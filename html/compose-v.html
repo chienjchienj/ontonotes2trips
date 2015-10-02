@@ -1,0 +1,76 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="compose" hidden/><h2>compose</h2>
+<h4> 1.1: write or create music or text</h4>
+
+<ul>
+<li>In 1983, he composed the score for HBO's first film.</li>
+<li>Tolkien composed the poem in either the late 1920s or the early 1930s.</li>
+<li>They compose poetry, journal entries, letters, rants, love stories, wish lists, artwork, comic strips...</li>
+<li>To subscribe to this mailing list, you will need to compose a short email.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: form the substance of</h4>
+
+<ul>
+<li>Shingle stones and diluvial accumulations compose the greater portion of these plains.</li>
+<li>CMS and Criticom International compose the largest wholesale monitoring company in the United States.</li>
+<li>It was composed of representatives from all the unions in the city.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: create from components</h4>
+
+<ul>
+<li>The need to compose product offerings from other products and components is becoming important.</li>
+<li>They composed the dish out of the box's contents.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: calm (oneself)</h4>
+
+<ul>
+<li>He said he was very impressed with how she got up and composed herself.</li>
+<li>It is important to compose yourself before stating your case.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

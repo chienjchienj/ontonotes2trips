@@ -1,0 +1,101 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="retire" hidden/><h2>retire</h2>
+<h4> 1.1: stop working, leave one's profession</h4>
+
+<ul>
+<li>He retired from the Navy in 1987.</li>
+<li>Mary is retiring from competitive skating next year.</li>
+<li>Bob retired from chess after losing to the grand master.</li>
+<li>The board made him retire as CEO because of the financial scandal during his watch.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: retreat or move from a position, relocate</h4>
+
+<ul>
+<li>The troops retired to their trenches under heavy mortar fire.</li>
+<li>The general had the army retire to the cliffs above the city.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: remove from circulation, dispose of</h4>
+
+<ul>
+<li>These old dollar bills are being retired from circulation.</li>
+<li>Bob has retired his cross-country skis to the basement for another season.</li>
+<li>I think you should retire that frayed jacket and buy yourself a new one.</li>
+<li>That cosmetic firm is retiring two older lines of foundation.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: cause an out in a ball game</h4>
+
+<ul>
+<li>The pitcher slid one over the outside corner for a strike to retire the side.</li>
+<li>The hitter was retired at first with a pop-up to center field.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: withdraw from social participation, excuse oneself</h4>
+
+<ul>
+<li>They retired from the party to the library in order to have a private conversation.</li>
+<li>After the bad car accident, John seems to have retired from his social life.</li>
+<li>Mary wanted to retire to the bath with a good book and a glass of wine.</li>
+<li>The jury retired from the courtroom to discuss the case.</li>
+<li>The player injured his ankle and was retired to the bench for the rest of the game.</li>
+<li>Bob said he was retiring early tonight, but encouraged us to continue the festivities without him.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: pay off or cancel, as a debt</h4>
+
+<ul>
+<li>The debt is to be retired from state gaming tax receipts.</li>
+<li>The nations agreed to retire a substantial portion of third-world debt.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

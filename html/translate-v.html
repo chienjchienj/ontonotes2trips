@@ -1,0 +1,102 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="translate" hidden/><h2>translate</h2>
+<h4> 1.1: render one language in another language</h4>
+
+<ul>
+<li>We were asked to translate a list of sentences.</li>
+<li>She works for the EU, translating from English into French.</li>
+<li>How does it translate the program into machine code?</li>
+<li>Occasionally, I translated French and German poems.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: express or transform in a new form or language</h4>
+
+<ul>
+<li>Here are three poems in English, but no most poetry doesn't translate well.</li>
+<li>The idiom doesn't translate well.</li>
+<li>So how does this theory translate into practical policy?</li>
+<li>Braque translated collage into oil.</li>
+<li>What I held back was too sacred and personal to translate into words.</li>
+<li>Not everything we learned in college translates well to the world of business.</li>
+<li>Today's steady growth in household income translate into more purchasing power.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: transfer to a place or into a state</h4>
+
+<ul>
+<li>She was translated from her small country home to a high-rise city apartment.</li>
+<li>Oh, the sweetness of being translated into a state of complete purity and perfection!</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: say or interpret something in understandable terms</h4>
+
+<ul>
+<li>Can you translate the instructions in this manual for a layman?</li>
+<li>Is there a need to translate the psychiatrist's remarks?</li>
+<li>I translated his silence as approval.</li>
+<li>You'll have to translate the attendant's vague mumbling for us.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: PHYSICS-move a body sideways through space in a stright line without rotation</h4>
+
+<ul>
+<li>Thirdly, the rotated object is translated to the new target position.</li>
+<li>The target is then translated to desired position and orientation.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: BIOLOGY-determine amino acid sequence during a protein synthesis</h4>
+
+<ul>
+<li>This service transcribes DNA into mRNA and translates mRNA into Amino Acid sequences.</li>
+<li>The information carried by the DNA bases translates into proteins.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,80 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="defeat" hidden/><h2>defeat</h2>
+<h4> 1.1: conquer or win a victory over an adversary</h4>
+
+<ul>
+<li>Most of the stories in business section are about those that defeated their competition.</li>
+<li>After Morgoth was defeated in the War of Wrath, Sauron hid for many centuries.</li>
+<li>He served until defeated in the election of 1995.</li>
+<li>He was defeated in the election of 1995.</li>
+<li>She defeated him in the election of 1995.</li>
+<li>Defeat your fears and live a happier life.</li>
+<li>I continue this routine rigorously until I have successfully defeated the sickness.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: baffle, fall short of understanding or ability</h4>
+
+<ul>
+<li>His logic defeats me.</li>
+<li>The mindset of those who did it defeats me.</li>
+<li>I'm afraid anything that involves language learning has always defeated me.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: make something void</h4>
+
+<ul>
+<li>The House defeated the motion by a nearly party-line vote of 190 to 235.</li>
+<li>In May of 2002, the district vote defeated the proposed budget.</li>
+<li>That proposed law was defeated.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: prevent success, cause something to fail</h4>
+
+<ul>
+<li>The truck defeated all my attempts to get it to start.</li>
+<li>Internal strife defeats the purpose of teamwork.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

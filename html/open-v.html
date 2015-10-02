@@ -1,0 +1,101 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="open" hidden/><h2>open</h2>
+<h4> 1.1: cause or become accessible state, make or become available</h4>
+
+<ul>
+<li>She opened the hood to check the oil.</li>
+<li>The door won't open.</li>
+<li>This decision will open him to attacks from the press.</li>
+<li>That memory opened old wounds.</li>
+<li>She opened her heart to me.</li>
+<li>I tried talking to her about it and she opened up to me slowly.</li>
+<li>I can't seem to open any of these Ascii files.</li>
+<li>After you open your browser, select the preferences tab.</li>
+<li>They are opening that land for commercial use.</li>
+<li>A position in the neurology department has just opened.</li>
+<li>This opens up new possibilities!</li>
+<li>The Episcopal Church recently opened up the priesthood to women.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: initiate, begin an activity or operation</h4>
+
+<ul>
+<li>He opens every lecture with a joke.</li>
+<li>Stocks opened lower this morning.</li>
+<li>In that chess game, white opened with the queen's knight.</li>
+<li>They opened a new library downtown.</li>
+<li>You need a license to open up a liquor store.</li>
+<li>That store doesn't open for business on Sundays.</li>
+<li>Voting has opened for the blogging scholarship.</li>
+<li>Jackson Browne and Linda Ronstadt opened for The Eagles.</li>
+<li>Breckenridge Resort's Peak 8 base area opened for the season this week.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: lead to</h4>
+
+<ul>
+<li>The forest suddenly opened into a field of wild flowers.</li>
+<li>The master bedroom opens to a large terrace.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: unfold or extend something</h4>
+
+<ul>
+<li>The eagle opened his mighty wings.</li>
+<li>She opened her arms for a hug.</li>
+<li>He held it underhand and opened up his fingers.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: shoot at</h4>
+
+<ul>
+<li>The troops opened fire on innocent civilians.</li>
+<li>The squad opened fire on the prisoner.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

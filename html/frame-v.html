@@ -1,0 +1,87 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="frame" hidden/><h2>frame</h2>
+<h4> 1.1: enclose in or as if in a frame</h4>
+
+<ul>
+<li>He decided to frame the picture with an ornate walnut frame.</li>
+<li>She framed the windows with garlands of flowers.</li>
+<li>A few days ago, the setting sun framed the southern tower.</li>
+<li>Your new haircut frames your face beautifully.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: contrive evidence against, set up</h4>
+
+<ul>
+<li>James Frampton framed the Martyrs on a trumped up charge of administering an unlawful oath.</li>
+<li>I swear I didn't do it! I was framed!</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: formulate or present with a particular perspective</h4>
+
+<ul>
+<li>We have not correctly framed the debate on intelligence reform.</li>
+<li>Bush framed his Sept. 19 speech in the context of the U.N.'s 1948</li>
+<li>Universal Declaration of Human Rights.</li>
+<li>Newspapers in different countries framed the bombing event in different ways.</li>
+<li>The Chinese agency framed the disease as being a threat to the Chinese population.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: draw up (a legal document)</h4>
+
+<ul>
+<li>He was a member of a committee which framed the Constitution of Massachusetts.</li>
+<li>He drew the Liturgy, and framed the rites.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: construct the skeleton of a structure</h4>
+
+<ul>
+<li>The workers framed the house in just two days.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

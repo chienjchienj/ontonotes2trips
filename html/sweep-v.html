@@ -1,0 +1,131 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="sweep" hidden/><h2>sweep</h2>
+<h4> 1.1: move over or through something in a sweeping manner</h4>
+
+<ul>
+<li>They confirmed the rumours that had swept the city a day earlier.</li>
+<li>The school expanded its program in response to the call that swept the nation for more graduate nurses.</li>
+<li>Some weeks earlier a hurricane swept across Cuba: again the human toll was minimal.</li>
+<li>Charlotte swept into the room, commanding the attention of all.</li>
+<li>It swept easily through its first reading in December, outraging environmental groups.</li>
+<li>He swept by the crowds and won the marathon.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: physically move objects (sometimes to affect an area)</h4>
+
+<ul>
+<li>She swept the room clean.</li>
+<li>She swept the dust from the room.</li>
+<li>Waves of nausea swept over her as the blackness beckoned.</li>
+<li>She swept the cracker crumbs under the rug.</li>
+<li>Two people died today when high waves swept them into the Atlantic Ocean.</li>
+<li>Cars were swept away by the waves.</li>
+<li>Even fish were swept up in the storm.</li>
+<li>Sweep the bronzer over cheeks, below your jaw line or anywhere you want to highlight.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: manipulate people; force (a person) into a situation.</h4>
+
+<ul>
+<li>When this incident was reported, the outrage of helplessness swept the station.</li>
+<li>Her eyes fluttered closed and she was swept off into a deep sleep that was long overdue.</li>
+<li>Many of them seem to have directed their attentions to the crisis that swept them out of office.</li>
+<li>They were swept up by the events.</li>
+<li>And once they all had finished their dinner, she'd swept the children off to bed.</li>
+<li>Dreams came and swept them away.</li>
+<li>The forces of change swept centuries of tradition aside.</li>
+<li>His despair sapped the joy out of life and swept the family's love of music out of their home.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: embrace as</h4>
+
+<ul>
+<li>Americans have swept labor union songs up as true products of our American oral tradition.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: span</h4>
+
+<ul>
+<li>The University Dance Company swept decades and genres in its spring concert.</li>
+<li>I was entralled by the masterful tale weaved by Anne Rice, a story that swept centuries.</li>
+<li>Beyond, the wide plain swept for miles, an oasis of spring green illuminated by softest sunlight.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: claim an overwhelming victory</h4>
+
+<ul>
+<li>Clarke County swept the Group A team titles for the third consecutive fall.</li>
+<li>They swept the morning competition and were chosen most outstanding choir of the festival.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: carefully search</h4>
+
+<ul>
+<li>The software simply sweeps a range and plots the resultant data.</li>
+<li>The Dutch swept the area around the train depot with Geiger counters.</li>
+<li>He took Johnny's spyglass and carefully swept the horizon, looking for sign of dust or of moving figures.</li>
+<li>He swept the computer for viruses.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: idiom: sweep under the rug</h4>
+
+<ul>
+<li>The rules committee had merely swept the problem under the rug.</li>
+<li>The intelligence scandal was swept quietly under the rug.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

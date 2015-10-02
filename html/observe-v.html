@@ -1,0 +1,80 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="observe" hidden/><h2>observe</h2>
+<h4> 1.1: focus attention on, keep tabs on</h4>
+
+<ul>
+<li>Observe the pose of the figures in the foreground of this painting.</li>
+<li>We couldn't observe the eclipse because of the overcast skies.</li>
+<li>No one observed the crime being committed.</li>
+<li>The chorus didn't appear to observe the conductor's tempo and got ahead of him.</li>
+<li>Wall Street has been observing the process of this merger with some interest.</li>
+<li>I observed a woman meowing into her cell phone yesterday.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: adhere to or engage in a practice</h4>
+
+<ul>
+<li>When did the country start observing Martin Luther King day?</li>
+<li>John's family observes the Sabbath.</li>
+<li>They are claiming that they intend to observe the conditions of the contract.</li>
+<li>The team observed a moment of silence in Ms. Weber's memory.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: discover or detect</h4>
+
+<ul>
+<li>I observed a definite change in Jane's behavior at work last week.</li>
+<li>Scientists have observed a sharp drop in vulture populations in India recently.</li>
+<li>Analysts have observed that China's energy demands have grown in recent years.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: remark or mention, state</h4>
+
+<ul>
+<li>"Mary is always late for dinner," observed John, glancing at his watch.</li>
+<li>She observed to the other session members that they should disable their cellphones.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

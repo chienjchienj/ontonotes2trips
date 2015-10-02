@@ -1,0 +1,55 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="prefer" hidden/><h2>prefer</h2>
+<h4> 1.1: value a thing or course of action more highly than another</h4>
+
+<ul>
+<li>Do gentlemen really prefer blondes?</li>
+<li>Users overwhelmingly prefer on demand to online downloads.</li>
+<li>People distrusted banks and the stock market and preferred to store their wealth in tangible assets.</li>
+<li>Fortunately for the Kissing Gourami, most aquarium fish lovers prefer to keep them in an aquarium instead of on the dinner table.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: give preference to one creditor over another</h4>
+
+<ul>
+<li>The man in debt may sell to pay his debts, and he may prefer creditors.</li>
+<li>The bankruptcy code does not allow a debtor to prefer one creditor rather than another.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

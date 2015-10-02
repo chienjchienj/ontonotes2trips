@@ -1,0 +1,77 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="end" hidden/><h2>end</h2>
+<h4> 1.1: stop, finish, terminate (A ends)</h4>
+
+<ul>
+<li>The bronchioles end in a capillary bed.</li>
+<li>My property ends by the bushes.</li>
+<li>The symphony ends in a pianissimo.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: bring to a halt, terminate (A causes B to end)</h4>
+
+<ul>
+<li>Why haven't 1.4 million new jobs ended the jobless recovery.</li>
+<li>She ended their relationship.</li>
+<li>The peace treaty ended the war.</li>
+<li>The terrible news ended our hopes that he had survived.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: be the end of, conclude (A is the event at the end of B)</h4>
+
+<ul>
+<li>Colorful closing ceremonies ended the XX Winter Olympic Games.</li>
+<li>This sad scene ended the movie.</li>
+<li>Everyone's laughter at our boss' joke ended the weekly meeting.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: end up, wind up, finally be or do something</h4>
+
+<ul>
+<li>"He ended up marrying his highschool sweetheart.</li>
+<li>"She ended up in some rather bizzare situation.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

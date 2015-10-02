@@ -1,0 +1,69 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="speed" hidden/><h2>speed</h2>
+<h4> 1.1: (cause to) move or go quickly</h4>
+
+<ul>
+<li>He sped/speeded down the hall to receive his guests.</li>
+<li>The train sped/speeded along at over 120 miles per hour.</li>
+<li>The actress then sped away in a waiting car.</li>
+<li>We sped down the ski slopes.</li>
+<li>This year is speeding by.</li>
+<li>Ambulances sped the injured people away from the scene.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: (cause to) increase the speed or rate of, accelerate</h4>
+
+<ul>
+<li>The new software speeded the production rate significantly.</li>
+<li>The best thing you can do to speed your recovery is to rest.</li>
+<li>I noted the car sped/speeded up and overtook me on the right.</li>
+<li>The network sped/speeded up the second phase of the process.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: drive at an excessive or illegal velocity</h4>
+
+<ul>
+<li>I got a ticket for speeding last Thursday.</li>
+<li>Next time you speed, I'm going to tear up your license. You hear?</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,84 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="feel" hidden/><h2>feel</h2>
+<h4> 1.1: experience, sense, emote</h4>
+
+<ul>
+<li>She felt resentful.</li>
+<li>He felt the wind in his face.</li>
+<li>Are you feeling better today?</li>
+<li>She felt small and insignificant.</li>
+<li>They never seemed to feel the effects of inflation.</li>
+<li>The sheets feel soft.</li>
+<li>He wasn't feeling comfortable in his new job.</li>
+<li>It feels wonderful to be on vacation!</li>
+<li>She really feels for stray animals.</li>
+<li>I feel like a cold beer now.</li>
+<li>After that nap, I felt like a million dollars!</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: touch,grope</h4>
+
+<ul>
+<li>She felt under her chair for the earring.</li>
+<li>I like the way this cashmere feels to the touch.</li>
+<li>The runner felt her pulse.</li>
+<li>He couldn't feel his way very well through the dark unfamiliar room.</li>
+<li>He got arrested for feeling up girls in the theater.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: find, conclude</h4>
+
+<ul>
+<li>I felt the movie did a bad job of developing the storyline.</li>
+<li>She is feeling that her son is too young to play football.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: FEEL OUT: try to learn someone's intentions</h4>
+
+<ul>
+<li>We need to feel out the new CEO to see if he's on the laborers' side.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

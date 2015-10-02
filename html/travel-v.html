@@ -1,0 +1,65 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="travel" hidden/><h2>travel</h2>
+<h4> 1.1: journey, move or proceed</h4>
+
+<ul>
+<li>We travelled north on Route 508.</li>
+<li>He travelled from Rome to Naples by bus.</li>
+<li>Do you prefer to travel by plane or by train?</li>
+<li>Bands of relatives traveled together.</li>
+<li>Waves that have traveled a long way from their source will have undergone much dispersion.</li>
+<li>The dust particles traveled around the world in about two weeks.</li>
+<li>Trains traveled back and forth all day and night playing a significant part in the growth and economic development of this country.</li>
+<li>They always had some food to spare for strangers who happened to travel by.</li>
+<li>She has always wanted to travel around the world.</li>
+<li>Texas Governor Rick Perry has traveled to Iraq with three other governors in a surprise visit to troops from their states.</li>
+<li>Senator Coleman traveled to International Falls to participate in an ice fishing clinic.</li>
+<li>We are planning to travel to India next January.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: move upon or across</h4>
+
+<ul>
+<li>Oliver Stone traveled the world in 94 days to film the movie.</li>
+<li>Artist Michael Parkes traveled the globe in search of meaning.</li>
+<li>These were ingenious trees that traveled the oceans of the earth in ready-to-grow packages called propagules.</li>
+<li>The busiest day in Maine Turnpike history occurred this year on Friday, August 1, when nearly 247000 vehicles traveled the highway.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,96 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="shift" hidden/><h2>shift</h2>
+<h4> 1.1: cause to change or exchange; transfer something</h4>
+
+<ul>
+<li>She shifted her weight from one spiked Armani heel to the other.</li>
+<li>I've shifted jobs three times in the last year.</li>
+<li>The tracking capacity enables us to shift attention from one spatial region to another.</li>
+<li>They will shift focus to show they mean business.</li>
+<li>Conversion programs shift the date taking at least 130 years into consideration.</li>
+<li>He shifted lanes several times, believing that police officers wanted to pass him.</li>
+<li>The sea winds shifted the sand, creating a range of large sand dunes.</li>
+<li>There, coastal currents shifted cold water north as far as East Cape.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: move or change one's own position or quality</h4>
+
+<ul>
+<li>She shifted slightly in her chair.</li>
+<li>She shifted uneasily from one foot to the other.</li>
+<li>The wind shifted to the northwest and the temperature fell quickly.</li>
+<li>While in this turn to final, the boat shifted left 30 degrees, then shifted back to center.</li>
+<li>The currents shifted abruptly equatorward in early 1998 at the outer-shelf mooring.</li>
+<li>His tone shifted dramatically.</li>
+<li>Jim's attention shifted back and forth.</li>
+<li>However, in the 1970s the focus shifted to the information technology (IT) sector.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: change gear</h4>
+
+<ul>
+<li>I shifted into fourth (gear).</li>
+<li>You have to shift when you go down a steep hill.</li>
+<li>In cars that are automatics, you don't have to bother with shifting gears.</li>
+<li>He lost his balance as the boat shifted in gear.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: Linguistics- altered as a part of a systematic historical change</h4>
+
+<ul>
+<li>Grimm showed how the consonants shifted.</li>
+<li>During the late Middle English period, most English vowels shifted their pronunciation.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: press shift key</h4>
+
+<ul>
+<li>She could not shift so all her letters are written in lower case.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

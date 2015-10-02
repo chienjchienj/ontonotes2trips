@@ -1,0 +1,90 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="save" hidden/><h2>save</h2>
+<h4> 1.1: rescue, redeem, deliver from harm or danger</h4>
+
+<ul>
+<li>This policy may have saved the economy from recession.</li>
+<li>A seat belt can save your life in an accident.</li>
+<li>The dog saved the drowning boy's life.</li>
+<li>Mary told the two evangelists that she didn't want them to save her.</li>
+<li>The king saved two of the prisoners from execution.</li>
+<li>They are trying to save these old growth trees from clear cutting.</li>
+<li>God save the Queen!</li>
+<li>The former tennis champion was now serving to save the match.</li>
+<li>I don't think these soggy manuscripts can be saved.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: keep or preserve something for use in the future</h4>
+
+<ul>
+<li>She has been saving these ruby earrings for her granddaughter.</li>
+<li>They are saving to buy a house.</li>
+<li>I'll save your place in line if you'll get us some coffee.</li>
+<li>They are saving a slot for Bob on the management team.</li>
+<li>Bill is saving up for retirement.</li>
+<li>We need to save our strength for the climb to the summit tomorrow.</li>
+<li>John forgot to save his files and lost two days of work on the computer.</li>
+<li>Tom's been saving his pocket money every week.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: prevent time, money, or effort from being wasted or spent</h4>
+
+<ul>
+<li>I saved the sales tax by buying this out of state.</li>
+<li>Buying tickets online will save you a service charge.</li>
+<li>John knows a short cut that will save an hour of driving to the beach.</li>
+<li>Pilots are helping the airlines explore ways to save on fuel.</li>
+<li>The ploy was meant to save the government some embarrassment.</li>
+<li>This cleaning product will save you time and effort.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: stop talking</h4>
+
+<ul>
+<li>Just save it, okay?</li>
+<li>He told them to save it and walked out of the room.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

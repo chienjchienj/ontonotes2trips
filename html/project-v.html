@@ -1,0 +1,101 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="project" hidden/><h2>project</h2>
+<h4> 1.1: convey or communicate effectively</h4>
+
+<ul>
+<li>You know, a person with good postrue projects poise, confidence and dignity.</li>
+<li>He projects himself as a confident speaker.</li>
+<li>Recently the president has sought to project a much tougher image.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: stick out, jut out, protrude</h4>
+
+<ul>
+<li>The hotel dining room projects out over the water.</li>
+<li>The balcony projected several feet.</li>
+<li>The boy projected his jaw in defiance.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: send off, cast forward</h4>
+
+<ul>
+<li>How does a cannon project a missile?</li>
+<li>His voice projects well.</li>
+<li>She had trouble projecting her voice to the back of the auditorium.</li>
+<li>She projected a light beam into the dark corner.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: transfer an image or feeling onto something else</h4>
+
+<ul>
+<li>The teacher projected the photograph onto a screen.</li>
+<li>Please project the color onto the surface.</li>
+<li>The instrument intercepted the rays of the sun and projected a shadow upon a disc.</li>
+<li>He had projected his fear of heights onto her.</li>
+<li>I suspect he's projecting his anxieties onto you.</li>
+<li>It can be used as a rotation matrix to project the shape onto the principal component axes.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: estimate, propose plan</h4>
+
+<ul>
+<li>Government spending is projected to rise by 3% next year.</li>
+<li>They project an increase of $6 million dollar for maintenance.</li>
+<li>The managers project an extended tour next year.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: imagine, envision or visualize</h4>
+
+<ul>
+<li>She projected herself back into her past.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

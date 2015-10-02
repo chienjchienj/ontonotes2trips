@@ -1,0 +1,73 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="grab" hidden/><h2>grab</h2>
+<h4> 1.1: sieze quickly or easily (and keep hold of)</h4>
+
+<ul>
+<li>A teenage boy sees his girlfriend being grabbed by ghouls.</li>
+<li>Ford grabbed the collar of his shirt from behind.</li>
+<li>The Life-Science Center grabbed venture capital investment.</li>
+<li>A gator was grabbed in Michigan and taken to the zoo.</li>
+<li>Peter was just a tool for those who grabbed power by exploitation.</li>
+<li>The robot Arthur will then grab the door knob, rotate it and open the door.</li>
+<li>She grabbed for the child, but couldn't reach him.</li>
+<li>I grabbed frantically for breath.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: catch to stop motion</h4>
+
+<ul>
+<li>So I grab the elevator to come up from my smoke break.</li>
+<li>They then just grab the door and walk in after you.</li>
+<li>I started to grab the door handle. 'What was behind this door?' I wondered.</li>
+<li>He grabbed a taxi and headed downtown.</li>
+<li>I immediately grabbed the subway.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: capture the attention or imagination of</h4>
+
+<ul>
+<li>The censorship battle grabbed headlines.</li>
+<li>This book will really grab you.</li>
+<li>This year's performance grabbed me by the heart.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

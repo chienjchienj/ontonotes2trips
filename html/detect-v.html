@@ -1,0 +1,56 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="detect" hidden/><h2>detect</h2>
+<h4> 1.1: notice or discover the presence or existence of</h4>
+
+<ul>
+<li>I know there are EGFR on the membrane since I detected them by confocal microscopy.</li>
+<li>I have frequently detected them running over me, but have always escaped being stung.</li>
+<li>And, after a while, we detected a funny smell wafting out of the front door.</li>
+<li>You claim to know they'll never detect gravitational waves.</li>
+<li>Our perception can fail to detect a fake image if there is no cause.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: to investigate a crime</h4>
+
+<ul>
+<li>A key component of our efforts to detect crime is the Scientific Support Department.</li>
+<li>He discussed the probability of detecting a crime where blood was found as a DNA source.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,80 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="crowd" hidden/><h2>crowd</h2>
+<h4> 1.1: fill to the point of overflowing</h4>
+
+<ul>
+<li>Thousands of spectators crowded the waterfront to see the Queen Mary 2.</li>
+<li>I missed the saturday dance and heard they crowded the dance floor.</li>
+<li>People crowded the ballrooms for cookies.</li>
+<li>Several dogs crowded the lawn to join in the event.</li>
+<li>We are really crowding the earth.</li>
+<li>They crowded together for moral support.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: Cause to gather together in large numbers</h4>
+
+<ul>
+<li>Barko, the sheep dog, crowded the flock through the gate.</li>
+<li>Police crowded the spectators back to the viewing stand.</li>
+<li>Shakspere has crowded the events together for dramatic effect.</li>
+<li>He was only 32 when he died, but he had crowded the adventure of</li>
+<li>many lives into those brief years.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: get too close to; often forcing one to move</h4>
+
+<ul>
+<li>Urban sprawl crowded the farmers out of the valley.</li>
+<li>Please step back, you're crowding me.</li>
+<li>They crowded me into the stairwell and took my money.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: approach a certain age or speed</h4>
+
+<ul>
+<li>She's crowding 50 and still stuck in the party-hearty '70s.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

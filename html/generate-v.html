@@ -1,0 +1,62 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="generate" hidden/><h2>generate</h2>
+<h4> 1.1: cause something to exist; create or produce</h4>
+
+<ul>
+<li>This new movie is generating a lot of excitement.</li>
+<li>He generated his oldest daughter with his first wife.</li>
+<li>Was that the assassination that generated hostilities between the countries?</li>
+<li>The new development will generate 1500 new jobs.</li>
+<li>These measures will increase the club's ability to generate income.</li>
+<li>The firm's new line of PDAs is generating about half their revenue this year.</li>
+<li>This new strain of wheat generates larger crops per acre than older varieties.</li>
+<li>The latest presidential debate has generated much discussion.</li>
+<li>The new dam will generate electricity for several towns.</li>
+<li>The rapid expansion and contraction of air generates sound waves.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: define or construct something abstractly</h4>
+
+<ul>
+<li>This set of grammatical rules cannot generate relative clauses.</li>
+<li>You can generate an ellipse by defining two foci.</li>
+<li>A proof for that theorem can be generated along the following lines.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

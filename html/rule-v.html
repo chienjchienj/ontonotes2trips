@@ -1,0 +1,91 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="rule" hidden/><h2>rule</h2>
+<h4> 1.1: have authority, reign over</h4>
+
+<ul>
+<li>Who is ruling the country now?</li>
+<li>Money rules supreme.</li>
+<li>Then the word of the Lord who rules over all came to me.</li>
+<li>Aristotle's logic has ruled over the thinking of western intellectuals.</li>
+<li>It's everything you need to rule the skies.</li>
+<li>Rule your heart to think no ill, Rule your temper and your will.</li>
+<li>Hey, Michael--you rule, dude!</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: decree, make a proclamation</h4>
+
+<ul>
+<li>The king ruled that all firstborn males should be killed.</li>
+<li>The trial judge ruled him guilty.</li>
+<li>The court ruled that four-letter words did not alone justify censorship.</li>
+<li>In 1665, the English Parliament ruled in favor of having only small funerals.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: exclude</h4>
+
+<ul>
+<li>John was ruled out as a possible suspect.</li>
+<li>NASA's mission management team today ruled out another shuttle repair spacewalk.</li>
+<li>They may pose a risk to the platypus that has not been ruled out by current research.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: have affinity or influence, as in the zodiac</h4>
+
+<ul>
+<li>The house where your Aries rules is where you will be challenged to grow.</li>
+<li>Scorpio rules the Midheavan or your worldly status.</li>
+<li>The creative and romantic Lion rules the Zodiac's house of pleasure.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: mark or draw with a ruler</h4>
+
+<ul>
+<li>Rule the margins.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

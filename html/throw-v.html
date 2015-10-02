@@ -1,0 +1,176 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="throw" hidden/><h2>throw</h2>
+<h4> 1.1: Propel or hurl something/someone with force; toss or put forward an idea or gesture.</h4>
+
+<ul>
+<li>The delinquents threw a brick through the school window.</li>
+<li>My friend threw the ball back over the fence.</li>
+<li>He threw a punch at his attacker.</li>
+<li>The horse reared and threw the rider into the bushes.</li>
+<li>He threw sixes on both die.</li>
+<li>She threw herself enthusiastically into the project.</li>
+<li>He finally got the message after she almost threw herself at him.</li>
+<li>The earthquake threw them onto the floor.</li>
+<li>Others threw insults and abusive words my way.</li>
+<li>She instantly spun around and threw me a scowl.</li>
+<li>The pirates then grasped him and threw him overboard.</li>
+<li>The beauty queen threw kisses at the crowd.</li>
+<li>She hangs out while the boys fight and throw money around.</li>
+<li>He abruptly stopped and threw a glance at me, but he didn't react.</li>
+<li>She threw me a look of encouragement.</li>
+<li>He threw in a couple of wisecracks during her speech.</li>
+<li>I'm just throwing my ideas out there. Let me know what you think.</li>
+<li>Here are some ideas and examples to throw out.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: Discard, dispose, expel, or get rid of.</h4>
+
+<ul>
+<li>Throw your worries into the wind!</li>
+<li>I have always wished I could cut things out and throw the old magazines away.</li>
+<li>So throw away your old habits and regain your confidence.</li>
+<li>He can't seem to throw off the bad first impression he made on Sally.</li>
+<li>Let's try to throw off this guy who's been following us across town.</li>
+<li>So, before you throw out the trash, see what you can recycle.</li>
+<li>They mistook him for a kid in a costume and threw him out of the bar.</li>
+<li>We need to calm down before we are thrown out of the room.</li>
+<li>That proposal was thrown out of the committee last year.</li>
+<li>The case was thrown out yesterday after the judges became impatient with delays.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: Manipulate or move something in order to operate.</h4>
+
+<ul>
+<li>John threw the car into reverse and squealed the tires.</li>
+<li>They threw the switch just as the train was approaching.</li>
+<li>He reversed the engine and threw the lever back.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: Cast, emit, or radiate.</h4>
+
+<ul>
+<li>Is the fireplace throwing any heat yet?</li>
+<li>We threw the tape of vacation highlights up on the screen for the audience.</li>
+<li>We can put up a reflector to throw light into the dark places</li>
+<li>This workshop will throw light into the dark corners of your mind.</li>
+<li>The searchlights are throwing out powerful beams.</li>
+<li>My wizard doesn't throw spells around left and right.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: Confuse or bewilder</h4>
+
+<ul>
+<li>Mary was really thrown by his unexpected apology.</li>
+<li>The game contestants were thrown by that last clue.</li>
+<li>Don't be thrown off by these equations; the underlying concept is simple.</li>
+<li>Maybe your remarks threw him off kilter.</li>
+<li>When you stop paying attention to her mistakes, you will throw her out of kilter.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: Hold an event</h4>
+
+<ul>
+<li>Our department is throwing Jim a farewell party.</li>
+<li>Mary threw an informal get-together at her place last night.</li>
+<li>She'll throw a fit when she sees what you've done with her toys.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: Form or shape, as pottery</h4>
+
+<ul>
+<li>We watched the potter throw a large vase on his wheel.</li>
+<li>John is going down to the ceramics studio to throw a few pots this afternoon.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: Lose, as a game, intentionally</h4>
+
+<ul>
+<li>They were suspected of throwing the game last Sunday.</li>
+<li>Deep Blue threw the match!</li>
+<li>Will the current chair throw the elections to the new candidate?</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: Give up, quit</h4>
+
+<ul>
+<li>Bob is ready to throw it in on this endless legal battle.</li>
+<li>They have decided to throw in the towel about fighting the rezoning commission.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: THROW UP: vomit</h4>
+
+<ul>
+<li>Obviously the shellfish we just ate disagreed with me. I just threw up.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.11: THROW IN: add as an extra or gratuity</h4>
+
+<ul>
+<li>The landlord threw in a free month of rent and let them move in two weeks early.</li>
+<li>When I bought my new glasses, they threw in a free pair of sunglasses.</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.11" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

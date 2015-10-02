@@ -1,0 +1,75 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="fit" hidden/><h2>fit</h2>
+<h4> 1.1: be satisfactory or acceptable, be in accordance with</h4>
+
+<ul>
+<li>This fits my needs.</li>
+<li>Does this paper fit the requirements for the degree?</li>
+<li>I'd say he fit the stereotype pretty well given his self escalation of doses.</li>
+<li>The administration welcomed intelligence that fit the president's determination to go to war.</li>
+<li>The stories didn't fit what her magazine's editors were looking for.</li>
+<li>Several witnesses' stories didn't fit the official line.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: (cause to) be put in or occupy a specific place due to its suitable features</h4>
+
+<ul>
+<li>This piece won't fit into the puzzle</li>
+<li>He fitted other pieces of paper to his cut-out.</li>
+<li>Fit the dress inside out, and fit the sides of the bodice.</li>
+<li>Can you fit the toy into the box?</li>
+<li>A straight line was fit between each two consecutive data points.</li>
+<li>This man can't fit himself into our work environment</li>
+<li>How does this shirt fit?</li>
+<li>Remember the kids who just didn't fit in when you were a child?</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: equip or supply with necessary things</h4>
+
+<ul>
+<li>The expedition was fit with proper clothing, food, and other necessities.</li>
+<li>The company has won a multi-million dollar contract to fit out the new hotel.</li>
+<li>Little kids can be over the side in a heart beat, so fit them out with a PFD.</li>
+<li>She's been fitted with an artificial leg.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

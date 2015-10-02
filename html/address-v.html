@@ -1,0 +1,107 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="address" hidden/><h2>address</h2>
+<h4> 1.1: Speak or give speech to.</h4>
+
+<ul>
+<li>He addressed the crowd outside the window.</li>
+<li>The chairman addressed the board of trustees.</li>
+<li>He addressed me in low tones.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: direct spoken or written message to the attention of</h4>
+
+<ul>
+<li>He addressed a few introductory remarks to the audience.</li>
+<li>The student body addressed a protest to the faculty senate.</li>
+<li>Counsel must address themselves only to the court. (compare to sense 3)</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: Direct efforts or attention of onself.</h4>
+
+<ul>
+<li>I would like to address myself to a matter which is of grave concern to me.</li>
+<li>In 1989 he addressed himself to environmental themes.</li>
+<li>The authorities must address themselves to crucial task of forging national unity.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: Deal with (something).</h4>
+
+<ul>
+<li>The book addressed the issue of absenteeism.</li>
+<li>We failed to address our funding problems.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: Call by correct title or proper name.</h4>
+
+<ul>
+<li>He likes to be addressed as 'Sir' or 'Mr Partridge'.</li>
+<li>I told you, you will address me as Great One offstage and on.</li>
+<li>You should address him by his last name.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: Write directions on mail.</h4>
+
+<ul>
+<li>The parcel was wrongly addressed.</li>
+<li>So why did you open a letter that was addressed to me?</li>
+<li>Address the package using the name and address listed below.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: Aim a golf ball.</h4>
+
+<ul>
+<li>A golfer addressed his ball to play the long first hole of the Baltusrol course.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

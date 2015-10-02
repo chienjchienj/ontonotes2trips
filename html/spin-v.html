@@ -1,0 +1,118 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="spin" hidden/><h2>spin</h2>
+<h4> 1.1: turn or cause to turn around on an axis</h4>
+
+<ul>
+<li>My head is spinning.</li>
+<li>He wrapped a coil of wire around a magnet and spun the magnet.</li>
+<li>The washer spun in the same direction as the lower one.</li>
+<li>And now her soul must come to terms with her death while the world still spins around her.</li>
+<li>Max observes the chaos that spins around him and mutters to himself.</li>
+<li>I spun the plane into my first roll, sky, trees, fields, circling about me.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: create or transform</h4>
+
+<ul>
+<li>If by that time you haven't spun the straw into gold you shall die.</li>
+<li>The citizen of Valley Center spins yarn on a foot-powered spinning wheel.</li>
+<li>His granddaughter spun a yarn about the governor and a train.</li>
+<li>He walks up walls and spins webs that are as strong as steel.</li>
+<li>Then the lady on the phone spun a story about an uncle from Paris unexpectedly visiting.</li>
+<li>Her fingers spun magic on the tabla and the music enthralled the audience.</li>
+<li>First they spun lies.</li>
+<li>Has he victimized, spun lies into truth, tricked the voters, or earned distrust?</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: give a specific interpretation to</h4>
+
+<ul>
+<li>The President's spokesmen had to spin the story to make it less embarrassing.</li>
+<li>The local and national press have spun the story so many directions without checking facts.</li>
+<li>People ignored it on purpose and spun the story to suit their own agendas.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: prolong or extend</h4>
+
+<ul>
+<li>We spun out the last hour eating sandwiches at the shaded tables of a snack.</li>
+<li>The left spun out the debate as long as it could.</li>
+<li>I spun out the evening browsing Melton's collection of cookery books over coffee.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: stream in jets, of liquids</h4>
+
+<ul>
+<li>The creek spun its course through the woods.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: provide entertainment by playing records</h4>
+
+<ul>
+<li>Ron has spun the Nashville Cares Artrageous party every year since 1997.</li>
+<li>The DJ spun the tunes and kept the party going.</li>
+<li>I also spun the last show ever there with Dilated and Jurassic.</li>
+<li>Over the last five years DJ Rap has spun the discs as much globally as nationally.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: create a new entity by separating out part of the main entity</h4>
+
+<ul>
+<li>The Star Trek series successfully spun-off a number of sequel feature films.</li>
+<li>So this past summer, she spun off a company, with the support of investors.</li>
+<li>I did NOT say that the iPod division should be spun off.</li>
+<li>For foundations spun off by hospital sales, even billions go only so far.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

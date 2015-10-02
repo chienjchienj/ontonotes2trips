@@ -1,0 +1,60 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="repair" hidden/><h2>repair</h2>
+<h4> 1.1: fix or mend something broken, injured, or damaged</h4>
+
+<ul>
+<li>She repaired her TV set.</li>
+<li>The city repaired the road after a harsh winter.</li>
+<li>We had to repair the roof of our house after a storm.</li>
+<li>The garage said the car was so old it wasn't worth repairing.</li>
+<li>I really must get my bike repaired this weekend.</li>
+<li>This soup will certainly repair this chill.</li>
+<li>That's why she had wanted to repair the broken friendship so badly.</li>
+<li>One can nevery fully repair the suffering and loss.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: go to another place (sometimes habitually)</h4>
+
+<ul>
+<li>After dinner, we repaired to the lounge for coffee.</li>
+<li>The family repaired to their cabin in the woods for the weekend.</li>
+<li>He repairs to the restaurant every week.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

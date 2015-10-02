@@ -1,0 +1,92 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="accept" hidden/><h2>accept</h2>
+<h4> 1.1: take on, consent to</h4>
+
+<ul>
+<li>She is accepting an offer from IBM.</li>
+<li>We couldn't accept another invitation this month.</li>
+<li>He has accepted too many responsibilities.</li>
+<li>Are you willing to accept the risk?</li>
+<li>That hotel won't accept having dogs in your room.</li>
+<li>Don't accept packages from strangers.</li>
+<li>The committee is accepting proposals until Monday.</li>
+<li>Female dogs will only accept males when they are in heat.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: tolerate</h4>
+
+<ul>
+<li>People did not accept atonal music at that time.</li>
+<li>He has gradually been accepting his loss of mobility from the disease.</li>
+<li>Do you think she'll accept our style of office humor?</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: believe, hold as true</h4>
+
+<ul>
+<li>At first Einstein didn't accept that the universe could be expanding.</li>
+<li>To accept both p and not p is a contradiction.</li>
+<li>The Creationists don't accept Darwinian evolution.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: admit to a group</h4>
+
+<ul>
+<li>Harvard accepted her brother for next year.</li>
+<li>The company isn't accepting any more interns for this summer.</li>
+<li>Through the direction and help of Gomez, she was accepted to the program.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: physically retain or hold</h4>
+
+<ul>
+<li>The spackle on the wall won't accept paint without a coat of primer.</li>
+<li>They need an additive for the cloth to accept the dye.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

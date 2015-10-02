@@ -1,0 +1,89 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="suppose" hidden/><h2>suppose</h2>
+<h4> 1.1: assume to be true for the sake of argument</h4>
+
+<ul>
+<li>Suppose that you had a lot of money. What would you do?</li>
+<li>Let us suppose that function f is an n-variable Boolean function.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: consider probable or likely</h4>
+
+<ul>
+<li>Look at that sky. I suppose it will rain today.</li>
+<li>Scientists supposed that large dinosaurs lived in swamps.</li>
+<li>I suppose you have heard the news.</li>
+<li>Do you suppose that Gillian will mary him?</li>
+<li>Her new book is supposed to be very good.</li>
+<li>It is widely supposed that the minister will be forced to resign.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: require something as a precondition</h4>
+
+<ul>
+<li>Your plan supposes that there are enough presents to go around.</li>
+<li>Patience must suppose pain. (quote by Samuel Johnson)</li>
+<li>Investment of this kind supposes an increase in the company's profits this year.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: consider something as an annoyance or unwilling agreement</h4>
+
+<ul>
+<li>I suppose you're going to be late again!</li>
+<li>I suppose that you think that's funny. Well, I certainly don't!</li>
+<li>Uh... I suppose I can come with you to the dentist.</li>
+<li>I don't agree with it, but I suppose it's for the better.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: consider as a suggestion - for a polite question</h4>
+
+<ul>
+<li>I don't suppose you could lend me the $50, could you?</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

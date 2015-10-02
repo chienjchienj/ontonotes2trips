@@ -1,0 +1,147 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="work" hidden/><h2>work</h2>
+<h4> 1.1: exert oneself in an activity</h4>
+
+<ul>
+<li>He is working hard to bring up his grade.</li>
+<li>They worked on a farm growing up.</li>
+<li>Those men will work for minimum wage.</li>
+<li>They work us hard in that gym class.</li>
+<li>The salesman works the Midwest.</li>
+<li>Don't work those children so hard.</li>
+<li>Her fingers worked with incredible speed.</li>
+<li>She worked at the algebra problems until she'd solved them all.</li>
+<li>At the end of sentence, he had worked off his debt to society.</li>
+<li>Please be quiet while I work on the taxes.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: perform, function, behave</h4>
+
+<ul>
+<li>How will the parachute actually work when deployed?</li>
+<li>This old radio doesn't work anymore.</li>
+<li>That drug has worked miracles for those with arthritis.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: shape, form, handle</h4>
+
+<ul>
+<li>The artist taught them to work different kinds of clay.</li>
+<li>We'll have to work this hard soil a lot before planting lettuce.</li>
+<li>The dough should work easily when kneading.</li>
+<li>He gradually worked the metal into a sword.</li>
+<li>Work the dough until it is smooth and glossy.</li>
+<li>Next, work in the butter.</li>
+<li>Try to work some jokes into your speech.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: proceed, move, position</h4>
+
+<ul>
+<li>I worked my way carefully around the broken glass.</li>
+<li>Start from the bottom and work towards the top.</li>
+<li>Slowly we worked the big rock onto the flatbed of the truck.</li>
+<li>The screw worked free.</li>
+<li>He knows how to work himself out of a jam.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: control, exploit, act upon</h4>
+
+<ul>
+<li>She worked on her friends to support the political candidate.</li>
+<li>The rock musician worked the crowd of young girls into a frenzy.</li>
+<li>Politicians know how to work a crowd.</li>
+<li>You've got to learn how to work the system.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: operate</h4>
+
+<ul>
+<li>We'll work the phones tonight for the fund raiser.</li>
+<li>Can you work an electric drill?</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: ferment</h4>
+
+<ul>
+<li>The vintner worked the wine in big oak vats.</li>
+<li>The wine worked.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: solve, figure out</h4>
+
+<ul>
+<li>He couldn't work the second problem on the test.</li>
+<li>They worked out a plan that should succeed.</li>
+<li>The fees work out to less than $100.</li>
+<li>Let's work through this problem together.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: idioms</h4>
+
+<ul>
+<li>Don't worry. Things will all work out in the end.</li>
+<li>He works out at the gym every day.</li>
+<li>Those thugs worked him over pretty bad and now he's in the hospital.</li>
+<li>I've really worked up an appetite.</li>
+<li>The team worked up an ad for the client in record time.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

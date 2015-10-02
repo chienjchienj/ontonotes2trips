@@ -1,0 +1,58 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="pretend" hidden/><h2>pretend</h2>
+<h4> 1.1: behave unnaturally (with intent to deceive); act fictitiously</h4>
+
+<ul>
+<li>Should Hillary pretend to be a flight attendant?</li>
+<li>I'm pretending to be a tiger! Rawr!</li>
+<li>Bogus calls pretend to be the police.</li>
+<li>Pretend (that) the world has ended.</li>
+<li>Let's pretend!</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: put forward a claim and/or assert possession of; feign or act, usually with intent to deceive; play a role for personal gain.</h4>
+
+<ul>
+<li>Never pretend to a love which you do not feel.</li>
+<li>He pretended the title of King.</li>
+<li>Melody pretended the role of predator in The Black Forest.</li>
+<li>I cannot pretend to know the truth.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,162 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="walk" hidden/><h2>walk</h2>
+<h4> 1.1: amble, travel, traverse, or cross by foot</h4>
+
+<ul>
+<li>Walk, don't run!</li>
+<li>She walks with a slight limp.</li>
+<li>He walks three miles every day.</li>
+<li>She is enthusiastic about the acrobats who walked the tightrope 10 meters above.</li>
+<li>For a month after the surgery, he could only walk with crutches.</li>
+<li>With some prodding, Barney walked the plank, and jumped into the sea.</li>
+<li>After breakfast, she walked about the park.</li>
+<li>We were walking around the garden.</li>
+<li>He walked away before I could say anything.</li>
+<li>She walks in at all hours, as if she lived here.</li>
+<li>I got annoyed and just walked off.</li>
+<li>I was simply walking on air all day.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: lead or escort</h4>
+
+<ul>
+<li>I'll walk you to your car.</li>
+<li>Don't forget to walk the dog.</li>
+<li>He walked the horse up the mountain.</li>
+<li>I have a harness and I'll walk the cat to see how she likes it.</li>
+<li>All day I nursed her, all night I walked her, and napped, and nursed, and walked her.</li>
+<li>At her apartment I walked her to her door.</li>
+<li>I have walked her through disabling the firewall.</li>
+<li>I walked him through the whole process and he built a flamenco guitar by himself.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: perform, rehearse, or do</h4>
+
+<ul>
+<li>We walked through the complete ceremony once.</li>
+<li>I also met with our sound designer Joe today and we walked through the play.</li>
+<li>I kept it very light as we walked through the light cues.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: leave abruptly and purposefully/abandon</h4>
+
+<ul>
+<li>The customer that was not served walked out.</li>
+<li>She walked out on her husband and children.</li>
+<li>The workers are threatening to walk out if they do not get a higher wage.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: steal or take</h4>
+
+<ul>
+<li>He walked off with my wife!</li>
+<li>The thief walked off with my gold watch.</li>
+<li>My CEO has just walked off with my pen!</li>
+<li>Toledo walked off with a 1-0 victory over Buffalo Wednesday afternoon.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: in baseball, to obtain/give a base</h4>
+
+<ul>
+<li>A's shortstop Bobby Crosby walked with the bases loaded in the bottom of the 17th.</li>
+<li>Adam Ruszkowski came on in relief and walked the first batter to load the bases.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: be or act in association with</h4>
+
+<ul>
+<li>It should be the desire of every person to walk with God.</li>
+<li>We must walk with our dispossessed brothers and sisters.</li>
+<li>India invites tourists to walk with Buddha.</li>
+<li>The refusal to admit doubt seems to walk hand in hand with a refusal to admit one is short of ideas.</li>
+<li>You have the ability to walk alongside people and to share your gifts and talents in meaningful ways.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: live or behave in a specified manner</h4>
+
+<ul>
+<li>Unhappy people around the world continue to walk in sadness feeling hopeless.</li>
+<li>For to walk with hope is to walk with hope in our hearts.</li>
+<li>She vowed to follow the steps of Jesus as she lived in faith and walked with hope.</li>
+<li>I walk this lonely road, the only one that I have ever known.</li>
+<li>Allan walked a tightrope, not only between art and life, but between grandeur and intimacy.</li>
+<li>Cash is filled with the candor, wit, and wisdom of a man who has truly walked the line.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: abuse, beat</h4>
+
+<ul>
+<li>You don't have to grovel at his feet and let him walk all over you.</li>
+<li>Stand your ground, don't continue to let her walk all over you.</li>
+<li>The local team walked over their old rivals for the championship.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: interrupt</h4>
+
+<ul>
+<li>Have your parents ever walked in on you?</li>
+<li>A police officer shot a man yesterday morning after the officer walked in on a robbery attempt.</li>
+<li>John told his parents he had inadvertently walked in on a seething row between two employees.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

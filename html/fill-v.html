@@ -1,0 +1,133 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="fill" hidden/><h2>fill</h2>
+<h4> 1.1: To make or become full, as in a physical container</h4>
+
+<ul>
+<li>Please fill this container.</li>
+<li>Her praise filled the child with pride. (metaphoric extension)</li>
+<li>The dentist filled the cavity.</li>
+<li>You've filled the space with great ideas!</li>
+<li>I filled the beaker with boiling water and waited for the coffee to brew.</li>
+<li>They filled the hole with dirt.</li>
+<li>The liquid fills the container.</li>
+<li>The pool filled slowly with water.</li>
+<li>The theater quickly filled up.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: employ or become employed in a position</h4>
+
+<ul>
+<li>She filled the job as director of development.</li>
+<li>They quickly filled the position with one of the many qualified applicants.</li>
+<li>The company kept the job vacancy open until it could be filled.</li>
+<li>I have never filled a job so quickly in my entire career.</li>
+<li>Federal agencies fill jobs two ways, competitively and noncompetitively.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: meet or satisfy a want or need, supplement or make complete</h4>
+
+<ul>
+<li>The volunteer experience was fun, educational and filled a need in our community.</li>
+<li>This church has evidently filled a want.</li>
+<li>Crime and horror comics filled a desire by that era's youth to experience some of the excitement the</li>
+<li>y imagined was part of World War II.</li>
+<li>This realization filled him suddenly and completely, leaving him feeling at peace.</li>
+<li>She had a hunger that longed to be filled.</li>
+<li>He filled up on turkey.</li>
+<li>They filled the bill in every way.</li>
+<li>A guest host filled in for Letterman.</li>
+<li>The assistant coach filled in for part of last season.</li>
+<li>The Florida Marlins filled out their coaching staff Wednesday.</li>
+<li>Filmmaker Mitch Davis has filled out his cast with appealing fresh</li>
+<li>faces.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: write all the required information</h4>
+
+<ul>
+<li>Fill out this questionnaire, please!</li>
+<li>Make sure to fill in all the blanks.</li>
+<li>The form will be automatically filled out for you.</li>
+<li>If they are logged in, the name is filled in for them.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: supply with information</h4>
+
+<ul>
+<li>She filled me in on a few points of Turkish culture.</li>
+<li>Craig filled me in on the challenges your sales department is facing.</li>
+<li>I was drawn to his office, dropping by to fill him in on what was happening.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: use a shade, color, or pattern</h4>
+
+<ul>
+<li>Ask students to use a red, blue, and yellow oil pastel to fill in the primary colors.</li>
+<li>Set the layers blending option to Hue, then fill in the selection</li>
+<li>by clicking inside it with the Paint Bucket tool.</li>
+<li>The picture will be repeated like a piece of tile to completely fill in the background of your page.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: to make or become larger, more substantial</h4>
+
+<ul>
+<li>His new health book was titled, "Business Eating on the Run: How to Fill Up Without Filling Out."</li>
+<li>You are still a teen - which means your body is still growing,</li>
+<li>filling out and adjusting itself to its ideal, mature weight and proportion.</li>
+<li>The downy parts of feathers as well as feathers that are totally</li>
+<li>downy provide insulation and filling out body contours.</li>
+<li>You will be growing taller and your body will be filling out.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

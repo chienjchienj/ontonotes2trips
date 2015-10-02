@@ -1,0 +1,100 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="render" hidden/><h2>render</h2>
+<h4> 1.1: cause to become</h4>
+
+<ul>
+<li>The shot rendered her immobile.</li>
+<li>It amounted to torture and rendered him mentally incompetent to now stand trial.</li>
+<li>His macho swagger hides a surprising sensitivity which emerges once he is rendered practically useless.</li>
+<li>We therefore tested the hypothesis that low levels of BDNF render neurons more sensitive to gp120.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: give, return, or deliver</h4>
+
+<ul>
+<li>The estate renders some revenue for the family.</li>
+<li>They had to render the estate.</li>
+<li>They had undoubtedly rendered the greatest service ever rendered to any country.</li>
+<li>The judge finally rendered a verdict.</li>
+<li>He rendered thanks to the Providence which allowed him to meet the men that he needed.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: depict, create, translate</h4>
+
+<ul>
+<li>Your stuff is so creative and tediously rendered.</li>
+<li>All hand bags are 100% rendered by hand, including the felt, processed with raw wool.</li>
+<li>The pianist rendered the Beethoven sonata beautifully.</li>
+<li>The carvings were rendered in the conventions of 15th century religious artwork.</li>
+<li>She rendered the French poem into English.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: take away, remove</h4>
+
+<ul>
+<li>Superman faces an old enemy that looks to render him of his power once and for all.</li>
+<li>The journey rendered him of all hope of ever seeing her again.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: melt, to separate out impurities</h4>
+
+<ul>
+<li>To render the fat and make cracklings, cut into pieces and place in a heavy pan over a medium flame.</li>
+<li>If you render the butter first before mixing it with meds you would have a higher butter fat.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: coat with plastic or cement</h4>
+
+<ul>
+<li>I got plasterers to lay a slab of concrete for the floor and to render the brick walls.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

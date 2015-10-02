@@ -1,0 +1,92 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="dissolve" hidden/><h2>dissolve</h2>
+<h4> 1.1: break up a solid, usually into a solution</h4>
+
+<ul>
+<li>Dissolve a cup of sugar in the hot water.</li>
+<li>The solution dissolved the stains in the bathtub.</li>
+<li>It was as though my body dissolved into tiny cells that were part of everything.</li>
+<li>That is happiness; to be dissolved into something complete and great.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: to morph into another state</h4>
+
+<ul>
+<li>The picture dissolved into static.</li>
+<li>All his anxiety resolved itself into a sigh and dissolved into apathy and drowsiness.</li>
+<li>The discussion quickly dissolved into nasty accusations about her business dealings.</li>
+<li>Image is dissolved into language... language, dissolved into sound... sound dissolved into image.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: (cause to) fade away</h4>
+
+<ul>
+<li>The sound dissolved away and you felt the immediate presence of a greater being.</li>
+<li>He realized that their 'wind dance' had dissolved their stress from school.</li>
+<li>The picture dissolved and the large white screen was so brilliant he had to shut his eyes.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: (cause to) cease to operate or function as a unit</h4>
+
+<ul>
+<li>Would Iraq be better off if it dissolved into three ethnic enclaves?</li>
+<li>More people dissolved their state domestic partnerships than in any month since January 2000.</li>
+<li>Last month they dissolved their collaboration on the nasal flu vaccine.</li>
+<li>They would have upheld the Government's contentions and dissolved the steel corporation into smaller units.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: lose control emotionally</h4>
+
+<ul>
+<li>She dissolved into tears when she saw the damage to her home.</li>
+<li>He dissolved into anguished and uncontrollable sobbing.</li>
+<li>He managed to keep a straight face until he made it back to his car, where he dissolved into laughter.</li>
+<li>What was the mournful vision that dissolved him into tears?</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,81 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="assign" hidden/><h2>assign</h2>
+<h4> 1.1: give a task, a post, or time in which to do a task</h4>
+
+<ul>
+<li>UN troops were assigned the task of rebuilding the hospital.</li>
+<li>The case has been assigned to our most senior officer.</li>
+<li>Teacher assigned homework to the children.</li>
+<li>The principal has assigned the teacher a new classroom.</li>
+<li>Have you assigned a time for the interviews yet?</li>
+<li>The company assigned her to the newspaper's Berlin office.</li>
+<li>He was assigned to what may be his most confusing case yet.</li>
+<li>I assigned a day for spring cleaning.</li>
+<li>Each department head will be assigned a timeslot for their presentation.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: ascribe or place in association with</h4>
+
+<ul>
+<li>Each player will be assigned a locker at the beginning of the season.</li>
+<li>I was assigned Miss Minchin as my counselor.</li>
+<li>Have you been assigned a security number yet?</li>
+<li>Newcomers are always assigned a roommate.</li>
+<li>Spotting four trucks on the highway, I immediately assigned them names.</li>
+<li>The biologists assigned the mushroom to the proper class.</li>
+<li>The words are assigned a rating based on frequency.</li>
+<li>Once you assign a value to the variable, the function does the rest.</li>
+<li>The characters in Unicode are assigned a directionality, left-to-right or right-to-left.</li>
+<li>People assign great importance to security.</li>
+<li>Detectives have been unable to assign a motive for the murder.</li>
+<li>The report assigned the blame for the accident to inadequate safety regulations.</li>
+<li>She assigns grades based on how much she likes you.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: transfer property or rights using legal means</h4>
+
+<ul>
+<li>Her property was assigned to her grandchildren.</li>
+<li>He assigned rights to this patent to the company in NY.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

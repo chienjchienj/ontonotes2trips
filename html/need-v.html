@@ -1,0 +1,76 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="need" hidden/><h2>need</h2>
+<h4> 1.1: must have, demand</h4>
+
+<ul>
+<li>Babies need constant care.</li>
+<li>The doctor said I need an operation.</li>
+<li>He was always needing money.</li>
+<li>This stew needs more salt.</li>
+<li>Will I need a passport to enter that country?</li>
+<li>Jet engines need special fuel.</li>
+<li>I don't need all this hassle.</li>
+<li>I really need a rest from all this.</li>
+<li>What you need is a hot bowl of soup.</li>
+<li>This room needs brightening up.</li>
+<li>I need my hair cut short.</li>
+<li>Being a good parent needs lots of patience.</li>
+<li>Eye surgery needs a very steady hand.</li>
+<li>I need a lot of time to practice my violin.</li>
+<li>I need you to help me.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: must do something</h4>
+
+<ul>
+<li>The doctors said I needed to get an operation.</li>
+<li>I need to get a haircut.</li>
+<li>You need to help me choose an outfit.</li>
+<li>What if I need to see a doctor while I'm away?</li>
+<li>I needed to remember.</li>
+<li>We need to ask ourselves what it means to integrate.</li>
+<li>I don't think we need ask him.</li>
+<li>Nothing needs to be done about this until next week.</li>
+<li>Nothing need be done about this until next week.</li>
+<li>Users need not see this command to use the application.</li>
+<li>Official blogs and wikis needn't be so boring!</li>
+<li>You needn't smirk like that.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

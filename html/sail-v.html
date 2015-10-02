@@ -1,0 +1,69 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="sail" hidden/><h2>sail</h2>
+<h4> 1.1: travel on a body of water (propelled by wind)</h4>
+
+<ul>
+<li>Charles Darwin sailed on the Beagle.</li>
+<li>I love sailing the open sea.</li>
+<li>Who 'really' sailed the Ocean Blue in 1492?</li>
+<li>Can a kitten sail a ship?</li>
+<li>There was a lady who sailed my soul.</li>
+<li>We sailed (the ocean) through the night.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: move with sweeping, effortless gliding motions</h4>
+
+<ul>
+<li>Jeanette sailed into the ballroom with a grin.</li>
+<li>The paper airplane sailed through the air.</li>
+<li>The glider sailed down to a perfect landing.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: SAIL THROUGH: succeed at easily or finish quickly</h4>
+
+<ul>
+<li>I'm sailing through my Linguistics class.</li>
+<li>Does he expect to sail through his entire college carreer?</li>
+<li>The market researcher sailed through the 100 question survey.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

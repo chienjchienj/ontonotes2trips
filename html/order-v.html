@@ -1,0 +1,79 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="order" hidden/><h2>order</h2>
+<h4> 1.1: give a command to someone</h4>
+
+<ul>
+<li>She ordered him to do the shopping.</li>
+<li>He had been ordered to appear at Korumburra Magistrates Court.</li>
+<li>Ferretti ordered her to continue taking her medication while in jail.</li>
+<li>Then he appointed a commander for each division and ordered them to surround the city.</li>
+<li>The victim says that the owner ordered the dogs to attack.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: request something to be made, supplied, or delivered</h4>
+
+<ul>
+<li>Germania, a charter airline, ordered three 737-300s, doubling its fleet.</li>
+<li>I just ordered pizza from panhandle pizza.</li>
+<li>You can order flowers online 24 hours a day.</li>
+<li>And I have ordered a massage therapist to give you a special rub down with sun screen.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: organize</h4>
+
+<ul>
+<li>I then realized that I'd ordered the files incorrectly in my guesses.</li>
+<li>I ordered the papers before the meeting, but forgot to bring them.</li>
+<li>This version has re-ordered the guidelines in a more logical way.</li>
+<li>We have conceptualized and ordered the world in a certain way.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: appoint to clerical posts</h4>
+
+<ul>
+<li>*No examples found.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

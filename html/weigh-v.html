@@ -1,0 +1,115 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="weigh" hidden/><h2>weigh</h2>
+<h4> 1.1: have a certain weight</h4>
+
+<ul>
+<li>The baby weighed seven pounds three ounces at birth.</li>
+<li>Yesterday a satellite weighing 15 tons was successfully placed in orbit.</li>
+<li>It really weighed too much to carry.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: find out the weight of something</h4>
+
+<ul>
+<li>The butcher weighed the chicken.</li>
+<li>Tyson weighed in at 245 lbs for the fight.</li>
+<li>She weighs herself every week on the scales in the bathroom.</li>
+<li>Your luggage must be weighed before it is put on the aircraft.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: consider carefully, take into account, compare options</h4>
+
+<ul>
+<li>I had to weigh all possible options before I made my choice.</li>
+<li>We can start when we have weighed all the factors involved.</li>
+<li>Economic benefits must be carefully weighed against the possible dangers.</li>
+<li>We never get to weigh out more than one option at a time.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: be heavy, bear on, influence, be important or burdensome</h4>
+
+<ul>
+<li>The snow weighed down on the roof.</li>
+<li>His opinion doesn't weigh much in my mind.</li>
+<li>Her advice weighs heavily with him.</li>
+<li>Easy access to a railway network weighed heavily with us when we chose a site for the new factory.</li>
+<li>The problem weighed heavily on everyone present.</li>
+<li>He's under huge pressure at work and it's really weighing on him.</li>
+<li>Too much responsibility when too young can weigh down on a child.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: heave up an anchor in preparation for sailing</h4>
+
+<ul>
+<li>To weigh anchor is to lift it from its moorings, so that the ship may start on her voyage.</li>
+<li>Fry and stormy the night that I weighed the anchor of Montevideo.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: measure and distribute by weight</h4>
+
+<ul>
+<li>The vendor weighed out two pounds of onions.</li>
+<li>These stones are weighed out not counted.</li>
+<li>Be sure not to weigh out more than 0.5 gram samples.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: contribute or become involved in a discussion</h4>
+
+<ul>
+<li>Several leading architects weighed in with criticisms regarding the design of the new museum.</li>
+<li>For the last two weeks we've all weighed in with our respective takes on him.</li>
+<li>Dan Green has weighed in with a thoughtful post about the Underground Literary Alliance.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

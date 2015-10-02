@@ -1,0 +1,73 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="favor" hidden/><h2>favor</h2>
+<h4> 1.1: show preference for, bestow preferential treatment</h4>
+
+<ul>
+<li>He favored loud suits and coloful ties.</li>
+<li>We favor our local team.</li>
+<li>Voters favored reform.</li>
+<li>She favors wine over beer.</li>
+<li>He always felt that his parents favored his younger</li>
+<li>brother.</li>
+<li>They favored him with the best seat in the house.</li>
+<li>This tax cut only favors the rich.</li>
+<li>She favored the chivalrous knight with a single chase kiss.</li>
+<li>Will you favor me with a smile?</li>
+<li>The darkness favored their escape.</li>
+<li>A strong wind will favor the bigger boats.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: treat or use something gently</h4>
+
+<ul>
+<li>He limped across the room, favoring a bad knee.</li>
+<li>He favored his wounded shoulder as he wiped the last of the orc blood off his sword.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: resemble somebody</h4>
+
+<ul>
+<li>She favors our Great Aunt Matilde.</li>
+<li>He and his father favor.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

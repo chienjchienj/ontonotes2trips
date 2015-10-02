@@ -1,0 +1,185 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="cut" hidden/><h2>cut</h2>
+<h4> 1.1: make an incision or separation</h4>
+
+<ul>
+<li>He cut the rope in half.</li>
+<li>The surgeon cut cleanly with the scalpel.</li>
+<li>The new knives cut beautifully.</li>
+<li>They cut the grain during the fine fall weather.</li>
+<li>He cut his finger on the broken glass.</li>
+<li>They cut our supply lines.</li>
+<li>Cut the deck.</li>
+<li>The boat cut through the water.</li>
+<li>Use the soap. It will cut the grease.</li>
+<li>His criticism cut me deeply.</li>
+<li>Cut away the branch.</li>
+<li>They cut down the trees behind their house.</li>
+<li>Cut in the butter.</li>
+<li>The shovel cut right into the rich soil.</li>
+<li>Van Gogh cut off his own ear.</li>
+<li>Father cut up the ham.</li>
+<li>She cut her nails short.</li>
+<li>I really need to get my hair cut.</li>
+<li>The gardener cut back the bushes.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: trim, reduce, dilute, eliminate</h4>
+
+<ul>
+<li>She was cut down in her prime.</li>
+<li>You need to cut calories if you want to lose weight.</li>
+<li>This cuts into my earnings.</li>
+<li>The company wants to cut back on health benefits.</li>
+<li>The editor recommended cutting several chapters from the manuscript.</li>
+<li>Cut the whiskey with water.</li>
+<li>The coach cut two players from the team.</li>
+<li>You need to cut back on your drinking.</li>
+<li>You can tell he cut corners because the quality is lower than usual.</li>
+<li>They cut down on expenses.</li>
+<li>Cut out the extra text.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: make or form (as if) by incision or grinding</h4>
+
+<ul>
+<li>I love how she cuts my hair.</li>
+<li>He learned to cut diamonds from a master.</li>
+<li>She cut paper dolls all morning.</li>
+<li>They cut the trenches in a matter of hours.</li>
+<li>He cut the dress in the latest fashion.</li>
+<li>They cut the deal after much negotiation.</li>
+<li>Richards cut the film in 12 days, and we released it on time.</li>
+<li>She cut all her major titles again.</li>
+<li>It's my dream to cut a record.</li>
+<li>Would you cut me a CD of that?</li>
+<li>She cut a check for the full amount.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: turn abruptly or travel in a certain direction</h4>
+
+<ul>
+<li>The car cut to the left at the intersection.</li>
+<li>We cut through the neighbor's yard to get home sooner.</li>
+<li>They cut across the platform and behind the curtain.</li>
+<li>Opinions on the bombing cut across party lines.</li>
+<li>The boxer cut upward toward his chin.</li>
+<li>It cuts abruptly from one scene to the next.</li>
+<li>The cameraman cut away from the departing train to focus on the heroine.</li>
+<li>The film cut back to an earlier event in the story.</li>
+<li>Did you see him cut in front of me?</li>
+<li>If you want to dance with her, why not just cut in?</li>
+<li>She was cut off at the turn.</li>
+<li>The way he cuts the ping-pong ball puts a nasty spin on it.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: stop, cease, turn off</h4>
+
+<ul>
+<li>Would you cut all that racket!</li>
+<li>You should always cut the engine when you refuel.</li>
+<li>She cut him dead at the meeting.</li>
+<li>We had to cut short our conversation.</li>
+<li>The director shouted to cut the scene.</li>
+<li>He was cut off right near the end of his speech.</li>
+<li>The motor cut out at the most inopportune time.</li>
+<li>He cut class and met his girlfriend out behind the school.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: sever contact with; isolate</h4>
+
+<ul>
+<li>They cut their son off without a penny.</li>
+<li>The town was cut off from civilization during the snowstorm.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: grow through the gums</h4>
+
+<ul>
+<li>The baby is cutting a new tooth.</li>
+<li>The new tooth is cutting</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: do, manage successfully</h4>
+
+<ul>
+<li>The new player just cannot cut it.</li>
+<li>He could not cut the long hours and decided to quit.</li>
+<li>So you think you can cut it?</li>
+<li>You will have your work cut out for you.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: have a certain appearance</h4>
+
+<ul>
+<li>He cuts a nice figure.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: frolic</h4>
+
+<ul>
+<li>When he heard the good news, he cut a caper, grabbed her hands and spun her around.</li>
+<li>Do you ever cut loose and have a good time?</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

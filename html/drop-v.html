@@ -1,0 +1,263 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="drop" hidden/><h2>drop</h2>
+<h4> 1.1: (cause or permit) to fall to the ground</h4>
+
+<ul>
+<li>Don't drop the dishes.</li>
+<li>Bombs are dropping on London!</li>
+<li>The branch dropped with a big thud.</li>
+<li>The chef dropped bits of chocolate across the cake.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: move to a lower position, terminate something</h4>
+
+<ul>
+<li>Utility stocks have dropped again for the second week in a row.</li>
+<li>Drop to your knees and give me twenty pushups!</li>
+<li>His voice has dropped since the onset of puberty.</li>
+<li>He was dropped from the Republican ticket.</li>
+<li>Mary has dropped all charges against him.</li>
+<li>I dropped him from the club because he wouldn't pay dues.</li>
+<li>John is trying to drop his image as a bossy manager.</li>
+<li>Let's drop the pretenses, shall we?</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: discourse utterance</h4>
+
+<ul>
+<li>Can you at least drop me a hint?</li>
+<li>She dropped a real zinger at lunch.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: unload or disembark something</h4>
+
+<ul>
+<li>They dropped the passengers at the terminal.</li>
+<li>Just drop me at the corner.</li>
+<li>She dropped the packages at the front desk.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: lose a game in sports</h4>
+
+<ul>
+<li>The Giants dropped 11 of their first 13.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: expend or pay money" type="Slang"></h4>
+
+<ul>
+<li>he dropped a wad on that diamond necklace.</li>
+<li>I'm dropping big bucks these days at the casinos.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: be suspended so as to hang freely</h4>
+
+<ul>
+<li>The light dropped from the ceiling.</li>
+<li>Clusters of berries dropped heavily from the slender branches.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: omit, leave out or miss something</h4>
+
+<ul>
+<li>His sentences were hard to read because he had dropped the commas.</li>
+<li>I think you are really dropping an opportunity here.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: change to a different state or characteristic</h4>
+
+<ul>
+<li>She dropped into navy jargon with her buddies at the class reunion.</li>
+<li>He has dropped into his usual pattern of procrastination.</li>
+<li>The discussion at Town Meeting dropped into a rude shouting match.</li>
+<li>Donnie's condition dropped (worsened) as time went on.</li>
+<li>Let's shop till we drop!</li>
+<li>The contestants dropped like flies.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: to give birth, especially animals</h4>
+
+<ul>
+<li>The cow dropped her calf this morning.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.11: Golf terminology - to deposit ball on the course</h4>
+
+<ul>
+<li>Measure two club lengths from the unplayable lie, drop a ball and play from there.</li>
+<li>When you drop a ball, stand erect, hold your arm out straight and drop it.</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.11" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      
+<h4> 1.12: take (a drug, especially LSD) by mouth." type=""></h4>
+
+<ul>
+<li>He was dropping almost every afternoon in those days.</li>
+<li>She dropped acid behind the barn.</li>
+</ul>
+
+<input type="text" name="annotation[results][11][id]" value="1.12" hidden />
+<input type="text" name="annotation[results][11][trips]" value="" visible/>
+      
+<h4> 1.13.1: move to the rear, retreat</h4>
+
+<ul>
+<li>Ralston dropped back to twelfth after stumbling on a rock.</li>
+<li>She found her companions tedious and dropped behind to avoid conversing with them.</li>
+</ul>
+
+<input type="text" name="annotation[results][12][id]" value="1.13.1" hidden />
+<input type="text" name="annotation[results][12][trips]" value="" visible/>
+      
+<h4> 1.13.2: diminish or get worse</h4>
+
+<ul>
+<li>The number of students enrolled in the class dropped off after the first week.</li>
+<li>His grades have dropped off since Christmas.</li>
+<li>The scores dropped away from last year's high.</li>
+</ul>
+
+<input type="text" name="annotation[results][13][id]" value="1.13.2" hidden />
+<input type="text" name="annotation[results][13][trips]" value="" visible/>
+      
+<h4> 1.13.3: visit informally</h4>
+
+<ul>
+<li>I'll drop by tomorrow with the photos.</li>
+<li>She always drops in at the most inopportune times.</li>
+</ul>
+
+<input type="text" name="annotation[results][14][id]" value="1.13.3" hidden />
+<input type="text" name="annotation[results][14][trips]" value="" visible/>
+      
+<h4> 1.13.4: give up, abandon</h4>
+
+<ul>
+<li>Her profound confidence kept her going when other women would have dropped by the wayside.</li>
+<li>After the poll results, Wilson dropped out of the election.</li>
+<li>Even traditional values like quality assurance are dropped by the wayside during this phase.</li>
+<li>We should not allow visual talent to be dropped by the wayside just because of verbal deficiencies.</li>
+</ul>
+
+<input type="text" name="annotation[results][15][id]" value="1.13.4" hidden />
+<input type="text" name="annotation[results][15][trips]" value="" visible/>
+      
+<h4> 1.13.5: leave school</h4>
+
+<ul>
+<li>Sandra dropped out her sophmore year.</li>
+</ul>
+
+<input type="text" name="annotation[results][16][id]" value="1.13.5" hidden />
+<input type="text" name="annotation[results][16][trips]" value="" visible/>
+      
+<h4> 1.13.6: leave, unload</h4>
+
+<ul>
+<li>I'll drop you off at the corner.</li>
+</ul>
+
+<input type="text" name="annotation[results][17][id]" value="1.13.6" hidden />
+<input type="text" name="annotation[results][17][trips]" value="" visible/>
+      
+<h4> 1.13.7: fall asleep</h4>
+
+<ul>
+<li>He dropped off the minute his head hit the pillow.</li>
+</ul>
+
+<input type="text" name="annotation[results][18][id]" value="1.13.7" hidden />
+<input type="text" name="annotation[results][18][trips]" value="" visible/>
+      
+<h4> 1.13.8: DROP OPEN: open involuntarily</h4>
+
+<ul>
+<li>His jaw dropped open at the sight.</li>
+</ul>
+
+<input type="text" name="annotation[results][19][id]" value="1.13.8" hidden />
+<input type="text" name="annotation[results][19][trips]" value="" visible/>
+      
+<h4> 1.13.9: DROP DOWN: fall to a lower level</h4>
+
+<ul>
+<li>The coach told him to drop down and give him twenty.</li>
+</ul>
+
+<input type="text" name="annotation[results][20][id]" value="1.13.9" hidden />
+<input type="text" name="annotation[results][20][trips]" value="" visible/>
+      
+<h4> 1.13.10: multiword expression</h4>
+
+<ul>
+<li>Drop me a line when you get to Berlin.</li>
+<li>The ship dropped anchor in Witma Bay.</li>
+<li>He dropped dead of a heart attack.</li>
+</ul>
+
+<input type="text" name="annotation[results][21][id]" value="1.13.10" hidden />
+<input type="text" name="annotation[results][21][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

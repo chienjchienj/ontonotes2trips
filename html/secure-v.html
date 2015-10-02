@@ -1,0 +1,83 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="secure" hidden/><h2>secure</h2>
+<h4> 1.1: aquire something usually through much effort, make certain</h4>
+
+<ul>
+<li>We finally secured a contract with the company we've been after for years!</li>
+<li>The negotiations to secure an agreement has failed.</li>
+<li>46 percent of the graduates secured a job within two months after graduation.</li>
+<li>The change in the law will make it harder for the police to secure convictions.</li>
+<li>Her bank loan is secured against her house. (=house is made collateral)</li>
+<li>Such preparations will secure your success.</li>
+<li>It was Kennedy's assassination and Johnson's landslide that secured the passage of the 1964 Civil Rights Act.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: fasten, attach firmly</h4>
+
+<ul>
+<li>We ask you to please secure your seatbelts in preparation for an immediate takeoff.</li>
+<li>Use a square or double overhand knot to secure the rope at the tire end.</li>
+<li>Secure the door bracket to the top doorframe on the marked centerline.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: make safe or protect from danger, risk, or loss</h4>
+
+<ul>
+<li>The troops secured the area before the civilians were allowed to return.</li>
+<li>The medical crew secured the room to prevent the spread of the virus.</li>
+<li>The embassy phone lines were secured.</li>
+<li>Online payments are secured through VERISIGN.</li>
+<li>The building has only one main entrance and would be easy to secure.</li>
+<li>This form of investment is an excellent way of securing your child's financial future.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: capture or confine</h4>
+
+<ul>
+<li>They secured the suspect in the squad car.</li>
+<li>The prisoner was secured in a room and handcuffed to a pipe on the wall.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

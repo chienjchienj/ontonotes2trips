@@ -1,0 +1,96 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="spot" hidden/><h2>spot</h2>
+<h4> 1.1: catch sight of</h4>
+
+<ul>
+<li>For the first time in over 40 years, scientists have spotted the snow leopard on Mount Everest.</li>
+<li>She ran home, looked at her balance online and spotted the bad news immediately.</li>
+<li>After the blunder was spotted, the report was removed from the website.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: (cause to) become blemished</h4>
+
+<ul>
+<li>It is of a blue ground, mixed with dirty white, and it spots easily.</li>
+<li>The wine spotted the tablecloth.</li>
+<li>Paint spotted the floor--like my studio and perhaps yours.</li>
+<li>We spotted the wall with blue paint.</li>
+<li>Spot the areas that one should clearly identify.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: lend money to (slang)</h4>
+
+<ul>
+<li>Hey man can you spot me a twenty so I can take her someplace nice?</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: stand guard while someone practices a sports manuever</h4>
+
+<ul>
+<li>I loaded and spotted for one of Bill's record benches at Duncan in about 1966.</li>
+<li>I mean, try being spotted for a 540 crescent.</li>
+<li>Often, gymnasts want to be spotted for quite some time before they regain their confidence.</li>
+<li>I learned the flip on the ice with a harness, and then he spotted me without a harness.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: jam a single frequency</h4>
+
+<ul>
+<li>This operator has been spot-jammed.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: promote on the spot</h4>
+
+<ul>
+<li>Supreme Bishop Digby had been spot-promoted to Archangel.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

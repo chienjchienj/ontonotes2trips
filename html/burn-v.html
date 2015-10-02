@@ -1,0 +1,154 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="burn" hidden/><h2>burn</h2>
+<h4> 1.1: (cause to) be consumed or destroyed by fire</h4>
+
+<ul>
+<li>In 1791 a mob, incensed at his radical religious and political views, burned his home.</li>
+<li>Her house burned down.</li>
+<li>He burned his draft card during the Vietnam War.</li>
+<li>The car burns only Diesel oil.</li>
+<li>The building burns its garbage.</li>
+<li>They burned her at the stake for witchcraft.</li>
+<li>The car burned up in the crash.</li>
+<li>The pie burned to a crisp.</li>
+<li>They should burn off the undergrowth in a controlled manner.</li>
+<li>The dermatologist burned off the wart.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: give off heat and light, shine intensely</h4>
+
+<ul>
+<li>The fire burned throughout the night.</li>
+<li>A wildfire is burning just west of Muskogee.</li>
+<li>This candle will burn for 15 hours.</li>
+<li>The lights in the office building burned until 2 a.m.</li>
+<li>Okita was enraged and the light in his eyes burned furiously.</li>
+<li>They threw a farewell glance towards the cliff, and beheld the</li>
+<li>vapors</li>
+<li>gathering in dense volumes, through which the gem burned</li>
+<li>duskily. --Nathaniel Hawthorne</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: create through burning</h4>
+
+<ul>
+<li>The iron burned a hole in my dress.</li>
+<li>The fire has burned a swath 12 miles long and three to five miles wide.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: get rid of by or as if by burning</h4>
+
+<ul>
+<li>Running is a great way to burn calories.</li>
+<li>Adding just 10 pounds of muscle will burn off 62 pounds of fat over the next year!</li>
+<li>Be sure to burn off the alcohol before adding the cream, otherwise the sauce may curdle.</li>
+<li>We need to burn up some time before we go in.</li>
+<li>Marco sure acts like he has money to burn.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: injure through heat or radiation</h4>
+
+<ul>
+<li>He missed a game after he burned his face, spending too much time under a tanning lamp.</li>
+<li>When the flash from the bomb came, and they were burned on their face.</li>
+<li>You'll burn if you stay out on the beach too long.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: feel hot or painful, as if burning</h4>
+
+<ul>
+<li>My eyes are burning.</li>
+<li>Her ears burned from the cold.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: feel strong emotion, esp. passion or anger</h4>
+
+<ul>
+<li>He burned with a fierce anger.</li>
+<li>The thought of her behavior that night made her burn with shame.</li>
+<li>What are you so burned up about?</li>
+<li>Her comments really made me burn!</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: BURN OUT: stop burning or functioning</h4>
+
+<ul>
+<li>The campfire did not burn out until dawn.</li>
+<li>The lightbulb burned out again!</li>
+<li>I'm so burned out I can't think straight.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: duplicate data</h4>
+
+<ul>
+<li>I'll burn the photos to a CD and mail it to you.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: insult, hurt</h4>
+
+<ul>
+<li>She's been burned by trusting her employees before.</li>
+<li>Way to go! You so burned that idiot.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

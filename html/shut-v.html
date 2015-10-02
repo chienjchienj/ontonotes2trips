@@ -1,0 +1,106 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="shut" hidden/><h2>shut</h2>
+<h4> 1.1: move a lid/door as to block an opening</h4>
+
+<ul>
+<li>Please shut the gate.</li>
+<li>This window won't shut. It's jammed.</li>
+<li>I've got a surprise for you! Shut your eyes tightly and hold out your hand.</li>
+<li>Mary shut her book and put it down on the table.</li>
+<li>When you have done so, shut the top valve so no air can enter.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: stop the supply, flow, or passage</h4>
+
+<ul>
+<li>Did you remember to shut off the water and gas before you left the house?</li>
+<li>Oil supplies have been shut off.</li>
+<li>Shut off the light before you leave the room.</li>
+<li>Rotate either of them in a clock-wise direction to shut the flow of water.</li>
+<li>I have shut the stream down and bypassed it with pipe between the filter and stream.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: confine or lock someone or something away</h4>
+
+<ul>
+<li>He was ten years old when he was shut away in an asylum for stealing an apple.</li>
+<li>They took him away and shut him in a prison.</li>
+<li>He was so upset that he shut himself in his bedroom and refused to come out.</li>
+<li>Nero Caesar seized him and shut him up in prison.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: exclude, push away, isolate, or keep something out</h4>
+
+<ul>
+<li>She was shut off from her friends.</li>
+<li>When her husband died she seemed to shut herself off from her friends and family.</li>
+<li>She finds it impossible to shut out the memory of the accident.</li>
+<li>Don't forget to shut the cat out when you leave for work.</li>
+<li>The double glazing shuts out most of the traffic noise.</li>
+<li>Anna felt shut out of the conversation.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: (cause to) end or stop operating</h4>
+
+<ul>
+<li>Another factory shut because it was losing money.</li>
+<li>The owner decided to move and shut down the factory.</li>
+<li>This computer is stuck. It won't shut down.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: (cause to) stop speaking or bring about silence</h4>
+
+<ul>
+<li>The children shut up when their father approached.</li>
+<li>Everyone just shut up!</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

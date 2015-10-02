@@ -1,0 +1,98 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="suck" hidden/><h2>suck</h2>
+<h4> 1.1: Draw something in by or as if by suction</h4>
+
+<ul>
+<li>You must suck out the poison - there's no time to wait!</li>
+<li>Try to suck on a straw.</li>
+<li>The baby sucked on the mother's breast.</li>
+<li>Mud was sucking at her feet.</li>
+<li>A giant vacuum sucks away the dried mud and burnt wrappers.</li>
+<li>The current boom in the economy sucked many workers in from abroad.</li>
+<li>Suck out the wound using the pipette.</li>
+<li>Suck in your cheeks and stomach.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: Be inadequate or objectionable.</h4>
+
+<ul>
+<li>This sucks!</li>
+<li>That class really sucked.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: Provide sexual gratification through oral stimulation.</h4>
+
+<ul>
+<li>Dental dams should be used whenever a partner chooses to suck.</li>
+<li>No woman should ever feel obligated to suck a partner off.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: Take in; also metaphorically.</h4>
+
+<ul>
+<li>The sponge sucked (up) moisture.</li>
+<li>The desert air sucks the moisture right out of you.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: Ingratiate oneself to; try to gain favor by flattering.</h4>
+
+<ul>
+<li>She is sucking up to the chairman.</li>
+<li>He sucked up to his boss for years before landing a promotion.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: Give suck to.</h4>
+
+<ul>
+<li>You can't suck your baby in public in some places.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

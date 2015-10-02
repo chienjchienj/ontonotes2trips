@@ -1,0 +1,61 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="delay" hidden/><h2>delay</h2>
+<h4> 1.1: (cause to) slow down</h4>
+
+<ul>
+<li>Traffic was delayed by a truck rollover on the Interstate.</li>
+<li>Brain damage can delay the child's cognitive development.</li>
+<li>When the process was delayed by supervisory intervention, panel members took over.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: (cause to) happen at a later time</h4>
+
+<ul>
+<li>Their negotiations were delayed due to conflicts.</li>
+<li>Bad weather delayed the plane for over two hours.</li>
+<li>I was delayed at the office.</li>
+<li>The governer is delaying the prisoner's execution.</li>
+<li>The order is being delayed due to the transportation stike.</li>
+<li>John delayed applying to graduate school for one year.</li>
+<li>I think we should delay deciding about this until next week.</li>
+<li>She has a tendency to delay making decisions.</li>
+<li>Don't delay the opportunity of seeing the world.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

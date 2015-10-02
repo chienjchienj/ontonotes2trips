@@ -1,0 +1,61 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="assist" hidden/><h2>assist</h2>
+<h4> 1.1: help, aid</h4>
+
+<ul>
+<li>She never assists her mother with housework.</li>
+<li>Can you assist me in carrying this table?</li>
+<li>The committee assisted the Elections Committee in promoting and explaining SAC representative voting procedures.</li>
+<li>The nurse assisted the physician and respiratory therapist during the intubation.</li>
+<li>Is a salesperson assisting you?</li>
+<li>The minister assisted the king for many years.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: be beneficial or helpful to</h4>
+
+<ul>
+<li>Whilst lower prices assisted industrial competitiveness and consumer welfare, they did not incentivise end users to be more energy efficient.</li>
+<li>It contains far too few maps, which could have greatly assisted the reader in understanding the issues being negotiated.</li>
+<li>The Crime Victims Fund assisted the family with $500 toward his burial expenses.</li>
+<li>Unseasonably warm weather assisted maturation of crops.</li>
+<li>The strong economy assisted the boating industry in 2004.</li>
+<li>Scattered rain assisted the firemen in dousing blazes.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,75 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="stuff" hidden/><h2>stuff</h2>
+<h4> 1.1: press or force material or objects into a cavity</h4>
+
+<ul>
+<li>Then I stuffed the chocolate dough into the 'cookie-machine'.</li>
+<li>Berger had stuffed the classified documents in his pants.</li>
+<li>I stuffed the bird with a bunch of fresh rosemary, onion, garlic,</li>
+<li>and half a lemon, yum!</li>
+<li>The bank robbers managed to stuff 3 million dollars into three backpacks.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: overeat</h4>
+
+<ul>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: treat with grease, fill and prepare for mounting</h4>
+
+<ul>
+<li>He liked natural history and even stuffed the animals he caught</li>
+<li>himself - yuck!</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: put fraudulent votes into, usu. in favor of one candidate</h4>
+
+<ul>
+<li>Maybe someone stuffed the ballot box for the liberals.</li>
+<li>Members of Congress stuffed the final legislation with more than</li>
+<li>6300 earmarks.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,89 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="scratch" hidden/><h2>scratch</h2>
+<h4> 1.1: cut into a surface by scraping and causing friction</h4>
+
+<ul>
+<li>We have just scratched the surface of the Cuneiform study.</li>
+<li>They found many PS2 consoles which scratched the game discs.</li>
+<li>Siddhartha scratched the boulder and the frogs.</li>
+<li>The carpet scratched up the CD and now it skips when we try to play it.</li>
+<li>Don't scratch your mosquito bites!</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: remove something (as if) by erasing</h4>
+
+<ul>
+<li>Scratch that last remark, I was mistaken.</li>
+<li>Scratch the meeting tomorrow, the chair had to leave for a family</li>
+<li>emergency.</li>
+<li>We don't need lemons any more, you can scratch that off the list.</li>
+<li>He scratched out that last sentence, it was all wrong.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: collect or obtain items over time with difficulty</h4>
+
+<ul>
+<li>We can bearly scratch together enough wheat for bread.</li>
+<li>The company can't scratch much profit out of their already</li>
+<li>exhausted stock.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: write down quickly</h4>
+
+<ul>
+<li>The boss scratched off a quick note to say he'll be right back.</li>
+<li>The bartender scratched down her phone number.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: SCRATCH AROUND: search, rummage</h4>
+
+<ul>
+<li>The chickens scratched around the coop for seeds.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

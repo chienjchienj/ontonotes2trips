@@ -1,0 +1,60 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="require" hidden/><h2>require</h2>
+<h4> 1.1: need, call for, be suitable for</h4>
+
+<ul>
+<li>Being a surgeon requires excellent hand dexterity.</li>
+<li>These accounts require some further going over.</li>
+<li>The refugees will require food and shelter for at least a month.</li>
+<li>Six years ago when German Mutual's growth required a new computer system.</li>
+<li>My broken arm is requiring more time to heal than I expected.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: command or compel someone</h4>
+
+<ul>
+<li>The security guard required us to sign in at the front desk.</li>
+<li>We require our serving staff to wear tuxedos.</li>
+<li>The statute required that the defendant would be sentenced to death.</li>
+<li>John's children are required to clean their rooms once a week.</li>
+<li>The SEC requires that companies file these forms annually.</li>
+<li>The Department argued that the law requires accessible pedestrian routes.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

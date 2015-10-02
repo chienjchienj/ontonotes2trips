@@ -1,0 +1,123 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="serve" hidden/><h2>serve</h2>
+<h4> 1.1: fulfill a function/or be used as something</h4>
+
+<ul>
+<li>This table serves both as a desk and a work bench.</li>
+<li>That law serves no useful purpose that I can determine.</li>
+<li>That sewage plant serves the entire coastal community.</li>
+<li>This example will serve to illustrate the point.</li>
+<li>He argues that the state-run programs are not serving the public as planned.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: contribute to, be useful to something</h4>
+
+<ul>
+<li>His remarks served to ignite whole neighborhoods.</li>
+<li>Bold decisions by their visionary CEO have served the firm well over the past decade.</li>
+<li>A shot of whiskey served to calm their nerves.</li>
+<li>Advocates believe the tax cuts will serve to boost economic growth.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: perform a duty</h4>
+
+<ul>
+<li>He served in Congress for two terms.</li>
+<li>They served their country nobly.</li>
+<li>The waiter will not serve patrons with no shoes or shirts.</li>
+<li>John wants to serve in the National Guard.</li>
+<li>They served in Desert Storm.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: dish out, hand out something, often food</h4>
+
+<ul>
+<li>They are serving mint juleps on the veranda.</li>
+<li>Her club serves meals to the homeless on Thursdays.</li>
+<li>Bob was served a summons to appear in court.</li>
+<li>The sheriff served him papers at his home.</li>
+<li>They served up some lively entertainment at the Caberet last night.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: spend time in prison</h4>
+
+<ul>
+<li>He served twenty years in prison for armed robbery.</li>
+<li>The prisoners were released before they had served their full terms.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: mate with, sexual reproduction</h4>
+
+<ul>
+<li>This pedigree stallion served three brood mares.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: put a ball into play</h4>
+
+<ul>
+<li>It was Mary's turn to serve.</li>
+<li>He served four aces during the first game of the tournament.</li>
+<li>That tennis star has been serving erratically lately.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: wind protectively with yarn or wire</h4>
+
+<ul>
+<li>She served the forestays with heavy yarn.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

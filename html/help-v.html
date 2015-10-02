@@ -1,0 +1,73 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="help" hidden/><h2>help</h2>
+<h4> 1.1: assist someone, improve a condition, or contribute to a goal</h4>
+
+<ul>
+<li>Please help me carry the groceries in.</li>
+<li>The children helped around the house.</li>
+<li>The police are helping to locate the bodies.</li>
+<li>More lighting would help people see the steps.</li>
+<li>Those pills haven't helped John get well.</li>
+<li>This money is to help orphans get an education.</li>
+<li>Repainting the room white helped it to look bigger.</li>
+<li>This will help to prevent accidents.</li>
+<li>The protests actually helped increase sales.</li>
+<li>Using the learning objectives helped clarify the goals of the task.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: avail of, supply</h4>
+
+<ul>
+<li>She is helping herself to more potatoes.</li>
+<li>The waiter offered to help him to another slice of pie.</li>
+<li>He told me to help myself to the office supplies.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: refrain from doing</h4>
+
+<ul>
+<li>They could not help watching the burning building.</li>
+<li>I couldn't help myself from eating another chocolate.</li>
+<li>Do you think she could help being a brat if she tried?</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

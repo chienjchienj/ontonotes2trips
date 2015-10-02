@@ -1,0 +1,59 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="bless" hidden/><h2>bless</h2>
+<h4> 1.1: render holy; consecrate; give benediction to</h4>
+
+<ul>
+<li>The priest blessed the newborn baby with holy water.</li>
+<li>The ancient Romans would bless a boundary around a new city to keep</li>
+<li>evil spirits out.</li>
+<li>I bless this church in the name of the Father...</li>
+<li>Every day the priests blessed the water to make it holy.</li>
+<li>She won't do anything new unless her father blesses the activity.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: confer a possession or attribute to</h4>
+
+<ul>
+<li>Apparently you weren't blessed with an over-abundance of intelligence.</li>
+<li>May was blessed with a beautiful voice.</li>
+<li>God blessed her with five beautiful children.</li>
+<li>My father blessed me with a good sense of self worth.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

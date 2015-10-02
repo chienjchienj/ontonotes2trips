@@ -1,0 +1,58 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="function" hidden/><h2>function</h2>
+<h4> 1.1: serve a purpose</h4>
+
+<ul>
+<li>Blade-shaped conodont elements functioned as cutting teeth.</li>
+<li>The Big Apple functioned as the contest hotspot for two consecutive weekends.</li>
+<li>It was an analysis of college freshmen perceptions of staff members who</li>
+<li>functioned as counselors compared to those who functioned as teachers.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: be in working order</h4>
+
+<ul>
+<li>In that same building, of the 99 elevators, only one elevator was functioning.</li>
+<li>There is no political entity to ensure that this economy</li>
+<li>functions smoothly, productively, and equitably.</li>
+<li>I had a hard disk that was functioning properly,</li>
+<li>but when I moved it to another PC, it stopped working.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

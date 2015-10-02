@@ -1,0 +1,118 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="post" hidden/><h2>post</h2>
+<h4> 1.1: display or publish something publically</h4>
+
+<ul>
+<li>I'll post the news on the bulletin board.</li>
+<li>Can you post a warning at the dump?</li>
+<li>You need an account to post your resume on our site.</li>
+<li>Please post comment on this blog.</li>
+<li>The journal page reference and date entry was posted to the ledger.</li>
+<li>Posting process has to be run in to post AR to Customer balance.</li>
+<li>The bank posted the fee as a debit.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: assign to a station or duty</h4>
+
+<ul>
+<li>Please post a security guard at the exit.</li>
+<li>The newspaper posted him in Timbuktu.</li>
+<li>The company posted her to a huge mine in north Queensland.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: send or transmit mail</h4>
+
+<ul>
+<li>I'll post your the paper when it's written.</li>
+<li>Post me your latest result by email.</li>
+<li>That company keeps on posting me junk mail.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: GAME, SPORTS - score something</h4>
+
+<ul>
+<li>He posted a win in his first game of the season.</li>
+<li>He posted 16 double-doubles in his 85-game career.</li>
+<li>last year, the team posted a 4-2 mark in the shootout.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: RIDING - keep rhythm with the horse</h4>
+
+<ul>
+<li>You want me to post a horse into the canter from a long trot?</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: physically drive a post into the ground</h4>
+
+<ul>
+<li>Triumphantly, he posted a stake in the ground.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: mark or be branded</h4>
+
+<ul>
+<li>Post that man as a thief!</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: to put forward</h4>
+
+<ul>
+<li>He posted a bail and was released.</li>
+<li>The bail was posted at $5000 cash.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,100 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="drift" hidden/><h2>drift</h2>
+<h4> 1.1: be carried along by a current (as if) by air or water</h4>
+
+<ul>
+<li>The boat drifted into the shallows where they were attacked and killed.</li>
+<li>WED scientists expressed some surprise that live pollen drifted as far as it did.</li>
+<li>The soft strains of taps drifted among the thousands of glistening headstones.</li>
+<li>The main chore was to drift the logs down river a dozen or two at a</li>
+<li>time.</li>
+<li>A new idea drifted in from nowhere.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: move randomly or without guidance; be subject to fluctuations, as in finance.</h4>
+
+<ul>
+<li>He drifted across the country in the early '60s before ending up in the hills of North Carolina.</li>
+<li>Friday arrivals drifted among old friends.</li>
+<li>He drifted farther and farther from his familial and cultural roots.</li>
+<li>Oil and gasoline futures prices drifted in a narrow range on Tuesday in lethargic trading.</li>
+<li>Stocks drifted under previous levels. e</li>
+<li>From there our conversation drifted to contemporary pop music and lyrics.</li>
+<li>Schools have drifted away from original values.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: be piled up in banks or heaps by the force of wind or a current</h4>
+
+<ul>
+<li>The snow drifted ever higher.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: cause to move, cause to be moved</h4>
+
+<ul>
+<li>He drifted the cattle slowly up the long hill to the top of the divide.</li>
+<li>They drifted the boats downstream.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: lose personal contact over time, two entities moving apart</h4>
+
+<ul>
+<li>Have your old friends drifted away?</li>
+<li>The team drifted apart after graduation.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: DRIFT OFF: fall asleep</h4>
+
+<ul>
+<li>He usually drifts off during the sermon.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

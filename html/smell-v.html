@@ -1,0 +1,135 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="smell" hidden/><h2>smell</h2>
+<h4> 1.1: perceive through olfactory sense</h4>
+
+<ul>
+<li>The officer said he smelled a strong odor of alcohol on the suspect's breath.</li>
+<li>I smelled a llama because I am AWESOME!</li>
+<li>For years I thought it was the screen I was smelling.</li>
+<li>I knew I thought I was smelling camphor.</li>
+<li>You smell that? Do you smell that?</li>
+<li>When Patricia stepped back he smelled coffee rather than her perfume.</li>
+<li>He smelled her frying eggs and onions.</li>
+<li>I need to know if turkeys can really smell?</li>
+<li>Can dogs really smell cancer?</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: perceive (metaphorical)</h4>
+
+<ul>
+<li>I smell trouble.</li>
+<li>But I was guilty and my 7 year old smelled victory a mile away.</li>
+<li>I think most feminists smelled them coming a long way off for the last ten years or so.</li>
+<li>I have the great instincts for smelling a problem possible.</li>
+<li>Instead, he smelled out the intruder and recognised him.</li>
+<li>I'm not saying the process is perfect but a number of the applicants can be smelled out right away.</li>
+<li>As drifts of bad checks massed behind him, he smelled out new green pastures.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: emit an odor</h4>
+
+<ul>
+<li>Sometimes a newbie makes a scented candle that doesn't smell when you burn it.</li>
+<li>It either didn't smell at all or the scent disipated very quickly.</li>
+<li>Looking at the picture, she remarked that while the flower was pretty it was too bad that it didn't smell.</li>
+<li>Does it smell? The initial stages of fermentation do have an odor, but it goes away after a few days. (making wine)</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: emit a particular quality of odor</h4>
+
+<ul>
+<li>The 2/3 smelled like a gas leak as we went through Times Square and Penn Station.</li>
+<li>He smelled pleasantly of aftershave, without even an undertone of stagnant urine.</li>
+<li>He rode horses and he smelled horsy, leathery and pipey.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: have a particular quality (metaphorical)</h4>
+
+<ul>
+<li>This case smelled bad from the start.</li>
+<li>Do you mean he smelled like money?</li>
+<li>He said the murder case smelled of corruption.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: stink; reek</h4>
+
+<ul>
+<li>I'm not surprised that mothers think their baby's waste matter doesn't smell.</li>
+<li>The locker room really smells.</li>
+<li>Do farts really smell worse in the cold, or does it just seem that way?</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: SMELL UP: cause to stink or reek</h4>
+
+<ul>
+<li>After I had lit it, it smelled up my entire bedroom.</li>
+<li>Some reported their sponges caught fire, smoked and smelled up their houses.</li>
+<li>Your football teams played so bad that they smelled up the whole city!</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: idioms (see list)</h4>
+
+<ul>
+<li>SMELL THE ROSES (appreciate life)</li>
+<li>I was able to stop smoking because I was smelling the roses.</li>
+<li>SMELL A RAT (suspect something to be wrong)</li>
+<li>Ms. Freeman smelled a rat, and told the producer that she wanted to know what was going on.</li>
+<li>SMELL THE COFFEE (become aware)</li>
+<li>That's when the Hollywood community collectively woke up and smelled the coffee.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

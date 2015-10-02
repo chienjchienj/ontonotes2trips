@@ -1,0 +1,77 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="tuck" hidden/><h2>tuck</h2>
+<h4> 1.1: Insert, perhaps in an effort to hide.</h4>
+
+<ul>
+<li>Then fold down the sides of the smaller box so that they tuck into</li>
+<li>the base of the larger box.</li>
+<li>He tucked the bottle under his arm and took the box and glass from</li>
+<li>her.</li>
+<li>The attendant tucked away the mask and waved a languid arm at each</li>
+<li>of the Exit doors.</li>
+<li>The family tucked the actress away from the media.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: Tuck in (fabric).</h4>
+
+<ul>
+<li>Beginning at the head of the bed, tuck in the sheet, working from</li>
+<li>head to foot.</li>
+<li>The trick is to tuck in the sheet and blanket while getting the</li>
+<li>corners as neat and flat as possible.</li>
+<li>At no point in the game does Drake stop and tuck in the loose part</li>
+<li>of his shirt.</li>
+<li>He tucked the little girl into bed.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: Eat up; eat a considerable amount of food.</h4>
+
+<ul>
+<li>I sup at a jar of mead and tuck into the bounteous feast laid out</li>
+<li>along the walls.</li>
+<li>Tuck into the taste of the Outback with no admittance necessary.</li>
+<li>My son tucked in a whole pizza.</li>
+<li>Once a successful mating has occurred, the female will begin to</li>
+<li>really tuck away the food.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,69 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="interpret" hidden/><h2>interpret</h2>
+<h4> 1.1: make sense of, give meaning to</h4>
+
+<ul>
+<li>How do you interpret his behavior?</li>
+<li>It's difficult to interpret these statistics without knowing how they were obtained.</li>
+<li>A jury should not interpret the silence of a defendant as a sign of guilt.</li>
+<li>It's very important to always interpret an ancient text in it's context!</li>
+<li>We had mistakenly interpreted the open door as an invitation.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: express a certain idea when rendering a play or music</h4>
+
+<ul>
+<li>All original designs are inspired by tribal concepts and interpreted in modern style.</li>
+<li>The pianist interpreted the Beethoven sonata quite beautifully.</li>
+<li>The singer interpreted in song exactly what I had demonstrated in dance.</li>
+<li>The painter interprets Basho's poem on the withered branch as having many crows.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: translate a language to another</h4>
+
+<ul>
+<li>All lectures were simultaneously interpreted into French and German.</li>
+<li>We had to ask our guide to interpret for us.</li>
+<li>Could you interpret sign language for the audience?</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

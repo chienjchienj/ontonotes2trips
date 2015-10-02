@@ -1,0 +1,87 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="shed" hidden/><h2>shed</h2>
+<h4> 1.1: cast off, get rid of something</h4>
+
+<ul>
+<li>Every one to three months, snake sheds its skin.</li>
+<li>The trees shed their leaves in autumn.</li>
+<li>They ran down to the sea, shedding clothes as they went.</li>
+<li>He shed his image as a pushy boss.</li>
+<li>900 jobs will be shed over the next few months.</li>
+<li>Psychotherapy helped him to shed some of his insecurity.</li>
+<li>I hope to shed a few pounds before my wedding day.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: cast off hair or fur</h4>
+
+<ul>
+<li>It's frightening how much I've been shedding since I switched shampoos.</li>
+<li>My cat sheds constantly.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: produce; (cause to) flow or radiate</h4>
+
+<ul>
+<li>She shed a few tears at her daughter's wedding.</li>
+<li>The sun shed its light on all objects equally and shows no preference.</li>
+<li>What if someone literally cut themselves and started to shed blood.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: SHED BLOOD (metaphorical)-kill or injure violently</h4>
+
+<ul>
+<li>They will never stop shedding blood of their enemies.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: SHED LIGHT ON (metaphorical)-make clear; free from confusion</h4>
+
+<ul>
+<li>As an economist, he was able to shed some light on the problem.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

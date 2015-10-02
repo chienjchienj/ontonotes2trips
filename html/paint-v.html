@@ -1,0 +1,86 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="paint" hidden/><h2>paint</h2>
+<h4> 1.1: Make a painting (of) in an artistic way.</h4>
+
+<ul>
+<li>He painted all day in the garden.</li>
+<li>He painted a painting of the garden.</li>
+<li>He painted his mistress many times.</li>
+<li>For art class, I painted a chair.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: Coat with paint or other liquid in a non-artistic fashion.</h4>
+
+<ul>
+<li>We painted the rooms yellow.</li>
+<li>It took all day to paint the ceiling.</li>
+<li>We painted the trim white.</li>
+<li>The worker painted the gutters with linseed oil.</li>
+<li>The dentist painted his teeth with a brightening agent.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: PAINT A PICTURE: Call to mind.</h4>
+
+<ul>
+<li>His story painted a picture of a sad childhood.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: PAINT THE LILY: Adorn unnecessarily.</h4>
+
+<ul>
+<li>Don't paint the lily.</li>
+<li>To paint the lily...is wasteful and ridiculous excess.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: Characterize.</h4>
+
+<ul>
+<li>He painted him as being smart.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

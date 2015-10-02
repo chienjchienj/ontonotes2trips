@@ -1,0 +1,131 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="sign" hidden/><h2>sign</h2>
+<h4> 1.1: place under contract via a signature</h4>
+
+<ul>
+<li>He won't sign the purchase agreement without reviewing it with his lawyer.</li>
+<li>The soprano signed to sing the new opera.</li>
+<li>They signed two new pitchers for the next season.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: communicate through gestural conventions</h4>
+
+<ul>
+<li>He tried to sign to me that he'd spotted a seahorse during the dive, but I didn't understand.</li>
+<li>During his speech they had someone signing so that the deaf could follow along.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: write one's signature</h4>
+
+<ul>
+<li>She always signs her name in black ink.</li>
+<li>The actor signed hundreds of autographs that evening.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: physically place signposts.</h4>
+
+<ul>
+<li>They need to sign this intersection better!</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: religious gesture</h4>
+
+<ul>
+<li>The woman signed herself before entering the small chapel.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.99.1: resign or transfer ownership of</h4>
+
+<ul>
+<li>The man just brought him in and signed him over to us.</li>
+<li>Others simply signed themselves over to the care of powerful lords.</li>
+<li>Ok, so you pretty much signed your life away for the next 30 years.</li>
+<li>She's pregnant and the father of the child wants to sign off his paternal rights.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.99.1" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.99.2: register or be registered upon entry or arrival</h4>
+
+<ul>
+<li>When do I need to sign in at the main hospital entrance?</li>
+<li>I'm signed in Yahoo IM at work and forgot to log out.</li>
+<li>All visitors must sign in at the reception/security desk.</li>
+<li>I'm surprised to see only 97 members signed on the chat forum.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.99.2" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.99.3: end communication or broadcasting</h4>
+
+<ul>
+<li>I was just about to sign off when she messaged me.</li>
+<li>In one recent e-mail to a journalist friend, she signed off with a casual "good vibes to you."</li>
+<li>Gregg signed off the video conference with a smile on his face.</li>
+<li>They sign off by wishing the restaurant luck and success in the cheeseburger world.</li>
+<li>If you sign out by mistake, just reconnect and sign in under another name.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.99.3" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.99.4: engage in an agreement or contract; join or enroll" type="1"></h4>
+
+<ul>
+<li>The group manager must sign off on the project priority and estimated completion date.</li>
+<li>You might be glad to know that she's signed on for the next season.</li>
+<li>Tedd signed up two new rappers as members of his Mau Mau Camp.</li>
+<li>There are web-based emails you can sign up for free.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.99.4" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,114 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="leave" hidden/><h2>leave</h2>
+<h4> 1.1: depart, go forth, exit</h4>
+
+<ul>
+<li>What time does the train leave?</li>
+<li>The ferry leaves every half hour from dock three.</li>
+<li>She left the room in a huff.</li>
+<li>Volunteers serving in East Timor have safely left the country.</li>
+<li>BD announces that its chief financial officer is leaving the company to pursue other interests.</li>
+<li>I left home when I was only 16 years old.</li>
+<li>Reagan, despite the Iran-contra scandal, left office a popular figure.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: leave something behind, refrain from taking, leave something unaffected or unused</h4>
+
+<ul>
+<li>John left his keys at the restaurant.</li>
+<li>We left behind all our cares during the vacation to Florida.</li>
+<li>They were told to leave off their coats.</li>
+<li>Leave the young fawn alone.</li>
+<li>Leave the nature park just as you found it.</li>
+<li>I left my shoes on when I entered their house.</li>
+<li>When she put away the food she left out the pie so we could have seconds.</li>
+<li>Let's leave enough time to visit the museum.</li>
+<li>He'll leave the decision to his wife.</li>
+<li>When he died he left the farm to his granddaughter.</li>
+<li>I'm leaving our telephone and address in Italy with the neighbors.</li>
+<li>Three minus one leaves two.</li>
+<li>At her death she left behind a husband and three cats.</li>
+<li>Are there any skills I should definitely leave off my resume?</li>
+<li>Is there any possibility that a stone has been left unturned?</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: cause an effect that remains</h4>
+
+<ul>
+<li>His remarks left us speechless.</li>
+<li>This legal battle is leaving them destitute.</li>
+<li>Water may leave a stain on that silk.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: stop, terminate, end</h4>
+
+<ul>
+<li>The road leaves off at the edge of the forest.</li>
+<li>John began where Mary left off.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: exclude, neglect to include</h4>
+
+<ul>
+<li>I really feel left out.</li>
+<li>Media tales of victims leave out the real culprit.</li>
+<li>He left out the bad results when he compiled the report.</li>
+<li>You left out the most important part!</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: End a romantic relationship.</h4>
+
+<ul>
+<li>She finally left her husband.</li>
+<li>Robert left Susie after a 10-year relationship.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,58 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="attribute" hidden/><h2>attribute</h2>
+<h4> 1.1: ascribe the cause, work, or result to something or someone</h4>
+
+<ul>
+<li>To what do you attribute your success?</li>
+<li>The doctors have attributed the cause of the illness to an unknown virus.</li>
+<li>To what do you attribute this delay?</li>
+<li>Most experts have attributed the drawing to Michelangelo.</li>
+<li>Clonus after human spinal cord injury cannot be attributed solely to recurrent muscle-tendon stretch.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: characterize with a particular quality or feature</h4>
+
+<ul>
+<li>I wouldn't dream of attributing such a lack of judgment to you.</li>
+<li>They attribute both kindness and cruelty to nature.</li>
+<li>Genius has become attributed much more to actual execution rather than to potential.</li>
+<li>Another etymology suggests it means "pompous", a quality often attributed by Australians to the British.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,66 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="remove" hidden/><h2>remove</h2>
+<h4> 1.1: take something or someone away from somewhere</h4>
+
+<ul>
+<li>The actress removed her stage makeup after the performance.</li>
+<li>John removed the candy wrapper and popped the chocolate into his mouth.</li>
+<li>I've tried removing these rust spots with several different cleaners.</li>
+<li>The men removed their hats when entering the church.</li>
+<li>Remove that grin from your face at once!</li>
+<li>They removed the children from harm's way.</li>
+<li>They decided to remove their son from the school.</li>
+<li>Hearing your opinion has removed my doubts.</li>
+<li>The bombings have removed any hope for a quick peace settlement.</li>
+<li>The troops were removed from the Pacific theater and sent to the European one.</li>
+<li>We removed ourselves to the library for brandy and cigars.</li>
+<li>The position is vacant since the lieutenant governor was removed from office.</li>
+<li>The company's shareholders have voted to remove the executive board.</li>
+<li>Several opposition groups are fighting to remove the president from power.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: murder</h4>
+
+<ul>
+<li>The mob wants to remove that informant.</li>
+<li>We had him removed for talking.</li>
+<li>The hit man will remove someone for a price.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,70 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="contend" hidden/><h2>contend</h2>
+<h4> 1.1: maintain, assert, or claim</h4>
+
+<ul>
+<li>He contended that no precedent could be found to justify such practice.</li>
+<li>Critics contended the search process appeared too political.</li>
+<li>Defendants contended the employee acted in self-defense.</li>
+<li>He contended that Communism had no future.</li>
+<li>The city contended the assessment was to compensate for past discrimination.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: struggle against or compete with for a desired outcome</h4>
+
+<ul>
+<li>They contended the 10 percent increase applied to the taxpayers' residence.</li>
+<li>The people of the frontier areas contended with the people of the older, southeastern region for more adequate representation.</li>
+<li>They won NCA Nationals in 1990 and 1995, and they contended for the title many other years.</li>
+<li>In the history of the Roman Church, the term antipope is used for a man who usurped or contended for the position of bishop of Rome.</li>
+<li>President Schmidt contended the unfair labor practice.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: deal with or come to terms with difficult or unpleasant situation</h4>
+
+<ul>
+<li>Murdoch this year contended with the surprise resignation of son Lachlan.</li>
+<li>How have they contended with the external influences to which their wealth has exposed them?</li>
+<li>Hamburger Lad contended with a new computer at work.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

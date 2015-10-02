@@ -1,0 +1,136 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="place" hidden/><h2>place</h2>
+<h4> 1.1: position, locate, post, put</h4>
+
+<ul>
+<li>Buy new windows to place emphasis on accessibility.</li>
+<li>Place the tray directly on the stove.</li>
+<li>He was placed on probation</li>
+<li>In what order would you place these students?</li>
+<li>The company placed some of their workers in LA.</li>
+<li>When the state placed me in foster care it was a good thing.</li>
+<li>In the movie, which event is not accurate for the era in which the movie is placed?</li>
+<li>Scientists have placed the time of this split between 5 and 7 million years ago.</li>
+<li>If you are placed in a station that is already full, you will not be accomplishing that goal.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: Earn a rank in a competition</h4>
+
+<ul>
+<li>Jerry placed third in the marathon.</li>
+<li>She placed first in the hundred meter hurdles.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: Identify, establish location or identity</h4>
+
+<ul>
+<li>I can't place the face but the name is familiar.</li>
+<li>A spokesman said it was not possible to place the error.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: Arrange for</h4>
+
+<ul>
+<li>You can place a phone call to Malta using the following steps.</li>
+<li>How do I place a bet on more than one selection?</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: Finish 2nd in a horse or dog race</h4>
+
+<ul>
+<li>He bet two dollars on number six to place.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: Sing a note with the correct pitch</h4>
+
+<ul>
+<li>*No examples found.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: Make an investment</h4>
+
+<ul>
+<li>Place a portion of the money in a mutual fund.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: Intend something to move toward a certain goal</h4>
+
+<ul>
+<li>He placed much criticism on the government.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9.1: PLACE DOWN-cause to sit; be settled in a position or place</h4>
+
+<ul>
+<li>Pick the cup up again, then place it down so the gaff is dislodged.</li>
+<li>Place the menu down the side of your web pages.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9.1" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.9.2: PLACE UPRIGHT-put in an vertical position</h4>
+
+<ul>
+<li>Place onion upright in shallow bowl and remove center core with circular cutter or apple corer.</li>
+<li>When you are done coloring the tubes, place them upright in a safe place to dry overnight.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.9.2" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

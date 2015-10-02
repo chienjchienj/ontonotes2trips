@@ -1,0 +1,208 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="beat" hidden/><h2>beat</h2>
+<h4> 1.1: be superior to, outwit, trounce</h4>
+
+<ul>
+<li>Agassi beat Becker in the tennis championship.</li>
+<li>Reading beats watching television.</li>
+<li>I beat the traffic.</li>
+<li>This beats me!</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: Hit, thump, pulsate, sometimes rythmically</h4>
+
+<ul>
+<li>He beat the table with his shoe.</li>
+<li>His heart was beating fast.</li>
+<li>Beat swords into ploughshares.</li>
+<li>The drums beat all night.</li>
+<li>The eagle beat its wings.</li>
+<li>Beat one's foot rythmically.</li>
+<li>The grandfather clock beat midnight.</li>
+<li>Beat bushes to rouse animals for hunting.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: subject to a beating</h4>
+
+<ul>
+<li>The teacher used to beat the students.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: glare or strike with intensity</h4>
+
+<ul>
+<li>The sun beat upon the head of Jonah.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: sail with much tacking</h4>
+
+<ul>
+<li>The boat beat in the strong wind.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: stir vigorously</h4>
+
+<ul>
+<li>Beat the egg whites until they form stiff peaks.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: avoid paying</h4>
+
+<ul>
+<li>Beat the subway fare.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: Make by pounding or trampling</h4>
+
+<ul>
+<li>Beat a path through the forest.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: Exhaust</h4>
+
+<ul>
+<li>I'm beat.</li>
+<li>He was beat after working a long day.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: Perplex, puzzle</h4>
+
+<ul>
+<li>This beats me!</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.11.1: BEAT OUT--come out better in a competition" type="1"></h4>
+
+<ul>
+<li>Steve beat out his brothers for a spot on the team.</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.11.1" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      
+<h4> 1.11.2: BEAT OUT--create by tapping" type="2"></h4>
+
+<ul>
+<li>The instructor beat out the rhythm for the dancers.</li>
+</ul>
+
+<input type="text" name="annotation[results][11][id]" value="1.11.2" hidden />
+<input type="text" name="annotation[results][11][trips]" value="" visible/>
+      
+<h4> 1.11.3: cause to move through force" type="2"></h4>
+
+<ul>
+<li>We beat back our attackers with a volley of snowballs.</li>
+<li>She beat him down to a better price.</li>
+</ul>
+
+<input type="text" name="annotation[results][12][id]" value="1.11.3" hidden />
+<input type="text" name="annotation[results][12][trips]" value="" visible/>
+      
+<h4> 1.11.4: BEAT UP--give a beating to" type="3"></h4>
+
+<ul>
+<li>He beat up that guy who was kissing his girlfriend.</li>
+</ul>
+
+<input type="text" name="annotation[results][13][id]" value="1.11.4" hidden />
+<input type="text" name="annotation[results][13][trips]" value="" visible/>
+      
+<h4> 1.11.5: BEAT UP--drum up, rally</h4>
+
+<ul>
+<li>The beat up support for the candidate.</li>
+</ul>
+
+<input type="text" name="annotation[results][14][id]" value="1.11.5" hidden />
+<input type="text" name="annotation[results][14][trips]" value="" visible/>
+      
+<h4> 1.11.6: BEAT IN--teach by drills</h4>
+
+<ul>
+<li>My mother beat in the multiplication facts when I was little.</li>
+</ul>
+
+<input type="text" name="annotation[results][15][id]" value="1.11.6" hidden />
+<input type="text" name="annotation[results][15][trips]" value="" visible/>
+      
+<h4> 1.11.7: BEAT ABOUT--search</h4>
+
+<ul>
+<li>He beat about for a solution to the problem.</li>
+</ul>
+
+<input type="text" name="annotation[results][16][id]" value="1.11.7" hidden />
+<input type="text" name="annotation[results][16][trips]" value="" visible/>
+      
+<h4> 1.11.8: multiword expressions</h4>
+
+<ul>
+<li>When he saw Sam coming, he beat a hasty retreat.</li>
+<li>Stop beating around the bush and just tell me what you think.</li>
+</ul>
+
+<input type="text" name="annotation[results][17][id]" value="1.11.8" hidden />
+<input type="text" name="annotation[results][17][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

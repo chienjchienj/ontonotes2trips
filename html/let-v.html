@@ -1,0 +1,60 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="let" hidden/><h2>let</h2>
+<h4> 1.1: allow or cause to happen</h4>
+
+<ul>
+<li>The double-paned windows won't let cold air from outside chill the room.</li>
+<li>She lets her dogs do as they please on their daily walk.</li>
+<li>Raising the interest rates will let the economy stave off inflation. (economy=metaphorical "actor")</li>
+<li>Let the evacuees of New Orleans take the lead in determining reconstruction procedures.</li>
+<li>The firm let it be known that they would fight a hostile takeover.</li>
+<li>Gently, the assailant let the knife slip between the man's ribs.</li>
+<li>I think marketing is the group that let the ball drop on that deal. (metaphoric)</li>
+<li>Let him know that in leaving for another job that he will need to train his replacement.</li>
+<li>Let him have it!</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: rent or lease something</h4>
+
+<ul>
+<li>We've decided to let our summer cottage this year as we need the money.</li>
+<li>I found a number of nice apartments to let listed in the Sunday paper.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

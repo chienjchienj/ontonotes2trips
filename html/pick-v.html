@@ -1,0 +1,235 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="pick" hidden/><h2>pick</h2>
+<h4> 1.1: select carefully from a group</h4>
+
+<ul>
+<li>She finally picked her successor.</li>
+<li>Sports Illustrated ruffled feathers when they picked the Panthers to win the Super Bowl.</li>
+<li>Hovind insisted that he pick the judges himself without any confirmation of their neutrality.</li>
+<li>Looks like I picked the wrong week to quit sniffing glue.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: look for and gather/pluck</h4>
+
+<ul>
+<li>Shuksan and Rainier strawberries are picked fresh daily and are of commercial quality.</li>
+<li>If you picked the flowers from the parking lot at work you lose points.</li>
+<li>I picked the vegetables from the vine myself and brought them to you!</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: lightly pluck or hit at</h4>
+
+<ul>
+<li>After slow-cooking, you can easily pick the meat off the bone.</li>
+<li>Remove the leg quarters from the pan and pick the bones clean.</li>
+<li>Presley's Vince Everett learns how to pick a guitar while doing time in Jailhouse Rock.</li>
+<li>She just picked her sandwich, but never really ate anything.</li>
+<li>Quit picking on me!</li>
+<li>I've got a bone to pick with you.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: steal</h4>
+
+<ul>
+<li>How now, Dame Partlet, have you inquired yet who picked my pocket?</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: strike hard</h4>
+
+<ul>
+<li>The next day we chopped and picked the ice out and built fires inside.</li>
+<li>The skater picked the ice with her skate.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: trigger, incite (an argument)</h4>
+
+<ul>
+<li>If you're gonna pick a fight with a technology cult, for Pete's sake, don't go after the Linux nerds.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7.1: physically lift</h4>
+
+<ul>
+<li>If she starts to cry, pick her up and give her a cuddle.</li>
+<li>I went to pick up the receiver, but it had stopped ringing.</li>
+<li>He picked the book up from the table and held it in his hands.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7.1" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.7.2: get, acquire, gather, or collect</h4>
+
+<ul>
+<li>He picked up the book and started to read.</li>
+<li>Have you ever picked up a hitchhiker?</li>
+<li>She picked up the children at the day care center.</li>
+<li>Where should he go in the waning hours of the campaign to pick up more votes?</li>
+<li>I picked up some food for snack.</li>
+<li>I really picked up a bargain during the weekend sale.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.7.2" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.7.3: notice or perceive; learn without being taught</h4>
+
+<ul>
+<li>In most cases people are able to pick up the signal within a day.</li>
+<li>I was always the one that picked up the smell of the flats first.</li>
+<li>Police dogs picked up the scent of the two men from clothes they had left behind.</li>
+<li>She is quick on picking up on the seasonal trends.</li>
+<li>Someone is bound to pick up you are new to this job.</li>
+<li>When you live in a country you soon pick up the language.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.7.3" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.7.4: increase or improve</h4>
+
+<ul>
+<li>The wind picked up late Saturday afternoon.</li>
+<li>I'm hoping that the number will pick up as soon as this season is over.</li>
+<li>I watched it at a very low time in my life and it picked up my spirits.</li>
+<li>Her performance in school really picked up.</li>
+<li>Her acting career picked up as she started appearing in sitcoms.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.7.4" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.7.5: emphasize</h4>
+
+<ul>
+<li>The lettering was later picked out in gold lustre.</li>
+<li>The scarf picks up the color of the skirt.</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.7.5" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      
+<h4> 1.7.6: recognize, choose, and take from a selection</h4>
+
+<ul>
+<li>It is easy for them to pick off the most lucrative business and ignore the rest.</li>
+<li>I scan through daily and pick off the best articles.</li>
+<li>At the shop, Jen picked out a red tea named chocolate mint over ice.</li>
+<li>Can you pick out the three deliberate mistakes in this paragraph?</li>
+<li>The critics picked him out as the outstanding male dancer of the decade.</li>
+<li>They hang around until the fish are thoroughly picked over in February.</li>
+</ul>
+
+<input type="text" name="annotation[results][11][id]" value="1.7.6" hidden />
+<input type="text" name="annotation[results][11][trips]" value="" visible/>
+      
+<h4> 1.7.7: criticize; find fault with</h4>
+
+<ul>
+<li>My master picked his defenses apart with ruthless efficiency.</li>
+<li>You fail to see the main points and want to pick apart the argument devoid of context.</li>
+<li>He picked at the way in which the papers were not referenced correctly.</li>
+</ul>
+
+<input type="text" name="annotation[results][12][id]" value="1.7.7" hidden />
+<input type="text" name="annotation[results][12][trips]" value="" visible/>
+      
+<h4> 1.7.8: lightly pluck or hit at</h4>
+
+<ul>
+<li>He shook his head and picked at the dust between his feet.</li>
+<li>Stop picking at your face and make it bleed.</li>
+<li>Often he sat alone and just picked at his food.</li>
+</ul>
+
+<input type="text" name="annotation[results][13][id]" value="1.7.8" hidden />
+<input type="text" name="annotation[results][13][trips]" value="" visible/>
+      
+<h4> 1.7.9: arrest</h4>
+
+<ul>
+<li>He was picked up by the police for drug dealing.</li>
+<li>The police picked her up just outside Canterbury.</li>
+</ul>
+
+<input type="text" name="annotation[results][14][id]" value="1.7.9" hidden />
+<input type="text" name="annotation[results][14][trips]" value="" visible/>
+      
+<h4> 1.7.10: make sexual or romantic advances</h4>
+
+<ul>
+<li>In the '70s, you picked up women by blowing cigarette smoke in their face.</li>
+<li>A man works odd jobs, picks up women, and drinks.</li>
+</ul>
+
+<input type="text" name="annotation[results][15][id]" value="1.7.10" hidden />
+<input type="text" name="annotation[results][15][trips]" value="" visible/>
+      
+<h4> 1.7.11: shoot or target one by one</h4>
+
+<ul>
+<li>I fired, raising a sweat as I picked the targets off again without a miss.</li>
+<li>Most of the chickens that roosted outside soon got picked off by various predators.</li>
+</ul>
+
+<input type="text" name="annotation[results][16][id]" value="1.7.11" hidden />
+<input type="text" name="annotation[results][16][trips]" value="" visible/>
+      
+<h4> 1.7.12: accept a challenge</h4>
+
+<ul>
+<li>He is bound to pick up the gauntlet thrown down by McClaren.</li>
+</ul>
+
+<input type="text" name="annotation[results][17][id]" value="1.7.12" hidden />
+<input type="text" name="annotation[results][17][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

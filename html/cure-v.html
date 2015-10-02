@@ -1,0 +1,71 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="cure" hidden/><h2>cure</h2>
+<h4> 1.1: treat a condition completely</h4>
+
+<ul>
+<li>The constitutional remedy cured the patient of all the disease symptoms.</li>
+<li>The new gene cured the disease in 12 patients, but went on to cause leukemia in three of them.</li>
+<li>At any rate, the lesson cured him of his laziness.</li>
+<li>I don't know if it cured her of biting, but it cured her of biting Mike.</li>
+<li>The roots of Artichokes smeared on, does not only cure the ill scent of armpits, but of the whole body also.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: preserve, pickle</h4>
+
+<ul>
+<li>Whisk in prepared mustard to taste and use this liquid to cure fruit.</li>
+<li>Dad always sugar-cured the hams and bacon and sometimes the shoulders.</li>
+<li>To dry cure the ham butt, apply 2 tablespoons of Tender-Quick for each pound.</li>
+<li>Does anyone grow it for culinary purposes and if so how do you cure the berries?</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: prepare, make usable</h4>
+
+<ul>
+<li>After it is cured, the resin can be abraded and polished as necessary.</li>
+<li>The amount of water present need only be sufficient to cure the cement.</li>
+<li>Curing the soap can take anywhere from 4-8 weeks depending on the soap!</li>
+<li>After curing the clay, soaking the image, and placing it on the clay glue side up, I cured the piece.</li>
+<li>My Aunt had been a milliner, and she cured the skins and made gloves.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

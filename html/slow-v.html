@@ -1,0 +1,59 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="slow" hidden/><h2>slow</h2>
+<h4> 1.1: lessen in intensity</h4>
+
+<ul>
+<li>Will you slow down for the sharp curves?</li>
+<li>Not knowing what was around the corner, we slowed up.</li>
+<li>Over the holiday period he slowed his blogging activities.</li>
+<li>After installing the application, my system has slowed down.</li>
+<li>Economic growth slowed by half.</li>
+<li>HIV prevalence has slowed down.</li>
+<li>As soon as the rain slowed, she walked back to her cabin.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: hold back, retard, delay</h4>
+
+<ul>
+<li>News of pandemonion may have slowed the much needed aid.</li>
+<li>Science is being slowed down by fraud.</li>
+<li>We got slowed up in Minburn by slow drivers.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

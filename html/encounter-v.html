@@ -1,0 +1,59 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="encounter" hidden/><h2>encounter</h2>
+<h4> 1.1: Meet, run into, compete against</h4>
+
+<ul>
+<li>You'll probably encounter her at the meeting.</li>
+<li>Princeton will encounter Yale this weekend.</li>
+<li>The fencer was delighted to encounter a water bearer, she was parched.</li>
+<li>The president will encounter the Nicaraguan dipolomat.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: Come upon or experience (as if by chance)</h4>
+
+<ul>
+<li>We encounter this idea in Plato.</li>
+<li>She encountered an interesting book in the store yesterday.</li>
+<li>The project encountered numerous financial difficulties.</li>
+<li>He encountered increasing feelings of dread as the surgery approached.</li>
+<li>My proposal encountered much opposition.</li>
+<li>In the preserve, tourists will encounter the largest land animal in the world.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,100 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="build" hidden/><h2>build</h2>
+<h4> 1.1: physically construct something, either directly or by implication</h4>
+
+<ul>
+<li>I built this table myself.</li>
+<li>They built houses out of sod on the prairies.</li>
+<li>The government had to raise taxes in order to build new bridges and roads.</li>
+<li>These architects build in interesting and new styles.</li>
+<li>We are building up this swampland to accomodate the boom.</li>
+<li>This castle was built upon the blood and sweat of the poor.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: develop, increase</h4>
+
+<ul>
+<li>Resentment about her promotion is building in the office.</li>
+<li>The clouds over the sea were building into a dark storm front.</li>
+<li>Suspense was building right from the beginning of the opera.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: establish or create a complex process or abstract entity, according to a plan</h4>
+
+<ul>
+<li>Our company's reputation is built on a history of satisfied customers.</li>
+<li>He is building a nice medical practice in Raleigh.</li>
+<li>They built a modern nation from democratic principles and free trade.</li>
+<li>Will the defense build their case around a plea of insanity?</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: improve cleaning action of</h4>
+
+<ul>
+<li>build detergents.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: BUILD IN: make something an integral part of a whole</h4>
+
+<ul>
+<li>We built in a special clause to make the contract better for you.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: BUILD UP: increase steadily and/or incrementally</h4>
+
+<ul>
+<li>Try to build up your savings when you graduate from college.</li>
+<li>Resistance to the manager's plan built up steadily.</li>
+<li>Troops are building up on the German border.</li>
+<li>Jack built up the confidence to ask Jill out.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

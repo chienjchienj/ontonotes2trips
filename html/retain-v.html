@@ -1,0 +1,76 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="retain" hidden/><h2>retain</h2>
+<h4> 1.1: continue to physically contain or hold something</h4>
+
+<ul>
+<li>The sea retains the sun's warmth longer than the land.</li>
+<li>This soil retains water.</li>
+<li>The cells retained the drug for a long time.</li>
+<li>The city's water supply is retained in a reservoir.</li>
+<li>We were asked to retain a little over than 600 words.</li>
+<li>When adults retain too much water we can treat them by restricting fluid intake.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: maintain posession of</h4>
+
+<ul>
+<li>I can't retain all that information!</li>
+<li>We were asked to retain a little over than 600 words.</li>
+<li>Despite losing the court case he retains all rights to the magazine article.</li>
+<li>We retain the copyright to the poem.</li>
+<li>The company retained a collateral interest in each policy.</li>
+<li>She has lost her battle to retain control of the company.</li>
+<li>He managed to retain his dignity throughout the performance.</li>
+<li>They wanted us to retain the original styling of the 1940's era.</li>
+<li>The athlete retained the lead througout the competion.</li>
+<li>I would rather live in a cow-town and retain our way of life.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: hire, keep in one's pay or services</h4>
+
+<ul>
+<li>As the family fortune waned, they could not retain their household staff.</li>
+<li>It is wise to retain a lawyer who knows the local court procedures.</li>
+<li>Effective training helps retain employees.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

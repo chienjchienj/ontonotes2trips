@@ -1,0 +1,69 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="consult" hidden/><h2>consult</h2>
+<h4> 1.1: seek advice or information from a source of special knowledge</h4>
+
+<ul>
+<li>Visitors are advised to consult an agent for travel arrangements.</li>
+<li>If symptoms persist, consult a doctor.</li>
+<li>You should consult your dictionary for spelling.</li>
+<li>I'm not quite sure how to get there. I'd better consult a map.</li>
+<li>I consulted my checkbook before making the purchase.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: exchange views, confer and discuss before a decision</h4>
+
+<ul>
+<li>In a meeting, the council consulted about Friday's news bulletin introduction.</li>
+<li>Why didn't you consult me about this?</li>
+<li>This afternoon, the Prime Minister was consulting with his advisors.</li>
+<li>You'd be wise to consult the boss before you make any major changes.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: provide professional advice, serve as a consultant</h4>
+
+<ul>
+<li>He is a retired executive that consults for several large companies.</li>
+<li>My professor also consults for industry.</li>
+<li>I now consult for The New York Times Company at its About.com.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

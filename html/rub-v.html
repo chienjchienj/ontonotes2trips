@@ -1,0 +1,132 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="rub" hidden/><h2>rub</h2>
+<h4> 1.1: Purposfully move over something with pressure, possibly while applying a substance.</h4>
+
+<ul>
+<li>Rub my hands please. They're so cold.</li>
+<li>She rubbed massage oil into my skin before beginning.</li>
+<li>Don't rub your insect bites.</li>
+<li>He rubbed his hands all over her body.</li>
+<li>You have to rub it in to make it work.</li>
+<li>He rubbed down his client for over an hour.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: Be in a rubbing relationship with something, causing friction.</h4>
+
+<ul>
+<li>My sweater rubs me sore.</li>
+<li>This bra rubs at the shoulders.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: Gradually wear away.</h4>
+
+<ul>
+<li>The letters slowly rubbed down/off until the note was not longer</li>
+<li>legible.</li>
+<li>She rubbed off the Xs on her hands and started to drink.</li>
+<li>The soles of my shoes have rubbed down to nothing.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: Remove by or as if by manually erasing.</h4>
+
+<ul>
+<li>We have to rub out the sins of our forefathers and start anew.</li>
+<li>Please rub out the formula on the blackboard - it's wrong!</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: RUB (UP) THE WRONG WAY: upset through one's actions.</h4>
+
+<ul>
+<li>That joke really rubbed me the wrong way.</li>
+<li>The date was horrible. His every action rubbed her the wrong way.</li>
+<li>That just rubs me up the wrong way!</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: RUB ONE OUT: masturbate; may be figurative.</h4>
+
+<ul>
+<li>Paul rubbed one out in the bathroom before class.</li>
+<li>She rubbed one out before retiring to bed.</li>
+<li>It was as if he had rubbed one out in the legislation - he was</li>
+<li>getting everything he wanted and more!</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: RUB ALONG: manage one's existence barely.</h4>
+
+<ul>
+<li>We rubbed along for a few years before finding better jobs.</li>
+<li>I guess I can rub along on this lousy salary.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: RUB: call to memory or consciousness.</h4>
+
+<ul>
+<li>My session today rubbed up some old issues.</li>
+<li>That dream last night rubbed up my childhood fear of rejection.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: pass a quality or characteristic on</h4>
+
+<ul>
+<li>His enthusiasm rubbed off on his son.</li>
+<li>The moonbats have rubbed off on me.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

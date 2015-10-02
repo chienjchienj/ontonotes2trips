@@ -1,0 +1,106 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="bounce" hidden/><h2>bounce</h2>
+<h4> 1.1: (cause to) move up or away after striking an object or a surface</h4>
+
+<ul>
+<li>Onlookers saw the car bounce off a tree.</li>
+<li>The ball bounced off the post and into the net.</li>
+<li>She bounced the ball quickly.</li>
+<li>The children had broken the bed by bouncing on it.</li>
+<li>He bounced the baby on his knee.</li>
+<li>Television pictures from all over the world are bounced off satellites.</li>
+<li>You are viewing an image bounced off the mirror and prism.</li>
+<li>Change the angle of the flash head and bounce the flash on the wall or ceiling.</li>
+<li>Her long blonde hair bounced as she walked.</li>
+<li>Her bag bounced as she ran down the hall.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: reject; (cause to) return after being refused</h4>
+
+<ul>
+<li>I had to pay a penalty fee when my check bounced.</li>
+<li>To my horror, the bank bounced the check.</li>
+<li>They somehow managed to get themselves bounced out of the restaurant.</li>
+<li>We were getting tired of calling the cops to bounce the underage drinkers.</li>
+<li>My last email to you bounced.</li>
+<li>My message is being bounced back to me.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: walk or move energetically or cheerfully</h4>
+
+<ul>
+<li>Tom bounced in, smiling broadly.</li>
+<li>The children came bouncing into the room.</li>
+<li>She bounced up to the guests and breezily said hello.</li>
+<li>Levi bounced to his feet with an ear-to-ear smile.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: discuss, share ideas</h4>
+
+<ul>
+<li>I'd like to bounce some ideas off you folks, and get some feedback.</li>
+<li>I bounced a few ideas off my boss.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: improve health, recover from setback</h4>
+
+<ul>
+<li>The patient bounced back to good health.</li>
+<li>My site has finally bounced back from the big drop we had on the 26th of April.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: BASEBALL-hit a ground ball to an infielder</h4>
+
+<ul>
+<li>The batter bounced out to the shortstop.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

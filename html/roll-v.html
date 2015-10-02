@@ -1,0 +1,184 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="roll" hidden/><h2>roll</h2>
+<h4> 1.1: (cause to) move in a smooth circular or undulating manner</h4>
+
+<ul>
+<li>The man rolled onto his stomach and rose to his knees.</li>
+<li>The children rolled the ball across the field.</li>
+<li>They laughed and traded looks, maybe even rolled their eyes at a dumb question.</li>
+<li>The ship rolled on the heavy seas.</li>
+<li>They rolled out the red carpet for him.</li>
+<li>Niki rolled around the floor after she hit her head on the footre</li>
+<li>The President's convoy rolled past the crowds.</li>
+<li>He rolled into town one day, promising the world.</li>
+<li>They rolled from house to house, over dirt roads and highways, up steep hills and into hidden valleys.</li>
+<li>Here the foamy heads of the waves rolled gently into the beach.</li>
+<li>The mist rolled in from the sea.</li>
+<li>He rolled up in a black Mercedes.</li>
+<li>These things just rolled off her tongue casually as though</li>
+<li>everyone talked about reincarnation with their child's doctor .</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: wind, wrap or form into a cylinder</h4>
+
+<ul>
+<li>She rolled her hair in strips of cotton the night before.</li>
+<li>He rolled three cigarettes and slid them into his pocket.</li>
+<li>This cashmere yarn rolls well.</li>
+<li>Roll up the map and put it in the bin.</li>
+<li>He rolled up his few possesions and tucked them under his arm.</li>
+<li>She rolled up her sleeves and set to work.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: have an appearance of motion (fictive motion)</h4>
+
+<ul>
+<li>The hills rolled past.</li>
+<li>NOTE: Do NOT include "rolling hills"--that's an adjectival usage!</li>
+<li>From the window an early October landscape rolled by.</li>
+<li>A hand-painted landscape rolled down behind a low mock-garden wall.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: operate or run, be working</h4>
+
+<ul>
+<li>The presses are rolling.</li>
+<li>Roll cameras!</li>
+<li>Let's roll!</li>
+<li>He worked 10-18 hour days and kept the project rolling at a fast pace.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: produce or emit a reverberating sound</h4>
+
+<ul>
+<li>Thunder rolled in the distance.</li>
+<li>The drums rolled on and on into the night.</li>
+<li>This lady rolled her R's like an 1860's stage actress.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: flatten or spread with a roller</h4>
+
+<ul>
+<li>The painters rolled the paint using varying pressures.</li>
+<li>She was rolling out the dough when the phone rang.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: introduce (a new product or product feature)</h4>
+
+<ul>
+<li>Ask.com has just rolled out its long-awaited new blog search engine.</li>
+<li>Flickr has finally rolled out their integrated mapping/geotagging functionality.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: arrive, occur (usually temporally)</h4>
+
+<ul>
+<li>Christmas rolled around again.</li>
+<li>Another milestone rolled around this week.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: recite</h4>
+
+<ul>
+<li>He rolled off a list of things we might need.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: renew a mature loan or transfer funds from an investment or retirement plan to another</h4>
+
+<ul>
+<li>You should roll over your 401K into an IRA when you leave the company.</li>
+<li>Thus, many investors just rolled over the investment and "profit."</li>
+<li>If you roll over the loan three times, the finance charge would climb to $60 to borrow $100.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.11: accumulate" type="accumulate"></h4>
+
+<ul>
+<li>He rolled up more votes than any president in history.</li>
+<li>Sazuki rolled up enough points for the technical fall.</li>
+<li>In the last three decades of the century, he rolled up a massive fortune.</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.11" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      
+<h4> 1.12: have sexual intercourse</h4>
+
+<ul>
+<li>The sweethearts emerged from the loft, where they had obviously been rolling in the hay.</li>
+<li>I never thought I'd find myself rolling in the hay with Matt Damon.</li>
+</ul>
+
+<input type="text" name="annotation[results][11][id]" value="1.12" hidden />
+<input type="text" name="annotation[results][11][trips]" value="" visible/>
+      
+<h4> 1.13: rob</h4>
+
+<ul>
+<li>I would always remember that he had rolled the drunk, and one of my rules is that if we make a dollar we split fifty-fifty.</li>
+</ul>
+
+<input type="text" name="annotation[results][12][id]" value="1.13" hidden />
+<input type="text" name="annotation[results][12][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

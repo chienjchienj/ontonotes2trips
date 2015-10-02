@@ -1,0 +1,57 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="equip" hidden/><h2>equip</h2>
+<h4> 1.1: provide with tools or items for a specific purpose</h4>
+
+<ul>
+<li>She equipped her school with pianos, globes, magazines, and books.</li>
+<li>The Curtiss Aeroplane and Motor Company equipped the Standard J-1s with its own engine.</li>
+<li>We hired these two men and equipped them with crossbow and sword.</li>
+<li>She gave land to the ex-slaves who had stayed with her, and equipped them to be independent farmers.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: give rise to abilities, skill or understanding</h4>
+
+<ul>
+<li>She evaluated how well new employees' education equipped them with these skills.</li>
+<li>Years of experience have equipped her to be a very successful entrepreneur.</li>
+<li>As it turned out, his mental/psychological make-up equipped him to be a fine teacher.</li>
+<li>He said that when God comforted him, it equipped him to be able to minister to others.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,78 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="forget" hidden/><h2>forget</h2>
+<h4> 1.1: (cause to) fail or be unable to remember something</h4>
+
+<ul>
+<li>I'm sorry, I've forgotten your name.</li>
+<li>Let me write down that date before I forget it.</li>
+<li>We'd forgotten that she doesn't come on Thrusdays.</li>
+<li>She would never forget seeing the Himalayas for the first time.</li>
+<li>I've forgotten how to do it.</li>
+<li>I never forget a face.</li>
+<li>I forgot to take the trash out.</li>
+<li>I forgot to attach the forms.</li>
+<li>I forgot to take my pills.</li>
+<li>I forgot to bring the disks with me.</li>
+<li>I forgot my umbrella.</li>
+<li>She forgot the disks at home.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: fail to give due attention to something or someone/lose control of manners or behavior</h4>
+
+<ul>
+<li>Don't forget your manners.</li>
+<li>For a moment he forgot himself, he forgot about the danger he was in as he stared in awe at the building.</li>
+<li>Oh dear, I'm forgetting myself!</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: dismiss</h4>
+
+<ul>
+<li>Forget about it!</li>
+<li>Forget about implementation, focus on results.</li>
+<li>Cashman can forget about a relaxing offseason.</li>
+<li>Forget your troubles, c'mon, get happy!</li>
+<li>I put on some good music and I just forgot everything else and started work.</li>
+<li>So we just forgot it and concentrated on boat speed and sail trim.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,65 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="control" hidden/><h2>control</h2>
+<h4> 1.1: exercise power or influence over; hold within limits</h4>
+
+<ul>
+<li>Some of those operations are now controlled by Homeland Security.</li>
+<li>That teacher knows how to control a rowdy class.</li>
+<li>Are you doing all you can to control your sodium intake?</li>
+<li>The skater was having trouble controlling his spins during the competition.</li>
+<li>He couldn't control his drinking on the job.</li>
+<li>The child needs to learn to control her temper.</li>
+<li>We controlled the fire by dousing it with water.</li>
+<li>The weather controls what we do, what we eat, and what we wear.</li>
+<li>How do these laws control drugs and poisons?</li>
+<li>The company is controlled largely by foreign interests.</li>
+<li>Can you control the tiller while I go forward to untangle the jib?</li>
+<li>I love that I can finally control my Pocket PC from my desktop.</li>
+<li>On the inside, a control panel can be used to control the lights in the apartment.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: verify something by comparing to a standard</h4>
+
+<ul>
+<li>Are you controlling for temperature in this experiment?</li>
+<li>Effluents should be controlled for pH by neutralization.</li>
+<li>The auditor controlled the physical count of inventories performed by the manager.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

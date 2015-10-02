@@ -1,0 +1,108 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="wash" hidden/><h2>wash</h2>
+<h4> 1.1: clean, cleanse, or able to be cleaned</h4>
+
+<ul>
+<li>Wash the towels please!</li>
+<li>Wash your face only twice per day.</li>
+<li>Does this material wash?</li>
+<li>I could watch my two cats wash each other all day.</li>
+<li>The nurse washed away the blood.</li>
+<li>After the paintball war, Joey washes off all the paint.</li>
+<li>I can't wash all the dirt out of my shirt.</li>
+<li>Good children wash up before dinner.</li>
+<li>Her eyes were washed with tears at her grandfather's funeral.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: Move, form or eliminate by/with water</h4>
+
+<ul>
+<li>The swollen river washed away the footbridge.</li>
+<li>Distilled water will wash minerals from soil.</li>
+<li>The river washed a ravine into the mountainside.</li>
+<li>Small waves washed the shore.</li>
+<li>The body washed down the river.</li>
+<li>Many shells washed up on the beach after the hurricane.</li>
+<li>The rain washed out the baseball game.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: Admit to testing/proof</h4>
+
+<ul>
+<li>This silly excuse won't wash in traffic court.</li>
+<li>I don't that will wash out in proceedings today.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: apply a thin coating of paint/metal</h4>
+
+<ul>
+<li>In between each wash with paint.</li>
+<li>How to lime wash with paint.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: accompany food with a lot of liquid</h4>
+
+<ul>
+<li>Danika ate the burger quickly and washed it down with a pint of</li>
+<li>beer.</li>
+<li>He likes to wash his worries down with a nice glass of whiskey.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: drain of color or vitality; exhaust</h4>
+
+<ul>
+<li>Wearing yellow totally washes me out.</li>
+<li>He was washed up after the exam.</li>
+<li>The harsh detergent washed all the color out of this blouse.</li>
+<li>Her illness washed her out.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

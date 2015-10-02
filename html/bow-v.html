@@ -1,0 +1,86 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="bow" hidden/><h2>bow</h2>
+<h4> 1.1: bend in an arc</h4>
+
+<ul>
+<li>She bowed her head in shame.</li>
+<li>His square shoulders bowed under the burden of the knapsack.</li>
+<li>You have bowed the heavens and you have stretched out your hand from on high.</li>
+<li>The water had bowed the wooden planks.</li>
+<li>The tent bowed under the weight of the snow.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: bend one's head, knee, or back to show respect</h4>
+
+<ul>
+<li>She bowed. The chief bowed. Then the talks began.</li>
+<li>Abraham bowed down before the people of the land</li>
+<li>The Italians bowed the knee to their German master, but they had no love for him.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: submit; defer to</h4>
+
+<ul>
+<li>The school board felt they had to bow to the wishes of the teachers union.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: play a stringed instrument with a bow</h4>
+
+<ul>
+<li>When the main strings are plucked or bowed, the vibrations on the main strings are transferred to any of the sympathetic strings.</li>
+<li>When a violin is being bowed, the string being played is set into horizontal vibrations by the bow.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: retire or remove oneself from an obligation or situation</h4>
+
+<ul>
+<li>She bowed out when she heard how much work was involved.</li>
+<li>He bowed out when he realized he could no longer handle the demands of the chairmanship.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,119 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="show" hidden/><h2>show</h2>
+<h4> 1.1: (cause to) be seen, reveal, demonstrate</h4>
+
+<ul>
+<li>He showed us the secret parking spot.</li>
+<li>The sales clerk showed me some nice suits.</li>
+<li>Could you show me your notes?</li>
+<li>Please show me Tuesday flights to DEN that leave in the morning from LAX?</li>
+<li>Whatever she's thinking, she never lets it show.</li>
+<li>I've painted over the graffiti twice, but it still shows through.</li>
+<li>A cursor is supposed to show in this box, when I click on the blue button.</li>
+<li>I rolled up my sleeve so the missing button wouldn't show.</li>
+<li>His upbringing really shows.</li>
+<li>The scars showed up within a few days of injury.</li>
+<li>The DNA showed that John was not the father of that child.</li>
+<li>The clinical trials showed the effectiveness of that drug against AIDS.</li>
+<li>The rookie showed his outfielding talent during the playoffs.</li>
+<li>He showed his disappointment by sulking the rest of the day.</li>
+<li>Careful. Your disgust shows up on your face.</li>
+<li>The polls are showing only a 3-point difference between the candidates.</li>
+<li>The thermometer showed 10 below zero this morning.</li>
+<li>The art exhibit showed many aspects of life in Polynesia.</li>
+<li>So then stop boasting about your talent, and show it to me!</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: SHOW UP-turn up, appear, arrive or come</h4>
+
+<ul>
+<li>We waited two hours but they never showed.</li>
+<li>He never shows up on time.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: demo; exhibit something for public viewing</h4>
+
+<ul>
+<li>She is showing her new work at a downtown gallery.</li>
+<li>The horse didn't show well at his last competition.</li>
+<li>We're going to show this application at two upcoming conferences.</li>
+<li>They show their dog every year.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: usher, direct, or guide</h4>
+
+<ul>
+<li>The man in the purple suit showed us to our seats.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: win 3rd place in a contest</h4>
+
+<ul>
+<li>Her dog didn't win, place or show in New York last year.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: SHOW THE DOOR-be asked to leave</h4>
+
+<ul>
+<li>I was shown the door when I asked for a raise.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: SHOW OFF-act in such a way to attract attention</h4>
+
+<ul>
+<li>She only bought that sports car to show off and prove she could afford one.</li>
+<li>He's always showing off to his classmates.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,117 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="jump" hidden/><h2>jump</h2>
+<h4> 1.1: (cause to) move suddenly and abruptly upward and/or forward</h4>
+
+<ul>
+<li>The horse easily jumped the five foot fence.</li>
+<li>The trainer jumped his tigers through flaming hoops.</li>
+<li>Let's don't jump to the wrong conclusion.</li>
+<li>Improper alignment of the film in the projector mechanism caused it to jump through frames.</li>
+<li>John jumped around in the article to see whether he had been cited.</li>
+<li>Electrons jump from specific energy levels to other levels, rather than continuously.</li>
+<li>They have been jumping back and forth on this issue for years.</li>
+<li>We jumped from our seats at the loud thunderbolt.</li>
+<li>A man was seen jumping off the bridge yesterday.</li>
+<li>Oil prices jumped sharply overnight.</li>
+<li>Her new novel has jumped to second place this week on the bestseller list.</li>
+<li>Sally jumped at the chance to become a shuttle astronaut.</li>
+<li>The puppy jumped right in with the bigger dogs.</li>
+<li>We need to jump on this issue right away.</li>
+<li>Billy has jumped off to a good start at school this year.</li>
+<li>Jump in the car, let's go!</li>
+<li>Jump back on a horse right away if you fall off.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: leave the rails or path unexpectedly</h4>
+
+<ul>
+<li>Several people were injured when the train jumped the track.</li>
+<li>They couldn't decide on the next step and now the whole reorganization plan has jumped the track.</li>
+<li>Floor-track doors that refuse to budge may have jumped the track.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: be highly noticeable</h4>
+
+<ul>
+<li>I don't like the way these colors jump out of the wall.</li>
+<li>The graphics just jump out at you.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: assail suddenly and unexpectedly</h4>
+
+<ul>
+<li>Muggers jumped the woman in the fur coat.</li>
+<li>John turned and was ready before the punks could jump him.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: cause an engine to start by connecting its battery to another</h4>
+
+<ul>
+<li>I jumped his Camry from my Civic.</li>
+<li>They borrowed Bob's cables to jump the car with the dead battery.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: multi-word idioms</h4>
+
+<ul>
+<li>jump_bail</li>
+<li>Debbie's brother jumped bail again after his second DWI charge.</li>
+<li>jump_ship</li>
+<li>Their investors are likes rats jumping ship. (figurative)</li>
+<li>jump_the_gun</li>
+<li>Analysts may have jumped the gun in predicting a housing recovery.</li>
+<li>jump_the_queue</li>
+<li>That couple appears to have jumped the queue to get tickets.</li>
+<li>jump_on_the_bandwagon</li>
+<li>Jenny jumped on the bandwagon for fear of appearing the outcast of the group.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

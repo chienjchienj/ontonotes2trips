@@ -1,0 +1,86 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="acknowledge" hidden/><h2>acknowledge</h2>
+<h4> 1.1: accept or admit to the truth, existence, or knowledge of</h4>
+
+<ul>
+<li>She acknowledged that she might have forgotten his name.</li>
+<li>The Crown Prince was acknowledged as the true heir to the throne.</li>
+<li>We do not acknowledge your gods.</li>
+<li>Mr. Specter acknowledged the difficulties ahead.</li>
+<li>Respondents acknowledged the inexperience of their campaign staff.</li>
+<li>He acknowledged the noise but said that there was no excessive play.</li>
+<li>I acknowledge my mistakes and learn from them.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: respond or show awareness of the receipt of an act</h4>
+
+<ul>
+<li>She acknowledged his compliment with a smile.</li>
+<li>We must acknowledge the kindness she showed towards us.</li>
+<li>Your generous contribution will be acknowledged with a gift card.</li>
+<li>Wiesel did not look at the young man or acknowledge his question in any way.</li>
+<li>The program committee acknowledged the submission of the authors of the paper.</li>
+<li>We will acknowledge the receipt of the package within a day or two of its arrival.</li>
+<li>The server acknowledges the message or sends an error message.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: mention as to give one's due recognition in speech or writing</h4>
+
+<ul>
+<li>It is important to acknowledge the work of others in one's own writing.</li>
+<li>He gave it to her and she acknowledged him in her speech.</li>
+<li>Helen Hunt acknowledged her by name in her acceptance speech when she won the Emmy.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: accept a document to be valid and legally binding</h4>
+
+<ul>
+<li>The original lease was acknowledged before a notary public at the time it was executed.</li>
+<li>Under IC 45-1003, a trust deed must be acknowledged to be recordable.</li>
+<li>The power of attorney must be acknowledged by the principal before an authorized officer.</li>
+<li>Most recording statutes provide that the deed must be acknowledged before a notary public.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

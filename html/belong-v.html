@@ -1,0 +1,64 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="belong" hidden/><h2>belong</h2>
+<h4> 1.1: be owned by</h4>
+
+<ul>
+<li>This book belongs to me.</li>
+<li>Texas' national-championship night in Pasadena belonged solely to the unstoppable Vince Young.</li>
+<li>This elegant 1840s farmhouse belonged to Osborne's first settler.</li>
+<li>Not all liquid stocks belong to big companies and not all illiquid stocks belong to small companies.</li>
+<li>Though Brandy can be made anywhere, the true roots belong to France.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: be in or part of an appropriate/acceptable place, situation or group</h4>
+
+<ul>
+<li>This student somehow doesn't belong.</li>
+<li>Where does this book belong?</li>
+<li>One of these things is not like the other, one of these things does not belong.</li>
+<li>Isn't it time you returned to where you once belonged?</li>
+<li>Serious money belongs in a widely diversified investment program.</li>
+<li>This student belongs to our bridge club.</li>
+<li>Senator Ted Kennedy belongs to All Male club.</li>
+<li>Each breed of dog belongs to a group of similar breeds.</li>
+<li>Tulips belong to the lily family.</li>
+<li>Your stove looks like it should belong in a museum.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

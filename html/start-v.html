@@ -1,0 +1,124 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="start" hidden/><h2>start</h2>
+<h4> 1.1: have an initial point with some characteristic</h4>
+
+<ul>
+<li>Prices for these homes start at $250,000.</li>
+<li>The novel starts with a murder.</li>
+<li>The forest starts just outside of town.</li>
+<li>Classes this fall start a week later than last year.</li>
+<li>When does the meeting start?</li>
+<li>The competition started with only three participants.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: begin an event, action, or effect</h4>
+
+<ul>
+<li>I started to laugh.</li>
+<li>Once he starts smoking, he can't stop.</li>
+<li>Taiwan plans to start making Tamiflu.</li>
+<li>The ball started to roll toward the street.</li>
+<li>The music is starting to upset me.</li>
+<li>The labor pains started coming with increased intensity.</li>
+<li>The child started violin lessons at age four.</li>
+<li>She starts her new job on Monday.</li>
+<li>He started the gathering with a prayer.</li>
+<li>Mary started the soup while John made the salad.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: to cause to come into being</h4>
+
+<ul>
+<li>He started a new company last year.</li>
+<li>The refinery started up a new facility last week.</li>
+<li>Iraq started a war when they invaded Kuwait.</li>
+<li>Why did you start that nasty rumor?</li>
+<li>The Girl Scouts learned how to start a fire at their first campout.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: (cause a machine to) begin to function or operate</h4>
+
+<ul>
+<li>My car wouldn't start this morning.</li>
+<li>I could not start the car.</li>
+<li>She started up the computer.</li>
+<li>The turbines started up.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: begin a journey, depart</h4>
+
+<ul>
+<li>They started for California yesterday.</li>
+<li>We threw in an extra day of food and started out for our high camp.</li>
+<li>The soldiers will start for the front at daybreak.</li>
+<li>She is starting down the road to recovery.</li>
+<li>Critics believe their opponents will start the country down the wrong path again.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: play in the starting lineup</h4>
+
+<ul>
+<li>The coach had trouble deciding which players to start.</li>
+<li>Jones started in only two games last season.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: startle, jump</h4>
+
+<ul>
+<li>She started when I snuck up behind her.</li>
+<li>She started in surprise at my jesting tone.</li>
+<li>He started in surprise, eyes wide.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

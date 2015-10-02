@@ -1,0 +1,95 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="seal" hidden/><h2>seal</h2>
+<h4> 1.1: fasten or close tightly</h4>
+
+<ul>
+<li>Once it is sealed, the container of drums is transported across the sea.</li>
+<li>The Romans, at the behest of the Pharisees, sealed the tomb.</li>
+<li>So I sealed the ridge vent, but I am still getting a draft.</li>
+<li>Nate sealed the envelope and collapsed backward on his cot.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: finalize; coerce into a permanant state</h4>
+
+<ul>
+<li>A 9th grader sealed the Godfrey deal.</li>
+<li>A flipped switch sealed the fate of the genesis spacecraft.</li>
+<li>The agricultural crisis in the 1880s sealed the end of this era.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: cover with varnish</h4>
+
+<ul>
+<li>I sealed the chair, using glazing between the first few layers of lacquer.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: hunt seals</h4>
+
+<ul>
+<li>No examples found.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: impose a blockade on</h4>
+
+<ul>
+<li>Baqouba was sealed off yesterday as U.S. forces lost control of it.</li>
+<li>Uzbek security forces have sealed off the centre of Andijan city.</li>
+<li>The authorities sealed off the villages as bird flu reached the capital.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: affix a seal to</h4>
+
+<ul>
+<li>My Parents sealed the letter with their own seal, which cannot be broken by any power.</li>
+<li>Maria sealed the letter with Olivia's sealing ring.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

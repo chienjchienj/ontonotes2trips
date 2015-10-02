@@ -1,0 +1,86 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="resolve" hidden/><h2>resolve</h2>
+<h4> 1.1: settle or decide an outcome (A resolves B)</h4>
+
+<ul>
+<li>The judge resolved the case in favor of the plaintiff.</li>
+<li>She was asked to resolve the quarrel between her siblings.</li>
+<li>The storm resolved the issue of where to hold the wedding ceremony.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: solve, find the answer to a problem or question (A resolves the answer to B)</h4>
+
+<ul>
+<li>Thus far, archeologists have not resolved the meaning of those symbols.</li>
+<li>Until he can resolve the difference between his equations and those observations, the theory is not supported.</li>
+<li>Who can resolve what happened before the Big Bang?</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: promise an action; make a resolution</h4>
+
+<ul>
+<li>I'll never resolve to give up coffee.</li>
+<li>The company has resolved to increase health insurance for its employees.</li>
+<li>He resolved to continue his father's mission.</li>
+<li>Nine years ago on New Year's Eve, I resolved to drink more.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: make physically visible, clarify</h4>
+
+<ul>
+<li>Can they resolve these images of Mars more clearly?</li>
+<li>I couldn't resolve her voice in the din of the loud bar.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: break up physically, dissolve</h4>
+
+<ul>
+<li>The stirring will resolve the clumps of sugar in the water.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

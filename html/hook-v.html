@@ -1,0 +1,125 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="hook" hidden/><h2>hook</h2>
+<h4> 1.1: attach or connect</h4>
+
+<ul>
+<li>He hooked a chain to the field cultivator.</li>
+<li>I had my thumbs hooked around the wheel.</li>
+<li>She hooked a standard motor to a pump and ran it for six minutes.</li>
+<li>They hooked him to a heart monitor and transported him to the hospital.</li>
+<li>The houses still need to be hooked up to the power grid.</li>
+<li>I don't think this computer is hooked into the network.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: catch or trap</h4>
+
+<ul>
+<li>Don't get hooked into a bad choice.</li>
+<li>He hooked a 100-pound tarpon but could not land it.</li>
+<li>She hooked him with her seductive wiles.</li>
+<li>She hooked the audience from note one.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: addict</h4>
+
+<ul>
+<li>She's hooked on Net chat.</li>
+<li>He got hooked on heroin during his first tour.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: affilliate (oneself) to someone, often romantically or sexually</h4>
+
+<ul>
+<li>Since he hooked up with Angelina I dont have any respect for him.</li>
+<li>She hooked up with a new band in Nashville.</li>
+<li>The manager hooked him up with a prominent talent agency.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: (cause to) travel in the shape of a hook</h4>
+
+<ul>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: hit with a particular kind of punch</h4>
+
+<ul>
+<li>As Hammer came tearing in, Leonard hooked him with a right to the body.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: sell sexual favors</h4>
+
+<ul>
+<li>She started hooking when she was only 14.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: create objects by manipulating yarn with a hook</h4>
+
+<ul>
+<li>She likes to hook more than dye and is always anxious to get started on the next project.</li>
+<li>Rhonda Richardson designed and hooked the purse.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: take by theft, rip off</h4>
+
+<ul>
+<li>no examples found</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

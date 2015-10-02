@@ -1,0 +1,108 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="boil" hidden/><h2>boil</h2>
+<h4> 1.1: (Cause to) come to the boiling point and change from liquid to vapor.</h4>
+
+<ul>
+<li>Water boils at 100 degrees Celcius.</li>
+<li>The sauce should boil down to one cup.</li>
+<li>The chef boiled down the sauce by cooking it for a long time.</li>
+<li>I boiled the water to purify it.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: Immerse or be immersed in a boiling liquid, for purposes of cooking or processing.</h4>
+
+<ul>
+<li>The chef boiled the potatoes.</li>
+<li>Factory workers boil the wool in preparation for drying and spinning.</li>
+<li>They extracted confessions by boiling prisoners alive.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: Be agitated.</h4>
+
+<ul>
+<li>The sea boiled in the storm.</li>
+<li>The skies boiled with dark, swirling clouds.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: Be agitated in an emotional state.</h4>
+
+<ul>
+<li>The customer was boiling with anger.</li>
+<li>Anger boiled inside the customer.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: BOIL DOWN: be the essential element</h4>
+
+<ul>
+<li>The proposal boils down to a compromise.</li>
+<li>The whole novel boils down to an insecure, highschool fantasy.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: BOIL OVER: (cause to) overflow while boiling.</h4>
+
+<ul>
+<li>The milk is boiling over.</li>
+<li>Charles' negligence caused the rice to boil over.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: BOIL OVER: (Cause) an emotional state to become apparent or acted upon; (cause) a situation to change state or status by (emotional) will.</h4>
+
+<ul>
+<li>His anger boiled over and he began to beat his opponent.</li>
+<li>A long-running controversy over the publication of caricatures of the</li>
+<li>Prophet Muhammad by a Danish newspaper boiled over in the past few</li>
+<li>days.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

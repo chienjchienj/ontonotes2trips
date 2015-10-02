@@ -1,0 +1,260 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="keep" hidden/><h2>keep</h2>
+<h4> 1.1: maintain or preserve a particular condition, state, or activity</h4>
+
+<ul>
+<li>The negotiators managed to keep their cool through the crisis.</li>
+<li>They kept radio silence for two hours.</li>
+<li>She kept mum about the party.</li>
+<li>She managed to keep back her tears.</li>
+<li>The ship's log needs to be kept up-to-date.</li>
+<li>The work in that class will keep you on your toes.</li>
+<li>He kept his family alive that winter by hunting deer and rabbit.</li>
+<li>The software giant complained that the EU kept changing the rules for compliance.</li>
+<li>She kept going despite her fatigue.</li>
+<li>His cryptic remark kept her guessing all day.</li>
+<li>This matter will keep until the morning.</li>
+<li>That chocolate cake will not keep long!</li>
+<li>The filter keeps down the dust in this room.</li>
+<li>They kept open the possibility of a merger.</li>
+<li>Keep up the good work!</li>
+<li>That cup of coffee kept me up until 3 in the morning.</li>
+<li>He tries to keep off drugs.</li>
+<li>The trees keep out the sunshine.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: retain ownership, access or title to something" group="1"></h4>
+
+<ul>
+<li>Keep the change.</li>
+<li>We need to keep some cash for a rainy day.</li>
+<li>Can I keep my email address after I graduate?</li>
+<li>She kept her maiden name when she got married.</li>
+<li>The deposed monarch was allowed to keep his personal servants and cook.</li>
+<li>He's keeping an adjunct position at the university while working for a start-up.</li>
+<li>After the stock market bust, they couldn't keep both their weekend cottage and their sail boat.</li>
+<li>They kept back the security deposit until they could inspect the apartment.</li>
+<li>These bankers always kept in hand part of the money they received.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: retain something in a particular place or position</h4>
+
+<ul>
+<li>Where do you keep your coffee grinder?</li>
+<li>They never kept guns in their house.</li>
+<li>John can't keep this much food in his small refrigerator.</li>
+<li>Keep these knives out of harms way in a drawer.</li>
+<li>Her company keeps old email on backup DVDs.</li>
+<li>Keep your hands in your pocket for warmth.</li>
+<li>Doctor adviced me to keep my foot on ice for a few minutes.</li>
+<li>He kept goats in his back yard, despite the zoning laws.</li>
+<li>You must build structures if you are going to keep bees properly.</li>
+<li>The deputy minister kept a mistress in his New York penthouse.</li>
+<li>She keeps an apartment in Paris for her shopping trips.</li>
+<li>Those two need to be kept apart.</li>
+<li>They could not keep the reporters away from the crime scene.</li>
+<li>Will you please keep your voices down?</li>
+<li>Keep off the grass!</li>
+<li>The cats need to be kept in tonight.</li>
+<li>The teacher recommended that Johnny be kept back a grade.</li>
+<li>Polly was kept after school twice this week for distrupting class.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: restrain or prevent from doing something</h4>
+
+<ul>
+<li>What has been keeping them (from coming) for so long?</li>
+<li>Nothing could keep me from falling asleep last night.</li>
+<li>The senator couldn't keep from reminding everyone that he had first proposed that bill two years earlier.</li>
+<li>They bought back enough stock to keep their competitor from buying them out.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: conform to, honor</h4>
+
+<ul>
+<li>He always keeps his promises.</li>
+<li>The firm has kept to the original conditions of the contract.</li>
+<li>Can you keep a secret?</li>
+<li>She taught her children to keep the sabbath.</li>
+<li>Sally isn't keeping her vow to stop smoking.</li>
+<li>Their commune decided to start keeping Druid holidays.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: care for, sustain, look after</h4>
+
+<ul>
+<li>I keep the shop for Mary while she picks up her children from daycare.</li>
+<li>Good luck and may God keep you!</li>
+<li>There's little to earn and many to keep.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: observe, follow along, synchronize, track</h4>
+
+<ul>
+<li>How do you keep time around the world?</li>
+<li>We don't keep track of the news anymore.</li>
+<li>Who is keeping score?</li>
+<li>During the audit they discovered that the accountant had kept sloppy records.</li>
+<li>She kept up with all the latest fashion trends.</li>
+<li>Bob could not keep up with the class assignments.</li>
+<li>She read three newspapers a day to keep abreast of current events.</li>
+<li>The boy tried to keep step with his father.</li>
+<li>The detective kept tabs on the suspect.</li>
+<li>He kept an eye on their progress.</li>
+<li>She kept note of how often Sally took a coffee break.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8.1: KEEP COMPANY: accompany.</h4>
+
+<ul>
+<li>Why don't you keep me company while I run this errand?</li>
+<li>The dogs keep each other company.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8.1" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.8.2: KEEP GUARD: protect.</h4>
+
+<ul>
+<li>The jewels over which they kept guard were stolen.</li>
+<li>Many watchmen keep guard over the Queen.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.8.2" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.8.3: KEEP IN LINE: make to behave (in a certain way).</h4>
+
+<ul>
+<li>That teacher cannot seem to keep her children in line.</li>
+<li>Keep in line!</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.8.3" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.8.4: KEEP ONE'S EYES PEELED: continually watch for something.</h4>
+
+<ul>
+<li>Keep your eyes peeled for a gas station.</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.8.4" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      
+<h4> 1.8.5: KEEP ONE'S EYES OPEN: continually watch for something.</h4>
+
+<ul>
+<li>Keep your eyes open for deer on the road.</li>
+</ul>
+
+<input type="text" name="annotation[results][11][id]" value="1.8.5" hidden />
+<input type="text" name="annotation[results][11][trips]" value="" visible/>
+      
+<h4> 1.8.6: KEEP ONE'S EYES SKINNED: continually watch for something.</h4>
+
+<ul>
+<li>We should keep our eyes skinned for roadblocks ahead.</li>
+</ul>
+
+<input type="text" name="annotation[results][12][id]" value="1.8.6" hidden />
+<input type="text" name="annotation[results][12][trips]" value="" visible/>
+      
+<h4> 1.8.7: KEEP ONE'S HANDS OFF: refrain from touching.</h4>
+
+<ul>
+<li>Keep your hands off my sister!</li>
+</ul>
+
+<input type="text" name="annotation[results][13][id]" value="1.8.7" hidden />
+<input type="text" name="annotation[results][13][trips]" value="" visible/>
+      
+<h4> 1.8.8: KEEP ONE'S EYES OFF: refrain from looking at.</h4>
+
+<ul>
+<li>Keep your eyes off my car.</li>
+</ul>
+
+<input type="text" name="annotation[results][14][id]" value="1.8.8" hidden />
+<input type="text" name="annotation[results][14][trips]" value="" visible/>
+      
+<h4> 1.8.9: KEEP TO ONESELF: generally remain quiet and self-centered.</h4>
+
+<ul>
+<li>Johnny always kept to himself in class.</li>
+</ul>
+
+<input type="text" name="annotation[results][15][id]" value="1.8.9" hidden />
+<input type="text" name="annotation[results][15][trips]" value="" visible/>
+      
+<h4> 1.8.10: KEEP ONE'S SHOULDER TO THE WHEEL: keep working.</h4>
+
+<ul>
+<li>We must keep our shoulder to the wheel to finish this project.</li>
+</ul>
+
+<input type="text" name="annotation[results][16][id]" value="1.8.10" hidden />
+<input type="text" name="annotation[results][16][trips]" value="" visible/>
+      
+<h4> 1.8.11: KEEP ONE'S NOSE TO THE GRINDSTONE: keep working.</h4>
+
+<ul>
+<li>She kept her nose to the grindstone to finish school.</li>
+</ul>
+
+<input type="text" name="annotation[results][17][id]" value="1.8.11" hidden />
+<input type="text" name="annotation[results][17][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,59 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="abandon" hidden/><h2>abandon</h2>
+<h4> 1.1: forsake, give up, leave behind</h4>
+
+<ul>
+<li>We abandoned the old car in the empty parking lot.</li>
+<li>He abandoned the thought of asking for her hand in marriage.</li>
+<li>The mother abandoned her husband and children.</li>
+<li>Frightened people abandoned the house and fled to another.</li>
+<li>As she sticks with that path, the fetters are abandoned, the obsessions destroyed.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: give up authority or control over</h4>
+
+<ul>
+<li>The genie abandoned Gamali to his own fate.</li>
+<li>Abandon your life to God.</li>
+<li>He abandoned himself to his grief.</li>
+<li>The young King abandoned himself entirely to pleasure.</li>
+<li>He abandoned himself hopelessly to his mad and consuming passion for her.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

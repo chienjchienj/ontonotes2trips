@@ -1,0 +1,122 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="buy" hidden/><h2>buy</h2>
+<h4> 1.1: use something to acquire goods; obtain through trade or transaction</h4>
+
+<ul>
+<li>The family bought a new car..</li>
+<li>According to his official biography, he bought his first bison in 1976.</li>
+<li>Should I fire him because he bought his degree from the internet instead of attending a regular university?</li>
+<li>She wanted to buy his love with her dedication to him and his work.</li>
+<li>Money can't buy me love.</li>
+<li>My mom's boyfriend would try to buy my trust by taking us out to eat.</li>
+<li>Novell, under pressure, will buy back its stock.</li>
+<li>I think my used car was bought back once by the manufacturer and the dealer didn't tell me when I bought it.</li>
+<li>Businessmen opposed to the Vietnam war tried to buy time for anti-war spots on a radio station.</li>
+<li>A New Hampshire Poll and Two Dollars Will Buy You a Cup of Coffee.</li>
+<li>No amount of money can buy you safety.</li>
+<li>The insurance premium you forego will buy you a pretty good road bike.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: bribe, make payments to in exchange for benefits</h4>
+
+<ul>
+<li>He can be bought off, but only on his terms.</li>
+<li>So why not buy off the IRA by sacrificing the Royal Ulster Constabulary?</li>
+<li>This judge can be bought.</li>
+<li>If you don't like the lectures, you can always try to buy off the professor.</li>
+<li>Offering money to buy off our enemies would just create an incentive for others to become our enemies.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: accept as true</h4>
+
+<ul>
+<li>Don't buy into wrong ideas about oil!</li>
+<li>And if you buy that, I've got a bridge to sell you.</li>
+<li>I can't buy that Marlena is so weak and stupid that she thinks it's not even worth some effort to escape to reunite with her family.</li>
+<li>I could not believe he bought my story!</li>
+<li>You think he bought the line about the sick roommate?</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: invest</h4>
+
+<ul>
+<li>He bought into several companies with the money he had inherited.</li>
+<li>More and more foreign firms are buying into China.</li>
+<li>For investors who bought into it in September 1991, the stock had suffered a value erosion of 66 per cent in value by September 2001.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: be killed; die</h4>
+
+<ul>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: take over ownership of</h4>
+
+<ul>
+<li>German car giant Volkswagen plans to buy out its Chinese partners.</li>
+<li>It is believed that in a major shift in strategy, HDFC may buy out Tata Sons.</li>
+<li>Foreign central banks are buying up ever more of America Reuters.</li>
+<li>The developer plans to buy up golf course for homes.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: stall, delay</h4>
+
+<ul>
+<li>A provisional patent is primarily viewed as a mechanism to buy time.</li>
+<li>Insulin pumps can buy time until transplant therapy arrives.</li>
+<li>Time spent on process now will buy you time as the semester unfolds.</li>
+<li>During the final weeks of her life we tried to buy time with her by making her get out of bed and walk around the house.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

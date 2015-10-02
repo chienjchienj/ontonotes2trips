@@ -1,0 +1,127 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="read" hidden/><h2>read</h2>
+<h4> 1.1: look at and grasp the meaning of written materials</h4>
+
+<ul>
+<li>I don't have time to read novels.</li>
+<li>Have you read Tom Clansy?</li>
+<li>Can you read Chinese?</li>
+<li>Teach me to read Braille.</li>
+<li>He has a very bad sense of direction and can't read maps.</li>
+<li>Where you see "male" read "female."</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: contain or have a specific wording or information</h4>
+
+<ul>
+<li>We just passed a sign that reads DANGER.</li>
+<li>The law reads as follows.</li>
+<li>Let us see how this passage reads in all three canonical Greek.</li>
+<li>The thermometer read forty degrees in the shade.</li>
+<li>Recite the poem exactly as it reads.</li>
+<li>As the law reads, defendant is guilty.</li>
+<li>How does you new watch read?</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: attribute a certain interpretation or meaning to</h4>
+
+<ul>
+<li>She read the sky and predicted rain.</li>
+<li>I can't read his strange behavior.</li>
+<li>I can read your mind like an open book.</li>
+<li>She's so hard to read.</li>
+<li>I read this address as satire.</li>
+<li>Read this novel as a parable.</li>
+<li>I read her words differently than you did.</li>
+<li>I can read abandonment in a broken door or shattered window.</li>
+<li>The tracker read the trail for signs of game.</li>
+<li>Read between the lines to discover the truth.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: utter or render out loud a written material, perhaps as an audition.</h4>
+
+<ul>
+<li>The King will read the proclamation at noon.</li>
+<li>The teacher is reading the poem to the students.</li>
+<li>We read to the children every night.</li>
+<li>He read for the part.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: obtain data from a medium</h4>
+
+<ul>
+<li>(Computer Science)</li>
+<li>Can your program read this file?</li>
+<li>The computer can't read this disk.</li>
+<li>Nano-wires have been used to read DNA efficiently.</li>
+<li>Read and translate the codons on m-RNA into the appropriate amino acid.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: study or get knowledge</h4>
+
+<ul>
+<li>She is reading for the Bar.</li>
+<li>They are both reading history at Cambridge.</li>
+<li>I read that the interest rates would continue to rise.</li>
+<li>We read about earthquakes in school today.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: receive audio (as in over radio)</h4>
+
+<ul>
+<li>Do you read me?</li>
+<li>I read you loud and clear.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

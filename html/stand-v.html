@@ -1,0 +1,259 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="stand" hidden/><h2>stand</h2>
+<h4> 1.1: (cause to) assume upright position</h4>
+
+<ul>
+<li>We had to stand for the entire performance.</li>
+<li>When it stood upright, it was about twice the height of an elephant.</li>
+<li>It stood on its hind legs, and belted out the British national anthem.</li>
+<li>When we are standing, the spine naturally curves both inwards and outwards.</li>
+<li>Can you stand the bookshelf up?</li>
+<li>Stand the tamales up in a large steamer or colander with the pinched end up.</li>
+<li>The dog's hair stood up on end as he growled at us.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: (cause to) be in a particular location</h4>
+
+<ul>
+<li>Trade deficit with India stands at $10 million.</li>
+<li>We all stand on the shoulders of giants.</li>
+<li>I want to stand as close to the edge as I can without going over.</li>
+<li>We stand at the intersection of computers and humanism.</li>
+<li>The bookshelf stood in the corner.</li>
+<li>Stand the bookshelf in the corner.</li>
+<li>The castle stands on a hill.</li>
+<li>Where do you stand on this issue?</li>
+<li>Do not use your septic system when surface water is standing on the field.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: have a particular attribute or feature; be in a particular state</h4>
+
+<ul>
+<li>She stands 6 feet tall.</li>
+<li>I stand corrected.</li>
+<li>The house stood empty for years.</li>
+<li>You stand accused of murder, how do you plead?</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: endure, persist or tolerate</h4>
+
+<ul>
+<li>Supermarkets stand the test of time.</li>
+<li>This love won't stand the test of time.</li>
+<li>If you can't stand the heat, get out of the kitchen.</li>
+<li>Those shoes really stand up to a lot of wear and tear.</li>
+<li>Our football team has stood up to adversity a lot this season.</li>
+<li>He stood up to the racial taunts.</li>
+<li>I'm standing my ground and I won't give in!</li>
+<li>Whether you like it or not, the rule stands.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: male domestic animals such as stallions serve selected females</h4>
+
+<ul>
+<li>Muscles Yankee will retire from racing to stand stud at Perretti Farms in Cream Ridge.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: be in a position to do something</h4>
+
+<ul>
+<li>I could stand to lose a few more pounds.</li>
+<li>If rates rise, you stand to receive less than you paid.</li>
+<li>Everyone could stand to conserve energy.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7.1: stand back</h4>
+
+<ul>
+<li>Stand back! Or I will be forced to make my upper thighs look blotchy!</li>
+<li>He stood back to look at her.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7.1" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.7.2: Be loyal, unwavering</h4>
+
+<ul>
+<li>She stood by her husband in times of trouble.</li>
+<li>Shortage looming, yet nurses stand fast.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.7.2" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.7.3: Stand firm</h4>
+
+<ul>
+<li>Stand firm! Don't let them intimidate you!</li>
+<li>I agree we should stand firm behind the president.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.7.3" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.7.4: Signify, mean, symbolize</h4>
+
+<ul>
+<li>What does the Statue of Liberty stand for?</li>
+<li>T stands for Tab.</li>
+<li>An 'h' in Greek stands for an 's' in Latin.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.7.4" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.7.5: Watch over as to protect</h4>
+
+<ul>
+<li>The jewels over which they stood guard were stolen.</li>
+<li>We must stand sentinel to protect ourselves.</li>
+<li>Tech saavy staff stand watch over their networks.</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.7.5" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      
+<h4> 1.7.6: Stand pat</h4>
+
+<ul>
+<li>Look for the Lakers to stand pat as the NBA trade deadline looms.</li>
+</ul>
+
+<input type="text" name="annotation[results][11][id]" value="1.7.6" hidden />
+<input type="text" name="annotation[results][11][trips]" value="" visible/>
+      
+<h4> 1.7.7: Stand still</h4>
+
+<ul>
+<li>Please stand still with your feet together for 10 minutes.</li>
+</ul>
+
+<input type="text" name="annotation[results][12][id]" value="1.7.7" hidden />
+<input type="text" name="annotation[results][12][trips]" value="" visible/>
+      
+<h4> 1.7.8: Arise, get up, be upright</h4>
+
+<ul>
+<li>We had to stand up for the entire performance.</li>
+<li>Can you stand the bookshelf up?</li>
+<li>My hair stood up when I saw the bear.</li>
+</ul>
+
+<input type="text" name="annotation[results][13][id]" value="1.7.8" hidden />
+<input type="text" name="annotation[results][13][trips]" value="" visible/>
+      
+<h4> 1.7.9: Refuse to back down, resist, hold water</h4>
+
+<ul>
+<li>He stood up for his friend.</li>
+<li>The balloon theory won't stand up.</li>
+</ul>
+
+<input type="text" name="annotation[results][14][id]" value="1.7.9" hidden />
+<input type="text" name="annotation[results][14][trips]" value="" visible/>
+      
+<h4> 1.7.10: Stand in</h4>
+
+<ul>
+<li>She will stand in for the President in case of absence.</li>
+</ul>
+
+<input type="text" name="annotation[results][15][id]" value="1.7.10" hidden />
+<input type="text" name="annotation[results][15][trips]" value="" visible/>
+      
+<h4> 1.7.11: Distinguish oneself, be noticable</h4>
+
+<ul>
+<li>He stood out as a beacon of humility.</li>
+<li>She stands out because she's never been afraid to speak her mind.</li>
+</ul>
+
+<input type="text" name="annotation[results][16][id]" value="1.7.11" hidden />
+<input type="text" name="annotation[results][16][trips]" value="" visible/>
+      
+<h4> 1.7.12: Of ships - steer away from shore</h4>
+
+<ul>
+<li>The ship stood out of the bay.</li>
+</ul>
+
+<input type="text" name="annotation[results][17][id]" value="1.7.12" hidden />
+<input type="text" name="annotation[results][17][trips]" value="" visible/>
+      
+<h4> 1.7.13: Put up with, tolerate</h4>
+
+<ul>
+<li>I won't stand for this kind of behavior!</li>
+</ul>
+
+<input type="text" name="annotation[results][18][id]" value="1.7.13" hidden />
+<input type="text" name="annotation[results][18][trips]" value="" visible/>
+      
+<h4> 1.7.14: Not act or do anything</h4>
+
+<ul>
+<li>He just stood by while the Police beat the demonstrators.</li>
+</ul>
+
+<input type="text" name="annotation[results][19][id]" value="1.7.14" hidden />
+<input type="text" name="annotation[results][19][trips]" value="" visible/>
+      
+<h4> 1.7.15: Stick around, be available</h4>
+
+<ul>
+<li>Stand by for the next installment of this article.</li>
+</ul>
+
+<input type="text" name="annotation[results][20][id]" value="1.7.15" hidden />
+<input type="text" name="annotation[results][20][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,106 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="stick" hidden/><h2>stick</h2>
+<h4> 1.1: adhere, (cause to) stay in place</h4>
+
+<ul>
+<li>Are you sure this wallpaper will stick to the wall?</li>
+<li>The door sticks--we should plane it.</li>
+<li>Stick these labels on the envelopes.</li>
+<li>He stuck his coat in the corner of the room.</li>
+<li>The dog hair really sticks to this sweater.</li>
+<li>Stick around and you'll learn something.</li>
+<li>I'll stick about for a few more hours.</li>
+<li>He stuck the seal on the document.</li>
+<li>She seems stuck on that one problem.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: poke into, pierce, protrude</h4>
+
+<ul>
+<li>She stuck the photo onto the corkboard.</li>
+<li>He stuck the needle into his finger.</li>
+<li>Don't stick your hand out the window!</li>
+<li>Stick your ticket in here.</li>
+<li>He stuck in a reference to his book.</li>
+<li>That nail sticks out from the wall.</li>
+<li>The fuschia lettering really sticks out.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: endure, be loyal</h4>
+
+<ul>
+<li>The label stuck to her for the rest of her life.</li>
+<li>He sticks to his principles.</li>
+<li>Those friends really stick together.</li>
+<li>He stuck by her through her illness.</li>
+<li>She stuck out her term despite the intense criticism.</li>
+<li>Stick with your diet.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: saddle with something disagreeable</h4>
+
+<ul>
+<li>They stuck me with the bill again!</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: STICK UP: defend</h4>
+
+<ul>
+<li>Ralph stuck up for his friend.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: STICK UP: rob at gunpoint</h4>
+
+<ul>
+<li>How many people have you stuck up?</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

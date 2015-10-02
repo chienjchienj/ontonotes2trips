@@ -1,0 +1,68 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="risk" hidden/><h2>risk</h2>
+<h4> 1.1: expose to the chance of damage or loss</h4>
+
+<ul>
+<li>The doctor discussed how he risked his life to uphold the Hippocratic Oath.</li>
+<li>They risked it all when they joined the growing civil rights movement.</li>
+<li>The diplomat risked his family and career to save lives.</li>
+<li>It was not only her life that was risked, but also her son's.</li>
+<li>You are risking not only your health, but your life itself by not doing so.</li>
+<li>Their arrogance risked safety of the mission.</li>
+<li>You will not need to risk a finger for me.</li>
+<li>How many lives are to be risked by unreliable information?</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: invite possibility of negative consequences</h4>
+
+<ul>
+<li>The doctor discussed how he risked death to uphold the Hippocratic Oath.</li>
+<li>The journalist risked imprisonment rather than reveal the identity of his source.</li>
+<li>With every novel, he has risked losing the audience his previous work has built.</li>
+<li>109 Bishops have risked heresy charges for lesbigays.</li>
+<li>From his point of view, he risked his family's disapproval when he married you.</li>
+<li>Everything on package was too suggestive of danger to be risked.</li>
+<li>He risked that he could disable the bank's security by aging the wires.</li>
+<li>Seeing Marek was in such an open mood, I risked a question I had wanted to.</li>
+<li>I nodded and risked a smile. I didn't dare speak.</li>
+<li>No candidate can risk a breath in private before the polls close.</li>
+<li>I not only didn't talk in there, I didn't even risk a whisper.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,79 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="calculate" hidden/><h2>calculate</h2>
+<h4> 1.1: figure out by (numerical) computation</h4>
+
+<ul>
+<li>How do you calculate the area of a circle?</li>
+<li>We must measure and calculate to determine how much paint will be needed.</li>
+<li>The cost of the damage caused by the recent storms has been calculated at 5 million.</li>
+<li>The new tax system would be calculated on the value of property owned by an individual.</li>
+<li>At some stage we need to calculate when the project will be finished.</li>
+<li>He's calculated that it would take him two years to save up enough for a car.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: think or evaluate, judge to be probable</h4>
+
+<ul>
+<li>I calculate he'll never make a farmer.</li>
+<li>Grandma calculated it will rain tomorrow.</li>
+<li>He calculated the impact such behavior would have upon the rest of human history.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: design for a specific purpose</h4>
+
+<ul>
+<li>This line of automobile is calculated to last for years</li>
+<li>It was choice that was calculated to please the public.</li>
+<li>He prepared a speech calculated to reassure investors.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: count or depend on someone or something</h4>
+
+<ul>
+<li>We're calculating on your help.</li>
+<li>We're calculating on about 30 guests.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

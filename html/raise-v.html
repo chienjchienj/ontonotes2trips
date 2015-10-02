@@ -1,0 +1,136 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="raise" hidden/><h2>raise</h2>
+<h4> 1.1: increase</h4>
+
+<ul>
+<li>The cartel raised the price of oil last week.</li>
+<li>Medidation may raise your awareness of being alive.</li>
+<li>The dough raised to twice its original size in three hours.</li>
+<li>He's raising hearts.</li>
+<li>I'll see you and raise you twenty.</li>
+<li>Ten raised to the 100th power is a large number.</li>
+<li>The sunshine and singing birds raised his spirit.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: lift, elevate, orient upwards</h4>
+
+<ul>
+<li>I raised my skirts to step over the mud puddle.</li>
+<li>Raise the flag high!</li>
+<li>Slowly, she raised her eyes up towards the tiny window near the ceiling.</li>
+<li>You need to raise your e's more.</li>
+<li>See how the artist has raised the edges of figures here?</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: express, activate</h4>
+
+<ul>
+<li>They raised their voices to the heavens.</li>
+<li>The hooligans raised hell at the last soccer match.</li>
+<li>Those old time fiddlers really raised the roof last night!</li>
+<li>He is raising a ruckus over that parking ticket.</li>
+<li>He raised the roof when he heard about the tuition increase.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: collect, levy</h4>
+
+<ul>
+<li>They need to raise taxes to finance the war.</li>
+<li>The king raised an army of ten thousand.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: cultivate, nurture</h4>
+
+<ul>
+<li>They raised corn and hogs where I grew up.</li>
+<li>She is basically raising her sister's kids.</li>
+<li>The crops you could raise on this land wouldn't pay enough to raise a family of four.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: invoke, elicit, set off</h4>
+
+<ul>
+<li>The specter of famine has again been raised.</li>
+<li>I couldn't so much as raise a smile out of him.</li>
+<li>I wish she'd stop raising the issue of her rotten marriage.</li>
+<li>They managed to raise Hanoi last night on the shortwave radio.</li>
+<li>You might as well try to raise the dead as get him to change his views.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: advance, better, promote</h4>
+
+<ul>
+<li>She has worked hard to raise the teaching standards at her school.</li>
+<li>They have raised him to the rank of Colonel.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: construct, build</h4>
+
+<ul>
+<li>Will you help us raise the new barn this weekend?</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: end</h4>
+
+<ul>
+<li>They decided to raise the sanctions against that country.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,77 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="slap" hidden/><h2>slap</h2>
+<h4> 1.1: hit with something flat like a paddle or hand; impact as if by hitting.</h4>
+
+<ul>
+<li>I slapped the monkey high five as we drove by.</li>
+<li>Over the years who has slapped the fans the hardest - Marvel or DC?</li>
+<li>The leader slapped the moneylender with the back of his hand.</li>
+<li>His sandles slapped the sidewalk as he ran.</li>
+<li>Investors adjusted as soon as the new interest rate slapped the market.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: put or place haphazardly</h4>
+
+<ul>
+<li>The guy at the deli slapped mustard on my sandwich.</li>
+<li>I got out of class at 9 p.m., so I just slapped dinner together.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: put consequence or criticisms on</h4>
+
+<ul>
+<li>The governor slapped the Illinois casinos with the largest tax rate in the country.</li>
+<li>The doctor slapped Helen on anti-depressants because of her recent breakdown.</li>
+<li>MySpace was slapped down for its apparent disregard for its content.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: dash or cast forcibly towards or away from something</h4>
+
+<ul>
+<li>He slapped the milk out of the woman's hand.</li>
+<li>The child slapped the ball to his partner.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

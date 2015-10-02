@@ -1,0 +1,74 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="share" hidden/><h2>share</h2>
+<h4> 1.1: to have a state or attribute in common with others</h4>
+
+<ul>
+<li>The mechanics may share the same grievances as the pilots' union.</li>
+<li>We share a common grandmother.</li>
+<li>What is this dislike of Americans shared by so many around the world?</li>
+<li>We shared a toast to the success of John's new venture.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: to use or partake of something in conjunction with other users</h4>
+
+<ul>
+<li>We shared a seat on the bus for the whole ride.</li>
+<li>The two firms will be sharing the new chip fabrication facility.</li>
+<li>The child won't share his favorite toy with his little sister.</li>
+<li>Bill doesn't like to share the limelight with anyone.</li>
+<li>We shared a sandwich at the cafe.</li>
+<li>The three partners are sharing the costs of the new venture.</li>
+<li>These small nations would like to share in the current economic prosperity.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: to distribute something to others</h4>
+
+<ul>
+<li>The firm has decided to share this year's profits as dividends.</li>
+<li>At the dinner he shared stories of his childhood.</li>
+<li>Let me share a very funny joke with you.</li>
+<li>We each shared our concerns about my present situation.</li>
+<li>He shared his time, his energy and his retirement years.</li>
+<li>Wilbur shared his lunch, shared his candy and shared his cupcakes with all his friends.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

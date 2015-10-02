@@ -1,0 +1,63 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="add" hidden/><h2>add</h2>
+<h4> 1.1: increase, supplement, enhance, constitute an addition</h4>
+
+<ul>
+<li>She added a personal note to her letter.</li>
+<li>He spoke at length, paused to see our reaction, then added 'I guess that's all'.</li>
+<li>We are going to add a new sun deck to our house.</li>
+<li>I think adding salt would bring out the flavor of this dish.</li>
+<li>We figured, since we're in Europe, let's add on a week on our own dime.</li>
+<li>Computer company ABC added 3/8 to 31 5/8.</li>
+<li>The dark colors in that painting add to the overall somber feeling.</li>
+<li>Salt added to the intense flavor of that dish.</li>
+<li>This adds a light note to the program.</li>
+<li>This paper will add to her reputation.</li>
+<li>Live piano jazz as well as selected background music adds to the experience.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: total, calculate, form an entity</h4>
+
+<ul>
+<li>Please add 12 and 74.</li>
+<li>When I added the bill up, it seemed too high.</li>
+<li>The facts in that case just don't add up.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

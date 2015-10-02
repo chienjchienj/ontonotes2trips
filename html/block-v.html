@@ -1,0 +1,118 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="block" hidden/><h2>block</h2>
+<h4> 1.1: obstruct a passage, signal, or view</h4>
+
+<ul>
+<li>The truck is blocking the road.</li>
+<li>The Cubans blocked the signal of Voice of America.</li>
+<li>Local anesthetic can be used to block nerve activity.</li>
+<li>My nose is so blocked.</li>
+<li>The thick curtain blocked the action on the stage.</li>
+<li>I can't believe he blocked that shot!</li>
+<li>The police have blocked off the room.</li>
+<li>How can we block out this light?</li>
+<li>You have totally blocked up the drain!</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: obstruct an event or the use of something</h4>
+
+<ul>
+<li>His brother blocked his attempts to take over the company.</li>
+<li>We must block his election.</li>
+<li>The courts blocked his access to the funds.</li>
+<li>The Justice Department blocked the merger.</li>
+<li>You are blocking the name of your first wife.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: plan</h4>
+
+<ul>
+<li>The director blocked Act I today.</li>
+<li>We should get together to block out our plan.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: shape a product made of yarn or felt</h4>
+
+<ul>
+<li>You should always block your sweaters after you wash them.</li>
+<li>I can block this hat so it fits your head perfectly.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: shape into blocks</h4>
+
+<ul>
+<li>Block the graphs so we can see the results clearly.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: stamp or emboss with a block</h4>
+
+<ul>
+<li>No examples found.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: secure with a block</h4>
+
+<ul>
+<li>The mechanic blocked the wheels.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: run trains on a block system</h4>
+
+<ul>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

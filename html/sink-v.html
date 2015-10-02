@@ -1,0 +1,137 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="sink" hidden/><h2>sink</h2>
+<h4> 1.1: (cause to) go down below the surface or to bottom of liquid</h4>
+
+<ul>
+<li>We think the ship was sunk by a freak wave.</li>
+<li>Britain sank warships as a gesture of disarmament.</li>
+<li>Four years ago, the canoe sank before it embarked on its maiden voyage.</li>
+<li>The Titanic was a passenger ship which sank (to the bottom of the ocean) in 1912.</li>
+<li>Enemy aircraft sank two battleships.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: (cause to) fall or subside to a lower place, level, or value</h4>
+
+<ul>
+<li>The water in the lake sank several feet during the long, dry summer.</li>
+<li>Sink the bucket into the well and draw water.</li>
+<li>The wounded soldier sank to his knees.</li>
+<li>The exhausted runner sank to the ground.</li>
+<li>The sun glowed red as it sank slowly below the horizon.</li>
+<li>Student numbers have sunk considerably this year.</li>
+<li>Voice sank into a whisper.</li>
+<li>The wind sank toward the evening.</li>
+<li>The dollar sank again yesterday.</li>
+<li>He looked at the huge pile of work on his desk and his heart sank.</li>
+<li>He sank into deep despair when he lost his job.</li>
+<li>The family sank into a state of disgrace.</li>
+<li>The patient is sinking fast.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: (cause to) pass into a specific state or condition</h4>
+
+<ul>
+<li>He sank into Nirvana.</li>
+<li>He sank into a deep sleep, and dreamed no more.</li>
+<li>Once home to an estimated 20000 people, Petra eventually sank into obscurity.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: (cause to) descend into a softer substance</h4>
+
+<ul>
+<li>The legs of the garden chair sank into the soft ground.</li>
+<li>That part of the building has been sinking into the ground for a while now.</li>
+<li>The dog sank her teeth into the ball and ran off with it.</li>
+<li>She sank back into her large cushion.</li>
+<li>I will sink into my bed and sleep for a few hours before going back to work.</li>
+<li>I sank fingers into soft sand.</li>
+<li>A big dog sank its fangs into the thigh of one of Gary's soldiers.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: (cause to) seep into something</h4>
+
+<ul>
+<li>The water is sinking slowly into the ground.</li>
+<li>Smear a little oil on the surface and leave it to sink in.</li>
+<li>Borman gulped as the implications of Putnam's words sank in.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: (cause to) invest, put money or resource into something</h4>
+
+<ul>
+<li>On his advise, we sank money into a new housing project.</li>
+<li>He must have sunk millions into these theaters.</li>
+<li>The Senate recently sank efforts to raise fuel efficiency standards.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: dig or force into ground</h4>
+
+<ul>
+<li>Sinking more wells is the best way of obtaining more clean drinking water.</li>
+<li>The first stage of building the fence is sinking the posts into the ground.</li>
+<li>To construct a cofferdam you need to sink pilings into the seabed.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: sports term: cause a ball to reach the 'goal'</h4>
+
+<ul>
+<li>He sank the putt to force the second playoff hole.</li>
+<li>Chetri flicked the ball to Hossain, who sank the ball in the right corner of the goal.</li>
+<li>He sank the ball, threw a very good changeup and he had his best breaking ball ever.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

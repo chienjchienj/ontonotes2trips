@@ -1,0 +1,82 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="refer" hidden/><h2>refer</h2>
+<h4> 1.1: attribute the cause or source to something else</h4>
+
+<ul>
+<li>They referred the high gains to the timing of their investment.</li>
+<li>He referred his success to her advice.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: make mention of or apply to, classify as, describe</h4>
+
+<ul>
+<li>Metafiction refers to the effect when a story is interrupted to remind the audience of something.</li>
+<li>I am referring to people who talk during movies and buy Spice Girls CDs</li>
+<li>He refers to his professors by their name.</li>
+<li>I heard him refer to her sister as "the princess".</li>
+<li>He always refers to the house as his "refuge".</li>
+<li>In her autobiography she occasionally refers to her unhappy schooldays.</li>
+<li>The new salary scale only refers to company managers and directors.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: direct to a source of help or information</h4>
+
+<ul>
+<li>My doctor referred me to a hospital specialist.</li>
+<li>The High Court has referred the case to the Court of Appeal.</li>
+<li>He referred me to his last employer for a recommendation.</li>
+<li>The reader is constantly referred back to the introduction.</li>
+<li>I referred him to a history book.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: reference or consult for help or information</h4>
+
+<ul>
+<li>He referred to a history book for historical dates.</li>
+<li>Please refer to your syllabus.</li>
+<li>She spoke for an hour without once referring to her notes.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,130 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="dip" hidden/><h2>dip</h2>
+<h4> 1.1: immerse briefly into liquid or container</h4>
+
+<ul>
+<li>Dip the garment into the cleaning solution.</li>
+<li>She dipped her donut into the coffee.</li>
+<li>He dipped into the pool.</li>
+<li>Marta dipped her hand into her purse.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: lower, decrease , or move downward, often momentarily</h4>
+
+<ul>
+<li>The plane dipped and flew on.</li>
+<li>The horse dipped its head.</li>
+<li>The sun dipped below the horizon.</li>
+<li>Stocks dipped for the third day in row today following early signs</li>
+<li>of improvement.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: be in a downward sloping position</h4>
+
+<ul>
+<li>Our property dips towards the river.</li>
+<li>The pass dips down about 2000 feet, and then back up again.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: scoop up, as if with a ladle</h4>
+
+<ul>
+<li>He dipped water out of the container.</li>
+<li>She was dipping soup from the pot.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: DIP INTO: investigate superficially, skim</h4>
+
+<ul>
+<li>I enjoy dipping into Chaucer once in awhile.</li>
+<li>She dipped into psychology briefly while in college.</li>
+<li>I was rather pleased to discover that I had read 50 of them and dipped into another two or three.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: DIP INTO: pull from a resource</h4>
+
+<ul>
+<li>Enron dipped into reserves to drive up earnings.</li>
+<li>We dipped into our savings.</li>
+<li>Cosmo dipped into our booty bank (aka tons of hot guys) to find the hottest mattress moves.</li>
+<li>He had to dip into funds that had been allocated for the initiative's second phase.</li>
+<li>There are also extra toiletries, which I had to dip into when I realized I'd forgotten my razor.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: make candles by immersing wick in wax</h4>
+
+<ul>
+<li>Using original tools and techniques, she dyes wool, weaves, and dips candles.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: disinfect an animal</h4>
+
+<ul>
+<li>We dipped the dog for fleas.</li>
+<li>I rode the horses, herded the cows, and clipped and dipped the sheep.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: switch headlights to a lower beam</h4>
+
+<ul>
+<li>Harry dipped the headlights and the two cars passed in silence.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

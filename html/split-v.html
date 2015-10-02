@@ -1,0 +1,90 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="split" hidden/><h2>split</h2>
+<h4> 1.1: (cause to) divide or separate an entity into parts, sections, or smaller groups</h4>
+
+<ul>
+<li>Split the aubergines in half and cover with breadcrumbs.</li>
+<li>(Aubergines are eggplants. For this recipe, each eggplant is cut in half.)</li>
+<li>I'll split this croissant with you.</li>
+<li>We'll split the prize.</li>
+<li>Why don't we split the project up into stages.</li>
+<li>The teacher split the children into three groups.</li>
+<li>Let's split up into teams.</li>
+<li>The childcare issue has split the employers' group.</li>
+<li>The union executive has split down the middle on what to do next.</li>
+<li>This poem doesn't split up into stanzas very well.</li>
+<li>We split up after the party and each went to our own homes.</li>
+<li>In any case, boards typically get split off from log halves using a froe.</li>
+<li>The species split off from a common ancestor about 7 million years ago.</li>
+<li>A group of extremists split off from the party to form a new group.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: violently rip, burst, or break open</h4>
+
+<ul>
+<li>His trousers split when he tried to jump the fence.</li>
+<li>The woman had split her head open when she was thrown off the horse.</li>
+<li>Panicked shouts split the air.</li>
+<li>A lightning bolt split the night sky.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: discontinue a relationship</h4>
+
+<ul>
+<li>They split up after a year of marriage.</li>
+<li>I'm a 35 yr old male, who recently split up with my fiancee.</li>
+<li>After about a year, the partners split up, each keeping his own clients.</li>
+<li>She split with the regular party organization.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: leave or depart a place</h4>
+
+<ul>
+<li>All the older kids have split to go dancing.</li>
+<li>"I'm bored," said John. "Let's split this joint."</li>
+<li>I'm about ready to split from this place. How 'bout you?</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

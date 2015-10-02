@@ -1,0 +1,73 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="sense" hidden/><h2>sense</h2>
+<h4> 1.1: perceive through the senses</h4>
+
+<ul>
+<li>I sensed the insect land lightly on my ear.</li>
+<li>They were so close, they could sense each other's breaths.</li>
+<li>From time to time I sensed the sound of water cascading over rocks.</li>
+<li>They are instructed to state the first thing that comes into their</li>
+<li>mind after sensing the odor.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: detect a circumstance or situation automatically</h4>
+
+<ul>
+<li>An apparatus for switching connectivity of fans to be sensed includes a primary control board.</li>
+<li>The LM35 sensed the temperature of the resistor.</li>
+<li>A flexible electronic skin that can sense when something is too hot to handle.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: feel or become aware of by intuition</h4>
+
+<ul>
+<li>An interesting theory that is emerging is that the animals sensed</li>
+<li>the tsunami much in advance.</li>
+<li>He felt around the walls, and sensed that magic had been used or was present there.</li>
+<li>I think I just sensed the Collective IQ of the internet go up by a few points.</li>
+<li>I sensed the industry was being taken for a big PR and FUD ride.</li>
+<li>Infants and toddlers can sense when there is excitement, sadness,</li>
+<li>or anxiety in the home.</li>
+<li>Max sensed that his beliefs had been correct all along.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,77 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="load" hidden/><h2>load</h2>
+<h4> 1.1: fill, assign to or burden, add, intensify</h4>
+
+<ul>
+<li>We loaded the gear and took off for the northern woods.</li>
+<li>Abraham loaded the livestock onto the barge.</li>
+<li>With hands trembling he loaded the wafers in the wafer prober.</li>
+<li>He loaded the Griffin with the bottles and took to the sky.</li>
+<li>She loaded up the injured, her son and his nanny, and left Berlin.</li>
+<li>The girl's mother loaded us down with the wealth of the village.</li>
+<li>He loaded the gun with silver bullets. Werewolves beware!</li>
+<li>Her eyes filled up as she loaded the weapon.</li>
+<li>He loaded the film and began to shoot.</li>
+<li>John loaded the punch with alcohol.</li>
+<li>Ezra Pound loaded up each line of poetry with obscure literary</li>
+<li>references.</li>
+<li>To load the stakes even more, Jacobs bet his watch and the title</li>
+<li>to his car.</li>
+<li>Congress loaded the bill with useless provisions.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: BASEBALL: fill up first, second and third base</h4>
+
+<ul>
+<li>DeJardin found himself battling his nerves when he loaded the</li>
+<li>bases.</li>
+<li>He loaded the bases again in the fourth.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: COMPUTERS: start up a saved program</h4>
+
+<ul>
+<li>He loaded the program again; it took 2 minutes.</li>
+<li>Once the program has loaded, scroll down a bit and you'll see the link.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

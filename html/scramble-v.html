@@ -1,0 +1,72 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="scramble" hidden/><h2>scramble</h2>
+<h4> 1.1: do something hurriedly or awkwardly/struggle or clamber</h4>
+
+<ul>
+<li>The child scrambled after the them.</li>
+<li>We managed to scramble over the fence in time.</li>
+<li>She scrambled up the steep hillside and over the rocks.</li>
+<li>He scrambled into his clothes and raced to fetch a doctor.</li>
+<li>As the burning plane landed, the terrified passengers scrambled for the door.</li>
+<li>People are scrambling to buy property before prices rise even further.</li>
+<li>Everyone was scrambling for the best seats in the theatre.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: jumble things in a random order</h4>
+
+<ul>
+<li>She fries sliced potato in olive oil and scrambles the vegetables with feta.</li>
+<li>I scrambled eggs for breakfast.</li>
+<li>The new updates scrambled the contents of my drive!</li>
+<li>I scrambled my stuff together and somehow made it off the bus behind her.</li>
+<li>When the pain signal is scrambled, the message is not received as "pain" at the injury site.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: encode message or change electronic signal</h4>
+
+<ul>
+<li>Indeed it was my private key that scrambled the message.</li>
+<li>Frequency hopping was used during the war to scramble telephone conversations.</li>
+<li>They have the ability to scramble the signals to make listening in by outsiders more difficult.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

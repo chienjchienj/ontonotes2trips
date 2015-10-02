@@ -1,0 +1,79 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="convert" hidden/><h2>convert</h2>
+<h4> 1.1: change from one form or function to another; alter; exchange for an equivalent</h4>
+
+<ul>
+<li>I thought alchemists could convert iron into gold.</li>
+<li>Could we convert the small bedroom into a second bathroom?</li>
+<li>The rebels converted hotels into jails.</li>
+<li>Selenium exhibits photovoltaic action, where light is converted directly into electricity.</li>
+<li>Scientists have discovered how to convert pig manure into crude oil.</li>
+<li>The Jason Bourne series is to be converted into multi-platform games.</li>
+<li>Many of these abstract ideas were converted into genuine working computer programs.</li>
+<li>We convert imagination into reality!</li>
+<li>Could you convert my dollars into pounds?</li>
+<li>He converted his holdings into shares.</li>
+<li>He could have converted his sentence to community service.</li>
+<li>They converted my campaign slogan from 'You know he's right' to 'You know he's nuts.'</li>
+<li>We converted the text into cryptorunes, with each rune standing for an English letter.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: (cause to) adopt a different system, value, or viewpoint</h4>
+
+<ul>
+<li>She converted to Buddhism.</li>
+<li>Nudie Cohn converted from Judaism to Christianity.</li>
+<li>I brought my friends who are not vegetarian and have converted them to tofu-lovers!</li>
+<li>I converted to pharmacology.</li>
+<li>He converted me to pharmacology.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: SPORTS-score points</h4>
+
+<ul>
+<li>They are otherwise good shooters, but for some reason they cannot convert from the free throw line.</li>
+<li>Each time Chicago was able to convert key free throws on the other end.</li>
+<li>The Stampeders would only be able to convert a field goal out of the opportunity.</li>
+<li>It is very difficult to convert into a spare in candlepin bowling.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,62 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="repeat" hidden/><h2>repeat</h2>
+<h4> 1.1: say, write, perform, or do things again, happen again</h4>
+
+<ul>
+<li>Can you repeat what you just said?</li>
+<li>She kept on repeating her request.</li>
+<li>She repeated the exercises every day.</li>
+<li>This stanza repeats after the third stanza.</li>
+<li>The plot repeats itself. Always the same good and evil plot!</li>
+<li>History repeats itself, doesn't it?</li>
+<li>The second movement repeats some of the elements from the first movement.</li>
+<li>He would never repeat the same magic trick again.</li>
+<li>The artist repeats the process to apply beautiful veneer to the surface of the piece.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: echo someone's words, actions or ideas</h4>
+
+<ul>
+<li>When it doubt, just repeat after me: it's only a book!</li>
+<li>Don't repeat what I told you to anyone, you hear?</li>
+<li>That kid won't stop repeating every word I say.</li>
+<li>He isn't original. He just repeats everything his friends say.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

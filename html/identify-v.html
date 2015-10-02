@@ -1,0 +1,65 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="identify" hidden/><h2>identify</h2>
+<h4> 1.1: recognize, point out, distinguish</h4>
+
+<ul>
+<li>The woman could not identify her assailant from the pictures the police showed her.</li>
+<li>From this distance I can only clearly identify the Prudential building.</li>
+<li>The children have to be able to identify the capital of each state.</li>
+<li>We identified his brother as one of the fugitives.</li>
+<li>The prisoner refused to identify any accomplices.</li>
+<li>Russell Crowe was forced to identify himself to police during his morning paddle in a kayak yesterday.</li>
+<li>Scientists believe they have identified a new species of dinosaur.</li>
+<li>Cosmic background radiation was first identified by two engineers trying to reduce noise in telecommunications.</li>
+<li>Cancer researchers have identified a gene that has a significant link to breast cancer.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: associate something with, consider equated with</h4>
+
+<ul>
+<li>I couldn't identify at all with the heroine of this novel.</li>
+<li>Bob identifies himself with the underdog.</li>
+<li>It's an agonizing experience. I really can identify.</li>
+<li>They need to identify better with their customer base.</li>
+<li>Has large brain size been identified with greater intelligence?</li>
+<li>The Cubist movement is identified with Picasso and Braque.</li>
+<li>Our society tends to identify success with financial wealth.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

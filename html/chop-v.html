@@ -1,0 +1,96 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="chop" hidden/><h2>chop</h2>
+<h4> 1.1: Cut at (as if) with a hacking tool (into pieces).</h4>
+
+<ul>
+<li>He chopped the wood into logs for the fire.</li>
+<li>John chopped up his dissertation.</li>
+<li>The chef chopped the meat into small cubes for the stew.</li>
+<li>Bush vows to chop away at logging legislation.</li>
+<li>The killer chopped at his body with a hatchet.</li>
+<li>Our boat chopped through the swells at top speed.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: CHOP DOWN: Cut down.</h4>
+
+<ul>
+<li>George chopped down the cherry tree.</li>
+<li>Land owners began to chop down large acreages of forest.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: CHOP OFF: Remove by or as if by cutting.</h4>
+
+<ul>
+<li>Van Gogh chopped off his own ear.</li>
+<li>The gardener chopped off the dead branch.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: Strike or hit sharply, perhaps as in sport.</h4>
+
+<ul>
+<li>He chopped his opponent ruthlessly.</li>
+<li>When the player chopped his opponent, the team received a five yard penalty.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: Form or shape by chopping.</h4>
+
+<ul>
+<li>The children chopped a hole in the backyard.</li>
+<li>The bullet chopped a large hold in his skull.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: Move suddenly.</h4>
+
+<ul>
+<li>His hand chopped quickly to the right, completing the card trick.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,156 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="clean" hidden/><h2>clean</h2>
+<h4> 1.1: remove dirt, filth or other unwanted substances</h4>
+
+<ul>
+<li>The dentist cleaned my teeth.</li>
+<li>Clean your fingernails before dinner.</li>
+<li>Top-ten Eco-friendly ways to clean the house.</li>
+<li>Clean the spots off the rug.</li>
+<li>He cleaned the wound.</li>
+<li>She cleans house compulsively as her husband starts to spend more time in pubs.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: remove all contents or possession from</h4>
+
+<ul>
+<li>The boys cleaned the sandwich platters of sandwiches.</li>
+<li>Having cleaned the pantry bare of cookies, coffee and bread, we headed for the big city.</li>
+<li>The trees were cleaned of apples by the storm.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: Deprive wholly of money or valuables, may be in gambling</h4>
+
+<ul>
+<li>The other players cleaned him completely.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: Remove feathers, pits, shells, skin, husks</h4>
+
+<ul>
+<li>Clean the grain before milling it.</li>
+<li>Try to clean the fish as soon as possible after removing it from the water.</li>
+<li>Clean the turkey by removing the gizzards, neck, etc.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5.1: CLEAN HOUSE--do housework</h4>
+
+<ul>
+<li>Cinderella sings and dances with mice and birds while she cleans house.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5.1" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.5.2: CLEAN HOUSE--eliminate undesirable elements, reform a situation</h4>
+
+<ul>
+<li>Until someone cleans house in Washington and tosses everyone out, nothing will be accomplished.</li>
+<li>It's a shame that the UN isn't really going to clean house over the Oil For Food scandal.</li>
+<li>Clean your own house first, China tells reform critics.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.5.2" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.5.3: CLEAN OUT--empty completely</h4>
+
+<ul>
+<li>We cleaned out all the drawers.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.5.3" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.5.4: CLEAN OUT--force to leave</h4>
+
+<ul>
+<li>The new boss cleaned out the lazy workers.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.5.4" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.5.5: CLEAN OUT--deprive of money or goods</h4>
+
+<ul>
+<li>The robbers cleaned us out in a couple of hours.</li>
+<li>The Powerball winner says thieves cleaned out his accounts.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.5.5" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.5.6: CLEAN UP--put things in order, remove dirt or filth</h4>
+
+<ul>
+<li>Go clean up your room!</li>
+<li>Do you want to clean up your disk but don't know where to start?</li>
+<li>We need your help to clean up the beach.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.5.6" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.5.7: CLEAN UP--make a profit</h4>
+
+<ul>
+<li>The investor really cleaned up when the stock market went up.</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.5.7" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      
+<h4> 1.5.8: CLEAN UP--make oneself presentable</h4>
+
+<ul>
+<li>Clean up before you go to the party.</li>
+<li>She sure cleans up well!</li>
+</ul>
+
+<input type="text" name="annotation[results][11][id]" value="1.5.8" hidden />
+<input type="text" name="annotation[results][11][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

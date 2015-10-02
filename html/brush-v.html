@@ -1,0 +1,80 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="brush" hidden/><h2>brush</h2>
+<h4> 1.1: rub, clean or groom</h4>
+
+<ul>
+<li>John brushed the hairs from his jacket.</li>
+<li>She brushed the suit before hanging it back in the closet.</li>
+<li>There is advice on how often to brush hair and which brush to use.</li>
+<li>He brushed the crumbs from his shirt.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: touch lightly, sweep</h4>
+
+<ul>
+<li>He brushed the wall lightly.</li>
+<li>Her long skirt brushed the floor.</li>
+<li>Brush the bread lightly with butter.</li>
+<li>Could you please brush powdered sugar on these cupcakes?</li>
+<li>My husband is now brushing elbows with the big bosses.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: bring to a finished, developed or superior state</h4>
+
+<ul>
+<li>He brushed up on his algebra to take the GRE.</li>
+<li>Girl, you need to brush up your acting skills.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: disregard or reprimand</h4>
+
+<ul>
+<li>U.S. Secretary of State disputed a report that she brushed off the</li>
+<li>head of the CIA.</li>
+<li>The Roman Emperor brushed off the threats of the Visigoths.</li>
+<li>Questions about war cannot be brushed aside.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

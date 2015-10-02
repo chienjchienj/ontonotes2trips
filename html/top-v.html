@@ -1,0 +1,123 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="top" hidden/><h2>top</h2>
+<h4> 1.1: exceed or surpass, go beyond, be greater than something</h4>
+
+<ul>
+<li>Profits this year topped 500 million dollars.</li>
+<li>She topped her performance of last year.</li>
+<li>Record attendance 2000 was surpassed in 2001, then topped again in 2002.</li>
+<li>It hasn't been too long since my daily hit numbers topped over the hundred-per-day mark</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: reach or cause to reach the highest point, best something</h4>
+
+<ul>
+<li>It topped the charts for 9 weeks, becoming the longest stay at the top all decade.</li>
+<li>She tops her class every year.</li>
+<li>Dell tops the market in PCs.</li>
+<li>Trying to decide if a career change is in order tops my priorities.</li>
+<li>The hikers topped the mountain just before noon.</li>
+<li>Bids for the painting topped out at $50 million.</li>
+<li>That really topped my joy, y'all.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: be located at or on top of something</h4>
+
+<ul>
+<li>Top the bread with a layer of melted cheese.</li>
+<li>A start tops our Christmas tree.</li>
+<li>The towers were topped with conical roofs.</li>
+<li>I ate garlic sesame seed sauce, topped over a hearty bowl of Chinese noodles.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: cut the upper part off something</h4>
+
+<ul>
+<li>Top the carrot before cutting it into strips.</li>
+<li>Many people mistakenly believe that topping trees will reduce storm damage.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: make a finish, end or conclusion</h4>
+
+<ul>
+<li>They topped off their dinner with a cognac.</li>
+<li>More flowers, cake, and balloons topped off the day.</li>
+<li>Top the celebration with your gift to Daddy with this bouquet of white roses.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: strike the upper part of a ball giving it forward spin</h4>
+
+<ul>
+<li>He addressed the ball, took his back swing, but, alack and alas, he topped it again.</li>
+<li>I had topped the ball, trickling it a few yards down the fairway.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: fill (usually liquid) to the rim</h4>
+
+<ul>
+<li>Carefully top the glass up with tequila, trying to avoid mixing up the Tabasco.</li>
+<li>Make sure you top the tank with boiled tap water.</li>
+<li>Do you top off your gas tank and overfill it?</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: give up something just as one reaches success</h4>
+
+<ul>
+<li>The financial consultant topped out at age 40 because he was burned out.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

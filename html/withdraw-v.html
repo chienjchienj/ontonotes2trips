@@ -1,0 +1,87 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="withdraw" hidden/><h2>withdraw</h2>
+<h4> 1.1: remove to or from a place or situation</h4>
+
+<ul>
+<li>Last year, I had to withdraw indefinitely from school.</li>
+<li>The enemy troops withdrew to the border.</li>
+<li>See how the tide has withdrawn to that line of rocks?</li>
+<li>Let's withdraw to the library for some privacy.</li>
+<li>Quietly, I withdrew myself from the room.</li>
+<li>He is withdrawing from competitive skiing.</li>
+<li>She'll be withdrawing from her position as CEO next year.</li>
+<li>After his wife died he withdrew into a life of solitude.</li>
+<li>Newsman later withdrew from his earlier position calling it premature.</li>
+<li>After the accident, he withdrew into himself and refused to talk.</li>
+<li>The robbers withdrew several bags of gold into the van.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: recall or take back something</h4>
+
+<ul>
+<li>The FDA is withdrawing several allergy drugs from the market.</li>
+<li>She vowed never to withdraw her accusations of him.</li>
+<li>The Minister duly apologized unreservedly and withdrew his remarks unconditionally.</li>
+<li>The UN has withdrawn its troops from the country.</li>
+<li>Eleven million bottles of water had to be withdrawn from sale due to a health scare.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: tap a resource</h4>
+
+<ul>
+<li>The child was withdrawing water from the town well.</li>
+<li>He withdrew too much money from his checking account last month.</li>
+<li>That nation has probably withdrawn more than half its oil supply.</li>
+<li>I just withdrew fifty dollars from my account.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: reveal or produce</h4>
+
+<ul>
+<li>He withdrew a knife from his pocket.</li>
+<li>The magician will now withdraw a rabbit from his hat.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

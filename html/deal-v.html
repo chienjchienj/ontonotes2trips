@@ -1,0 +1,108 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="deal" hidden/><h2>deal</h2>
+<h4> 1.1: handle or manage, exert some control over</h4>
+
+<ul>
+<li>How are we going to deal with this problem?</li>
+<li>She deals with problems as simple as migraines or as complex families falling apart.</li>
+<li>He works hard to gain an understanding of the information that he deals with every day.</li>
+<li>Both teams dealt with poor weather conditions.</li>
+<li>I think that I have dealt with not having a drink for eight months.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: interact with others and within society</h4>
+
+<ul>
+<li>This job requires good problem solving ability, verbal and written communication skills, and the ability to deal with others.</li>
+<li>Too many people lead unhappy lives due to an inability to deal with others.</li>
+<li>The spanked children then imitate parental anger when they deal with other children.</li>
+<li>The depression left me with not wanting to deal with my family or friends.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: consider, address, look at, focus on a particular topic</h4>
+
+<ul>
+<li>The report dealt with the national efforts to implement the Convention against Torture.</li>
+<li>Here we deal with the following case.</li>
+<li>A number of global reports produced by ILO have dealt with poverty.</li>
+<li>This book deals with alcohol and drug abuse.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: distribute or portion out</h4>
+
+<ul>
+<li>The cook came with the dishes and dealt out the rations.</li>
+<li>This is the water which all the estates receive in turn, dealt out to them on regular days.</li>
+<li>Bad provisions, bad water, and scanted rations were dealt to the prisoners.</li>
+<li>Unfortunately fate has dealt a cruel blow and we have little choice but to move on.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: distribute to players in a game</h4>
+
+<ul>
+<li>Just because Fate doesn't deal you the right cards, it doesn't mean you should give up.</li>
+<li>A total of four cards are initially dealt by the dealer or a player in the game.</li>
+<li>He dealt me the King of Spades.</li>
+<li>The game begins with each player being dealt a "loyalty" card.</li>
+<li>You play the hand you're dealt.</li>
+<li>The number of bones dealt at start of the game varies in different parts of the world.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: sell</h4>
+
+<ul>
+<li>People have sent us a clear message they do not want people who deal drugs to live among them.</li>
+<li>The state stripped him of both his business license and his license to deal cars.</li>
+<li>People who deal in marijuana are likely to deal in other illicit drugs.</li>
+<li>Later he dealt arms in Latin America.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

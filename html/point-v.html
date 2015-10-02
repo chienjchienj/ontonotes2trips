@@ -1,0 +1,89 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="point" hidden/><h2>point</h2>
+<h4> 1.1: indicate or draw attention to something</h4>
+
+<ul>
+<li>They pointed to the gun lying on the ground.</li>
+<li>Watch where I'm pointing!</li>
+<li>The growing deficit was pointed out by the senator.</li>
+<li>Shortness of breath may point to a more serious underlying ailment.</li>
+<li>The sign pointed the way to London.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: orient or aim something</h4>
+
+<ul>
+<li>She pointed her dart carefully at the opposite wall.</li>
+<li>He pointed his horse towards the setting sun and galloped away.</li>
+<li>Tighten the jib sheet if you plan to point the ship this close into the wind.</li>
+<li>That sailboat stalled because it was pointing too close into the wind.</li>
+<li>The gun points with ease.</li>
+<li>Please point your mouth at me when you speak.</li>
+<li>His criticism was pointed only at her acting ability.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: tag or mark texts to supply additional information</h4>
+
+<ul>
+<li>Which scholar pointed these texts?</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: shape something into a point</h4>
+
+<ul>
+<li>The artist pointed the tip of his brush by carefully swirling it.</li>
+<li>That ballerina can really point her toes!</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: repair bricks on a structure</h4>
+
+<ul>
+<li>We paid a lot to have them point our chimney and exterior walls.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

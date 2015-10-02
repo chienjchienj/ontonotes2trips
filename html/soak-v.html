@@ -1,0 +1,95 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="soak" hidden/><h2>soak</h2>
+<h4> 1.1: submerge, cover, or fill (as if) with a liquid</h4>
+
+<ul>
+<li>Soak the bandage in antiseptic for 5 minutes.</li>
+<li>The water has totally soaked through my clothes.</li>
+<li>This industrial sponge soaks up twice the liquid as a regular one.</li>
+<li>Rita loved to soak in the tub for hours.</li>
+<li>The pipe exploded and soaked the carpet.</li>
+<li>Soak your hands in the lotion mixture and they'll come out smooth.</li>
+<li>My anger soaked me, turning me into a beast.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: ask an unreasonable price or leave a guarantee in return for money</h4>
+
+<ul>
+<li>That used car dealer was sure soaking us!</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: beat or punish severly</h4>
+
+<ul>
+<li>Mama soaked me for letting the cat get out.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: make or become drunk</h4>
+
+<ul>
+<li>We soaked Julie at the party last night.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: heat metal prior to working it</h4>
+
+<ul>
+<li>You need a full firing for 30 minutes to soak the metal with heat.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: SOAK UP: take in information readily; devote oneself to a task</h4>
+
+<ul>
+<li>Little children just soak up languages.</li>
+<li>The architect soaked up our ideas, and produced a perfect plan for our new house.</li>
+<li>We soaked up the sights of Philly like a sponge.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

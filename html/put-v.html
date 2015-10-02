@@ -1,0 +1,423 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="put" hidden/><h2>put</h2>
+<h4> 1.1: place or set, physically (or abstractly)</h4>
+
+<ul>
+<li>She is putting the tray of food on the table.</li>
+<li>Winning this game will put them in first place.</li>
+<li>Put the name of the author above the title.</li>
+<li>He put the date of the meeting on his calendar.</li>
+<li>They put her on the varsity team.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: LIGHT VERB--do or perform a specified action</h4>
+
+<ul>
+<li>The rock put a dent in the car's door.</li>
+<li>The government is putting an end to the quota system.</li>
+<li>They put pressure on her to get good grades.</li>
+<li>I put my trust in him.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: to formulate, express, or present something</h4>
+
+<ul>
+<li>I would put that differently.</li>
+<li>He put his argument bluntly to her.</li>
+<li>Several questions were put to the new principal.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: invest, commit</h4>
+
+<ul>
+<li>She puts tremendous energy into her teaching.</li>
+<li>Don't put all your money into technology stocks.</li>
+<li>He put too much time into that project.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: calculate, estimate</h4>
+
+<ul>
+<li>They put the time of the robbery at 6:45 pm.</li>
+<li>I put his height at six feet one inch.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: to subject someone or something</h4>
+
+<ul>
+<li>They really put that car to the test.</li>
+<li>The real estate deal is putting us into debt.</li>
+<li>The smells from the bakery put us in the mood to eat.</li>
+<li>There simply wasn't enough proof to put him on trial.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7.1: express or present something</h4>
+
+<ul>
+<li>She puts across her ideas very clearly.</li>
+<li>He put forward his plan for reorganizing the department.</li>
+<li>Cliff Brun was put forward as a candidate for the position.</li>
+<li>I put him up for teacher of the year.</li>
+<li>He put over the union leaders as hard-working guys.</li>
+<li>She put in that she thought we should meet every week.</li>
+<li>He tried to put in clever remarks wherever he could.</li>
+<li>I put in an application for an NSF grant.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7.1" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.7.2: place or set somewhere</h4>
+
+<ul>
+<li>Please put away your books now.</li>
+<li>He put the camera back where it belongs.</li>
+<li>She put down the basket.</li>
+<li>He put down the passengers in front of the side entrance.</li>
+<li>Put in the key, then turn it.</li>
+<li>We'll need to put on several coats of paint.</li>
+<li>They put up a for-sale sign on their lawn.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.7.2" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.7.3: carry out</h4>
+
+<ul>
+<li>They put on a spectacular performance.</li>
+<li>He put through a new economic plan.</li>
+<li>We need to put this right.</li>
+<li>He put up a good fight.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.7.3" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.7.4: invest or expend</h4>
+
+<ul>
+<li>He put out considerable effort to make that project succeed.</li>
+<li>They put in thousands of dollars to the fund.</li>
+<li>The city put up half the money for the stadium.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.7.4" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.7.5: dupe, fool</h4>
+
+<ul>
+<li>You're putting me on!</li>
+<li>He put one over on her.</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.7.5" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      
+<h4> 1.7.6: imprison</h4>
+
+<ul>
+<li>The murderer will be put away for a good, long time.</li>
+<li>Some criminals repent once they are put behind bars.</li>
+</ul>
+
+<input type="text" name="annotation[results][11][id]" value="1.7.6" hidden />
+<input type="text" name="annotation[results][11][trips]" value="" visible/>
+      
+<h4> 1.7.7: stop using</h4>
+
+<ul>
+<li>It is time to put aside childish things.</li>
+<li>Put aside your books and go out to play.</li>
+<li>He put away his mistress when he tired of her.</li>
+</ul>
+
+<input type="text" name="annotation[results][12][id]" value="1.7.7" hidden />
+<input type="text" name="annotation[results][12][trips]" value="" visible/>
+      
+<h4> 1.7.8: euthanize</h4>
+
+<ul>
+<li>I would never put away my dog just to move into a building with a no-pets rule.</li>
+<li>We had to put our cat to sleep when her cancer got too bad.</li>
+<li>It's sad when someone has to put down a beloved pet.</li>
+</ul>
+
+<input type="text" name="annotation[results][13][id]" value="1.7.8" hidden />
+<input type="text" name="annotation[results][13][trips]" value="" visible/>
+      
+<h4> 1.7.9: eat a lot</h4>
+
+<ul>
+<li>He can really put away those hotdogs!</li>
+</ul>
+
+<input type="text" name="annotation[results][14][id]" value="1.7.9" hidden />
+<input type="text" name="annotation[results][14][trips]" value="" visible/>
+      
+<h4> 1.7.10: cost a certain amount</h4>
+
+<ul>
+<li>That car put us back several thousand dollars.</li>
+</ul>
+
+<input type="text" name="annotation[results][15][id]" value="1.7.10" hidden />
+<input type="text" name="annotation[results][15][trips]" value="" visible/>
+      
+<h4> 1.7.11: insult, demean</h4>
+
+<ul>
+<li>She has no friends because she is always putting people down.</li>
+</ul>
+
+<input type="text" name="annotation[results][16][id]" value="1.7.11" hidden />
+<input type="text" name="annotation[results][16][trips]" value="" visible/>
+      
+<h4> 1.7.12: express in writing; make a record of</h4>
+
+<ul>
+<li>When I put down these poems, I didn't think of myself as a writer.</li>
+<li>Put down your height and weight.</li>
+</ul>
+
+<input type="text" name="annotation[results][17][id]" value="1.7.12" hidden />
+<input type="text" name="annotation[results][17][trips]" value="" visible/>
+      
+<h4> 1.7.13: land an aircraft</h4>
+
+<ul>
+<li>The pilot put down the plane on a grassy field.</li>
+</ul>
+
+<input type="text" name="annotation[results][18][id]" value="1.7.13" hidden />
+<input type="text" name="annotation[results][18][trips]" value="" visible/>
+      
+<h4> 1.7.14: be assertive</h4>
+
+<ul>
+<li>Young ladies these days know how to put themselves forward.</li>
+</ul>
+
+<input type="text" name="annotation[results][19][id]" value="1.7.14" hidden />
+<input type="text" name="annotation[results][19][trips]" value="" visible/>
+      
+<h4> 1.7.15: postpone</h4>
+
+<ul>
+<li>But we have put off this meeting three times already!</li>
+<li>If you ask him about a raise, he'll just put you off.</li>
+<li>We should put over this topic until we meet again.</li>
+</ul>
+
+<input type="text" name="annotation[results][20][id]" value="1.7.15" hidden />
+<input type="text" name="annotation[results][20][trips]" value="" visible/>
+      
+<h4> 1.7.16: cause dislike or inconvenience</h4>
+
+<ul>
+<li>His constant bragging puts people off.</li>
+<li>My parents put me out when they showed up unannounced.</li>
+</ul>
+
+<input type="text" name="annotation[results][21][id]" value="1.7.16" hidden />
+<input type="text" name="annotation[results][21][trips]" value="" visible/>
+      
+<h4> 1.7.17: extinguish, cause to end</h4>
+
+<ul>
+<li>It took three weeks to put out the fire.</li>
+<li>Will you put out the lights?</li>
+<li>The government put down the insurrection.</li>
+</ul>
+
+<input type="text" name="annotation[results][22][id]" value="1.7.17" hidden />
+<input type="text" name="annotation[results][22][trips]" value="" visible/>
+      
+<h4> 1.7.18: thrust or extend out</h4>
+
+<ul>
+<li>He put out his hand and introduced himself.</li>
+<li>Always put your best foot forward.</li>
+</ul>
+
+<input type="text" name="annotation[results][23][id]" value="1.7.18" hidden />
+<input type="text" name="annotation[results][23][trips]" value="" visible/>
+      
+<h4> 1.7.19: install</h4>
+
+<ul>
+<li>They put in a new video conferencing system.</li>
+</ul>
+
+<input type="text" name="annotation[results][24][id]" value="1.7.19" hidden />
+<input type="text" name="annotation[results][24][trips]" value="" visible/>
+      
+<h4> 1.7.20: be sexually active</h4>
+
+<ul>
+<li>He only dates girls with a reputation for putting out.</li>
+</ul>
+
+<input type="text" name="annotation[results][25][id]" value="1.7.20" hidden />
+<input type="text" name="annotation[results][25][trips]" value="" visible/>
+      
+<h4> 1.7.21: make available for sale or consumption</h4>
+
+<ul>
+<li>They put out 35 books a year.</li>
+<li>We put our house up for sale in June.</li>
+</ul>
+
+<input type="text" name="annotation[results][26][id]" value="1.7.21" hidden />
+<input type="text" name="annotation[results][26][trips]" value="" visible/>
+      
+<h4> 1.7.22: baseball--cause to be out</h4>
+
+<ul>
+<li>The shortstop threw to first to put out Johnson.</li>
+</ul>
+
+<input type="text" name="annotation[results][27][id]" value="1.7.22" hidden />
+<input type="text" name="annotation[results][27][trips]" value="" visible/>
+      
+<h4> 1.7.23: anesthetize</h4>
+
+<ul>
+<li>The drug put him out for hours.</li>
+<li>They need to put him under for this surgery.</li>
+</ul>
+
+<input type="text" name="annotation[results][28][id]" value="1.7.23" hidden />
+<input type="text" name="annotation[results][28][trips]" value="" visible/>
+      
+<h4> 1.7.24: preserve, lay aside for future use</h4>
+
+<ul>
+<li>We put in several bales of hay for the horses this winter.</li>
+<li>My mother put up preserves every summer.</li>
+</ul>
+
+<input type="text" name="annotation[results][29][id]" value="1.7.24" hidden />
+<input type="text" name="annotation[results][29][trips]" value="" visible/>
+      
+<h4> 1.7.25: augment</h4>
+
+<ul>
+<li>They put on a sunroom.</li>
+<li>He has really put on weight.</li>
+<li>She put 1,000 miles on the odometer.</li>
+</ul>
+
+<input type="text" name="annotation[results][30][id]" value="1.7.25" hidden />
+<input type="text" name="annotation[results][30][trips]" value="" visible/>
+      
+<h4> 1.7.26: dress, wear clothing</h4>
+
+<ul>
+<li>Put on your coat before going out in this weather.</li>
+</ul>
+
+<input type="text" name="annotation[results][31][id]" value="1.7.26" hidden />
+<input type="text" name="annotation[results][31][trips]" value="" visible/>
+      
+<h4> 1.7.27: connect by telephone</h4>
+
+<ul>
+<li>Put this call through to Tokyo.</li>
+</ul>
+
+<input type="text" name="annotation[results][32][id]" value="1.7.27" hidden />
+<input type="text" name="annotation[results][32][trips]" value="" visible/>
+      
+<h4> 1.7.28: construct</h4>
+
+<ul>
+<li>That crew can put up a house in 3 weeks.</li>
+<li>She put together the committee.</li>
+<li>We need to put together a new plan.</li>
+</ul>
+
+<input type="text" name="annotation[results][33][id]" value="1.7.28" hidden />
+<input type="text" name="annotation[results][33][trips]" value="" visible/>
+      
+<h4> 1.7.29: tolerate</h4>
+
+<ul>
+<li>He puts up with all sorts of nonsense at work.</li>
+</ul>
+
+<input type="text" name="annotation[results][34][id]" value="1.7.29" hidden />
+<input type="text" name="annotation[results][34][trips]" value="" visible/>
+      
+<h4> 1.7.30: provide housing for</h4>
+
+<ul>
+<li>They put up the refugees in the high school gym.</li>
+</ul>
+
+<input type="text" name="annotation[results][35][id]" value="1.7.30" hidden />
+<input type="text" name="annotation[results][35][trips]" value="" visible/>
+      
+<h4> 1.7.31: multi-word expressions</h4>
+
+<ul>
+<li>She's always putting on airs, like she's better than everyone else.</li>
+<li>He put everything on the line when he told her how he felt.</li>
+<li>You should put out feelers for a new job.</li>
+<li>Henry the Eighth put several of his wives to death.</li>
+<li>They were put to work digging ditches.</li>
+</ul>
+
+<input type="text" name="annotation[results][36][id]" value="1.7.31" hidden />
+<input type="text" name="annotation[results][36][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,86 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="lie" hidden/><h2>lie</h2>
+<h4> 1.1: be or become situated, often in a horizontal position</h4>
+
+<ul>
+<li>Your book is lying on the hall table.</li>
+<li>They see nothing lying in the path of a successful IPO for their firm.</li>
+<li>He likes to lie on the sofa and drink a scotch after work.</li>
+<li>As you lie still, the scanner parts revolve around you.</li>
+<li>John decided to lie on the floor because he was dizzy.</li>
+<li>All he does is lie around!</li>
+<li>Sometimes I lay awake at night and wonder.</li>
+<li>Gardai lay in wait to trap post office raiders.</li>
+<li>Your problem lies with these clogged fuel lines.</li>
+<li>The decision of whether or not to bomb the nuclear plant lies with the president.</li>
+<li>Its danger lies in its strident assertions of falsehoods.</li>
+<li>Love many things, for therein lies the true strength.</li>
+<li>Volcanos can lie dormant for thousands of years.</li>
+<li>John wetted his hair to make it lie flat.</li>
+<li>That island lies due west of Panama.</li>
+<li>Let sleeping dogs lie.</li>
+<li>Here lies Billy Brown, lost at sea and never found.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: tell a falsehood or untruth</h4>
+
+<ul>
+<li>The corporate officers may have lied under oath.</li>
+<li>Don't lie to me.</li>
+<li>Mary thinks the papers lie about certain current events.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: be in confinement for childbirth</h4>
+
+<ul>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: have sex, have intercourse</h4>
+
+<ul>
+<li>He lay with women of every class, from rich to poor, and sired many children.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

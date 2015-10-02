@@ -1,0 +1,185 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="draw" hidden/><h2>draw</h2>
+<h4> 1.1: cause to move toward or after; pull</h4>
+
+<ul>
+<li>He drew the wagon up the hill.</li>
+<li>The other ox drew the grist to the mill.</li>
+<li>Then she drew down the mask over her face.</li>
+<li>He drew great benefits from his membership in the association.</li>
+<li>She drew the beads onto the string.</li>
+<li>Norman archers drew their bowstrings only to the chest.</li>
+<li>Please draw the shades.</li>
+<li>Rachel drew a deep breath and dove.</li>
+<li>After a dramatic pause, she drew away the cloth to reveal her masterpiece.</li>
+<li>The nurse drew back the edges of the wound.</li>
+<li>He drew the child close.</li>
+<li>The pilot drew in the landing gear.</li>
+<li>He drew in his stomach and sauntered past the girls.</li>
+<li>She drew on her long gloves.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: attract; cause to move through a force or attraction</h4>
+
+<ul>
+<li>The chairman drew sharp criticism Tuesday from some of the party's core conservatives.</li>
+<li>I refuse to be drawn into their argument.</li>
+<li>This chimney draws pretty well.</li>
+<li>The Fed's interest rate changes drew the market down.</li>
+<li>This pianist draws huge crowds.</li>
+<li>He drew the most walks by a Dodgers player since Shawn Green.</li>
+<li>The material drew together after being washed in hot water.</li>
+<li>He discovered what drew white blood cells to the wound site.</li>
+<li>The leader's charisma drew in scores of followers.</li>
+<li>Their loss drew them together.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: extract, cause to move out from</h4>
+
+<ul>
+<li>She drew on her intelligence and her get-out-of-my-way-bud lifestyle to create the character.</li>
+<li>She drew her gun and fired.</li>
+<li>The participants in the experiment were drawn from a representative sample.</li>
+<li>They drew water from the well each morning.</li>
+<li>He drew $2,000 from the account.</li>
+<li>If the infection was a bad one, the salve drew pus out.</li>
+<li>Draw a card and place it on the table.</li>
+<li>She drew strength from the minister's words.</li>
+<li>They drew pulp from the fruit.</li>
+<li>Can you draw her out? She's always so quiet.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: move oneself, usually steadily</h4>
+
+<ul>
+<li>The ship drew toward the shore.</li>
+<li>Night drew down over the mountains.</li>
+<li>His days were drawing to a close.</li>
+<li>They were neck and neck, then Simpson drew away in the final lap.</li>
+<li>She drew back in horror.</li>
+<li>They drew close to their mother to keep warm.</li>
+<li>The enemy army drew close to our encampment.</li>
+<li>The train drew in to Tokyo station.</li>
+<li>At the word of command from the colonel, the soldiers drew up on the deck as if on parade.</li>
+<li>He drew up in front of the hotel at precisely 11:00.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: cause to extend outward; pull tightly</h4>
+
+<ul>
+<li>He drew her hair throught his fingers.</li>
+<li>They could draw wire as fine as a spider's web.</li>
+<li>Erected in 1912, it was used to draw glass tube for making thermometers.</li>
+<li>I'll draw out the meeting as long as I can.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: create pictures, documents, or representations</h4>
+
+<ul>
+<li>He drew lines in the sand with the stick.</li>
+<li>Gen loved to draw pictures of dogs.</li>
+<li>Alex drew an elaborate plan of attack.</li>
+<li>They met to draw up a blueprint for recapitalization.</li>
+<li>The deed was drawn in the lawyer's office.</li>
+<li>I need to draw up a will.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: formulate in the mind</h4>
+
+<ul>
+<li>You can probably draw a conclusion about how well he scrubs his feet by checking out his soles.</li>
+<li>I'm trying to draw a parallel to systems I have worked with in the past.</li>
+<li>I'd like to answer your question, but I'm just drawing a blank.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: tie</h4>
+
+<ul>
+<li>These teams drew the last time they met in this competition.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: pull apart or disembowel</h4>
+
+<ul>
+<li>He was sentenced to be drawn and quartered for his crimes.</li>
+<li>Draw the chicken and cut it up as for a fricassee.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: require a specified depth for floating</h4>
+
+<ul>
+<li>This boat draws 70 inches.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.11: miscellaneous idioms</h4>
+
+<ul>
+<li>The hunter drew a bead on the rabbit and fired.</li>
+<li>You can borrow my books and CDs, but I draw the line at borrowing my clothes.</li>
+<li>Helen drew rein and her weary horse came to a stop.</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.11" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

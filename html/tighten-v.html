@@ -1,0 +1,76 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="tighten" hidden/><h2>tighten</h2>
+<h4> 1.1: make a concrete thing tight or tighter</h4>
+
+<ul>
+<li>Tighten the straps so they don't rub.</li>
+<li>As he struggled, the ropes tightened even more.</li>
+<li>Harris tightened the lid on the bottle and placed it back in the drawer.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: make an abstract thing tight or more restrictive</h4>
+
+<ul>
+<li>We have tightened the rules on NHS operations so that health tourists now have to pay for treatment.</li>
+<li>They tightened security measures to prevent future escapes.</li>
+<li>The law tightens the border with the neighboring nation.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: make something tighter or completely tight</h4>
+
+<ul>
+<li>Are there any plans to tighten up on advertising controls?</li>
+<li>They tightened up security and access to information.</li>
+<li>Is there anything the writer could do to tighten up the scene without cutting out any interesting or important details?</li>
+<li>Once the fit is nice and snug, tighten up the screws.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: live frugally and use fewer resources</h4>
+
+<ul>
+<li>In the new economy, we all have to learn to tighten our belts.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

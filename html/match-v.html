@@ -1,0 +1,89 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="match" hidden/><h2>match</h2>
+<h4> 1.1: correspond or be compatible, be equal, fulfill or satisfy</h4>
+
+<ul>
+<li>Brown matched the Nets' Rick Barry shot for shot.</li>
+<li>The Rams matched the Washington Redskins' six-year contract offer with Butler.</li>
+<li>The two stories don't match in many details</li>
+<li>I found shoes to match my sweater.</li>
+<li>I found the jigsaw piece that matches that one.</li>
+<li>These footprints don't match his shoe size.</li>
+<li>Nothing can match cotton for durability</li>
+<li>The company matched the discount policy of its competitors</li>
+<li>I couldn't match her ability at the pool table.</li>
+<li>This hotel doesn't match my standards of cleanliness.</li>
+<li>Her vacation did not match her expectations.</li>
+<li>The course experience matched my expectations.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: provide funds complementary to</h4>
+
+<ul>
+<li>The company will match one dollar for every dollar you put in your 401K.</li>
+<li>He matched 1 dollar for every 4 that we brought in for his charity.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: to pair or couple people or things</h4>
+
+<ul>
+<li>She will try to match her daughter with that wealthy European bachelor.</li>
+<li>Each dancer with a red ribbon was matched with a dancer wearning a blue ribbon.</li>
+<li>The movie matched the theme of having great wealth with that of wanting just a simple life.</li>
+<li>Airline passengers have discovered that their names were mistakenly matched with those appearing on federal watch lists.</li>
+<li>30,000 people said they were mistakenly matched to names on the list.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: oppose or pit against</h4>
+
+<ul>
+<li>The game matched the league's best defensive teams.</li>
+<li>The third place game matched the California Quake with Sharp Edge.</li>
+<li>In this game, you will be matched against one of the other people in the room.</li>
+<li>Let them match their best athletes against ours.</li>
+<li>Match a chess player against the Russian champion.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

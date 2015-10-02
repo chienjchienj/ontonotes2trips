@@ -1,0 +1,73 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="desire" hidden/><h2>desire</h2>
+<h4> 1.1: strongly want or wish for</h4>
+
+<ul>
+<li>Whats-his-name desired a ham sandwich.</li>
+<li>An advanced degree (MS, PhD) in relevant field is desired.</li>
+<li>If desired, a recommended caulk can be used to fill the gap for appearance.</li>
+<li>He desired her to divert herself in his absence, to send for her friends and acquaintances.</li>
+<li>Amalickiah desired him to come down with his army.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: have a strong sexual attraction to</h4>
+
+<ul>
+<li>She always wanted him to tell her how beautiful she was and how much he desired her.</li>
+<li>Katie, Is it wrong to desire you?</li>
+<li>Here are the top 27 Valentine's Day tips to make your man desire you more.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: formally express a request</h4>
+
+<ul>
+<li>I desire you to accept my acknowledgments for your laudable endeavours</li>
+<li>to render men sober, honest, and good citizens. (George Washington)</li>
+<li>Therefore I desire you to grant this petition.</li>
+<li>As the pass through the Blue Ridge may be disputed by two columns,</li>
+<li>he desires you to approach it with great caution.</li>
+<li>He again called up to look into his waistcoat pocket; she did, it was not there;</li>
+<li>she told him so, and he desired her to look into his jacket pocket.</li>
+<li>He desired her to read the label, which she accordingly did.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

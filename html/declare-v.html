@@ -1,0 +1,60 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="declare" hidden/><h2>declare</h2>
+<h4> 1.1: state, assert or announce"></h4>
+
+<ul>
+<li>Bob has declared his intention to pay for the damages.</li>
+<li>Although he declared he was innocent, no one believed it.</li>
+<li>During the last play of the bridge game, John declared hearts.</li>
+<li>We had nothing to declare going through customs.</li>
+<li>The minister declared them husband and wife.</li>
+<li>The company is declaring dividends on their preferred stock.</li>
+<li>The soldiers didn't know that a cease-fire had been declared.</li>
+<li>The space shuttle was declared fit for launch on Tuesday.</li>
+<li>The man was declared legally dead upon arrival.</li>
+<li>Mary declares these seedlings ready for planting.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: propose marriage"></h4>
+
+<ul>
+<li>The wealthy bachelor declared himself to Sally, but she declined his offer of marriage.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

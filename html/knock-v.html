@@ -1,0 +1,178 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="knock" hidden/><h2>knock</h2>
+<h4> 1.1: hit forcefully; deliver a sharp blow or push</h4>
+
+<ul>
+<li>He accidentally knocked the vase off the table.</li>
+<li>She knocked her head against the wall as she fell.</li>
+<li>Who knocked over that mug of coffee?</li>
+<li>Some thug knocked him unconscious.</li>
+<li>They knocked nails into the wall.</li>
+<li>He knocked me off balance.</li>
+<li>She was knocked down by a bus.</li>
+<li>The winds knocked out the window.</li>
+<li>She easily knocked down every argument he put up.</li>
+<li>He used to be a bully in school. He knocked me about all the time.</li>
+<li>He got arrested for knocking around his wife.</li>
+<li>He knocked out his pipe.</li>
+<li>The landlord knocked a hole in the wall at the back of the premises.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: tap, rap or clank repeatedly producing noise</h4>
+
+<ul>
+<li>She knocked on the window to attract his attention.</li>
+<li>There's someone knocking at the door.</li>
+<li>Please knock before entering.</li>
+<li>The heater in my dormroom has been knocking all afternoon.</li>
+<li>The car engine is knocking again.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: find fault with; express criticism of</h4>
+
+<ul>
+<li>Don't knock him. He's doing his best.</li>
+<li>Don't knock the food. It's free.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: wander from place to place; hang out; kick about</h4>
+
+<ul>
+<li>I'm sure I've got a copy of 'Time's Arrow' knocking about somewhere.</li>
+<li>He spent years knocking around the Far East before World War One.</li>
+<li>I used to knock around with him at school.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: set someone back physically, emotionally, or financially</h4>
+
+<ul>
+<li>I bet that computer knocked you back a few thousand.</li>
+<li>Wow, a bout with a bad cold really knocked me back for a couple of weeks.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: eliminate (not kill), render unconcious, overwhelm</h4>
+
+<ul>
+<li>The Brazilian team was unexpectedly knocked out in the first round.</li>
+<li>The car moving at 35 miles per hour struck him and knocked him out cold.</li>
+<li>All the guys were knocked out by her charm.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: kill</h4>
+
+<ul>
+<li>He hired a hit-man to knock off a business rival.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: reduce or cut quantitatively</h4>
+
+<ul>
+<li>She wanted to knock down the price to $200.</li>
+<li>The manager knocked off $5 because it was damaged.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: steal or copy illegally</h4>
+
+<ul>
+<li>He has a stack of computer equipment he's knocked off from various shops.</li>
+<li>Terrorist groups are knocking over banks to get money.</li>
+<li>He got in trouble for knocking off name brand purses.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: accomplish quickly</h4>
+
+<ul>
+<li>She knocked the project together in 3 days.</li>
+<li>I can knock that proposal out by tomorrow.</li>
+<li>She knocked off a letter to her brother that afternoon.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.11: stop a particular behavior</h4>
+
+<ul>
+<li>Knock it off!</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.11" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      
+<h4> 1.12: (cause to) become pregnant</h4>
+
+<ul>
+<li>You don't want to get knocked up by some guy you hardly know.</li>
+</ul>
+
+<input type="text" name="annotation[results][11][id]" value="1.12" hidden />
+<input type="text" name="annotation[results][11][trips]" value="" visible/>
+      
+<h4> 1.13: Ingest.</h4>
+
+<ul>
+<li>I love doughnuts. I could knock back five or six.</li>
+<li>I knocked back a few beers before heading home.</li>
+</ul>
+
+<input type="text" name="annotation[results][12][id]" value="1.13" hidden />
+<input type="text" name="annotation[results][12][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

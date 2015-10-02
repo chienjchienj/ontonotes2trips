@@ -1,0 +1,60 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="bother" hidden/><h2>bother</h2>
+<h4> 1.1: take the trouble</h4>
+
+<ul>
+<li>Does he ever bother to brush his teeth?</li>
+<li>Please, don't bother.</li>
+<li>Why did she bother to go at all?</li>
+<li>He never bothered about what other people thought.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: disturb, annoy</h4>
+
+<ul>
+<li>That old war wound is bothering me again.</li>
+<li>The light bothered his eyes.</li>
+<li>It bothered her religious scruples to schedule a meeting on the Sabbath.</li>
+<li>Charlie's attachment to his ex-wife bothers her.</li>
+<li>His sudden disappearance bothered the detective.</li>
+<li>I'm sorry to bother you, but you're stepping on my cape.</li>
+<li>Don't bother the professor while he's working.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

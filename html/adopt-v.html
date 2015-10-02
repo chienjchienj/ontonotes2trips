@@ -1,0 +1,79 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="adopt" hidden/><h2>adopt</h2>
+<h4> 1.1: take up a plan, idea, cause, or practice to use or follow</h4>
+
+<ul>
+<li>The company adopted the new guidelines for employee sick leave.</li>
+<li>The Fed is expected to adopt a tighter monetary policy under the new chairman.</li>
+<li>I think it's time to adopt a different strategy in my dealings with him.</li>
+<li>He adopted some techniques of glass-blowing from his teacher.</li>
+<li>The author plans to adopt a pseudonym.</li>
+<li>She is adopting the Jewish faith of her husband.</li>
+<li>The new consulate didn't adopt all the duties and protocols of the former consulate.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: acquire, assume, or internalize as one's own attribute</h4>
+
+<ul>
+<li>They adopted an air of superiority to mere schoolboys.</li>
+<li>In Swan Lake, a bewitched princess adopts the form of a swan.</li>
+<li>Roz has adopted one or two funny mannerisms since she's been away.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: take into one's family or group</h4>
+
+<ul>
+<li>We wanted to adopt the two stray kittens.</li>
+<li>She was surprised to learn that she couldn't adopt a child from that country.</li>
+<li>Mary has sort of adopted the absent-minded professor who lives upstairs.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: dramatize</h4>
+
+<ul>
+<li>Do you plan to adopt your novel to a screenplay?</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

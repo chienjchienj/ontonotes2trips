@@ -1,0 +1,213 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="kick" hidden/><h2>kick</h2>
+<h4> 1.1: physically hit, strike, or propel with foot</h4>
+
+<ul>
+<li>I kicked the ball as hard as I could.</li>
+<li>He was accused of kicking a man in the face.</li>
+<li>She felt the baby kicking inside her.</li>
+<li>Looks like you kicked down the door and took your best shot!</li>
+<li>They kicked the ball downstairs.</li>
+<li>They kicked the ball upstairs.</li>
+<li>They kicked the ball back into the box.</li>
+<li>They kicked the ball around.</li>
+<li>They kicked the ball about the house.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: be alive or be active; wander or wait</h4>
+
+<ul>
+<li>Is he still kicking around the house with a job?</li>
+<li>He still kicks about town.</li>
+<li>Does the old man still kick around.</li>
+<li>She kicked her heels for hours at the game of the embassy.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: KICK AROUND-discuss or consider</h4>
+
+<ul>
+<li>We kicked the notion around with the gentleman ambassador.</li>
+<li>You can kick the idea around on your own time table and succeed or fail.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: KICK AROUND-abuse or treat harshly</h4>
+
+<ul>
+<li>Those bullies kicked him around a bit, didn't they?</li>
+<li>I won't let them kick me around anymore!</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: KICK OUT-expel or remove from position</h4>
+
+<ul>
+<li>They kicked us out of the mall for sliding down the bannisters.</li>
+<li>We are Denver residents who were kicked out of the President's Town Hall Conversation.</li>
+<li>He got kicked out for laughing at the teacher.</li>
+<li>They kicked the chairman out for misappropriating funds.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: KICK IN-set in or become active</h4>
+
+<ul>
+<li>Right now, I'm waiting for the effects of the medication to kick in.</li>
+<li>Now the reason you finally realized it was simply that your anger kicked in.</li>
+<li>With the new coverage that kicked in last month, we'll be able to afford it.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: KICK IN-chip in something; contribute</h4>
+
+<ul>
+<li>Mom and dad kicked a few dollars in to help me buy my car.</li>
+<li>The government kicked in some $30000 to cover the costs of shipping the pellets.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: KICK UP-raise or increase</h4>
+
+<ul>
+<li>I'll teach you how to kick it up a notch!</li>
+<li>Thankfully, the new installation kicked the heat up a bit.</li>
+<li>The haunting aromatics of cumin and curry kicked it up to a ringing High C.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: KICK OFF-start or commence; take off</h4>
+
+<ul>
+<li>The Braves kicked the season off right, scoring in only the game's first 36 seconds.</li>
+<li>We kicked the year off making modifications to our new home in Victoria St.</li>
+<li>I officially kicked off the party with a short welcoming speech.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: KICK BACK-relax</h4>
+
+<ul>
+<li>When do you find time to kick back and read?</li>
+<li>Kick back and relax!</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.11: KICK BACK-spring back or recoil from a thrust</h4>
+
+<ul>
+<li>I fired and the gun kicked back and knocked my mask off.</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.11" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      
+<h4> 1.12: KICK BACK-make illegal payment</h4>
+
+<ul>
+<li>Both men are accused of kicking back lump sums to the criminal.</li>
+</ul>
+
+<input type="text" name="annotation[results][11][id]" value="1.12" hidden />
+<input type="text" name="annotation[results][11][trips]" value="" visible/>
+      
+<h4> 1.13: KICK DOWNSTAIRS-reduce in rank or position; demote</h4>
+
+<ul>
+<li>So the solutions for national problems get kicked downstairs.</li>
+<li>They kicked him downstairs for using the company resources for his own good.</li>
+</ul>
+
+<input type="text" name="annotation[results][12][id]" value="1.13" hidden />
+<input type="text" name="annotation[results][12][trips]" value="" visible/>
+      
+<h4> 1.14: KICK UPSTAIRS-increase in rank or position; promote</h4>
+
+<ul>
+<li>Under the new management, our petition was kicked upstairs.</li>
+<li>We kicked him upstairs to a cushy job as Chairmain of our new division.</li>
+</ul>
+
+<input type="text" name="annotation[results][13][id]" value="1.14" hidden />
+<input type="text" name="annotation[results][13][trips]" value="" visible/>
+      
+<h4> 1.15: stop or quit an activity or habit</h4>
+
+<ul>
+<li>To kick my habit, I sought out some of the stranger places to drink in this town.</li>
+</ul>
+
+<input type="text" name="annotation[results][14][id]" value="1.15" hidden />
+<input type="text" name="annotation[results][14][trips]" value="" visible/>
+      
+<h4> 1.16: complain</h4>
+
+<ul>
+<li>She has a lot to kick about.</li>
+<li>Stop kicking about your old sixth hole! You've had the darndest luck I ever saw, and yet you grumble.</li>
+</ul>
+
+<input type="text" name="annotation[results][15][id]" value="1.16" hidden />
+<input type="text" name="annotation[results][15][trips]" value="" visible/>
+      
+<h4> 1.17: KICK THE BUCKET-die</h4>
+
+<ul>
+<li>If you say someone kicked the bucket, you mean someone died.</li>
+</ul>
+
+<input type="text" name="annotation[results][16][id]" value="1.17" hidden />
+<input type="text" name="annotation[results][16][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

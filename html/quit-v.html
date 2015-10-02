@@ -1,0 +1,78 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="quit" hidden/><h2>quit</h2>
+<h4> 1.1: (cause to) cease an activity; stop doing something</h4>
+
+<ul>
+<li>Quit teasing your little brother.</li>
+<li>Let's quit the debate about whether greenhouse gases are caused by man or nature.</li>
+<li>For people looking to quit the soft drink habit, a new ebook is available.</li>
+<li>Ready to quit smoking and end all nicotine use?</li>
+<li>It makes a negative G momentum long enough to make the engine quit.</li>
+<li>I quit the engine, and enjoyed a 15 minute noise-free glide down to the landing field.</li>
+<li>He had to quit teaching because of heart problems.</li>
+<li>Quit while you're ahead.</li>
+<li>You wouldn't quit women because of a bad one, would you?</li>
+<li>Rest if you must, but don't you quit.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: resign from a position; leave a place, job or organization</h4>
+
+<ul>
+<li>I can't work under this boss. I quit!</li>
+<li>I had to quit my job as a teacher because of Access-A-Ride.</li>
+<li>Christopher Eccleston has decided to quit the role of the 9th Doctor.</li>
+<li>He felt compelled to quit his job.</li>
+<li>About 50 percent of walk-ons quit the team because of the time commitment.</li>
+<li>Four screenwriters quit the committee, joining a fifth who had quit earlier.</li>
+<li>Why won't the US quit Iraq?</li>
+<li>The Knight proudly answered that no one should make him quit the country.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: exit a program (computer)</h4>
+
+<ul>
+<li>If InDesign 2.0.2 is running, quit the application.</li>
+<li>You will need to quit out of your browser to install the player.</li>
+<li>How do I quit Windows from Access?</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

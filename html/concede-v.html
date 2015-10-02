@@ -1,0 +1,59 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="concede" hidden/><h2>concede</h2>
+<h4> 1.1: admit or acknowledge a proposition</h4>
+
+<ul>
+<li>He has conceded that his suspicions have proved groundless.</li>
+<li>She wouldn't concede a single point during the debate.</li>
+<li>Bill conceded he had taken on more than he could deliver.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: surrender or relinquish something</h4>
+
+<ul>
+<li>The populace has conceded yet more rights under the dictatorial regime.</li>
+<li>He has just conceded the governor's race to his opponent.</li>
+<li>John had to swerve his bicycle into the ditch because the car wouldn't concede an inch of the road.</li>
+<li>The coach conceded three safeties rather than kick into the wind. (football)</li>
+<li>Over the past three years the firm has conceded a lot of ground to its competitors.</li>
+<li>He was forced to concede the gold medal when the committee determined he had used drugs.</li>
+<li>Management is hoping that labor will concede a shorter work week in the negotiations.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

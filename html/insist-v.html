@@ -1,0 +1,62 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="insist" hidden/><h2>insist</h2>
+<h4> 1.1: emphatically beg, request, or demand a desired situation or course of action</h4>
+
+<ul>
+<li>Country legend Johnny Cash insisted film producer James Keach bring his life story, Walk The Line, to the big screen.</li>
+<li>My family insisted that I should not give in, but stay and fight.</li>
+<li>Let me pay, I insist!</li>
+<li>Amie insisted we don't stop to eat.</li>
+<li>Sharon Stone insisted on nudity.</li>
+<li>You should have insisted on getting to a higer level support rep.</li>
+<li>Fox host Varney insisted on false comparison.</li>
+<li>The cat insisted he take part in the photoshoot too.</li>
+<li>If a man insisted always on being serious, and never allowed himself a bit of fun and relaxation, he would go mad or become unstable without knowing it.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: resolutely declare or assert to be true</h4>
+
+<ul>
+<li>Bush insisted only he should decide who should stand trial before military court.</li>
+<li>Selmayr insisted the EU and US were not that far apart.</li>
+<li>Jaromir Jagr stormed out of the Rangers' locker room toward the bus and insisted his sticks were legal.</li>
+<li>Pentagon communications aide Allison Barber insisted the questions were not rehearsed.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

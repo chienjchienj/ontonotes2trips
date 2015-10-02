@@ -1,0 +1,68 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="shrink" hidden/><h2>shrink</h2>
+<h4> 1.1: make or become smaller or less</h4>
+
+<ul>
+<li>His savings quickly shrank.</li>
+<li>Your sweater will shrink if you wash it at too high a temperature.</li>
+<li>The company's profits have shrunk from 5.5 million to 1.25 million.</li>
+<li>The productivity improvements have shrunk our costs by 25 percent.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: draw back or recoil, be unwilling or reluctant</h4>
+
+<ul>
+<li>He shrank back in revulsion.</li>
+<li>She does not shrink from tackling tough problems.</li>
+<li>He shrank at the thought of making such a sacrifice.</li>
+<li>The child shrank behind the sofa as his father shouted at him.</li>
+<li>When she was younger she would shrink away from me whenever I spoke to her.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: be treated by psychotherapist</h4>
+
+<ul>
+<li>Just listen to me and try not to shrink me.</li>
+<li>That guidance councelor was gonna shrink us all!</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

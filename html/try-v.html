@@ -1,0 +1,89 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="try" hidden/><h2>try</h2>
+<h4> 1.1: attempt, make an effort</h4>
+
+<ul>
+<li>The outfielder tried to catch the fly ball.</li>
+<li>They are trying to buy out that company.</li>
+<li>He will definitely try for the gold.</li>
+<li>Mary tried out for the musical but they didn't cast her.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: test, experiment, sample</h4>
+
+<ul>
+<li>This drug hasn't been tried on humans yet.</li>
+<li>Would you like to try my soup?</li>
+<li>John tried several techniques of applying the paint.</li>
+<li>She tried on six pairs of shoes.</li>
+<li>I'd like to try out that new Mercedes.</li>
+<li>It's a new approach that hasn't been tried out before.</li>
+<li>We are going to try out the new French restaurant.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: put on trial</h4>
+
+<ul>
+<li>You cannot be tried twice for the same crime.</li>
+<li>They will try this case in New Jersey.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: strain, burden, cause to suffer</h4>
+
+<ul>
+<li>Mary was tried by the baby's constant crying.</li>
+<li>These are times that try men's souls.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: melt or render</h4>
+
+<ul>
+<li>You must first try the butter, then add it to the batter.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,205 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="blow" hidden/><h2>blow</h2>
+<h4> 1.1: exhale hard</h4>
+
+<ul>
+<li>She blew on her soup to cool it.</li>
+<li>Go blow your nose.</li>
+<li>He made a wish and blew out the candles.</li>
+<li>The whale blew again, and they were close enough to catch some of the mist.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: (cause to) be in motion due to air currents</h4>
+
+<ul>
+<li>The wind blew from the west.</li>
+<li>The leaves were blowing in the wind.</li>
+<li>I blew my hair dry.</li>
+<li>The wind blew the leaves around in the yard.</li>
+<li>She blew me a kiss.</li>
+<li>The bald eagle controversy was the biggest storm to blow through</li>
+<li>the bird-watcher community.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: make a sound</h4>
+
+<ul>
+<li>The whistle blew.</li>
+<li>The trumpets blew.</li>
+<li>He blew the horn.</li>
+<li>No one should blow their car horn in anger.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: explode, burst or break suddenly</h4>
+
+<ul>
+<li>He blew up his garage with a botched experiment.</li>
+<li>How does a volcano blow its top?</li>
+<li>My only transportation blew out a spark plug for the fifth time.</li>
+<li>My microwave blew a fuse, and when I replaced it, it blew again.</li>
+<li>Someone's laptop just freakin blew up and started a cozy little desktop fire!</li>
+<li>The bomb blew off the roof of the building.</li>
+<li>The oil well blew out.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: spend wastefully; squander</h4>
+
+<ul>
+<li>He blew his inheritance on wild living.</li>
+<li>She blew her bonus money on one outrageously expensive bottle of wine.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: make a mess of; ruin or jeapardize</h4>
+
+<ul>
+<li>The senator admits he blew the whole campaign with that one comment.</li>
+<li>"I blew my last chance to get him back," she sobbed.</li>
+<li>Our strategy of pitting our enemies against each other just blew</li>
+<li>up.</li>
+<li>The story blew the agent's cover.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: shape by blowing</h4>
+
+<ul>
+<li>Only a true artisan could have blown that vase.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: provide sexual gratification through oral stimulation</h4>
+
+<ul>
+<li>She stopped coming there to blow the president.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: leave</h4>
+
+<ul>
+<li>Let's blow this joint.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: lay eggs</h4>
+
+<ul>
+<li>Unable to find an attested example.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.11: show off</h4>
+
+<ul>
+<li>Unable to find an attested example.</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.11" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      
+<h4> 1.12: get very angry and fly into a rage</h4>
+
+<ul>
+<li>When my mother found out where I'd been, she blew her stack.</li>
+<li>When you tell him you didn't finish the report, he will blow up.</li>
+<li>She made sports page headlines when she blew a fuse over trade talks involving her hubby.</li>
+</ul>
+
+<input type="text" name="annotation[results][11][id]" value="1.12" hidden />
+<input type="text" name="annotation[results][11][trips]" value="" visible/>
+      
+<h4> 1.13: fill with or as if with air</h4>
+
+<ul>
+<li>We blew up 15 balloons for the party.</li>
+<li>Her face blew up from the drugs.</li>
+</ul>
+
+<input type="text" name="annotation[results][12][id]" value="1.13" hidden />
+<input type="text" name="annotation[results][12][trips]" value="" visible/>
+      
+<h4> 1.14: exagerate or embellish</h4>
+
+<ul>
+<li>I'd like to have this picture blown up to a 5 x 7.</li>
+<li>The tabloid press blew up the story about the 'party boat loaded</li>
+<li>with drugs.'</li>
+</ul>
+
+<input type="text" name="annotation[results][13][id]" value="1.14" hidden />
+<input type="text" name="annotation[results][13][trips]" value="" visible/>
+      
+<h4> 1.15: BLOW OVER: go away without lasting consequences</h4>
+
+<ul>
+<li>Don't worry. It will all blow over in a few days.</li>
+</ul>
+
+<input type="text" name="annotation[results][14][id]" value="1.15" hidden />
+<input type="text" name="annotation[results][14][trips]" value="" visible/>
+      
+<h4> 1.16: surprise, outdo or impress greatly</h4>
+
+<ul>
+<li>Her news really blew me out of the water.</li>
+</ul>
+
+<input type="text" name="annotation[results][15][id]" value="1.16" hidden />
+<input type="text" name="annotation[results][15][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

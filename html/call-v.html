@@ -1,0 +1,179 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="call" hidden/><h2>call</h2>
+<h4> 1.1: communicate orally, usually in a loud, distinct tone</h4>
+
+<ul>
+<li>The bluejays called to each other.</li>
+<li>She called out in pain.</li>
+<li>Someone just called my name.</li>
+<li>The teacher called roll.</li>
+<li>I love when Henry calls the square dance; he calls off the best moves.</li>
+<li>The hunters called the ducks.</li>
+<li>She called down her son for his disobedience.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: summon</h4>
+
+<ul>
+<li>The boss called him into her office.</li>
+<li>The Yei Peace Conference was called in July to address the underlying tension.</li>
+<li>I was called for jury duty last month.</li>
+<li>Employees in the Reserve who are called up for active duty will continue to receive their regular pay.</li>
+<li>He called forth demons from the underworld.</li>
+<li>Aaron Burr called out Alexander Hamilton.</li>
+<li>Wilson was called in from the mound in the sixth inning.</li>
+<li>The nurse called in the next patient.</li>
+<li>The ambassador was called back to attend the state funeral.</li>
+<li>The accident called back a lot of bad memories.</li>
+<li>You will call down the wrath of the gods!</li>
+<li>The case was called up in court.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: order or require</h4>
+
+<ul>
+<li>If their terms aren't met, the union will call a strike.</li>
+<li>This job calls for someone with great communication skills.</li>
+<li>A wonderful dinner like this calls for a fabulous dessert!</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: communicate by telephone or similar device</h4>
+
+<ul>
+<li>I called him last night, but he didn't pick up.</li>
+<li>Can I call you back in an hour?</li>
+<li>Those telemarketers call you up at all hours!</li>
+<li>My doctor will call in the perscription.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: label with a name or quality</h4>
+
+<ul>
+<li>They called their son Jimmy.</li>
+<li>Please call me Mister.</li>
+<li>Don't call me an idiot!</li>
+<li>I wouldn't exactly call her beautiful.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: request or demand a response from someone; challenge someone</h4>
+
+<ul>
+<li>Why does the teacher always call on me in math class?</li>
+<li>He lied about being sick, and his boss called him on it.</li>
+<li>I'm hoping someone will call him on the fact that his position is outside the judicial mainstream.</li>
+<li>She called on her sister for help.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: visit; stop off at</h4>
+
+<ul>
+<li>The mayor likes to call on some prominent citizens.</li>
+<li>Who has come to call?</li>
+<li>The ship will call in Honolulu tomorrow.</li>
+<li>I'll call at your office on Friday for the boxes.</li>
+<li>He called for Mary at precisely 7pm, corsage in hand.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: indicate a decision or prediction</h4>
+
+<ul>
+<li>The umpire called 2 strikes, then 4 balls in a row.</li>
+<li>He called the runner out at second.</li>
+<li>They got divorced! Did I call it or what?</li>
+<li>Several media outlets called Florida for Gore before the polls were closed.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: demand the return of or payment on</h4>
+
+<ul>
+<li>The bank called the loan in August 2004.</li>
+<li>In general, the firm will call the bond when its yields are sufficiently lower than its coupon rate.</li>
+<li>Hilltop Farm called back its packaged spinach when it was found to be contaminated with e coli.</li>
+<li>Ford called in that model to replace a defective part.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: halt or cancel an event or activity</h4>
+
+<ul>
+<li>The game was called because of the storm.</li>
+<li>We're going to have to call off the party.</li>
+<li>Shall we call it quits and start again tomorrow?</li>
+<li>Let's call it a day.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.11: miscellaneous idioms</h4>
+
+<ul>
+<li>Mental Health Month calls attention to ADHD.</li>
+<li>Rob's recent blunder calls into question his suitability for the job.</li>
+<li>She was called on the carpet for her mishandling of the case.</li>
+<li>I would call his bluff, because I don't believe for a second that he would go to court.</li>
+<li>He calls all the shots around here.</li>
+<li>If you let the kids call the tune, you're in for trouble.</li>
+<li>Let's call this meeting to order.</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.11" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,66 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="propose" hidden/><h2>propose</h2>
+<h4> 1.1: put forward for consideration</h4>
+
+<ul>
+<li>President Bush on Wednesday proposed a new temporary worker program.</li>
+<li>The Commission proposed a disclosure requirement for companies.</li>
+<li>The 150-room hotel that was proposed to accompany a conference center has fallen short of expectations.</li>
+<li>Nicolet Minerals Company has proposed to construct an engineered surface disposal facility.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: intend</h4>
+
+<ul>
+<li>Semantics aside, this week I proposed to take the other side of the argument.</li>
+<li>How do you propose to do it?</li>
+<li>The research student shall suggest the name of the guide underwhose supervision he/she proposes to do research.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: ask for hand in marriage</h4>
+
+<ul>
+<li>I proposed to my wife on her 30th birthday, in front of about 30 people.</li>
+<li>He finally proposed to her in 1988, but prison rules delayed their wedding.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

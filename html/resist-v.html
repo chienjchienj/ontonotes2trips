@@ -1,0 +1,67 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="resist" hidden/><h2>resist</h2>
+<h4> 1.1: fight back or fend off attack by someone or something</h4>
+
+<ul>
+<li>The soldiers resisted (the enemy attacks) for two days.</li>
+<li>We were the village that had resisted the invaders!</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: remain firm against the actions and effects</h4>
+
+<ul>
+<li>The party leader resisted demands for his resignation.</li>
+<li>He tried to run away from the police and was charged with resisting arrest.</li>
+<li>The new hybrid crops are much better at resisting disease.</li>
+<li>No one could resist her charms.</li>
+<li>Majestic buildings with limestone vaults which have resisted the test of time.</li>
+<li>My son resists any school assignment, regardless of how easy it is.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: elude especially in a baffling way</h4>
+
+<ul>
+<li>They point to a world that actively resists logic and plain sense.</li>
+<li>Haiku resists explanation, but you know it when you see it.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

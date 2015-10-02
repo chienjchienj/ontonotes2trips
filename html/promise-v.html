@@ -1,0 +1,65 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="promise" hidden/><h2>promise</h2>
+<h4> 1.1: pledge or make a commitment</h4>
+
+<ul>
+<li>He promised me one of his kittens.</li>
+<li>He promised to give me one of his kittens.</li>
+<li>Promise me that you won't tell.</li>
+<li>Promise to not tell.</li>
+<li>The government have promised that they'll reduce taxes.</li>
+<li>The government have promised to reduce taxes.</li>
+<li>Her parents promised her a new car if she passed her exams.</li>
+<li>Her parents promised to buy her a new car if she passed her exams.</li>
+<li>You promise?</li>
+<li>Hey, you promised!</li>
+<li>I'll look, but I can't promise you anything.</li>
+<li>You'll like this movie, I promise you.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: give grounds for expectation</h4>
+
+<ul>
+<li>It promises to be an exciting match.</li>
+<li>Those thunderclouds promise rain.</li>
+<li>It is worth trying as an experiment at least because it promises well and costs little.</li>
+<li>The results promised fame and glory.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

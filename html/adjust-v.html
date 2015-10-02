@@ -1,0 +1,77 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="adjust" hidden/><h2>adjust</h2>
+<h4> 1.1: reorient, realign or reposition something</h4>
+
+<ul>
+<li>Adjust the height of your chair so that your wrists can rest comfortably on the keyboard.</li>
+<li>The dance instructor adjusted her position.</li>
+<li>If it's too hot under the electric blanket, they can adjust the dial down.</li>
+<li>Adjust your seat belt so that you are comfortable.</li>
+<li>Don't forget to adjust the clocks tonight when we go on daylight savings time.</li>
+<li>Boot camp will adjust your expectations of doing as you please. (figurative extension)</li>
+<li>Analysts have adjusted their economic outlook based on these new figures. (figurative extension)</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: accept, acclimate or adapt to a context, situation</h4>
+
+<ul>
+<li>Many teens have difficulty adjusting to a new stepparent.</li>
+<li>The pets who survived the hurricane are adjusting to new homes.</li>
+<li>Mary and John are adjusting to having a baby in the house.</li>
+<li>Living in the same house isn't awkward just for me; I'm sure he's adjusting too.</li>
+<li>If you're not adjusting as well as you'd like, seek help from professional counsellors.</li>
+<li>The salinity of the water must be lowered gradually to give the fish time to adjust.</li>
+<li>Some of the workers had difficulty adjusting to the new management.</li>
+<li>Give your eyes time to adjust to the darkness.</li>
+<li>Let the engine adjust to the cold temperature before starting it up.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: decide the amount to be paid on an insurance claim</h4>
+
+<ul>
+<li>It will be possible to pay the policy limits through dialogue with the insured and without waiting for a site visit</li>
+<li>to adjust the loss.</li>
+<li>Many times an insurer will adjust the benefit after receiving additional information that justifies the higher charg</li>
+<li>e.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

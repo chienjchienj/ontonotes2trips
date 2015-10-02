@@ -1,0 +1,83 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="steal" hidden/><h2>steal</h2>
+<h4> 1.1: take possession without consent or right</h4>
+
+<ul>
+<li>Someone stole my wallet on the train.</li>
+<li>The number of cars which are stolen every year has risen.</li>
+<li>They were so poor they had to steal in order to eat.</li>
+<li>This author stole entire paragraphs from my dissertation.</li>
+<li>It destroys its victim's memory and steals the ability to communicate.</li>
+<li>This picture steals my heart everytime.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: do or achieve something surreptitiously or stealthily</h4>
+
+<ul>
+<li>I leaned close and stole a kiss.</li>
+<li>She stole a glance at her watch.</li>
+<li>I stole a bite off the one burger, before giving him all the rest of it.</li>
+<li>If everyone stole a ride, there would be no more public transportation.</li>
+<li>He stole out of the room while noone was looking.</li>
+<li>During the night, she stole away from the hateful place.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: draw attention or have successful performance; outdo or win</h4>
+
+<ul>
+<li>He stole the show with his offbeat puns and no fear analogies.</li>
+<li>The child with the dog stole the show.</li>
+<li>He stole the show away from Paul Walker for sure.</li>
+<li>Yanks steal finale from Braves.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: BASEBALL-gain base without hit</h4>
+
+<ul>
+<li>He might be the last person in baseball you'd expect to steal a base.</li>
+<li>Ty Cobb stole second base, third base, and home plate during the same inning.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

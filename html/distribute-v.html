@@ -1,0 +1,78 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="distribute" hidden/><h2>distribute</h2>
+<h4> 1.1: hand out, dispense or dole out something</h4>
+
+<ul>
+<li>Bottles of water and blankets were distributed to the evacuees.</li>
+<li>This year the company is distributing a dividend to each shareholder.</li>
+<li>The TA will be distributing the final exam tomorrow in Room 210.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: spread or scatter over an area or region</h4>
+
+<ul>
+<li>Layers of ash were distributed here millions of years ago by a volcano.</li>
+<li>Portuguese became distributed around the world by 17th century sailors.</li>
+<li>This function distributes the values along a straight line.</li>
+<li>A probability function distributes a probability mass of 1 throughout the sample space.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: circulate or publicize something</h4>
+
+<ul>
+<li>This film has not yet been distributed overseas.</li>
+<li>The students had a petition distributed to the faculty last week.</li>
+<li>The rumor of John's resignation was widely distributed before he could stop it.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: arrange items or be arranged</h4>
+
+<ul>
+<li>Distribute the cards so that there are three in each group.</li>
+<li>The gardener had distributed the bulbs to form a circle around the tree.</li>
+<li>In the expression 'a(b + c)' multiplication can also distribute 'a' over both 'b' and 'c' as 'ab + ac'.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

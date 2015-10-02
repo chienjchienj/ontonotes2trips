@@ -1,0 +1,75 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="transfer" hidden/><h2>transfer</h2>
+<h4> 1.1: cause to move from one location, context, or situation to another</h4>
+
+<ul>
+<li>He transferred the money from his trousers pocket to his jacket pocket.</li>
+<li>Please transfer the data from the mainframe to this laptop computer.</li>
+<li>She transferred the plants from breakable pots to plastic containers.</li>
+<li>The themes transferred from classic myth to future settings are always the psychological ones. (context)</li>
+<li>Outside calls may be transferred to someone else within our system.</li>
+<li>When your child reaches the age of maturity, control of the account is transferred to him or her.</li>
+<li>The political power in their country was peacefully transferred from a monarchy to a parliamentary democracy.</li>
+<li>The Harper Court Foundation transferred ownership of its 40-year-old shopping center to another non-profit in December.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: relocate oneself or something to a different institution</h4>
+
+<ul>
+<li>He transferred the children to a private school.</li>
+<li>I was transferred to headquarters in Houston.</li>
+<li>The murder case was transferred to the Illinois State Police.</li>
+<li>The US Army abandoned Fort Lyon in 1897 and its troops were transferred elsewhere.</li>
+<li>I transferred to Boston College in the fall of 2003.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: make a scheduled change in transportation lines or vehicle</h4>
+
+<ul>
+<li>The luggage was there when we transferred planes in Newark. (from one plane to another)</li>
+<li>Then I transferred in Tokyo for another long flight to Bangkok.</li>
+<li>We transferred trains with five minutes to spare.</li>
+<li>If your flight transferred in New York, did you have to transfer from Kennedy to La Guardia or Newa</li>
+<li>rk?</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

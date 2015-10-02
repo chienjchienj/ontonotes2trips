@@ -1,0 +1,76 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="continue" hidden/><h2>continue</h2>
+<h4> 1.1: Keep doing something; preserve an activity or situation; persist, endure</h4>
+
+<ul>
+<li>We continued to work into the night.</li>
+<li>She continues to believe her health will improve.</li>
+<li>Please continue speaking.</li>
+<li>They continued their meal in peace.</li>
+<li>We will continue this discussion next week.</li>
+<li>The temperature continued to climb throughout the day. (metaphorical agent)</li>
+<li>She continued the family tradition of going to Harvard for</li>
+<li>undergraduate studies.</li>
+<li>That film star's legacy will continue long after her death.</li>
+<li>The story continues tomorrow.</li>
+<li>The bad weather continued for two more weeks.</li>
+<li>The Archipelago continues for another 500 miles.</li>
+<li>The war continued for five years.</li>
+<li>Girls continue to outnumber boys in gymnastics.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: Act of speaking or communicating.</h4>
+
+<ul>
+<li>'I think you should stay,' he continued, after taking a sip from his glass of wine.</li>
+<li>The directions continue: 'Blend the mixture to an even consistency.'</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: Travel; move along a physical path.</h4>
+
+<ul>
+<li>The fly continued along the window sill.</li>
+<li>Just continue down Main Street for three blocks, then turn left.</li>
+<li>The car continued up the hill, then parked in front of a blue house.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

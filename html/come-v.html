@@ -1,0 +1,214 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="come" hidden/><h2>come</h2>
+<h4> 1.1: move, travel, arrive</h4>
+
+<ul>
+<li>The train never came last night.</li>
+<li>No news has yet come of the disaster at sea.</li>
+<li>That's an idea whose time has come!</li>
+<li>Come to Mexico with us next winter.</li>
+<li>Dawn comes early in the summertime.</li>
+<li>The financial crisis has come to New York as well.</li>
+<li>Our company just came through a couple of tough quarters.</li>
+<li>The wallpaper is starting to come away from the wall.</li>
+<li>She came away angry.</li>
+<li>Can we come back to that point?</li>
+<li>The rain came down in buckets.</li>
+<li>If you know what happened, please come forward.</li>
+<li>She came in with several witty remarks.</li>
+<li>Winter is coming near.</li>
+<li>It was coming on dawn when when her fever finally broke.</li>
+<li>Has the new Woody Allen movie come out yet?</li>
+<li>She came through the surgery quite well.</li>
+<li>The sun came through the clouds.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: occur, happen</h4>
+
+<ul>
+<li>The rainbow colors just came about as my way of expressing myself.</li>
+<li>Did something ever come of John's plan to start a winery?</li>
+<li>How is the remodelling of your bathroom coming?</li>
+<li>The computer came along and changed the way we do business.</li>
+<li>How did your talk come off?</li>
+<li>The poster came out really great.</li>
+<li>Several important points came up in the meeting.</li>
+<li>I'm sorry. Something has come up.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: progress to a state</h4>
+
+<ul>
+<li>Let the water come to a boil.</li>
+<li>Your shoe is coming untied.</li>
+<li>The trade agreement may come undone due to this scandal.</li>
+<li>We came to agree with the new policies.</li>
+<li>She came close to quitting her job.</li>
+<li>My plants are coming along.</li>
+<li>The clasp came off and the bracelet just came apart.</li>
+<li>His hair came out in tufts.</li>
+<li>He came around to our point of view.</li>
+<li>It really came home to me that she was never coming back.</li>
+<li>She came near to fainting.</li>
+<li>Let me tell you how this newspaper came into being.</li>
+<li>The power came on the next day.</li>
+<li>The computer finally came up after Will worked on it.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: be available, exist in a state</h4>
+
+<ul>
+<li>Do these shoes come in a smaller size?</li>
+<li>The furniture comes unassembled.</li>
+<li>Prejudice comes in many forms.</li>
+<li>The agreement came with a clause allowing both parties to back out within 30 days.</li>
+<li>That riddle originally came in the form of a poem.</li>
+<li>Russian caviar comes dear.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: originate from, issue from</h4>
+
+<ul>
+<li>Melons come from a vine.</li>
+<li>Prejudice may come from fear.</li>
+<li>He comes from a small fishing village in Brazil.</li>
+<li>Many modern English words come from either Latin or French.</li>
+<li>We hear screams coming from next door.</li>
+<li>He came forth from behind the throne.</li>
+<li>Part of the enjoyment comes from seeing your work as others do.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: occur in a sequence, prioritized</h4>
+
+<ul>
+<li>What's the next prime number to come after seven?</li>
+<li>Those topics need to come under a new heading.</li>
+<li>First comes higher interest rates, then inflation.</li>
+<li>Her family always came first, even when she was running the company.</li>
+<li>Christmas came around again, as it always does.</li>
+<li>No, no, Nixon came before Ford.</li>
+<li>John came in third in the state for backstroke.</li>
+<li>She came out last in the race.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: reach, extend to, total</h4>
+
+<ul>
+<li>Her hair came to her waist.</li>
+<li>The flood waters came up the roof!</li>
+<li>The tab came to over sixty dollars.</li>
+<li>Her results came close to the estimate.</li>
+<li>They came short of a first down.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: discover or think up</h4>
+
+<ul>
+<li>I came across John in the garden.</li>
+<li>She came on the papers by accident.</li>
+<li>Ralph came upon your name in the newspaper.</li>
+<li>It just came to me that I forgot to deposit these checks.</li>
+<li>Just say the first thing that comes to mind.</li>
+<li>I came up with a new name for our band.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: be revealed</h4>
+
+<ul>
+<li>The truth will come out in the end.</li>
+<li>His treachery came to light in the end.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: experience orgasm</h4>
+
+<ul>
+<li>He came several times.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.11: idioms</h4>
+
+<ul>
+<li>His message came across very clearly.</li>
+<li>They came back to win the game.</li>
+<li>I wish I could come back with a witty remark.</li>
+<li>How did you come by this rare vase?</li>
+<li>It comes down to this: I just don't like him.</li>
+<li>You look like you're coming down with a cold.</li>
+<li>The critics came down hard on the leading man.</li>
+<li>The governor came in for a lot of criticism.</li>
+<li>That tape sure came in handy.</li>
+<li>He came into a lot of money when his uncle died.</li>
+<li>He will have access to his trust fund when he comes of age.</li>
+<li>His parents were very supportive when he came out.</li>
+<li>Why doesn't he come out of the closet and admit he's gay?</li>
+<li>The patient came to quickly after fainting.</li>
+<li>You need to come to grips with your alcoholism.</li>
+<li>Just use the first thing that comes to hand.</li>
+<li>The need for evidence-led practice has come to the fore in work with the young.</li>
+<li>How will you come up with the cash?</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.11" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

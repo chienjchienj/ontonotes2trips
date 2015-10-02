@@ -1,0 +1,74 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="demonstrate" hidden/><h2>demonstrate</h2>
+<h4> 1.1: prove, establish, attest to</h4>
+
+<ul>
+<li>The police have been unable to demonstrate a link between the two murders.</li>
+<li>The film 2001 demonstrated the illusive and relative notion of 'intelligence'.</li>
+<li>The Roman roads demonstrate excellent engineering know-how.</li>
+<li>He demonstrated great skill in steering the warring factions to the negotiating table.</li>
+<li>The existence of additional spatial dimensions may be demonstrated</li>
+<li>through new high energy particle experiments.</li>
+<li>Colleagues demonstrated that transposon-mediated evolution can</li>
+<li>happen in real time to create novel solutions to changing</li>
+<li>conditions.</li>
+<li>As Figure one demonstrates, moderate slumps in the economy</li>
+<li>tend to be followed by moderate recoveries.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: show or give an exhibition of something</h4>
+
+<ul>
+<li>The magician will now demonstrate removing a rabbit from a bottle.</li>
+<li>They are demonstrating a great new graphics package at Booth 15.</li>
+<li>The chef demonstrated how to bone a chicken.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: protest or engage in a march</h4>
+
+<ul>
+<li>The students are demonstrating against the war in front of the administration building.</li>
+<li>Angry mobs were demonstrating in front of several European embassies.</li>
+<li>John is not planning to demonstrate because he has a physics exam in the morning.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,67 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="attack" hidden/><h2>attack</h2>
+<h4> 1.1: launch an assault, try to hurt or defeat, cause damage</h4>
+
+<ul>
+<li>He was attacked and seriously injured by a gang of youths.</li>
+<li>Army forces have been attacking the town since dawn.</li>
+<li>Most wild animals won't attack unless they are provoked.</li>
+<li>AIDS attacks the body's immune system.</li>
+<li>My rose bushes are being attacked by greenfly.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: criticize strongly or severely</h4>
+
+<ul>
+<li>She wrote an article attacking the judges and their conduct of the trial.</li>
+<li>The report attacks the idea of exams for 7 and 8 year-olds.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: deal with something in an efficient way</h4>
+
+<ul>
+<li>I'll attack the issue as soon as I get out of the bed.</li>
+<li>We have to attack these problems now and find some solutions.</li>
+<li>The children rushed in and eagerly attacked the food.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

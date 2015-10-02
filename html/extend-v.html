@@ -1,0 +1,91 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="extend" hidden/><h2>extend</h2>
+<h4> 1.1: (cause to) lengthen or stretch out in space</h4>
+
+<ul>
+<li>He extended one foot into the water.</li>
+<li>Let's extend our right arms over our heads.</li>
+<li>Would you mind extending the TV antenna?</li>
+<li>I can't seem to extend the legs of this folding table.</li>
+<li>The train service doesn't yet extend to the outer suburbs.</li>
+<li>His property extends to the stone wall over there.</li>
+<li>The epidemic currently extends from Malyasia to Singapore.</li>
+<li>We saw the rock that was extending in the river just before we collided with it.</li>
+<li>The emperor has been extending his empire to the west.</li>
+<li>The civil war extended into the neighboring province.</li>
+<li>Mosquitos have extended malaria onto the islands off the mainland.</li>
+<li>We can extend the stew by adding some more potatoes and carrots.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: (cause to) lengthen or expand in time or some abstract realm</h4>
+
+<ul>
+<li>I'll need to extend my stay for two more days.</li>
+<li>They suggested that the existing freeze be lifted and the period extended from one year to 15 months.</li>
+<li>Deregulation is also a megatrend that will probably extend into the twenty-first century.</li>
+<li>The full destructive impact of the war extended to Iraqi civil infrastructure.</li>
+<li>That tax law was extended to now include S corporations as well.</li>
+<li>The governor is attempting to extend his influence as far as possible.</li>
+<li>Travelling to Asia extended John's horizons.</li>
+<li>The military's goal of morale through knowledge of the facts extended into army hospitals.</li>
+<li>The investor has extended his offer of $20 a share until midnight tomorrow.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: offer or make available</h4>
+
+<ul>
+<li>The bank has extended him credit to start his company.</li>
+<li>I would like to extend my congratulations to you.</li>
+<li>Are they extending an apology to her?</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: exert something</h4>
+
+<ul>
+<li>He told the jockey to go ahead and extend the colt on the back stretch.</li>
+<li>Mary really extended herself to pass the advanced class in quantum mechanics.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

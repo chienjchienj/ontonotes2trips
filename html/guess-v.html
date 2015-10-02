@@ -1,0 +1,58 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="guess" hidden/><h2>guess</h2>
+<h4> 1.1: think, suppose, casually say</h4>
+
+<ul>
+<li>I guess I'll have the steak.</li>
+<li>I guess she is angry at me for standing her up.</li>
+<li>He guessed that he would do the same again.</li>
+<li>Looking in the mirror at his sharp raccoon teeth, he guessed that he probably would eat meat.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: predict, estimate, make a conclusion about an unknown</h4>
+
+<ul>
+<li>Jackie Chan said he guessed two of the Olympic mascots before they were unveiled.</li>
+<li>Who could have guessed that she would grace the covers of major magazines?</li>
+<li>Ever guessed who is about to call you?</li>
+<li>Be sure to use a password that would not be easily guessed.</li>
+<li>23% guessed that the image was some kind of sea or ocean creature.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

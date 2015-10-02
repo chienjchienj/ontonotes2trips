@@ -1,0 +1,68 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="specialize" hidden/><h2>specialize</h2>
+<h4> 1.1: devote or adapt exclusively to an skill, study, or work</h4>
+
+<ul>
+<li>This plumber specialized in jacuzzis.</li>
+<li>She's specializing in pediatrics.</li>
+<li>She's hired a lawyer who specializes in divorce cases.</li>
+<li>Our study specilizes in honey bees.</li>
+<li>The B-cell specializes in detecting bacteria.</li>
+<li>I love restaurants that specialize in seafood.</li>
+<li>The shop specializes in mountain-climbing gear.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: gear or develop something to a particular purpose</h4>
+
+<ul>
+<li>She has finally specialized her field of research.</li>
+<li>It is the transcription of mRNAs that specializes a cell.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: specify, make particular note of, give details</h4>
+
+<ul>
+<li>I can specialize the method for you.</li>
+<li>Who should I specialize this check to?</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

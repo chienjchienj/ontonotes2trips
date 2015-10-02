@@ -1,0 +1,167 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="stay" hidden/><h2>stay</h2>
+<h4> 1.1: remain in a certain state or location</h4>
+
+<ul>
+<li>The original blade has stayed sharp for hundreds of cuts.</li>
+<li>The dress stayed wet after repeated attempts to dry it.</li>
+<li>We are staying in Detroit; we are not moving to Cincinnati.</li>
+<li>You can stay with me while you are in town.</li>
+<li>After graduation, she stayed in Cambridge as a student adviser.</li>
+<li>I had to stay at home and watch the children.</li>
+<li>I stayed with him even when it was obvious that it was not a good relationship.</li>
+<li>The statistician who went to UK says he stayed his own man.</li>
+<li>This is how cougar stayed his natural color.</li>
+<li>They made up after the fight, but the hostility stayed.</li>
+<li>The perfume stayed long after she had left.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: stop or halt</h4>
+
+<ul>
+<li>Please stay the bloodshed.</li>
+<li>He has stayed his golden-yoked chariot and horses.</li>
+<li>It was pity that stayed his hand.</li>
+<li>The judge stayed the execution order.</li>
+<li>The egg stayed my hunger, but it wasn't enough.</li>
+<li>By a brook the weary hero stayed his path and bathed in the clean water, and there he laid his head to sleep.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: continue on a course of action</h4>
+
+<ul>
+<li>On foreign policy, too, Reagan stayed his course despite heavy pressure.</li>
+<li>Whether or not he stayed his course is a matter to consider as he grew and evolved musically.</li>
+<li>Young, clear-eyed, true of Heart and true of path; he stayed his path strait and pure for decades.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: fasten with stays</h4>
+
+<ul>
+<li>(no examples or information available)</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5.1: STAY AT, STAY OVER--reside temporarily</h4>
+
+<ul>
+<li>We're staying at the Hilton.</li>
+<li>I recently stayed at the ETAP Hotel on Colmore Steet, Birmingham.</li>
+<li>The boy's friends were allowed to stay over after the birthday party.</li>
+<li>It's so late, why don't you just stay over?</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5.1" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.5.2: STAY AWAY--avoid</h4>
+
+<ul>
+<li>Stay away from that man, he is dangerous!</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.5.2" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.5.3: STAY FRESH--keep from spoiling</h4>
+
+<ul>
+<li>Rolled sandwiches will stay fresh until lunch time.</li>
+<li>Once opened, soy milk will stay fresh for seven to 10 days if kept refrigerated.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.5.3" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.5.4: STAY IN PLACE, STAY PUT--be stationary</h4>
+
+<ul>
+<li>It seems like women are running faster just to stay in place.</li>
+<li>He would have survived if his helmet had stayed in place.</li>
+<li>The remainder of the Jell-O stabilized and stayed put on the nails quite securely.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.5.4" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.5.5: STAY OFF--refrain from entering or walking on</h4>
+
+<ul>
+<li>Stay off the grass.</li>
+<li>He warned us to stay off his property.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.5.5" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.5.6: STAY ON--continue in a position or situation</h4>
+
+<ul>
+<li>After graduation, she stayed on in Cambridge as a student adviser.</li>
+<li>Aa hardline Islamic alliance yesterday protested Musharraf's plan to stay on as army chief.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.5.6" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.5.7: STAY TOGETHER--remain in a relationship</h4>
+
+<ul>
+<li>Fountain District business owners have stayed together through tough times.</li>
+<li>We only stayed together for the kids.</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.5.7" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      
+<h4> 1.5.8: STAY UP--don't go to sleep</h4>
+
+<ul>
+<li>On Friday nights, we let the kids stay up until ten.</li>
+</ul>
+
+<input type="text" name="annotation[results][11][id]" value="1.5.8" hidden />
+<input type="text" name="annotation[results][11][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

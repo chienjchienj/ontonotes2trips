@@ -1,0 +1,131 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="snap" hidden/><h2>snap</h2>
+<h4> 1.1: (cause to) break or separate abruptly</h4>
+
+<ul>
+<li>The rope snapped, and the crate plummeted to the ground.</li>
+<li>He could snap your neck in two.</li>
+<li>Snap off a square of that chocolate for me.</li>
+<li>The victory also snapped a three-game losing streak against the Earthquakes.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: (cause to) move abruptly, often making a short, sharp sound</h4>
+
+<ul>
+<li>The door of the trap snapped shut, with the rat securely inside.</li>
+<li>Once he lined it up correctly, it snapped into place.</li>
+<li>The flag snapped in the breeze.</li>
+<li>I snapped on the light.</li>
+<li>She always snaps her phone shut one-handed.</li>
+<li>The police snapped the handcuffs around her wrists.</li>
+<li>Marla snapped around, a look of fury on her face.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: make a short, sharp sound</h4>
+
+<ul>
+<li>Rice Crispies: they Snap, Crackle and Pop!</li>
+<li>The fire snapped and crackled cheerfully on the hearth.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: use the fingers of one hand to make a snapping sound</h4>
+
+<ul>
+<li>I didn't learn to snap until I was seven.</li>
+<li>They all snapped in time with the music.</li>
+<li>Kat snapped and everyone in the room jumped.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: utter in a sharp and angry tone</h4>
+
+<ul>
+<li>He snapped back a reply, annoyed that she had asked.</li>
+<li>'Just give me the check,' she snapped.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: seize; grasp at something</h4>
+
+<ul>
+<li>The fish snapped at the bait.</li>
+<li>He snapped at any chance he could get to be near her.</li>
+<li>She snapped up all the good bargains.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: undergo an abrupt change in mental condition</h4>
+
+<ul>
+<li>She snapped awake at the sound.</li>
+<li>Will you snap out of it?!</li>
+<li>When his daughter died, he just snapped.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: take a photograph</h4>
+
+<ul>
+<li>She snapped a picture of the senator as he left the restaurant.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: SPORTS: put the ball into play or execute a play.</h4>
+
+<ul>
+<li>A moment after he snapped the ball, Miller was hit by a linebacker.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

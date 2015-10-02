@@ -1,0 +1,86 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="assume" hidden/><h2>assume</h2>
+<h4> 1.1: accept as true without verificaiton</h4>
+
+<ul>
+<li>I assume his train was late.</li>
+<li>To assume good faith is a fundamental principle on any wiki, including Wikipedia.</li>
+<li>It's politely assumed that democracy is a means of containing and restraining violence.</li>
+<li>Man has always assumed that he was more intelligent than dolphins.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: take on a feature, position, responsibility, right, etc.</h4>
+
+<ul>
+<li>When will the new President assume office?</li>
+<li>She assumed strange manners.</li>
+<li>The gods assume human or animal form in these fables.</li>
+<li>He assumes the lotus position.</li>
+<li>Increasingly, families with limited resources have had to assume debt to defray these costs.</li>
+<li>He assumed to himself the right to fill all positions in the town.</li>
+<li>The contractor shall assume responsibility for all functions.</li>
+<li>Dress then assumed a more natural appearance.</li>
+<li>She assumed indifference.</li>
+<li>You'd put on a costume, assume a character, and act out a part.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: take someone's soul into heaven</h4>
+
+<ul>
+<li>This is the day when Mary was assumed into heaven.</li>
+<li>Many believe that she did not die at all, but was Assumed directly into heaven.</li>
+<li>If the George Mason Law faculty were suddenly assumed into heaven, would there be any loss to the legal profession here on earth?</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: wear, put on</h4>
+
+<ul>
+<li>The queen assumed the stately robes.</li>
+<li>In the third frame, the youth has assumed clothing, jewelry, and thus identity.</li>
+<li>There are no beings known as hats, coats, shoes, dresses, and trousers--those are just the clothing assumed by us humans.</li>
+<li>The young black throat bunting, although full grown, had not yet assumed their second clothing, in which the sexes are distinguished.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

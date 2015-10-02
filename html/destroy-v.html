@@ -1,0 +1,67 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="destroy" hidden/><h2>destroy</h2>
+<h4> 1.1: make useless, ruin or spoil completely</h4>
+
+<ul>
+<li>Most of the old part of the city was destroyed by bombs during the war.</li>
+<li>The accident seemed to have totally destroyed his confidence.</li>
+<li>The ancient manuscripts were destroyed by fire.</li>
+<li>New evidence destroyed the testimony of the prosecution's chief witness.</li>
+<li>In crowded populations, poverty destroys the possibility of cleanliness. (G.B. Shaw)</li>
+<li>Through violence and propaganda, they have destroyed hope.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: subdue or defeat completely</h4>
+
+<ul>
+<li>The rebel forces were destroyed in battle.</li>
+<li>The home team destroyed the visitors.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: put an animal to death because of illness or danger</h4>
+
+<ul>
+<li>The customs agents destroyed the dog that was found to be rabid.</li>
+<li>Park officials trapped and destroyed the bear.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

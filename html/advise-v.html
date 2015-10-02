@@ -1,0 +1,63 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="advise" hidden/><h2>advise</h2>
+<h4> 1.1: offer counsel or advice, suggest a plan of action</h4>
+
+<ul>
+<li>I won't choose until somebody can advise me.</li>
+<li>She advised with her associates.</li>
+<li>She advises the President on African policy.</li>
+<li>We were advised by our teacher.</li>
+<li>We were advised against staying longer.</li>
+<li>I think I'd advise him to leave the company.</li>
+<li>His doctor advised him against smoking.</li>
+<li>They're advising that children be kept out of the sun altogether.</li>
+<li>I'd advise waiting until tomorrow.</li>
+<li>She advised us when to come.</li>
+<li>She advises the President on African policy.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: offer information</h4>
+
+<ul>
+<li>I advised him that the rent was due.</li>
+<li>They were advised of their rights.</li>
+<li>Our solicitors have advised that the costs could be enormous.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

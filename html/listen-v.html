@@ -1,0 +1,49 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="listen" hidden/><h2>listen</h2>
+<h4> 1.1: make conscious effort to hear; pay attention</h4>
+
+<ul>
+<li>Spy agencies listened in on Diana.</li>
+<li>Even if you listened in on a telephone conference, you only know what the kids told you.</li>
+<li>How do I watch video or listen to audio?</li>
+<li>They listened to our feedback and now the site really works.</li>
+<li>You shoulda listened to your mother.</li>
+<li>If higher education listened to me, class attendance would not be required.</li>
+<li>I tried to tell her, but she just wouldn't listen.</li>
+<li>Customers that feel listened to are more likely to spread positive recommendations.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

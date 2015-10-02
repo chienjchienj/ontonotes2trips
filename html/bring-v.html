@@ -1,0 +1,167 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="bring" hidden/><h2>bring</h2>
+<h4> 1.1: cause to be in a state or location</h4>
+
+<ul>
+<li>Remember to bring your passport.</li>
+<li>I'm bringing John a birthday cake.</li>
+<li>Can we bring the dog to the picnic?</li>
+<li>Don't bring the cream to a boil, just simmer it.</li>
+<li>This brings us to the conclusion.</li>
+<li>The sound of gunfire brought him to a heightened state of awareness.</li>
+<li>That business venture is bringing them to financial ruin.</li>
+<li>They brought about the boat when they saw a storm approaching.</li>
+<li>The new President must bring about a change in the health care system.</li>
+<li>His urgent letter finally brought me around to give money to the school.</li>
+<li>He was groggy at this point, but fear brought him around pretty quick.</li>
+<li>After this, DC tried to bring back superheroes and they were a success.</li>
+<li>Massive, nonviolent civil disobedience brought down the Berlin Wall.</li>
+<li>Local government elections have been brought forward to Thursday May 5.</li>
+<li>He brought in a new judge.</li>
+<li>Bring on the birthday cake!</li>
+<li>He believes it is his faith that has brought him through many ordeals in his life.</li>
+<li>They gave him a little whisky to bring him to.</li>
+<li>They have chairs where you can sit while they bring out your shoes.</li>
+<li>He was brought up to the major leagues.</li>
+<li>Can you bring the boxes up from the basement?</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: impart, give, produce; be the source of</h4>
+
+<ul>
+<li>Age brings wisdom in time.</li>
+<li>Pastel colors will bring a feeling of calm and serenity to a room.</li>
+<li>His vast experience brings credibility to the project.</li>
+<li>My state of inattention brought down impositions upon me.</li>
+<li>The earth brought forth grass, herbs yielding seed after their kind, and trees bearing fruit.</li>
+<li>Exercise is shown to reverse brain deterioration brought on by aging</li>
+<li>BBC's global news resources are brought swiftly to bear when big stories happen.</li>
+<li>Our Breckenridge painting brought 55,000 dollars.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: present, make known</h4>
+
+<ul>
+<li>They responded to criticisms brought up during the hearings.</li>
+<li>The accused brought forth a letter in court that he claims exonerates him.</li>
+<li>A suggestion was brought forward from a member to adjust the calendar.</li>
+<li>Legislation will be brought forward in the 2002 Finance Bill.</li>
+<li>Why did his speech go on so long after he had brought his point home?</li>
+<li>He brings out the best in her.</li>
+<li>The bright blue dress brings out her eyes.</li>
+<li>Riots occurred after the newspaper brought out the special issue.</li>
+<li>But the government only brought out the scandal during the electoral campaign!</li>
+<li>His name was brought up during the investigation.</li>
+<li>They brought up several questions concerning the methodology.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: cause to develop, emerge</h4>
+
+<ul>
+<li>The teacher tried to bring out the shy boy.</li>
+<li>You bring out the patient side of me.</li>
+<li>It is very important for a therapist to bring out the patient's independence.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: induce, cause to act</h4>
+
+<ul>
+<li>The confession of one of the accused brought the others to admit to the crime.</li>
+<li>He could not bring himself to call his parents.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: raise or rear offspring</h4>
+
+<ul>
+<li>This is a great neighborhood in which to bring up a family.</li>
+<li>She was brought up by her aunt.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: legally set forth</h4>
+
+<ul>
+<li>Police have brought charges against a tourist for bathing naked in a holy lake.</li>
+<li>When the jury brought in a verdict of guilty, the lawyer protested.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: succeed through a plan of action</h4>
+
+<ul>
+<li>The veteran Irish stylist brought off one of the biggest literary coups.</li>
+<li>After only eight minutes Attard's keeper Mizzi brought off a fine save.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: cause an operating system to load</h4>
+
+<ul>
+<li>On the website I am building I have links to bring up Windows Media and Winamp.</li>
+<li>Pressing F8 when booting will bring up Windows 95 boot menu.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: cause to come to a sudden stop</h4>
+
+<ul>
+<li>Bracebridge had brought up the horse on which he had been riding to a stand.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

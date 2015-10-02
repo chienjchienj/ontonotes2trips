@@ -1,0 +1,77 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="trail" hidden/><h2>trail</h2>
+<h4> 1.1: lag or linger behind</h4>
+
+<ul>
+<li>The dog trailed some distance behind his master.</li>
+<li>John trailed behind his class mates in math.</li>
+<li>Caterpillar Inc. said full-year earnings will trail last year's results.</li>
+<li>He trailed for only five holes during his six matches.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: (cause to) lay or drag along a surface</h4>
+
+<ul>
+<li>The bride's veil trailed along the ground.</li>
+<li>The ivy trailed across the balcony.</li>
+<li>Two men were wounded and staggered along, trailing blood behind them.</li>
+<li>The toddler was trailing his pants.</li>
+<li>The rock trailed seaweed whiskers.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: follow a trail; pursue</h4>
+
+<ul>
+<li>He trailed them into the Osage Nation and located their hide-out.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: TRAIL OFF: dwindle; come to an end</h4>
+
+<ul>
+<li>Sales of the low-end products may finally be trailing off.</li>
+<li>His voice trailed off when he saw the look on her face.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

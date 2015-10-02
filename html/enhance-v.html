@@ -1,0 +1,48 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="enhance" hidden/><h2>enhance</h2>
+<h4> 1.1: increase or improve in value, quantity, or quality</h4>
+
+<ul>
+<li>Your excellent customer service has truly enhanced our enjoyment of sailing.</li>
+<li>Music enhances our joy.</li>
+<li>His time in Costa Rica has only enhanced his love of rare tropical fruits.</li>
+<li>Collaborative learning enhances critical thinking.</li>
+<li>We've enhanced our website.</li>
+<li>He enhanced the photo using his newly purchased software.</li>
+<li>Enhance your life with wireless networking!</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

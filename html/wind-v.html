@@ -1,0 +1,136 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="wind" hidden/><h2>wind</h2>
+<h4> 1.1: meander, wander</h4>
+
+<ul>
+<li>The river winds through the hills.</li>
+<li>A steep path winds through the French village, leading to the castle overlooking the river.</li>
+<li>The invincible thread of sound wound up into the air like the smoke from a cottage chimney.</li>
+<li>Our bikes wind down the snaky road that runs from the summit to the Maui.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: wrap with or form into a coil</h4>
+
+<ul>
+<li>Then they'd carefully wound the spool with three meters of monomolecular filament.</li>
+<li>Wind the yarn around your hand loosely about two dozen times.</li>
+<li>The stream of stars has wound itself around the galaxy like a strand of spaghetti.</li>
+<li>He angered the reptile, which had wound itself around its mistress' neck and hissed loudly.</li>
+<li>The instrument wove a web of sound that wound around the innocent voice and lifted it up.</li>
+<li>Then I wound it into a ball and it's been sitting around my house for 27 months.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: unroll ('wind off')</h4>
+
+<ul>
+<li>Now you can wind the yarn off the spindle and into a skein.</li>
+<li>Feed the silkworms, and wind the silk off the cocoons.</li>
+<li>The occupant can wind the webbing off the wind-up shaft 18 to fasten the webbing to himself.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: activate, energize</h4>
+
+<ul>
+<li>Don't forget to wind your watch!</li>
+<li>Simply wind up the built-in generator with the fold-out handle under the base of the lantern.</li>
+<li>She wound him up, and creaking with effort, the little figure came to life.</li>
+<li>She changed him, she wound him up, and they had the most terrible rows.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: finish, wrap up</h4>
+
+<ul>
+<li>Custard tarts wind up the dim-sum meal.</li>
+<li>Voluntary liquidation occurs when the members resolve to voluntarily wind up the affairs of the company.</li>
+<li>Let's wind up the party and go to bed.</li>
+<li>He wound up the analysis with summaries of legislation.</li>
+<li>When breakfast wound down the next morning, Adrian went into the dining room.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: end up in a resulting state</h4>
+
+<ul>
+<li>Eventually, you'll wind up behind the Stinson Beach fire Department.</li>
+<li>I know you'll wind up missing me.</li>
+<li>That's how she wound up getting $16 a week in unemployment compensation.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: make breathless</h4>
+
+<ul>
+<li>The run hadn't really winded him.</li>
+<li>The last kick really winded him -straight to the gut.</li>
+<li>Panic, quick and devastating, winded her.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: catch the scent of</h4>
+
+<ul>
+<li>The light colored fallow doe must have winded me.</li>
+<li>The handler had blown a whistle about the same time the dog winded the bird.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: hoist or draw with a windlass, winch, etc.</h4>
+
+<ul>
+<li>(No examples found)</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

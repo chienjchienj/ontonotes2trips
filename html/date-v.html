@@ -1,0 +1,70 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="date" hidden/><h2>date</h2>
+<h4> 1.1: engage in a romantic relationship with someone</h4>
+
+<ul>
+<li>Tonight she is dating a former high school sweetheart.</li>
+<li>He is dating his former wife again!</li>
+<li>Did you know she was dating an older man?</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: stamp or mark with a date</h4>
+
+<ul>
+<li>The package was dated November 24.</li>
+<li>She wrote the letter on Monday but she dated it Saturday.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: assign a date to</h4>
+
+<ul>
+<li>Scientists often cannot date precisely archeological or prehistorical findings.</li>
+<li>The autographed manuscript of a poem was signed by Henry Lawson but not dated.</li>
+<li>Surviving fragments of sculpture dated it to the end of the 12th century.</li>
+<li>The title to the property dated back to 1803.</li>
+<li>Lacrosse is a game that dates back as early as the existence of Native American tribes.</li>
+<li>Some plant historians date the kohlrabi back to the Roman Empire.</li>
+<li>The CD dates it from 1961, though other sources date it from 1965.</li>
+<li>He had in his possession a marble statue dated from the 6th century BC.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

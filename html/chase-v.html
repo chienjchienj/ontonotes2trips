@@ -1,0 +1,77 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="chase" hidden/><h2>chase</h2>
+<h4> 1.1: go after quickly (with the intention of catching)</h4>
+
+<ul>
+<li>The policeman chased the mugger down the alley.</li>
+<li>He said now he chases storms so he can understand them better.</li>
+<li>We need to chase down the facts before making any accusations.</li>
+<li>She chased all over the city searching for the right size.</li>
+<li>He chased after fame his entire life.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: pursue sexually or romantically</h4>
+
+<ul>
+<li>And she asks him if it's true he chases girls.</li>
+<li>Krista chased him shamelessly, but he never even gave her the time of day.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: cause to go away; drive away</h4>
+
+<ul>
+<li>He chased the children out of his backyard.</li>
+<li>The common cold could be chased away by an ancient Japanese plant.</li>
+<li>An evening with good friends can chase away the blues.</li>
+<li>Are women being chased out of the blogosphere?</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: cut grooves or furrows</h4>
+
+<ul>
+<li>It sparkles in the light from the way the silver was chased.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

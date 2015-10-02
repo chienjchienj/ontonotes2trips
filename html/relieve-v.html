@@ -1,0 +1,103 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="relieve" hidden/><h2>relieve</h2>
+<h4> 1.1: mitigate; alleviate</h4>
+
+<ul>
+<li>These pills will relieve your headaches.</li>
+<li>The only thing that relieves the pressure of this job is the gallows humor.</li>
+<li>The deal relieved the pressure on the army.</li>
+<li>Her assurances relieved his fears.</li>
+<li>Have the new drugs relieved the burden of the orthopedic surgeon?</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: exempt or free from a burden, duty, or requirement</h4>
+
+<ul>
+<li>The president relieved him from command for gross insubordination.</li>
+<li>The sentry relieved him at midnight.</li>
+<li>The court ruled that the transfer was on the husband's behalf if it relieved him of an obligation.</li>
+<li>An intervening clause relieved her of liability.</li>
+<li>In the process, she relieved herself of an overbearing and annoying husband.</li>
+<li>Death relieved him from suffering.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: free from the burden of an object</h4>
+
+<ul>
+<li>The housekeeper relieved him of his packages at the door.</li>
+<li>I relieved him of his shotgun and nudged him forward.</li>
+<li>She relieved herself of the backpack from her back.</li>
+<li>The thief relieved them of their watches and wallets.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: calm, reassure</h4>
+
+<ul>
+<li>Her entrance relieved him.</li>
+<li>She was able to see through the crack, though, which relieved her to no end.</li>
+<li>The child was relieved by the end of his parents' argument.</li>
+<li>I was relieved to find my services no longer required.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: Save from ruin, destruction, or harm.</h4>
+
+<ul>
+<li>Ordinary people try to relieve the pain of the people of Darfur.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: RELIEVE ONESELF: urinate</h4>
+
+<ul>
+<li>She relieved herself right on the front lawn.</li>
+<li>My dog always relieves himself first thing in the morning.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

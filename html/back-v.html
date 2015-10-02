@@ -1,0 +1,132 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="back" hidden/><h2>back</h2>
+<h4> 1.1: travel or cause to travel backward</h4>
+
+<ul>
+<li>Back into the driveway.</li>
+<li>The car backed up and hit the tree.</li>
+<li>Back the car into the parking spot.</li>
+<li>Back out slowly, and don't hit the mailbox this time.</li>
+<li>They are getting backed into the corner, and they are getting desperate.</li>
+<li>I never did get a straight answer out of him as to why he backed into me.</li>
+<li>He backed me into the ropes and hit me with three straight knife-edge chops.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: support</h4>
+
+<ul>
+<li>I backed Kennedy in 1960.</li>
+<li>I can't back this plan.</li>
+<li>He doesn't have the resources to back this enterprise.</li>
+<li>Which horse are you backing?</li>
+<li>Can you back up your claims with proof?</li>
+<li>Here's what those who backed the war are saying today.</li>
+<li>Trump has backed the venture with his own money rather than opting for a financial partner.</li>
+<li>Woodman backed the trumpeter along with Mingus on bass.</li>
+<li>Back the board with a piece of hard wood.</li>
+<li>Back up the wheel pant mount with a piece of plywood so you do not split it as the drill.</li>
+<li>His colleague, who was recently given a regular column in the LA Times, backed him up.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: face back or be in back of</h4>
+
+<ul>
+<li>John's house backs the city dump.</li>
+<li>The prosperous plain backs up to the Vosges mountains.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: make a copy of</h4>
+
+<ul>
+<li>Did you back up your files?</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: withdraw from a situation</h4>
+
+<ul>
+<li>One scholar involved in the study quickly backed away from that notion.</li>
+<li>Sun Microsystems has apparently backed away from its efforts to acquire a Linux software distribution.</li>
+<li>The school board has backed away from wading into the more-than-century-old debate over teaching the theory of evolution.</li>
+<li>He backed out of his earlier promise.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: decrease pressure, support, or responsibility</h4>
+
+<ul>
+<li>Iran's message to the west: back off or we retaliate.</li>
+<li>In the process, the author backed off one of the book's most explosive claims.</li>
+<li>The bully had to back down.</li>
+<li>Caribbean tourism officials backed down from a proposal to charge cruise ship passengers tax when visiting the region.</li>
+<li>Ben never backed down, even when he knew his job was threatened by that.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: clog up, congest</h4>
+
+<ul>
+<li>Cars backed up for miles on I-94.</li>
+<li>The toilet backed up again.</li>
+<li>I stuffed too much down the garbage disposal and the pipes backed up.</li>
+<li>The second highway backed up because 1/2 mile or so ahead of the merging area the highway was also one lane.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: shift to a counterclockwise direction</h4>
+
+<ul>
+<li>The wind backed.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

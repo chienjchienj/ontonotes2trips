@@ -1,0 +1,91 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="count" hidden/><h2>count</h2>
+<h4> 1.1: enumerate, determine a quantity</h4>
+
+<ul>
+<li>The teacher counted noses once the children were seated on the bus.</li>
+<li>Her baby brother can count to ten.</li>
+<li>The clerk counted off four yards of material from the fabric bolt.</li>
+<li>They are counting down again at t minus 40 seconds.</li>
+<li>Mary counted up the receipts for the day.</li>
+<li>How do I love thee, let me count the ways.</li>
+<li>We couldn't count all the stars in the sky.</li>
+<li>Don't count your chickens before they hatch.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: matter; have a value or importance</h4>
+
+<ul>
+<li>Let your employees know that their suggestions count.</li>
+<li>What really counts in life is that you love your work.</li>
+<li>These practical walking shoes don't count for much in terms of style.</li>
+<li>My opinion doesn't count for anything around here.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: classify; consider or be considered</h4>
+
+<ul>
+<li>Our department has ten staff members if you count the summer interns.</li>
+<li>That bag of potato chips hardly counts as a meal.</li>
+<li>The fact that it's his third offense will count against the defendant.</li>
+<li>Count me in for the company picnic next weekend.</li>
+<li>Definitely count me out if we have to bike to those far places.</li>
+<li>He counts himself lucky to have survived the accident.</li>
+<li>These nations had always been counted as allies in previous crises.</li>
+<li>The rebate will count as taxable income.</li>
+<li>The professor told the students that the final exam counted for half their grade.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: depend on, expect</h4>
+
+<ul>
+<li>Mary knew she could always count on John.</li>
+<li>In New England you can count on a lousy spring.</li>
+<li>Sally's cousin is counting heavily on getting into Harvard.</li>
+<li>I wouldn't count on there still being cheap seats on that flight.</li>
+<li>Their crops count on seasonal flooding of the river.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

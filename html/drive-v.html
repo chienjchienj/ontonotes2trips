@@ -1,0 +1,128 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="drive" hidden/><h2>drive</h2>
+<h4> 1.1: operating or traveling via a vehicle</h4>
+
+<ul>
+<li>We drove the car to the garage.</li>
+<li>My new truck drives well.</li>
+<li>He drives a bread truck.</li>
+<li>The car drove around the corner.</li>
+<li>We drive the turnpike to work.</li>
+<li>We drove up to Shirley and Bob's house.</li>
+<li>The driver behind me drove right up to about a foot from my bumper.</li>
+<li>On his third try, as detectives drove him around, he finally identified the house.</li>
+<li>We were driving around in the countryside on a fine Sunday morning.</li>
+<li>The star and her manager drive in today from their motor tour across the country.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: control or force to a position or action</h4>
+
+<ul>
+<li>The hunters drove the birds from out of the bush.</li>
+<li>Neighbors appeared at the scene and drove away the small group of demonstrators.</li>
+<li>After a hard-fought battle, the Romans eventually drove back the Britons.</li>
+<li>The kestrel drove off the jay, but then a crow flew in and drove off the kestrel.</li>
+<li>The border collie drove in the cattle.</li>
+<li>His line double drove in Jim Lemon with the winning run.</li>
+<li>EU carbon trading scheme may drive prices of raw materials up.</li>
+<li>All of the variables, known and unknown, will drive prices higher or lower.</li>
+<li>He drives me mad.</li>
+<li>We drove the enemy into the sea.</li>
+<li>The noise finally drove me to move.</li>
+<li>Her passion drives her.</li>
+<li>Production, not consumption, drives the economy.</li>
+<li>Innovation drives our business.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: move forcefully toward a goal</h4>
+
+<ul>
+<li>We really drove to meet the deadline.</li>
+<li>They drove through the desert heat on foot.</li>
+<li>What are you driving at?</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: cause an object to move forcefully, usu. by striking it</h4>
+
+<ul>
+<li>He drove the ball far out into the field.</li>
+<li>The adjustment can help a golfer drive a golfball at the perfect angle.</li>
+<li>The batter drove one deep into left field.</li>
+<li>The boxer drove home a solid left.</li>
+<li>I'm trying to drive home these basic ideas.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: force to penetrate or create through penetration</h4>
+
+<ul>
+<li>They drove a tunnel right through that mountain.</li>
+<li>He drove through bedrock to reach the vein of precious mineral.</li>
+<li>It's time to drive a stake through the heart of the RMA.</li>
+<li>Some manufacturers have created a tiny knob to help you drive in the screw.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: supply power for</h4>
+
+<ul>
+<li>Steam drives the engines.</li>
+<li>Those machines are all driven by electricity.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: search for game, as in hunting</h4>
+
+<ul>
+<li>They drove the forest, hunting bear.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

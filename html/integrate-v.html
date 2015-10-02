@@ -1,0 +1,69 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="integrate" hidden/><h2>integrate</h2>
+<h4> 1.1: make or become whole or part of a whole</h4>
+
+<ul>
+<li>Over two-thirds of the teachers (71%) report they integrated the arts into their subjects.</li>
+<li>They integrated Blackfeet language and culture into what they knew.</li>
+<li>They should be ready to explain how they integrated the criteria established in step 4 and the PRIZM data into their plan.</li>
+<li>Like a number of other clans, they integrated into the great Scottish Highlands.</li>
+<li>Finally, the hero achieves maturity when he integrates all of these experiences.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: open to members of all races and ethnic groups</h4>
+
+<ul>
+<li>My two girls, they integrated the church, along with a white lady that came down.</li>
+<li>Based on a true story, the movie is set in 1971, when TC Williams High integrated blacks and whites.</li>
+<li>Germany's new government emphasizes that foreigners should be integrated.</li>
+<li>The Roman Empire was an organization that integrated outsiders.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: calculate the integral of</h4>
+
+<ul>
+<li>In order to integrate a function over a complicated domain, it picks random points over some simple domain.</li>
+<li>Enter an expression and then enter the variable or variables to integrate.</li>
+<li>Here you can integrate a function f(z) using Simpson's rule.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

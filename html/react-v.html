@@ -1,0 +1,69 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="react" hidden/><h2>react</h2>
+<h4> 1.1: show response to something</h4>
+
+<ul>
+<li>She slapped him and called him names, but he didn't react.</li>
+<li>The judge reacted angrily to the suggestion that it hadn't been a fair trial.</li>
+<li>Officials reacted with guarded optimism.</li>
+<li>The government reacted by sending aid.</li>
+<li>The kids react to everything I say.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: show a negative physical response</h4>
+
+<ul>
+<li>She reacted negatively to her new medication.</li>
+<li>Many people react to penicillin.</li>
+<li>If you react to kidney beans, you may also react to other members of the legume family.</li>
+<li>He asked how she reacts to bee stings, but the child hasn't ever had one so we don't know.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: undergo a change through chemical reaction</h4>
+
+<ul>
+<li>Potassium reacts with water.</li>
+<li>The chlorine reacts with the iodide to form iodine.</li>
+<li>The drug might react to other medications the patient is taking.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,71 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="endorse" hidden/><h2>endorse</h2>
+<h4> 1.1: approve and support</h4>
+
+<ul>
+<li>This practice is not endorsed by headquarters.</li>
+<li>We endorse the project without reservation as being a good example of the simulation studies.</li>
+<li>It was just a matter of time before the mayor endorsed the candidate.</li>
+<li>They decided to endorse the mayor as a candidate for higher office.</li>
+<li>Pop-up advertisements falsely suggested that Microsoft endorsed the product.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: promote a product through public (advertising) appearance</h4>
+
+<ul>
+<li>They paid $2 million to the world champion to endorse their new aftershave.</li>
+<li>You will buy the product just because your favorite football player endorses it on TV?</li>
+<li>A popular actor endorsed the pain reliever.</li>
+<li>My cell phone plan is from a company endorsed by Catherine Zeta Jones.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: sign on a document/check to give it permission</h4>
+
+<ul>
+<li>If you are depositing checks, you will need to endorse the back of the check.</li>
+<li>If your name is written on the check incorrectly, you should endorse the check twice.</li>
+<li>Date and endorse the back exactly as written upon the face of the certificate.</li>
+<li>The fitness report had been endorsed on the back by its recipient.</li>
+<li>Endorse the receipt and return it to the responsible person.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,89 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="drink" hidden/><h2>drink</h2>
+<h4> 1.1: take in a liquid orally</h4>
+
+<ul>
+<li>Drink lots of water on a hot day.</li>
+<li>At the picnic the children drank lemonade.</li>
+<li>The colt drank its milk thirstily.</li>
+<li>The cut roses are drinking their water nicely. (figurative extension)</li>
+<li>Bob drank three glasses of orange juice.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: intake alcohol</h4>
+
+<ul>
+<li>His father drank himself to death.</li>
+<li>His religion forbids him to drink or smoke.</li>
+<li>The two sailors drank themselves into a stupor in one of the little bars along the docks.</li>
+<li>The woman drinks and beats her kids.</li>
+<li>I have stopped drinking for lent.</li>
+<li>I don't smoke, I drink occasionally.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: complete mental immersion or fascination with something</h4>
+
+<ul>
+<li>We stood on the cliffs, drinking in the view of the Pacific Ocean.</li>
+<li>He drank in her words of love.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: a toast</h4>
+
+<ul>
+<li>I'll drink to that!</li>
+<li>Let's drink to the happiness of the bride and groom.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: a quality of taste, as with wine</h4>
+
+<ul>
+<li>This 1985 Cabernet drinks beautifully!</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,72 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="free" hidden/><h2>free</h2>
+<h4> 1.1: release from confinement, obligation, or a burden</h4>
+
+<ul>
+<li>After a ten-hour siege the gunman agreed to free the hostages.</li>
+<li>The defendants were freed after their acquittal.</li>
+<li>When I was finally freed from detention, I ran straight home.</li>
+<li>Both men were freed from the wreckage after a four-hour operation.</li>
+<li>Fortunately, tilting the case back and forth freed the screw.</li>
+<li>They should be freed from cares and troubles about the affairs of the world.</li>
+<li>This practice will free you from fear and fill you with courage.</li>
+<li>Free your imagination!</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: rid something of an undesirable thing</h4>
+
+<ul>
+<li>Have you freed your school of squirrels?</li>
+<li>Warren Buffett, the American billionaire, recently freed himself of some of his worldly goods.</li>
+<li>His main concern will be to correct his growing methods to help the plants free themselves of pests.</li>
+<li>She freed a path across the cluttered floor.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: make something available for use</h4>
+
+<ul>
+<li>We have 80% of the hardware needed for human lunar missions already developed, and have freed the funds required to develop the rest.</li>
+<li>They planned to extend the car park, freeing existing parking spaces for visitors.</li>
+<li>I need to free up the afternoon to write this report.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

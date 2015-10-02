@@ -1,0 +1,61 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="last" hidden/><h2>last</h2>
+<h4> 1.1: continue to be available</h4>
+
+<ul>
+<li>We brought enough food to last us a week.</li>
+<li>Get a free watch with your purchase, while supplies last.</li>
+<li>This snack will have to last you until dinner. (suffice to meet your needs)</li>
+<li>This bottle of shampoo only lasted (me) a week.</li>
+<li>These memories will last us a lifetime. (figurative extension)</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: exist, persist, live</h4>
+
+<ul>
+<li>"A person can last up to 30 days without food."</li>
+<li>"Trust me, you won't last a day in that job."</li>
+<li>These cars are built to last.</li>
+<li>"These superstitions will last in the backwaters of America."</li>
+<li>He doubts the new hire will last out the training program.</li>
+<li>Their romance won't last.</li>
+<li>The patient isn't expected to last the night.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

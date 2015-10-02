@@ -1,0 +1,69 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="volunteer" hidden/><h2>volunteer</h2>
+<h4> 1.1: give or do freely and willingly</h4>
+
+<ul>
+<li>He volunteered his time to translate these papers into French/Francais.</li>
+<li>You can use our services without having to volunteer any information about yourself.</li>
+<li>WOAI caught recruiters volunteering to help recruits ace the drug test at home.</li>
+<li>Just because we volunteered for the military doesn't mean we volunteered to put our lives in unnecessary harm.</li>
+<li>They volunteered that the queen would really like cake.</li>
+<li>'I know who drove their car into your flowerbed, Mr. Beatty,' Jimmy volunteered.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: work in charity</h4>
+
+<ul>
+<li>I volunteer on the weekends.</li>
+<li>She often volunteers at the hospital.</li>
+<li>I've been volunteering for many years - I started as a way to help with my shyness.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: nominate someone for a task</h4>
+
+<ul>
+<li>He wasn't happy when Major Sheppard volunteered him to help the Hoffans without asking him first.</li>
+<li>Steve's colleagues unanimously volunteered him and he didn't duck.</li>
+<li>Jackie volunteered her secretary to help call students.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

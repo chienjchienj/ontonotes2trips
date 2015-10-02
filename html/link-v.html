@@ -1,0 +1,61 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="link" hidden/><h2>link</h2>
+<h4> 1.1: discover a logical or causal connection; associate</h4>
+
+<ul>
+<li>The report linked the North Korean government to state-directed crimes.</li>
+<li>Police announced Tuesday that they had linked the shootings, including one that killed a woman.</li>
+<li>Kevin Trenberth linked the severity of the 2004 hurricane season to global warming.</li>
+<li>He and his colleagues linked the signs of demasculinization to lower phthalate exposures.</li>
+<li>It linked up the Bin Laden and Bush families long before Fahrenheit 9/11.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: join or connect, as if by a chain</h4>
+
+<ul>
+<li>A hallway linked the dining room to the kitchen.</li>
+<li>The defendant linked the domain names to his own site.</li>
+<li>It linked the phone system to the public-address system.</li>
+<li>A canal was created that linked the Tiber to the sea.</li>
+<li>The transportation ties that linked the town of Chicago with the communities of Will County.</li>
+<li>J-Serve 2005 linked the Jewish community with the larger national "weekend of service."</li>
+<li>The site will be moved onto the public servers, and the domain name will be linked up.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

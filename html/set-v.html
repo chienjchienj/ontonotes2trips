@@ -1,0 +1,185 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="set" hidden/><h2>set</h2>
+<h4> 1.1: put, place, position</h4>
+
+<ul>
+<li>Set your purse on the table.</li>
+<li>The jeweler set rubies around the central diamond.</li>
+<li>I'm going to set a couple of rose bushes along the back of the house.</li>
+<li>The novel is set 50 years in the future.</li>
+<li>When Franklin was a printer's apprentice, he had to set type by hand.</li>
+<li>Einstein's genius set him apart from the others.</li>
+<li>As soon as the ship docked, they were set ashore.</li>
+<li>Please set aside 3 cartons for me.</li>
+<li>He tried to set down his thoughts on paper.</li>
+<li>Let's set back the meeting an hour to give him time to prepare.</li>
+<li>She set forth her reasons, one by one.</li>
+<li>Shall I set out your clothes?</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: go down, sink</h4>
+
+<ul>
+<li>At one time the sun never set on the British Empire.</li>
+<li>The helicopter set down right in the field next to my house.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: determine, fix at certain value</h4>
+
+<ul>
+<li>We don't have to always let her set the rules.</li>
+<li>Try your equations with X set to a negative number.</li>
+<li>The bank set interest rates on their long-term CDs at 5 percent.</li>
+<li>With that time, the runner has just set a new world record.</li>
+<li>The coroner set the time of death at about 6pm.</li>
+<li>You didn't set the trip odometer back to zero.</li>
+<li>I'm setting the clock for 5 a.m.</li>
+<li>When daylight savings time begins, set your clocks ahead one hour.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: prepare, arrange; create or organize for a particular purpose</h4>
+
+<ul>
+<li>These packages were set to go yesterday.</li>
+<li>Your printer is all set.</li>
+<li>Will you set the table, please?</li>
+<li>How do you set up this tent?</li>
+<li>We're not set up to receive messages from offshore.</li>
+<li>I set up my schedule so that I'm home by 4:00 every day.</li>
+<li>We should set up a committee to look into that.</li>
+<li>The American Red Cross was set up in 1881 to aid victims of war and natural disasters.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: cause to assume a condition</h4>
+
+<ul>
+<li>The truth will set you free.</li>
+<li>They believe vandals set fire to the school.</li>
+<li>I set him to work on the windows.</li>
+<li>My daughter's wedding set me back $20,000.</li>
+<li>That white coat really sets off your dark hair.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: begin an activity, or cause one to begin</h4>
+
+<ul>
+<li>She set about contacting all the parents.</li>
+<li>They set off on their morning walk.</li>
+<li>I hope the verdict doesn't set off a riot.</li>
+<li>The ships set out at dawn.</li>
+<li>His rash words set in motion a chain of events he would intensely regret.</li>
+<li>The terrorists set off another bomb this morning.</li>
+<li>The scientists set up a shock wave.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: fix firmly, solidify</h4>
+
+<ul>
+<li>That bone never set properly.</li>
+<li>He set his jaw and refused to comply.</li>
+<li>The carpenter set the nail firmly.</li>
+<li>You won't have time to set your hair.</li>
+<li>Don't add the pineapple until the gelatin has set at least partially.</li>
+<li>Winter has set in.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: ensnare, frame, arrange through deceit</h4>
+
+<ul>
+<li>I was set up!</li>
+<li>That election was set up so she would win.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: dialect for SIT</h4>
+
+<ul>
+<li>I was jus' settin' there, when up walked the new pastor.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: (cause to) attack</h4>
+
+<ul>
+<li>He swore he'd set the dogs on them.</li>
+<li>He set into his food with gusto.</li>
+<li>She was set upon by wolves.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.11: hone</h4>
+
+<ul>
+<li>He set all the kitchen knifes beautifully.</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.11" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      
+<h4> 1.12: reproduce,fructify</h4>
+
+<ul>
+<li>These old trees in the orchard may not set.</li>
+</ul>
+
+<input type="text" name="annotation[results][11][id]" value="1.12" hidden />
+<input type="text" name="annotation[results][11][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

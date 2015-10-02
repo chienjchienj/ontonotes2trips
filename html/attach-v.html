@@ -1,0 +1,75 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="attach" hidden/><h2>attach</h2>
+<h4> 1.1: join, connect, assign or associate</h4>
+
+<ul>
+<li>I attached a photo to my application form.</li>
+<li>I'm attaching a copy of the latest report to the email.</li>
+<li>The spider attached a thread to the window sill.</li>
+<li>The spider's thread attached to the window sill.</li>
+<li>The construction worker attached the door to the frame.</li>
+<li>How do you set up an HP DeskJet printer that is attached to a Windows XP computer?</li>
+<li>Should I attach a label on this gift?</li>
+<li>Wherever convenient, a famous/infamous person was attached a label.</li>
+<li>I attach no importance whatsoever to their claims.</li>
+<li>Many major issues are attached to this legislation.</li>
+<li>There are many issues attached to this question.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: bind somebody or become bound emotionally</h4>
+
+<ul>
+<li>I'm very attached to my mobile phone.</li>
+<li>Taylor has reportedly become closely attached to her pet dog.</li>
+<li>If your child is attached to his teacher, have him write an end-of-year thank-you card.</li>
+<li>Being on his own, he attached himself to a noisy group at the bar.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: seize something legally</h4>
+
+<ul>
+<li>Kansas Department of Revenue attached the property to pay the drug tax and penalty.</li>
+<li>When personal property is attached, it remains in the custody of the officer until judgement.</li>
+<li>The maintenance court authorizes the issue of a warrant of execution to attach goods.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

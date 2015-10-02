@@ -1,0 +1,61 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="wait" hidden/><h2>wait</h2>
+<h4> 1.1: remain inactive or delay action until an appointed time</h4>
+
+<ul>
+<li>He is waiting to be drafted.</li>
+<li>I had to wait in line for an hour to get the tickets.</li>
+<li>Microsoft urged Windows users to wait for its official security patch for a graphics file vulnerability.</li>
+<li>Let's wait for the details before celebrating.</li>
+<li>We waited for a sofa and love seat for over 6 months.</li>
+<li>Wait, wait, don't tell me!</li>
+<li>I patiently waited for the credits and then ran for the exit.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: serve</h4>
+
+<ul>
+<li>He waits tables on Saturday nights.</li>
+<li>She once waited on Julia Child.</li>
+<li>All her life she had waited on the needs of the white Redds.</li>
+<li>I was waited on immediately at the ticket counter by two very pleasant young women.</li>
+<li>We each had our own private hostess, who waited on us hand-and-foot.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

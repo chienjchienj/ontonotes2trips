@@ -1,0 +1,581 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="get" hidden/><h2>get</h2>
+<h4> 1.1: Come into possession (by purchase or hearing), capture, receive, obtain, undergo</h4>
+
+<ul>
+<li>Get permission to take a few days off from work.</li>
+<li>I got nothing but trouble for my good intentions.</li>
+<li>Get me those books over there, please.</li>
+<li>Get an idea for a birthday party theme.</li>
+<li>The Brazilian team got four goals.</li>
+<li>We finally got the suspect.</li>
+<li>He didn't get the joke.</li>
+<li>"How to get the attention of unruly school children."</li>
+<li>You cannot get water out of a stone.</li>
+<li>What did you get at the toy store?</li>
+<li>She didn't get his name when they first met.</li>
+<li>Why should the president get hell for initiating a war?</li>
+<li>He got five years in prison.</li>
+<li>She got the mood just right in her photographs.</li>
+<li>He got an insulin shock after eating too much candy.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: Catch, come down with</h4>
+
+<ul>
+<li>I got funny spots all over my body.</li>
+<li>She got a cold from John.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: Become, enter a state, cause</h4>
+
+<ul>
+<li>It must be getting more serious.</li>
+<li>He got his squad on the ball.</li>
+<li>The children finally got me to buy a computer.</li>
+<li>You don't wanna get me mad.</li>
+<li>His lying really gets me.</li>
+<li>Brahms' "Requiem" gets me every time.</li>
+<li>"Got me! I don't know the answer."</li>
+<li>Get working as soon as the sun rises.</li>
+<li>He got his arm broken in the scuffle.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: Arrive at, reach</h4>
+
+<ul>
+<li>She didn't get to Chicago until after midnight.</li>
+<li>What are you getting at?</li>
+<li>What do you get when you add these numbers?</li>
+<li>She got the bus just as it was leaving.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: Pay back, get revenge</h4>
+
+<ul>
+<li>We'll get them for this!</li>
+<li>This time I got him!</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: communicate with person or place</h4>
+
+<ul>
+<li>Bill called this number and he got Mary.</li>
+<li>The operator couldn't get Kobe because of the earthquake.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: Command to scram or buzz off</h4>
+
+<ul>
+<li>"Get!"</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: Baseball - earn or achieve a base by walk</h4>
+
+<ul>
+<li>Almost all batters strike out more than they get a base on balls.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: Overcome or destroy</h4>
+
+<ul>
+<li>The cat got my goldfish.</li>
+<li>The ice storm got my flowers.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: Engender, sire, mother or father</h4>
+
+<ul>
+<li>No examples found</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.11.1: (cause to) gain a characteristic or attribute</h4>
+
+<ul>
+<li>Then I got dressed and looked at myself in the mirror.</li>
+<li>Rush out of bed to get the kids dressed, let the cat out, get your partner's lunch ready.</li>
+<li>This picture was taken before the elevator got stuck with doors open.</li>
+<li>Get well soon!</li>
+<li>Just when I thought things couldn't get worse, they did.</li>
+<li>Seattle got even early in the second quarter.</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.11.1" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      
+<h4> 1.11.2: (cause to) attain a state/location relative to a point of reference</h4>
+
+<ul>
+<li>I got across the river last night as wet as a drowned rat.</li>
+<li>We got across 500 miles in a mere 8 or so hours.</li>
+<li>Tired, confused crew members got ahead of the fire and uphill from it.</li>
+<li>I think we just got ahead of ourselves and didn't get clear enough thinking.</li>
+<li>How to get away from your lover on Valentine`s Day.</li>
+<li>I moved across the car to get away from the door.</li>
+<li>These horsemen got behind the ridge on our right again.</li>
+<li>I just got back from the dentist.</li>
+<li>Bride's Biscuit got by the other dogs to win the race.</li>
+<li>What time did you get in?</li>
+<li>Get out your best dress, we're going dancing.</li>
+<li>The rain clouds can't get over the mountain.</li>
+<li>Hey, if I hang up my cell phone I'll get to work in time.</li>
+<li>I can't take it anymore, I have to get away!</li>
+<li>He reined up his horse and got down.</li>
+<li>She opened the door and told him to get in.</li>
+<li>Don't be afraid of the horse, just get on.</li>
+<li>Get out!</li>
+<li>I've fallen and I can't get up.</li>
+</ul>
+
+<input type="text" name="annotation[results][11][id]" value="1.11.2" hidden />
+<input type="text" name="annotation[results][11][trips]" value="" visible/>
+      
+<h4> 1.11.3: enter into activity, begin</h4>
+
+<ul>
+<li>To fix these problems you folks with the source code for this puppy need to get cracking.</li>
+<li>Kate and Sawyer got down to business in the fish-biscuit cage.</li>
+<li>He'll get going on a good rant, throw in a few smart things, and suddenly you're convinced.</li>
+<li>Let's get moving on this tutorial.</li>
+<li>They got off to a good start.</li>
+<li>It's up to the city to get ball rolling.</li>
+<li>You must serve participants as soon as you can get the project rolling.</li>
+<li>And don't get me started on our wacko teetotalism!</li>
+<li>Agendas allow social people to recognize when it is time to get to business.</li>
+<li>Bring on the fisticuffs and let's get weaving.</li>
+</ul>
+
+<input type="text" name="annotation[results][12][id]" value="1.11.3" hidden />
+<input type="text" name="annotation[results][12][trips]" value="" visible/>
+      
+<h4> 1.11.4: travel, move about</h4>
+
+<ul>
+<li>Getting about in Bangkok has traditionally been a bit of a challenge.</li>
+<li>We marveled at our doggie's ability to get around on just three legs.</li>
+<li>Anywho, so news gets around that Jeff and I can't find our way to the Holiday Inn.</li>
+<li>Coast to coast the word got out: Don't go see 'Gigli.'</li>
+</ul>
+
+<input type="text" name="annotation[results][13][id]" value="1.11.4" hidden />
+<input type="text" name="annotation[results][13][trips]" value="" visible/>
+      
+<h4> 1.11.5: progress, advance</h4>
+
+<ul>
+<li>Wanna get ahead in love and life?</li>
+<li>It seems he's getting more outspoken as he's getting along in his career.</li>
+<li>She did not count her birthdays or worry because she was getting on in years.</li>
+<li>How are you getting along in your new place?</li>
+<li>It's getting on midnight--let's all go to bed.</li>
+</ul>
+
+<input type="text" name="annotation[results][14][id]" value="1.11.5" hidden />
+<input type="text" name="annotation[results][14][trips]" value="" visible/>
+      
+<h4> 1.11.6: reach, arrive at (concrete or abstract)</h4>
+
+<ul>
+<li>He never got to first base with any of his big wheels and deals.</li>
+<li>He finally got around to painting the windows.</li>
+<li>That's the closest some of us ever get to setting goals.</li>
+<li>I cannot get at the postman (I cannot even see him to give him my ferocious appearance.)</li>
+<li>Can you get at the stuff inside?</li>
+</ul>
+
+<input type="text" name="annotation[results][15][id]" value="1.11.6" hidden />
+<input type="text" name="annotation[results][15][trips]" value="" visible/>
+      
+<h4> 1.11.7: finish, reach the end of</h4>
+
+<ul>
+<li>Let's get this job over with.</li>
+<li>This tagging task is such a pain, I don't know how I'll get through it!</li>
+<li>I was so weak that I could not get through a day without taking a nap.</li>
+</ul>
+
+<input type="text" name="annotation[results][16][id]" value="1.11.7" hidden />
+<input type="text" name="annotation[results][16][trips]" value="" visible/>
+      
+<h4> 1.11.8: become aware of</h4>
+
+<ul>
+<li>Be informed--get a line on new bankruptcy ramifications.</li>
+<li>When the townswomen get wind of the scheme, they invite some Spanish fishermen to the same dance.</li>
+<li>We will be working time and half to bring you all the details as we get word of them.</li>
+</ul>
+
+<input type="text" name="annotation[results][17][id]" value="1.11.8" hidden />
+<input type="text" name="annotation[results][17][trips]" value="" visible/>
+      
+<h4> 1.11.9: perceive through one of the senses</h4>
+
+<ul>
+<li>Through those thin walls we really got a load of their fight.</li>
+<li>I just got a look inside and it's impressive.</li>
+<li>I knew we were in trouble when I opened up the noodle box and got a noseful of that Heinz tomato smell.</li>
+<li>Get a whiff of the new pot sniffing technologies, coming to a highway near you.</li>
+</ul>
+
+<input type="text" name="annotation[results][18][id]" value="1.11.9" hidden />
+<input type="text" name="annotation[results][18][trips]" value="" visible/>
+      
+<h4> 1.11.10: contact, reach, communicate with</h4>
+
+<ul>
+<li>I think there was about 3 years where even my family couldn't get a hold of me.</li>
+<li>How do I get in touch with the person who filed the complaint?</li>
+<li>Get in touch with your inner rodent.</li>
+<li>I got through to tech support on my first attempt.</li>
+</ul>
+
+<input type="text" name="annotation[results][19][id]" value="1.11.10" hidden />
+<input type="text" name="annotation[results][19][trips]" value="" visible/>
+      
+<h4> 1.11.11: communicate a meaning</h4>
+
+<ul>
+<li>I couldn't get across the message.</li>
+<li>Even though my point got across, it was dismissed as inconsequential.</li>
+<li>The safety message has definitely got through to young people.</li>
+<li>I'm hoping he'll get through to his minions to curb their enthusiasm.</li>
+</ul>
+
+<input type="text" name="annotation[results][20][id]" value="1.11.11" hidden />
+<input type="text" name="annotation[results][20][trips]" value="" visible/>
+      
+<h4> 1.11.12: understand</h4>
+
+<ul>
+<li>Changing names of entries confused some, but they got it eventually.</li>
+<li>It took her a little bit of time to get onto the idea that I wanted to transfer.</li>
+<li>I explained it a dozen times, but he still doesn't get the picture.</li>
+<li>And yes, we finally got wise to the dust problem, and covered the couches.</li>
+</ul>
+
+<input type="text" name="annotation[results][21][id]" value="1.11.12" hidden />
+<input type="text" name="annotation[results][21][trips]" value="" visible/>
+      
+<h4> 1.11.13: have good relations</h4>
+
+<ul>
+<li>Can't we all just get along?</li>
+<li>I never really got along with art teachers.</li>
+<li>He often comes to see us, and he and Mamma get on very well together.</li>
+<li>And it made me wonder why people just can't get on with each other.</li>
+</ul>
+
+<input type="text" name="annotation[results][22][id]" value="1.11.13" hidden />
+<input type="text" name="annotation[results][22][trips]" value="" visible/>
+      
+<h4> 1.11.14: have sexual relations</h4>
+
+<ul>
+<li>He has a different girlfriend every week, he really gets around.</li>
+<li>They are having the pandas watch videos of other pandas getting it on.</li>
+<li>Married folk get laid most, this unsurprising sex study reveals.</li>
+</ul>
+
+<input type="text" name="annotation[results][23][id]" value="1.11.14" hidden />
+<input type="text" name="annotation[results][23][trips]" value="" visible/>
+      
+<h4> 1.11.15: enter into marriage</h4>
+
+<ul>
+<li>Throughout the ages, the royals got hitched for duty (and money), not love.</li>
+<li>Before you get married, answer these important questions with your partner.</li>
+</ul>
+
+<input type="text" name="annotation[results][24][id]" value="1.11.15" hidden />
+<input type="text" name="annotation[results][24][trips]" value="" visible/>
+      
+<h4> 1.11.16: affect</h4>
+
+<ul>
+<li>If you really want to get at him, beat his score one day and he'll sulk for a week!</li>
+<li>Rainy days and Mondays always get me down.</li>
+<li>Once an idea gets hold of me, I can keep writing hour after hour.</li>
+<li>They used blackmail to get at the former finance minister.</li>
+<li>There is just something about the blues that really gets to me.</li>
+</ul>
+
+<input type="text" name="annotation[results][25][id]" value="1.11.16" hidden />
+<input type="text" name="annotation[results][25][trips]" value="" visible/>
+      
+<h4> 1.11.17: regain, recover</h4>
+
+<ul>
+<li>I need to now set up regular writing schedules to get my groove back!</li>
+<li>How can I get my money back?</li>
+<li>Someone help me get my feet back on the ground.</li>
+</ul>
+
+<input type="text" name="annotation[results][26][id]" value="1.11.17" hidden />
+<input type="text" name="annotation[results][26][trips]" value="" visible/>
+      
+<h4> 1.11.18: take revenge</h4>
+
+<ul>
+<li>The article discribes using tarpits to get back at spammers.</li>
+<li>They're my mother's curse to get back at me for the things that I did when I was a child!</li>
+<li>Don't get mad, get even.</li>
+</ul>
+
+<input type="text" name="annotation[results][27][id]" value="1.11.18" hidden />
+<input type="text" name="annotation[results][27][trips]" value="" visible/>
+      
+<h4> 1.11.19: avoid unpleasant situations or consequences</h4>
+
+<ul>
+<li>Is there any way to get around this problem?</li>
+<li>Her parents let her get away with murder!</li>
+<li>The lawyer got him off despite the evidence.</li>
+<li>You got off lightly this time.</li>
+<li>My sister always got out of doing the dishes.</li>
+<li>How did he get by with that sort of thing?</li>
+</ul>
+
+<input type="text" name="annotation[results][28][id]" value="1.11.19" hidden />
+<input type="text" name="annotation[results][28][trips]" value="" visible/>
+      
+<h4> 1.11.20: cope, manage, make do</h4>
+
+<ul>
+<li>If you had any ambition, you'd go out and find some work, and everybody got by.</li>
+<li>Somehow I manage to get by without idle chit-chat with strangers.</li>
+</ul>
+
+<input type="text" name="annotation[results][29][id]" value="1.11.20" hidden />
+<input type="text" name="annotation[results][29][trips]" value="" visible/>
+      
+<h4> 1.11.21: swallow, ingest</h4>
+
+<ul>
+<li>He got down a few bites of the turkey.</li>
+</ul>
+
+<input type="text" name="annotation[results][30][id]" value="1.11.21" hidden />
+<input type="text" name="annotation[results][30][trips]" value="" visible/>
+      
+<h4> 1.11.22: put in writing</h4>
+
+<ul>
+<li>Please say that again so that I can get it all down.</li>
+<li>I was writing as fast as I could and I got down that we can improve data validation</li>
+</ul>
+
+<input type="text" name="annotation[results][31][id]" value="1.11.22" hidden />
+<input type="text" name="annotation[results][31][trips]" value="" visible/>
+      
+<h4> 1.11.23: obtain</h4>
+
+<ul>
+<li>Does anyone know where in the UK I can get hold of banana leafs?</li>
+</ul>
+
+<input type="text" name="annotation[results][32][id]" value="1.11.23" hidden />
+<input type="text" name="annotation[results][32][trips]" value="" visible/>
+      
+<h4> 1.11.24: enter a realm, become involved with</h4>
+
+<ul>
+<li>Harvard sent her a letter yesterday telling her she got in.</li>
+<li>I got in on a great deal and don't want to lose it.</li>
+<li>The more we got into their inner circle of trust, the more we kept discovering.</li>
+<li>She got into drugs when she was in college.</li>
+<li>How did you get into this field?</li>
+</ul>
+
+<input type="text" name="annotation[results][33][id]" value="1.11.24" hidden />
+<input type="text" name="annotation[results][33][trips]" value="" visible/>
+      
+<h4> 1.11.25: submit, send to</h4>
+
+<ul>
+<li>Did you get your paper in on time?</li>
+<li>Get the check off to them today!</li>
+</ul>
+
+<input type="text" name="annotation[results][34][id]" value="1.11.25" hidden />
+<input type="text" name="annotation[results][34][trips]" value="" visible/>
+      
+<h4> 1.11.26: thoroughly enjoy</h4>
+
+<ul>
+<li>I never really got into hockey until I went to a few games.</li>
+<li>She gets off on buying shoes.</li>
+</ul>
+
+<input type="text" name="annotation[results][35][id]" value="1.11.26" hidden />
+<input type="text" name="annotation[results][35][trips]" value="" visible/>
+      
+<h4> 1.11.27: receive punishment</h4>
+
+<ul>
+<li>Oooh, now you're gonna get it!</li>
+<li>Napoleon got his lumps at Waterloo.</li>
+</ul>
+
+<input type="text" name="annotation[results][36][id]" value="1.11.27" hidden />
+<input type="text" name="annotation[results][36][trips]" value="" visible/>
+      
+<h4> 1.11.28: be temporarily relieved of one's duties</h4>
+
+<ul>
+<li>I get off work at seven.</li>
+</ul>
+
+<input type="text" name="annotation[results][37][id]" value="1.11.28" hidden />
+<input type="text" name="annotation[results][37][trips]" value="" visible/>
+      
+<h4> 1.11.29: be stoned, drugged, high</h4>
+
+<ul>
+<li>He gets high every weekend.</li>
+<li>She's a white woman who gets off on just about any drug.</li>
+</ul>
+
+<input type="text" name="annotation[results][38][id]" value="1.11.29" hidden />
+<input type="text" name="annotation[results][38][trips]" value="" visible/>
+      
+<h4> 1.11.30: deliver verbally</h4>
+
+<ul>
+<li>He got off the best line I've heard in a long time.</li>
+<li>I managed to get out a few words.</li>
+</ul>
+
+<input type="text" name="annotation[results][39][id]" value="1.11.30" hidden />
+<input type="text" name="annotation[results][39][trips]" value="" visible/>
+      
+<h4> 1.11.31: overcome</h4>
+
+<ul>
+<li>I finally got over that cold.</li>
+<li>He got over his shyness and asked her out.</li>
+<li>Oh, just get over it!</li>
+</ul>
+
+<input type="text" name="annotation[results][40][id]" value="1.11.31" hidden />
+<input type="text" name="annotation[results][40][trips]" value="" visible/>
+      
+<h4> 1.11.32: assemble, join forces, gather together</h4>
+
+<ul>
+<li>Get together all those who are interested in the project.</li>
+<li>The soprano and the pianist did not get together for this piece.</li>
+<li>Fitness experts got together with a great commitment to promote exercise.</li>
+</ul>
+
+<input type="text" name="annotation[results][41][id]" value="1.11.32" hidden />
+<input type="text" name="annotation[results][41][trips]" value="" visible/>
+      
+<h4> 1.11.33: awake, wake up</h4>
+
+<ul>
+<li>The baby still gets us up in the middle of the night.</li>
+<li>We get up at 5 a.m. during the week.</li>
+</ul>
+
+<input type="text" name="annotation[results][42][id]" value="1.11.33" hidden />
+<input type="text" name="annotation[results][42][trips]" value="" visible/>
+      
+<h4> 1.11.34: develop, produce</h4>
+
+<ul>
+<li>Twain asked "Can't you get up a plot for a 'skeleton novelette'?</li>
+<li>But if you want to get up an appetite just stroll over the mountains all day.</li>
+<li>Even though we're short-handed, we can get out a dozen cakes a day.</li>
+</ul>
+
+<input type="text" name="annotation[results][43][id]" value="1.11.34" hidden />
+<input type="text" name="annotation[results][43][trips]" value="" visible/>
+      
+<h4> 1.11.35: dress up</h4>
+
+<ul>
+<li>She got herself up in a bizarre outfit.</li>
+<li>The princess, got up in all her finery, was led to the well.</li>
+</ul>
+
+<input type="text" name="annotation[results][44][id]" value="1.11.35" hidden />
+<input type="text" name="annotation[results][44][trips]" value="" visible/>
+      
+<h4> 1.11.36: study intensively</h4>
+
+<ul>
+<li>(no examples found, only reference in WordNet)</li>
+</ul>
+
+<input type="text" name="annotation[results][45][id]" value="1.11.36" hidden />
+<input type="text" name="annotation[results][45][trips]" value="" visible/>
+      
+<h4> 1.11.37: idiomatic expressions</h4>
+
+<ul>
+</ul>
+
+<input type="text" name="annotation[results][46][id]" value="1.11.37" hidden />
+<input type="text" name="annotation[results][46][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

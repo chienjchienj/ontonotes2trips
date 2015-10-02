@@ -1,0 +1,61 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="guarantee" hidden/><h2>guarantee</h2>
+<h4> 1.1: give assurance or make promise, assume responsibility for following through</h4>
+
+<ul>
+<li>She guarantees this drinking water is good.</li>
+<li>The government won't guarantee the safety of those prisoners.</li>
+<li>Those tires are guaranteed for two years.</li>
+<li>European Airlines guarantees its customers top-quality service.</li>
+<li>He guaranteed to spare the lives of any troops who surrendered or deserted.</li>
+<li>Discover this new step-by-step golf system that guarantees to fix your golf slice in just 21 days!</li>
+<li>It is research that is guaranteed to delight men - and infuriate the women.</li>
+<li>Check out the following exercise, guaranteed to freak you out.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: make certain or ensure a result</h4>
+
+<ul>
+<li>Sunny skies today don't guarantee them tomorrow.</li>
+<li>This bestseller has guaranteed him a secure financial future.</li>
+<li>His victory in the election was guaranteed by the large turnout.</li>
+<li>Late fines doesn't always guarantee that people return borrowed items on time.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

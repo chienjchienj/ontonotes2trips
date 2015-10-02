@@ -1,0 +1,60 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="prohibit" hidden/><h2>prohibit</h2>
+<h4> 1.1: forbid, command against</h4>
+
+<ul>
+<li>Junco prohibited his reporters from taking gifts from government officials.</li>
+<li>The statute prohibited his use of any state facilities or time in completing the work.</li>
+<li>After beating her, he ordered her to leave, but prohibited her from taking her coat or shoes.</li>
+<li>Motor vehicles are prohibited from driving in the town centre.</li>
+<li>The government introduced a law prohibiting tobacco advertisements on TV.</li>
+<li>Parking is strictly prohibited between these gates.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: prevent, make impossible</h4>
+
+<ul>
+<li>He claimed that class discussion of evolution prohibited his children's free exercise of religion.</li>
+<li>In attempting to prohibit evil thoughts, we've succeeded in prohibiting attempts to really think about evil.</li>
+<li>The housing development neighbors successfully prohibited the annual event.</li>
+<li>Major-league baseball has also managed to prohibit fan ownership, though without enacting a formal policy against it.</li>
+<li>The loudness of the music prohibits serious conversation in most nightclubs.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

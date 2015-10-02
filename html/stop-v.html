@@ -1,0 +1,95 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="stop" hidden/><h2>stop</h2>
+<h4> 1.1: halt,quit,discontinue something</h4>
+
+<ul>
+<li>The car stopped at the red light.</li>
+<li>Stop worrying so much!</li>
+<li>I couldn't stop the baby's crying.</li>
+<li>They stopped production of the new drug after three patients using it died.</li>
+<li>The committee will stop at noon for a two-hour lunch break.</li>
+<li>The sexual revolution of the 1960s has been stopped dead in its tracks by the AIDS epidemic.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: check,contain or prevent something</h4>
+
+<ul>
+<li>These measures may stop a new flu epidemic, should one arise.</li>
+<li>They hope this will stop interest rates from rising further.</li>
+<li>She doesn't believe the new policies have stopped the spread of terrorism.</li>
+<li>The fighter jets stopped the intruding aircraft before it reached the capitol.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: visit or travel to</h4>
+
+<ul>
+<li>On all those trips, he never managed to stop in Japan.</li>
+<li>Will you be stopping at the club this evening?</li>
+<li>That train stops in Denver but not in Phoenix.</li>
+<li>Let's stop at Aunt Jane's house on Halloween.</li>
+<li>We had to stop over in Venezuela on our flight back from Brazil.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: have a boundary or terminating point</h4>
+
+<ul>
+<li>His property stops at the fence.</li>
+<li>The countryside stopped abruptly at the edge of the large chemical plant.</li>
+<li>Their guilt doesn't stop with just the intent to commit fraud, they actually committed it.</li>
+<li>The second momement stops on a bright E-major chord.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: barricade, block up, plug</h4>
+
+<ul>
+<li>The police stopped the bus road leading out of town.</li>
+<li>He stopped up the broken window with his gloves.</li>
+<li>He stopped up the chimney and the smoke thickened.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

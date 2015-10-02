@@ -1,0 +1,114 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="sleep" hidden/><h2>sleep</h2>
+<h4> 1.1: be asleep or in a state resembling sleep</h4>
+
+<ul>
+<li>I never sleep well the night before a big presentation.</li>
+<li>He slept 12 hours last night.</li>
+<li>She slept away a whole night and a day.</li>
+<li>John sleeps the sleep of the dead.</li>
+<li>She sleeps with the angels now.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: stay asleep longer than usual</h4>
+
+<ul>
+<li>She sleeps in every Saturday.</li>
+<li>Ralph actually slept late on his wedding day!</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: be able to accommodate for sleeping</h4>
+
+<ul>
+<li>This tent sleeps six people.</li>
+<li>We can sleep 12 in our bed and breakfast.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: SLEEP OFF: get rid of by sleeping</h4>
+
+<ul>
+<li>Pam is sleeping off the anesthesia right now.</li>
+<li>You'll have to sleep off your binge.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: SLEEP WITH: have intercourse with</h4>
+
+<ul>
+<li>He slept with 7 women during his internship.</li>
+<li>I would never sleep someone just to get a job.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: SLEEP OVER: spend the night somewhere</h4>
+
+<ul>
+<li>After the birthday party, the boys slept over.</li>
+<li>We plan on sleeping over in Brussels.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: sleep in the same location as one's job</h4>
+
+<ul>
+<li>The housekeeper sleeps in, because it is too far for her to commute.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: SLEEP OUT: sleep in a different location as one's job</h4>
+
+<ul>
+<li>Our cook sleeps out and so he can easily commute from his home.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

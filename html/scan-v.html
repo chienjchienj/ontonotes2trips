@@ -1,0 +1,69 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="scan" hidden/><h2>scan</h2>
+<h4> 1.1: make a sweeping search of; examine minutely or hastily</h4>
+
+<ul>
+<li>Experts at Villanova University scanned the brains of 20 healthy smokers.</li>
+<li>People on incomming steams scanned the waves in vain.</li>
+<li>The doctor scanned the patients X-rays.</li>
+<li>I scanned over the headlines of the New York Times while waiting</li>
+<li>for the bus.</li>
+<li>Tobias scanned the snowy darkness as he slogged on.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: COMPUTERS: obtain data/images from magnetic tapes or with a beam of light</h4>
+
+<ul>
+<li>Once the book has been scanned, it is available for widespread distribution.</li>
+<li>I scanned in all my old graduation photos to save on my hard drive.</li>
+<li>Can we scan those old videotapes and convert them to DVDs?</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: read or conform to the metrical pattern of</h4>
+
+<ul>
+<li>These trochaic lines may be scanned into iambic verse.</li>
+<li>These lines may be scanned as blank verse, but the preceding three</li>
+<li>insist upon an older pattern.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

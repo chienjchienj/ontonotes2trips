@@ -1,0 +1,188 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="hold" hidden/><h2>hold</h2>
+<h4> 1.1: physically grasp, position, or support something</h4>
+
+<ul>
+<li>Hold this bowl for a moment, please.</li>
+<li>The child is holding a cookie in each hand.</li>
+<li>Hold on tightly!</li>
+<li>I held the tiller while John went forward to untangle the jib.</li>
+<li>Hold the fire extinguisher directly on the flames.</li>
+<li>Only a single nail is holding that heavy picture to the wall.</li>
+<li>You should hold your head straight when you sing.</li>
+<li>Can the roof hold all that weight?</li>
+<li>Hold your friends close and your enemies closer.</li>
+<li>The minister held out his hand, and I grasped it in a firm handshake.</li>
+<li>That beam holds up the roof.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: stop or restrain something; keep something from being used</h4>
+
+<ul>
+<li>The terrorists held the journalists for ransom.</li>
+<li>Hold your tongue.</li>
+<li>'Hold your fire until you see the whites of their eyes!'</li>
+<li>He can hold his breath for 3 minutes!</li>
+<li>She held him to his promise.</li>
+<li>They're holding a table at Maxim's for us.</li>
+<li>Please hold all my calls until I return this afternoon.</li>
+<li>He held the taxi as she came down the stairs.</li>
+<li>That story held my attention for hours.</li>
+<li>She held back a snicker.</li>
+<li>Hold down the noise or I'm calling the police!</li>
+<li>She held in all her anger.</li>
+<li>I'll hold open the position as long as I can.</li>
+<li>When it comes to raising prices, just hold the line.</li>
+<li>Hurry up. Don't hold up the whole group.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: maintain one's state, position, or physical integrity</h4>
+
+<ul>
+<li>If the weather holds, we'll go sailing tomorrow.</li>
+<li>The old bridge has held through two major earthquakes.</li>
+<li>Do you think the chain will hold?</li>
+<li>The revamped defensive line is holding up.</li>
+<li>The ropes held fast through the storm.</li>
+<li>He held firm despite the pressure to change his vote.</li>
+<li>Hold on. I'll be back in a minute.</li>
+<li>We held out for three days without food or water.</li>
+<li>Just hold tight; the ambulance will be here in a minute.</li>
+<li>Those shoes will never hold up in all this snow.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: maintain an attitude, belief, or opinion</h4>
+
+<ul>
+<li>We hold these truths to be self evident.</li>
+<li>Rousseau's philosophy holds that people are inherently good</li>
+<li>I still hold to my theory that right makes might.</li>
+<li>She was held in contempt of court.</li>
+<li>I hold with John that we should drink the good wine first.</li>
+<li>She can really hold a grudge!</li>
+<li>Take a stand for the principles we hold dear.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 2.5: possess or control something, e.g., money, position of authority, honor</h4>
+
+<ul>
+<li>Most of the stock is held by just the founders of that firm.</li>
+<li>The dissatisfied students held the President's office for almost a week.</li>
+<li>When the battle ended, the Union troops still held the ridge.</li>
+<li>They hold four gold medals from their past competitions.</li>
+<li>Will she hold the office of assistant dean?</li>
+<li>He held the chairmanship for 10 years.</li>
+<li>His father held two advanced degrees from Harvard.</li>
+<li>She held down two jobs in order to support her family.</li>
+<li>His wife held on to his clothes long after he had died.</li>
+<li>They held over the movie for another week.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="2.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: contain or accommodate</h4>
+
+<ul>
+<li>He held the memory of her in his heart.</li>
+<li>The last chapter holds the key to how the murder was done.</li>
+<li>That case used to hold my grandfather's violin.</li>
+<li>This can holds five gallons.</li>
+<li>The opera house holds two thousand people.</li>
+<li>My coin purse won't hold any more change.</li>
+<li>He just can't hold his liquor.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: be relevant or applicable</h4>
+
+<ul>
+<li>This theory still holds.</li>
+<li>The same rules will hold for all members of our club.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: conduct a social event</h4>
+
+<ul>
+<li>We held a reception in his honor.</li>
+<li>They held a special emergency meeting last week.</li>
+<li>They are holding inquiries next week.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: block or cover protectively (by grasping)</h4>
+
+<ul>
+<li>We held our noses when we passed near the dead skunk on the highway.</li>
+<li>He held his ears as the F-15s flew by overhead.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: idioms</h4>
+
+<ul>
+<li>He held forth at length on his views of modern life.</li>
+<li>No one plays better. She can hold her own against anyone.</li>
+<li>He held the threat of expulsion over her.</li>
+<li>I won't hold still for that kind of behavior!</li>
+<li>The GOP held sway for several years, until the Democrats won the House.</li>
+<li>We were held up at gunpoint!</li>
+<li>He held up his sister as a shining example of purity.</li>
+<li>That theory just doesn't hold water.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

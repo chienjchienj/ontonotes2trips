@@ -1,0 +1,187 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="carry" hidden/><h2>carry</h2>
+<h4> 1.1: transport, move, or extend (from X) (to Y)</h4>
+
+<ul>
+<li>I can't carry all these bags into the house at once.</li>
+<li>That player can really carry the ball!</li>
+<li>Just carry the total from that column to this column.</li>
+<li>For 68+57, I add 8 and 7 to get 15, that I put down 5 and carry 1.</li>
+<li>Small plankton and shrimp are carried by the ocean currents.</li>
+<li>The ambulance carried the injured athlete away this morning.</li>
+<li>While traveling with her husband she was carried off by the centaur Nessus.</li>
+<li>It is easy, however, to carry the argument too far.</li>
+<li>The civil war carried into the neighboring province.</li>
+<li>The news was carried by word of mouth to every settlement.</li>
+<li>His considerable fame carried him to Rome and Milan.</li>
+<li>Her voice carries well in this big opera house.</li>
+<li>Sound carries well over water.</li>
+<li>I try not to let my problems at work carry over into my private life.</li>
+<li>The news carried from village to village.</li>
+<li>How do you carry forward the balance (good or bad) of the previouse month?</li>
+<li>You cannot carry the credit back to taxation years that end before April 23, 2003.</li>
+<li>It is possible to carry over the budget beyond the expected completion date.</li>
+<li>This rifle carries 3,000 feet (has a range of 3,000 feet).</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: have, contain, hold, or feature</h4>
+
+<ul>
+<li>He always carries a cane.</li>
+<li>These jugs will carry our water supply.</li>
+<li>How many people are carried on the payroll?</li>
+<li>Do you carry karosene holders?</li>
+<li>I will always carry his smile in my mind.</li>
+<li>Darien's face carried frustration.</li>
+<li>His opinion carries a lot of weight.</li>
+<li>The crime carries a penalty of five years in prison.</li>
+<li>This loan carries a high interest rate.</li>
+<li>Citibank carries $150 million in earthquake insurance.</li>
+<li>The restaurant is now carrying a new menu.</li>
+<li>The morning news carried the press conference.</li>
+<li>It was a candid story of an athlete, who carried a cause and succeeded.</li>
+<li>His heart still carried scars from what Boyer had said about riders like him.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: support, sustain, bear, or be responsible for</h4>
+
+<ul>
+<li>The weight of the cathedral roof is carried by two rows of pillars.</li>
+<li>The biology majors are carrying a heavy course load.</li>
+<li>The middle class carried the largest tax burden for many years.</li>
+<li>He resented having to carry his brother through years of illness.</li>
+<li>He really drank more than he could carry.</li>
+<li>This land will carry ten cows to the acre.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: win or be approved</h4>
+
+<ul>
+<li>The senator will probably carry his home state.</li>
+<li>He carried the crowd with his impassioned speech.</li>
+<li>the troops carried the town after a brief fight.</li>
+<li>The motion to nominate John as president carried easily.</li>
+<li>She lost the game but carried the match.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: behave or move in a certain manner</h4>
+
+<ul>
+<li>He always carried himself with dignity.</li>
+<li>Still carries herself with her trademark style.</li>
+<li>You can tell she's a dancer from the way that she carries herself.</li>
+<li>The dog was taught to fetch and carry.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: lose control of action, emotions, or behavior</h4>
+
+<ul>
+<li>Sorry, I got carried away in the moment.</li>
+<li>The crowd was carried away by his passionate speech.</li>
+<li>The children have carried on all day!</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: achieve something successfully</h4>
+
+<ul>
+<li>He can't, for his life, carry a tune.</li>
+<li>I thought he carried off the part of Hamlet with great skill.</li>
+<li>She was nervous about giving a talk, but she carried it off very well.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: continue or do something as desired or planned</h4>
+
+<ul>
+<li>Let's carry on this discussion at some other time.</li>
+<li>You just have to carry on as if nothing's happened.</li>
+<li>Daphne is carrying on the family tradition by becoming a lawyer.</li>
+<li>We need solid plans to carry out this task properly.</li>
+<li>Will it be possible to carry through the reforms as quickly as we hope?</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: be pregnant or continue to be pregnant</h4>
+
+<ul>
+<li>It was quite a shock to learn that she was carrying twins.</li>
+<li>I was enormous when I was carrying Josh.</li>
+<li>Most women who miscarry, will carry to term if they become pregnant again.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: CARRY OFF: eliminate or decimate</h4>
+
+<ul>
+<li>He admitted that the disease carried off large numbers of persons.</li>
+<li>In 1160, Saracens carried off the entire population of Porquerolles.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.11: CARRY THROUGH: (cause to) endure or survive through hardship</h4>
+
+<ul>
+<li>The soldiers' courage carried them through.</li>
+<li>I force her to eat a snack at bedtime to carry her through the night.</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.11" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

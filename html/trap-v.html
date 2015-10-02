@@ -1,0 +1,59 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="trap" hidden/><h2>trap</h2>
+<h4> 1.1: place in a confining or embarassing position</h4>
+
+<ul>
+<li>Deflation has trapped the Federal Reserve into a scenario that will depress the economy.</li>
+<li>The embargo trapped the country in a vice between ruthless insurgents and unloved occupiers.</li>
+<li>Japan had complete miliary control so Korea was trapped in a hopeless situation.</li>
+<li>Are you trapped in procrastination by your decision-making ability?</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: to catch in or as if in a trap; immobilize</h4>
+
+<ul>
+<li>The search-and-rescue teams entered the mine 11 hours after the</li>
+<li>blast trapped the miners.</li>
+<li>Marc crossed both his blades and trapped Shannon's sword above his head.</li>
+<li>By a clever trick, the children brought down a landslide that</li>
+<li>trapped the serpent.</li>
+<li>The climber was trapped between the rocks for 5 hours.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

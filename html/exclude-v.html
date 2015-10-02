@@ -1,0 +1,51 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="exclude" hidden/><h2>exclude</h2>
+<h4> 1.1: leave out, omit, prevent from entering</h4>
+
+<ul>
+<li>The cost for the trip excludes food and beverages.</li>
+<li>The ten year survival rate of patients with liver cirrhosis excluded the association of liver carcinoma at the establishment of diagnosis.</li>
+<li>Adjusted earnings per share excluded the non-recurring charge of $0.15 per share taken in the fourth quarter.</li>
+<li>What vehicles are excluded from fleet requirements?</li>
+<li>Israel excludes Palestinians from fertile valley.</li>
+<li>One local government after another voted to end relations with the group because it excludes gay people.</li>
+<li>The court excluded the fingerprint critic's testimony as "Junk Science".</li>
+<li>The bad results were excluded from the report.</li>
+<li>The district court did not abuse its discretion when it excluded evidence.</li>
+<li>She was excluded from the Tashkent State Institute.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

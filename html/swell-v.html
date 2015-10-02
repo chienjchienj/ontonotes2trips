@@ -1,0 +1,74 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="swell" hidden/><h2>swell</h2>
+<h4> 1.1: (cause to) increase in size, number, intensity</h4>
+
+<ul>
+<li>Wind swelled the sails.</li>
+<li>This repatriated labor has swelled the skilled workforce.</li>
+<li>Free trade has swelled the ranks of independent businessmen.</li>
+<li>The crowd swells at the Rainbow Family gathering.</li>
+<li>The US foreign-born population swelled in the 1990s.</li>
+<li>Arcturus is old and has swelled into a red giant type star.</li>
+<li>The orchestra swells into a cheerful, sweeping sound.</li>
+<li>Her throat swelled shut as a result of the peanut allergy.</li>
+<li>She said her eyes swelled so fast her contacts popped out.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: fill with emotion</h4>
+
+<ul>
+<li>His heart swelled, and the tears gathered in his eyes, as they rested on the baby.</li>
+<li>He swelled with holy anger at the disloyalty of those around him.</li>
+<li>A mighty rage shook him, he swelled and choked with resentment.</li>
+<li>She swelled at the memory; she loved her son more purely than the others she loved.</li>
+<li>Downtown Mexico City swelled Saturday with the accumulated frustration and rage of the poor.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: come up, as of liquid or gas</h4>
+
+<ul>
+<li>Thick columns of smoke swelled into the sky as heavy winds fanned the fire.</li>
+<li>She went a bit deep and the water swelled into her boot.</li>
+<li>The heady brew of sanitary chemicals and bean curries swelled up into the air.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,62 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="behave" hidden/><h2>behave</h2>
+<h4> 1.1: act, perform, or conduct oneself in a certain manner, possibly in a socially appropriate manner.</h4>
+
+<ul>
+<li>He behaved like an utter fool.</li>
+<li>Al Gore behaved like a villainous wrestler.</li>
+<li>The driver did not have the receipt and behaved very unprofessionally.</li>
+<li>She's been behaving oddly.</li>
+<li>He should have behaved like a grown-up with them!</li>
+<li>Now, children, behave yourselves.</li>
+<li>They did not behave, and were asked to leave.</li>
+<li>And if you don't behave I'll turn you into a goon!</li>
+<li>She behaved so well, I was so proud of her!</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: respond, function, or react</h4>
+
+<ul>
+<li>Prices for cashews behaved erratically.</li>
+<li>The nailed wood boxes sector has behaved erratically, peaking in 1989.</li>
+<li>The early universe may have behaved like a liquid.</li>
+<li>Unexpectedly, the quark gluon plasma behaved like a perfect liquid of quarks.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

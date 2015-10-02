@@ -1,0 +1,137 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="close" hidden/><h2>close</h2>
+<h4> 1.1: cease operating</h4>
+
+<ul>
+<li>The car repair shop closes at noon on Saturdays.</li>
+<li>Our favorite bakery was closed due to a fire.</li>
+<li>The old bookstore finally closed its doors last summer.</li>
+<li>Highway 9 has been closed for two days because of mud slides.</li>
+<li>Close all running applications before starting this process on your PC.</li>
+<li>That restaurant was closed down by the Board of Health.</li>
+<li>Close off the compressor because there are engine fumes in the vicinity.</li>
+<li>They had to close up shop because of lack of funds.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: shut or become in a shut state</h4>
+
+<ul>
+<li>I can't close my car window.</li>
+<li>She is always closing doors behind her.</li>
+<li>The lid closed on the piano bench with a heavy thud.</li>
+<li>I'd better close my mouth before I say something I'll regret.</li>
+<li>The horses were closed in by a high wooden fence.</li>
+<li>They had to close off the main gas line that connects to the houses on our street.</li>
+<li>Mary was closed off from her friends and life by a long bout with depression.</li>
+<li>The mummy was closed up in the tomb by slaves.</li>
+<li>She closes up whenever John enters the conversation.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: terminate or conclude an activity</h4>
+
+<ul>
+<li>The meeting was closed without deciding on who would be club president.</li>
+<li>He likes to close dinner speeches with a good joke.</li>
+<li>She closed her recital with a beautiful folksong.</li>
+<li>I hope stocks will close higher at day's end.</li>
+<li>That relief pitcher has closed six games this season, winning all of them.</li>
+<li>That fashion house has closed out its line of evening wear.</li>
+<li>John will be closing out his account at his old bank.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: draw near to, approach</h4>
+
+<ul>
+<li>A meteorite appears to be closing with our spacecraft!</li>
+<li>The southern cavalry closed with Union forces on the battlefield.</li>
+<li>Close on your opponent's left and catch him off guard.</li>
+<li>The police were closing in on the suspect.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: bring parts together, join</h4>
+
+<ul>
+<li>The pincers of the big crab closed on John's hand.</li>
+<li>She closed a blanket around the shivering child.</li>
+<li>He closed the wound with a series of small stitches.</li>
+<li>This umbrella won't close properly.</li>
+<li>The party has closed ranks during this political scandal.</li>
+<li>You need to close up a few loose ends in the logic of your story's plot.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: bring about, accomplish</h4>
+
+<ul>
+<li>We are closing on the house tomorrow.</li>
+<li>Don't go into sales if you can't close deals.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: fill in, repair</h4>
+
+<ul>
+<li>Try closing those cracks in the ceiling with this new compound.</li>
+<li>They are trying to close the income gap between the urban poor and the middle class.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: preclude or rule out</h4>
+
+<ul>
+<li>They were closed out of society based only on the color of their skin.</li>
+<li>Don't close out this opportunity before you've had a chance to learn more about it.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

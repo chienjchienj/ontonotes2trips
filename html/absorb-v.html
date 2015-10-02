@@ -1,0 +1,94 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="absorb" hidden/><h2>absorb</h2>
+<h4> 1.1: take something in, soak in, or use up (often gradually)</h4>
+
+<ul>
+<li>This is the way all plant cells grow and the way roots absorb water from the soil.</li>
+<li>The sponge absorbs and eliminates virtually all strong odors.</li>
+<li>We see that the black hole absorbs only a small amount of the emitted radiation.</li>
+<li>In cold climates, houses need to have walls that will absorb heat.</li>
+<li>Towels absorb moisture.</li>
+<li>The drug is quickly absorbed into the bloodstream.</li>
+<li>This project is absorbing too much money.</li>
+<li>The project has absorbed all of our department's resources.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: learn, aquire, or fully understand information or knowledge</h4>
+
+<ul>
+<li>It's hard to absorb so much information.</li>
+<li>He hasn't yet absorbed the news.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: adapt, assimilate, or incorporate into a whole</h4>
+
+<ul>
+<li>The sales tax was absorbed into the income tax.</li>
+<li>The islands were later absorbed into the Roman Empire.</li>
+<li>Our countryside is increasingly being absorbed by the large cities.</li>
+<li>The immigrants were quickly absorbed into the society.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: engage or engross; occupy full attention, interest and time of</h4>
+
+<ul>
+<li>Simon was so absorbed in his book, he didn't even notice me come in.</li>
+<li>His work absorbed him completely.</li>
+<li>Her interest in butterfies absorbs her.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: take in as to stop the transmission or reduce effect of shock or change</h4>
+
+<ul>
+<li>The barrier absorbed the main impact of the crash.</li>
+<li>We absorbed the costs this year, but we don't know how much longer we can do that.</li>
+<li>The company was forced to absorb the cost of tax increases.</li>
+<li>We couldn't absorb the additional hardships.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

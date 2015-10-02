@@ -1,0 +1,91 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="gather" hidden/><h2>gather</h2>
+<h4> 1.1: actively, intentionally assemble or collect things</h4>
+
+<ul>
+<li>We are gathering wood to make a fire.</li>
+<li>Gather the fabric along the seam to make a pleat.</li>
+<li>The lawyer began to gather his arguments into a summary statement.</li>
+<li>The CEO under indictment has been gathering his allies around him.</li>
+<li>Can you gather in the laundry before it rains?</li>
+<li>She quickly gathered up the child and his toy in her arms.</li>
+<li>Let's gather up the loose ends on this report.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: congregate together socially</h4>
+
+<ul>
+<li>Many heads of state gather each year in Davos, Switzerland.</li>
+<li>We gathered around the water cooler to hear Sally's story.</li>
+<li>My friends have been gathering at a new tapas bar on Firday nights.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: (let) accumulate or grow</h4>
+
+<ul>
+<li>They are watching the storm clouds gathering over this international incident.</li>
+<li>Dust seems to gather quickly on my computer monitor.</li>
+<li>The economy has been gathering momentum since last June.</li>
+<li>The car gathered speed.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: conclude or assume</h4>
+
+<ul>
+<li>I gather he wasn't pleased at our last meeting.</li>
+<li>They are beginning to gather that the deal may not go through.</li>
+<li>The union finally gathered that management would not back down in negotiations.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: Draw and bring closer.</h4>
+
+<ul>
+<li>She gathered her shawl around her shoulders.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

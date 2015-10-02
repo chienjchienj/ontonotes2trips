@@ -1,0 +1,73 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="affect" hidden/><h2>affect</h2>
+<h4> 1.1: have an effect or impact on</h4>
+
+<ul>
+<li>Will the new rules affect me?</li>
+<li>This new ruling affects your business.</li>
+<li>It affected me to the point where I couldn't concentrate in school a lot.</li>
+<li>My family has a history of cancer and it profoundly affected me to do something.</li>
+<li>I'm one to think of the little things in life that have affected me to become the person that I am today.</li>
+<li>The smell of an old cheese made him feel unwell, and affected him with vomiting.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: give an impression</h4>
+
+<ul>
+<li>Its ticking affected me as being like the pulsing of a faint heartbeat.</li>
+<li>The whole Challenger disaster always affected me as being not quite right.</li>
+<li>She affected me as being pretty bright.</li>
+<li>When I first read that in college, it really affected me as being amazingly insightful to the way the western world is dumbing down.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: take on an appearance or position</h4>
+
+<ul>
+<li>In the courtroom, he affected a likeable, friendly attitude with the jury, reminding them that he was not a lawyer but a defendant.</li>
+<li>He affected a ballet pose, with one arm up and one arm trailing.</li>
+<li>Giddy with celebrity, he affected a flamboyant lifestyle.</li>
+<li>He affected a deliberately unkempt appearance and had a personality that tended to be abrasive.</li>
+<li>Her only flaw was that she affected a fake British accent.</li>
+<li>She affected a concern that she did not really feel.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

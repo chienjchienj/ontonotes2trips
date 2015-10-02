@@ -1,0 +1,69 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="examine" hidden/><h2>examine</h2>
+<h4> 1.1: study, investigate, or analyze in detail</h4>
+
+<ul>
+<li>Forensic scientists are examining the wreckage for clues about the cause of the explosion.</li>
+<li>The council is to examine ways of reducing traffic in the city centre.</li>
+<li>The research examined the effects of alcohol on long-term memory.</li>
+<li>We need to examine how an accident like this can be avoided in the future.</li>
+<li>The professor examined the structure of a novel in class.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: inspect something or somebody/look at</h4>
+
+<ul>
+<li>The customs agent examined the baggage.</li>
+<li>He examined the rash on his skin with his eyes.</li>
+<li>I suggest you get examined by a qualified physician.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: test someone by questioning; interrogate</h4>
+
+<ul>
+<li>Candidates must pass a qualifying test which examines for general and specific knowledge.</li>
+<li>A psychiatrist was examined on the mental state of the defendant.</li>
+<li>The prosecutor examined the witness under oath.</li>
+<li>`</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

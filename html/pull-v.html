@@ -1,0 +1,169 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="pull" hidden/><h2>pull</h2>
+<h4> 1.1: exert force to cause movement</h4>
+
+<ul>
+<li>Tommy pulled the wagon behind him.</li>
+<li>This pianist pulls huge crowds.</li>
+<li>Pull the rope to ring the bell.</li>
+<li>She pulled her knees up to her chin.</li>
+<li>When he pulled the trigger, nothing happened.</li>
+<li>A declining dollar pulled down the export figurs for the last quarter.</li>
+<li>As I pulled the oars, I discovered that these were smaller than my old ones.</li>
+<li>He pulled nervously at the cuffs of his shirt.</li>
+<li>Pull back on the bow string in order to fire.</li>
+<li>Can you believe they pulled down that beautiful old building?</li>
+<li>How much money do you pull in every month?</li>
+<li>Don't pull off that cloth!</li>
+<li>The mugger pulled a knife on his victim.</li>
+<li>Pull together your thoughts before you go in.</li>
+<li>Watch while I pull a rabbit out of my hat.</li>
+<li>He pulled out a gun and waved it in the air.</li>
+<li>She pulled the petals off one by one.</li>
+<li>The dentist pulled three teeth.</li>
+<li>I spent all weekend pulling weeds.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: steer something or move oneself in a certain direction</h4>
+
+<ul>
+<li>Your car pulls to the right.</li>
+<li>I'm going to pull over and let that car go by.</li>
+<li>He pulled the car up to the curb.</li>
+<li>Jackson pulled the ball to Ortiz's right to start the possible inning-ending double play.</li>
+<li>Jeanne pulled ahead in the last yard to win the race.</li>
+<li>The limo pulled away from the curb.</li>
+<li>The regiment pulled back in order to regroup.</li>
+<li>The bullet train pulled in to Tokyo Station.</li>
+<li>He pulled out of the project when he discovered how much work was involved.</li>
+<li>They pulled together after the disaster.</li>
+<li>He pulled up short at the strange sight.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: eliminate from a situation or obligation</h4>
+
+<ul>
+<li>Pull the old soup cans from the shelf.</li>
+<li>We reserve the right to pull the promotion at our discretion.</li>
+<li>Due to his poor performance, he was pulled from the project.</li>
+<li>Each feared that the other might pull out of the war effort and make a separate settlement with Germany.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: commit, do</h4>
+
+<ul>
+<li>He's pulled five bank robberies.</li>
+<li>You can't pull that crap on me!</li>
+<li>Steve has always loved to pull practical jokes on people.</li>
+<li>Gerald Ford pulled off the difficult transition from Nixon's disastrous presidency.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: strain abnormally, overstretch</h4>
+
+<ul>
+<li>Ann pulled a muscle skiing last weekend.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: tear</h4>
+
+<ul>
+<li>Next, pull the cooked chicken into strips.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: (cause to) survive</h4>
+
+<ul>
+<li>He'll pull round in a day or two, the surgeon said.</li>
+<li>She pulled through the surgery just fine.</li>
+<li>We pulled through most of the victims of the bomb attack.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: rein in a horse to lose a race</h4>
+
+<ul>
+<li>Do you really think Dan pulled the horse in the last race?</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: take sides with, show support for</h4>
+
+<ul>
+<li>I'm pulling for the Libertarian.</li>
+<li>Americans love to pull for the underdog.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: idioms</h4>
+
+<ul>
+<li>He pulled a face when his mother asked him to eat his vegetables.</li>
+<li>We pulled a fast one on the substitute teacher.</li>
+<li>The aggressive investment company pulled in its horns.</li>
+<li>I'm sick of doing all the chores. You need to pull your own weight.</li>
+<li>He really slept that long? Are you pulling my leg?</li>
+<li>When they realized how unprofitable the division was, they pulled the plug.</li>
+<li>The con men\'s charm helped pull the wool over the eyes of their victims.</li>
+<li>The family of an Army officer must frequently pull up stakes to move.</li>
+<li>He pulled wires to get his nephew that job.</li>
+<li>She pulled out all the stops for this party.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

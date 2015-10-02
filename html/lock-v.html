@@ -1,0 +1,114 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="lock" hidden/><h2>lock</h2>
+<h4> 1.1: fasten something or become fastened</h4>
+
+<ul>
+<li>Don't forget to lock up the house when you go out.</li>
+<li>The door will lock automatically.</li>
+<li>I locked my bike to the fence.</li>
+<li>Lock the drawer even when you are in the room.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: place or confine in a secure place</h4>
+
+<ul>
+<li>For punishment, they locked him in his room.</li>
+<li>She locked her jewels in the safe deposit box.</li>
+<li>She locked the pain away somehwere else and focused on what felt good.</li>
+<li>The old man locked the dog in the basement.</li>
+<li>Lock this prisoner up in that cell.</li>
+<li>Use this vacuum pack to lock in the flavor!</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: (cause to)be fixed in a position, situation, or state</h4>
+
+<ul>
+<li>The ship was locked in the ice through the winter.</li>
+<li>Here are some screws to lock the drawer into place.</li>
+<li>The therapist noticed that the patient's knees tended to lock during exercise.</li>
+<li>The mechanism tends to lock in cold weather.</li>
+<li>He locked his hands around his neck.</li>
+<li>The two dogs were locked in combat.</li>
+<li>She felt that she had become locked into a binding agreement.</li>
+<li>I was locked in a frustrating argument for four hours.</li>
+<li>You are not locked into buying the parts from the same manufacturer.</li>
+<li>For a moment, their eyes locked. (compare to sense 4)</li>
+<li>Others stood frozen, locked in fear.</li>
+<li>They were locked in laughing fit.</li>
+<li>Depending upon the lender, you may be able to lock in the interest rate.</li>
+<li>Large switching costs lock in a buyer once he makes an initial purchase.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: fix or aim something on a target, establish securely</h4>
+
+<ul>
+<li>The policeman locked his radar on the vehicle showing a speed of 86 mph.</li>
+<li>The pilot locked the enemy aircraft within his target sight.</li>
+<li>She locked her eyes on the man, matching his stare and curling her lip in a sneer.</li>
+<li>The strategy was to lock in the customers immediately.</li>
+<li>The only reason for inventing a new networking medium for this application is to lock in the consumer.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: pass or put a vessel through a lock in a waterway</h4>
+
+<ul>
+<li>We lock through Montgomery Lock and Dam and move on.</li>
+<li>We are proud to say we lock through 6000 vessels of all shapes and sizes annually.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: prevent from entering or working</h4>
+
+<ul>
+<li>Management has threatened to lock out the workforce if they do not accept the new contract.</li>
+<li>He had to break into the house because his girlfriend had locked him out.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,84 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="pay" hidden/><h2>pay</h2>
+<h4> 1.1: to give compensation for something, either through money or some other form</h4>
+
+<ul>
+<li>I paid four dollars for this sandwich.</li>
+<li>Does she pay you for the work you are doing?</li>
+<li>He paid for his fun last night with a terrible hangover this morning.</li>
+<li>He always pays his credit card monthly bill on time.</li>
+<li>Please pay the fine for these overdue library books.</li>
+<li>She paid the fireman who rescued her with a smile.</li>
+<li>You still need to pay me back that 10 dollars.</li>
+<li>I paid cash for this sweater.</li>
+<li>Mark paid off the mobsters for his safety.</li>
+<li>Businesses are paying out more each year for health insurance.</li>
+<li>If he doesn't pay up soon, the IRS will repossess his car.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: give cognizance to something or someone</h4>
+
+<ul>
+<li>Don't pay them any mind, they mean no harm.</li>
+<li>Please pay special attention to how you pack those.</li>
+<li>Pay heed to street signs or you'll get a ticket.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: be worth something, yield a result</h4>
+
+<ul>
+<li>How much does this savings certificate pay annually?</li>
+<li>It definitely pays to get a college degree.</li>
+<li>It didn't pay to remodel the family room before we sold the house.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: make, undertake</h4>
+
+<ul>
+<li>He always pays a visit to his parents at Thanksgiving.</li>
+<li>She paid me a call at work last week.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

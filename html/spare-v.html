@@ -1,0 +1,69 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="spare" hidden/><h2>spare</h2>
+<h4> 1.1: save from an experience, action or harm</h4>
+
+<ul>
+<li>I hit the deer; I spared the idiot driver.</li>
+<li>XSL style sheets spared the developers the tedious task of writing HTML.</li>
+<li>Apparently, God spared the Russians from death.</li>
+<li>Four soldiers were spared the death penalty.</li>
+<li>Children could be spared the pain of the doctor's needle.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: give away something that is not needed</h4>
+
+<ul>
+<li>He sent every cent he could possibly spare.</li>
+<li>Mary convinced us to eat some of her food, even though she couldn't</li>
+<li>spare it.</li>
+<li>Sir, I wonder whether you could kindly spare a few minutes?</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: use frugally</h4>
+
+<ul>
+<li>On the verge of bankruptcy, US airlines tries to spare on</li>
+<li>everything.</li>
+<li>Try to spare the tomatoes, they're the last of the season.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,51 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="unite" hidden/><h2>unite</h2>
+<h4> 1.1: merge or group separate things into one</h4>
+
+<ul>
+<li>The thirteen colonies united to form our nation.</li>
+<li>It remains unclear whether the two firms will be allowed to unite as one conglomerate.</li>
+<li>Beating vigorously will unite the sugar and air with the egg whites.</li>
+<li>Shabbat 1000 unites Jews and non-Jews at traditional dinner.</li>
+<li>Observers believe labor will unite with management this time to save the company.</li>
+<li>The two rivers unite at the southern tip of Illinois.</li>
+<li>A new stylish chassis design unites aesthetics and ergonomics.</li>
+<li>On Point unites distinct and provocative voices with passionate discussion.</li>
+<li>Her face unites a strength of character with a whimsical humor.</li>
+<li>This luxury sedan unites world-class performance and safety.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

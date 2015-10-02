@@ -1,0 +1,89 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="tap" hidden/><h2>tap</h2>
+<h4> 1.1: penetrate a source to extract/access something from it</h4>
+
+<ul>
+<li>Remember when we tapped the maple tree to collect syrup?</li>
+<li>When did you tap this keg of beer?</li>
+<li>They tapped the trust funds for money.</li>
+<li>Some employees claim that the company tapped phone lines to gather information.</li>
+<li>Do you want me to tap my father for some money?</li>
+<li>The music tapped into childhood memories of my Grandmother teaching me piano in the basement.</li>
+<li>He tapped beer into the plastic cups.</li>
+<li>They tapped money from trust funds set aside for the environment.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: strike lightly (on something)</h4>
+
+<ul>
+<li>My eyes flickered back and forth across the stage, my foot tapped, my shoulders swayed.</li>
+<li>The gentle rain tapped my shoulders.</li>
+<li>I belted out the words to a U2 song and tapped my fingers on the steering wheel.</li>
+<li>Again, Anansi tapped out the rhythm on the talking drum.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: dance or walk by striking feet on the floor for sound</h4>
+
+<ul>
+<li>Stark's voice sing-songed through the room as he tapped around the room.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: select and call on someone for a particular role</h4>
+
+<ul>
+<li>The voting members tapped her as the publicity chair.</li>
+<li>The management tapped him to run the newly created branch.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: cut a female screw thread with a tap</h4>
+
+<ul>
+<li>The trocar will drill into bone, but it primarily acts to tap the screw threads.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

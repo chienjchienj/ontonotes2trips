@@ -1,0 +1,182 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="bear" hidden/><h2>bear</h2>
+<h4> 1.1: have as an attribute, characteristic, or possession; be relevant to.</h4>
+
+<ul>
+<li>It may need to be stitched together, and the place where it was stitched will bear a scar.</li>
+<li>She prepared a history that bears the marks of the grand tradition of careful scholarship.</li>
+<li>Only a few Smith families actually bore a coat of arms!</li>
+<li>The lectures bore down on the political background.</li>
+<li>Actually, none of this bears on me, so the terms are no problem.</li>
+<li>Examples like that show that instrumental reasoning can bear upon</li>
+<li>the selection of ends.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: be pregnant or give birth</h4>
+
+<ul>
+<li>Titaness Themis bore him two sets of daughters known as the Fates and the Hours.</li>
+<li>Neither woman bore him an heir, so Aegeus began to fear losing his power.</li>
+<li>He publicized the case of a woman used by a married man to bear his kids, to highlight the plight of foreign brides.</li>
+<li>The baby was born at 5am.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: produce, bring forth</h4>
+
+<ul>
+<li>The apple tree bore delicious apples this year.</li>
+<li>We studied hard and our efforts bore fruit.</li>
+<li>Anna's efforts bore success and by 1911, Mother's Day observances were across our country.</li>
+<li>The loan bears interest at three percent per year.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: carry, bring</h4>
+
+<ul>
+<li>They bore him to the surgeon.</li>
+<li>Beware of Greeks bearing gifts.</li>
+<li>If he wants to keep smoking, you bear him no ill will, but you need to let him go.</li>
+<li>A group of muscular Californians wrested the axe from Stanford and bore it away to Berkeley.</li>
+<li>So it remains that the soldiers must bear him off by force.</li>
+<li>Americans have the right to bear arms!</li>
+<li>We are grand old folks borne along on faith.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: tolerate; accept or take on as a responsibility.</h4>
+
+<ul>
+<li>We can bear criticism because that criticism makes us more responsive to the truth.</li>
+<li>I'm so sensitive I can't bear for anyone to disagree with, or make fun of me.</li>
+<li>I couldn't bear how he had no sense of trust for me.</li>
+<li>The losses were borne by the entire nation.</li>
+<li>She agreed to bear the responsibility.</li>
+<li>The taxpayer will bear the brunt of problems.</li>
+<li>They also bore the cost of stations, tracks, taxes, and other such messes.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: hold, contain within</h4>
+
+<ul>
+<li>Given the tank bears 40 liters I can forget about filling it for two weeks.</li>
+<li>She bears the knowledge of generations.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: carry yourself or behave in a certain manner</h4>
+
+<ul>
+<li>She bore up under the enormous strain.</li>
+<li>I must bear on, despite this anguish wild.</li>
+<li>He bore himself with dignity.</li>
+<li>I don't know whether it was the way she bore her head or something in her deep eyes.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: put pressure or strain on</h4>
+
+<ul>
+<li>This tax bears down on the lower middle class.</li>
+<li>Everything had gone black and smoke bore down on me like a weight from above.</li>
+<li>I am afflicted by worse, and conscience bears on me.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: exert effort</h4>
+
+<ul>
+<li>There will be times throughout both stages of labor when you will want to push or bear down.</li>
+<li>Our students will have to bear down if they want to pass their exams.</li>
+<li>The pitcher bore down.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: move in a particular direction</h4>
+
+<ul>
+<li>Then the path bears a little to the right.</li>
+<li>Bear east on Route 66 and continue heading east all the way to the ocean.</li>
+<li>At the next traffic light bear left.</li>
+<li>A second huge bike bore down on him.</li>
+<li>Bogart gave him Santana's helm as a ship bore down on that yacht.</li>
+<li>The car gathered speed and bore down on him.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.11: be worthy of, merit an action</h4>
+
+<ul>
+<li>This issue bears further investigation.</li>
+<li>Her advice bears repeating.</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.11" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      
+<h4> 1.12: VPCs not listed in the above sentences" type="idiom"></h4>
+
+<ul>
+<li>Why is it called Sutra which all Buddhas protect and bear in mind?</li>
+<li>It is important to bear in mind that names generally tend to follow trends.</li>
+<li>The LQ was also the place that bore witness to many people's first performances.</li>
+<li>John bore witness about him, and cried out.</li>
+</ul>
+
+<input type="text" name="annotation[results][11][id]" value="1.12" hidden />
+<input type="text" name="annotation[results][11][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,68 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="confront" hidden/><h2>confront</h2>
+<h4> 1.1: Oppose or approach, as in hostility or competition</h4>
+
+<ul>
+<li>I'm going to have to confront the angry mob alone.</li>
+<li>You must confront your opponent.</li>
+<li>Jackson confronted Smith in the boxing ring.</li>
+<li>The child screamed when confronted by the man in the costume.</li>
+<li>The overweight man confronted the last donut.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: Approach someone else with an unpleasent issue, usu. to criticize</h4>
+
+<ul>
+<li>I'm going to have to confront Lucas about stealing my dollar.</li>
+<li>We confronted him with the evidence.</li>
+<li>He confronted her with his complaints.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: deal with something unpleasent head on</h4>
+
+<ul>
+<li>We had never been confronted by such beauty.</li>
+<li>Jara was confronted by complex moral decisions.</li>
+<li>This is a problem most people hardly expect to confront.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

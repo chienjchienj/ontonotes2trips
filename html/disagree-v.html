@@ -1,0 +1,68 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="disagree" hidden/><h2>disagree</h2>
+<h4> 1.1: have different opinions; dispute or quarrel</h4>
+
+<ul>
+<li>City Task Force strongly disagrees with the quality assessment.</li>
+<li>I'm afraid I have to disagree with you on that issue.</li>
+<li>I strongly disagree with the decision that has been taken.</li>
+<li>She disagrees with him on everything.</li>
+<li>They say it will rain, but I disagree.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: fail to correspond, show discrepancies</h4>
+
+<ul>
+<li>These population figures disagree with county estimates.</li>
+<li>Our initial estimates disagreed with the measurements.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: DISAGREE WITH: have an unpleasant effect on someone or something</h4>
+
+<ul>
+<li>I love oysters, but they disagree with me.</li>
+<li>When a t-shirt color disagrees with me, I dye it brown or puce.</li>
+<li>The weather disagreed with me and held me hostage at the marina.</li>
+<li>Since weather disagreed with their barbecue plans, he decided to make roast lamb dinner.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

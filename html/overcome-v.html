@@ -1,0 +1,58 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="overcome" hidden/><h2>overcome</h2>
+<h4> 1.1: defeat or succeed; win; prevail over problems or obstacles</h4>
+
+<ul>
+<li>Juventus overcame Ajax in a thrilling match.</li>
+<li>Eventually she managed to overcome her shyness in class.</li>
+<li>He tried to overcome the obstacles of poverty.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: overpower, affect deeply</h4>
+
+<ul>
+<li>Just a few minutes before closing time, an incredible shaking overcame the building.</li>
+<li>This very rough noice overcame the engine, which made us worry.</li>
+<li>They were overcome by fumes from the fire and had to be carried out of their houses.</li>
+<li>This threat overcame some of Miss Prism's reticence.</li>
+<li>Overcome with emotion, she found herself unable to speak for a few minutes.</li>
+<li>Bitter sorrow overcame him, and he was unable to retain his presence of mind.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

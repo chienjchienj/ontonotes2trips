@@ -1,0 +1,72 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="expose" hidden/><h2>expose</h2>
+<h4> 1.1: make accessible to some action, influence, or condition</h4>
+
+<ul>
+<li>We are able to expose the students to a lot of different professional ways of thinking.</li>
+<li>I exposed the wound to sunlight a few times during the day.</li>
+<li>Don't expose the film (to light) until after developing.</li>
+<li>After purchasing your plant do not expose it to cold drafts of air.</li>
+<li>These children are exposed to hunger, loss and death on a daily basis.</li>
+<li>The employment exposed him to a greater risk of lung disease.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: remove covering or protection to reveal something hidden</h4>
+
+<ul>
+<li>The plaster on the walls has been removed to expose the original bricks underneath.</li>
+<li>He damaged his leg so badly in the accident that the bone was exposed.</li>
+<li>Cleaning exposed the grain of the wood.</li>
+<li>The gaping wound was exposed for all to see.</li>
+<li>The company was financially exposed and many executives were concerned about it.</li>
+<li>The newspaper exposed him as a liar.</li>
+<li>We exposed the criminal practices of selected companies</li>
+<li>The review exposed widespread corruption in the police force.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: EXPOSE ONESELF: uncover indecently a part of the body in public</h4>
+
+<ul>
+<li>The man exposed himself in the subway.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

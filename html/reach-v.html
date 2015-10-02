@@ -1,0 +1,94 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="reach" hidden/><h2>reach</h2>
+<h4> 1.1: to attain or arrive at a state, either real or abstract</h4>
+
+<ul>
+<li>We reached land by nightfall.</li>
+<li>The water reached the doorstep.</li>
+<li>That plane reaches a top speed of 500 mph.</li>
+<li>The sunlight never reaches behind that wall.</li>
+<li>She reached a can of peaches on the top shelf.</li>
+<li>I reached a different conclusion from that data.</li>
+<li>The smell of burning wood reached his nostrils.</li>
+<li>They reached into their wallets and gave all they could.</li>
+<li>She reached her goal of being in the Olympics.</li>
+<li>With great effort, the team reached the finals.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: establish contact or communication with someone or something</h4>
+
+<ul>
+<li>His message didn't reach the younger voters.</li>
+<li>Our advertisements reach millions.</li>
+<li>Why didn't you try to reach me yesterday?</li>
+<li>She reached inside herself to find the courage.</li>
+<li>Campus organization reaches out to local workers.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: pass or transfer something (British usage?)</h4>
+
+<ul>
+<li>My trusty dwarf and friend, reach me my shield, and hold it while I swear.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: labor or exert effort, does not necessarily imply accomplishment of the goal</h4>
+
+<ul>
+<li>I was really reaching to play in that volleyball league.</li>
+<li>She was reaching for her high notes during that aria.</li>
+<li>He reached for the rope, but missed it by an inch.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: extend physically or by influence</h4>
+
+<ul>
+<li>The superhero generated a force field that reached out for several feet.</li>
+<li>The 'CSI effect' reaches into real courtrooms.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,80 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="plunge" hidden/><h2>plunge</h2>
+<h4> 1.1: cause to be immersed in</h4>
+
+<ul>
+<li>The professor plunged his students into the study of the Italian text.</li>
+<li>She plunged into a dangerous adventure.</li>
+<li>New Orleans was plunged into a nightmare by Hurricane Katrina.</li>
+<li>We plunged into the icy water. (if the subject did so willingly, as in jumping off a pier)</li>
+<li>Most of the building was plunged into darkness during the thunderstorm.</li>
+<li>London Underground was plunged into chaos by the severe weather today.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: fall or drop steeply</h4>
+
+<ul>
+<li>The Prime Minister's personal approval rating has plunged to an all-time low of 36 percent.</li>
+<li>Google Shares plunged erratically in volatile trading after the market closed in New York last night.</li>
+<li>A packed passenger train derailed Monday and plunged into a steep river canyon outside the Montenegrin capital.</li>
+<li>We plunged into the icy water. (if the subject was in a derailed train)</li>
+<li>The sample was plunged into liquid nitrogen.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: begin/start out with vigor</h4>
+
+<ul>
+<li>I plunged into the job of creating something from nothing.</li>
+<li>She plunged into a new adventure.</li>
+<li>Every time I plunge into the magazine's crackling pages at my dentist's I get excited.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: unclog a toilet</h4>
+
+<ul>
+<li>Then pour in a pail of water and plunge one more time before flushing the toilet to refill the bowl.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

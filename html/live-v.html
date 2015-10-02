@@ -1,0 +1,153 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="live" hidden/><h2>live</h2>
+<h4> 1.1: exist in a certain manner, mode, or style</h4>
+
+<ul>
+<li>We had to live frugally after the war.</li>
+<li>Many people in the world have to live on $1 a day.</li>
+<li>She lived lavishly on her inheritence.</li>
+<li>He said Italians really know how to live.</li>
+<li>I lived through two divorces</li>
+<li>The holocaust survivors have lived a nightmare.</li>
+<li>He lived a thrilling life at sea.</li>
+<li>She lived a boring existence at the private school.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: inhabit, dwell</h4>
+
+<ul>
+<li>She lived in New Jersey all her life.</li>
+<li>For many years only a few people lived on that island.</li>
+<li>I live in a 220 year old house.</li>
+<li>The Anazazi Indians lived in cliffs above the desert floor.</li>
+<li>Who knows what evil lives in the hearts of men?</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: survive, continue</h4>
+
+<ul>
+<li>The legend of Elvis lives on.</li>
+<li>We lived without water and food for 3 days.</li>
+<li>These superstitions live in the backwaters of America.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: have a mortal existence</h4>
+
+<ul>
+<li>My grandfather lived until the end of war.</li>
+<li>Tiny mammals lived during the age of dinosaurs.</li>
+<li>The terminally ill patient wished he could live to see his grandchild.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5.1: Live_on" type="3"></h4>
+
+<ul>
+<li>He lives on through his art.</li>
+<li>Elvis lives on in Vegas.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5.1" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.5.2: live to the end</h4>
+
+<ul>
+<li>Let me live out my years in heat of blood!</li>
+<li>Stubborness helps Bears coach live out boyhood dream.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.5.2" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.5.3: work in a house where one doesn't live</h4>
+
+<ul>
+<li>If your nanny lives out, she's entitled to minimum wage.</li>
+<li>The maid lives out but comes and provides daily service.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.5.3" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.5.4: Live_down</h4>
+
+<ul>
+<li>You can never live this down!</li>
+<li>We couldn't stop laughing and he never lived it down.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.5.4" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.5.5: Live_in</h4>
+
+<ul>
+<li>If your nanny lives in, you do not have to pay minimum wage.</li>
+<li>Our trusted maid lives in and performs domestic duties.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.5.5" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.5.6: Live_it_up</h4>
+
+<ul>
+<li>It's your birthday, so let's live it up!</li>
+<li>Live it up on your next trip!</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.5.6" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.5.7: Live_over</h4>
+
+<ul>
+<li>If I had my life to live over I'd pick more daisies.</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.5.7" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

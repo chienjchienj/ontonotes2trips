@@ -1,0 +1,60 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="explain" hidden/><h2>explain</h2>
+<h4> 1.1: clarify, make comprehensible, describe</h4>
+
+<ul>
+<li>He explained the laws of physics to his students.</li>
+<li>The committee explained their plan for fund-raising to the Dean.</li>
+<li>She explained that she was doing a piece on Susan Clancy's new book on UFO abductions.</li>
+<li>She explained that Islam was brought to various parts of the world with previously existing cultures.</li>
+<li>Both a science and an art book, Colorworm explains the electromagnetic spectrum and visible light.</li>
+<li>The surgeon explained how to make the incision to the 1st-year medical students.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: be a reason, cause, or justification of</h4>
+
+<ul>
+<li>Her recent divorce may explain her reluctance to date again.</li>
+<li>Oh! Well, that explains it.</li>
+<li>This explains why Donald Rumsfeld so strongly opposed the reforms recommended by the 9/11 commission.</li>
+<li>The purpose of these analyses was to test the hypothesis that IQ explains socioeconomic differentials.</li>
+<li>All his conduct cannot be explained away as an innocent misunderstanding.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

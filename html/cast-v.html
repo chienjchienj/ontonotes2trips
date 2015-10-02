@@ -1,0 +1,115 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="cast" hidden/><h2>cast</h2>
+<h4> 1.1: throw; project outward</h4>
+
+<ul>
+<li>Apollo cast the scroll indignantly to the ground.</li>
+<li>When spin-fishing, you cast a lure attached to a very thin line with a spinning rod.</li>
+<li>Cast off the shackles of this modern oppression</li>
+<li>The family cast her out for her betrayal.</li>
+<li>Visiting artists from the UK cast aside their preconceptions.</li>
+<li>The political developments have cast a shadow on the Mahamastakabhisheka celebrations.</li>
+<li>The sun began to slowly cast its light over the earth.</li>
+<li>Any type of projector can be used to cast the image.</li>
+<li>He seemed to cast a spell over his listeners.</li>
+<li>Goerne cast his voice easily throughout the room.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: form by putting into a mold; form in a particular way</h4>
+
+<ul>
+<li>His father had spent a considerable fortune in the attempt to cast steel in large blocks.</li>
+<li>The company used the molds to cast the statue in iron.</li>
+<li>Mr. Lieberman cast his answer in a lofty reference to the Declaration of Independence.</li>
+<li>I won't be able to entirely cast the situation as somehow the fault of the contractor.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: assign the roles in a theatrical production</h4>
+
+<ul>
+<li>To cast the movie, Taake and I held an actual screen test for the group.</li>
+<li>Eventually he was cast in a walk-on role in Ice Cube's Friday.</li>
+<li>I cast the opera after I saw Houston's production.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: deposit officially, as to vote</h4>
+
+<ul>
+<li>You can now cast your ballots for the November election.</li>
+<li>Help me decide how to cast my vote.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: search or wander without direction</h4>
+
+<ul>
+<li>She cast about for another subject; one day it was a nonfiction piece on tango, the next a novel about family.</li>
+<li>Standing up, she cast about for something to tie her hair.</li>
+<li>I began to cast around for alternatives.</li>
+<li>He would see Poseidon dancing in the waves as he cast about the earth.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: depress or dispirit</h4>
+
+<ul>
+<li>She had given up all to come to a home that no longer existed, and for once her sturdy little heart was cast down.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: create or remove a set of stitches</h4>
+
+<ul>
+<li>How is the join when you cast off a piece knit in the round?</li>
+<li>It's very hard to cast on only one or two stitches onto four double-pointed needles.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

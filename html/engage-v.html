@@ -1,0 +1,88 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="engage" hidden/><h2>engage</h2>
+<h4> 1.1: (cause to) participate in an activity, occupy, absorb</h4>
+
+<ul>
+<li>We quickly engaged in a heated discussion.</li>
+<li>The noble knight engaged in a battle against the evil dragon.</li>
+<li>The children engaged in a tug-of-war.</li>
+<li>Can you engage every child in the game?</li>
+<li>She engaged the shy newcomer in the conversation.</li>
+<li>We have engaged the enemy.</li>
+<li>The armies engaged at dawn.</li>
+<li>Enemy planes engaged the troops as they advanced into the mountains.</li>
+<li>Her interest in buterflies engaged her hours at a time.</li>
+<li>His smile engages everyone he meets.</li>
+<li>Studying engages most of my time.</li>
+<li>This book did not engage my interest.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: employ, hire, reserve, obtain use or the service of</h4>
+
+<ul>
+<li>I engaged a carpenter for the remodeling task.</li>
+<li>The accused engaged a lawyer for the trial.</li>
+<li>An accountant was engaged to examine the ledger.</li>
+<li>Let's engage a tour guide when we visit Rome.</li>
+<li>We engaged a room for our conference.</li>
+<li>I engaged a car and a driver for your trip.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: pledge or promise</h4>
+
+<ul>
+<li>We are engaged to be married this November.</li>
+<li>He wanted to go out, but as you know I'm previously engaged.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: operate, mesh or get caught as in gears</h4>
+
+<ul>
+<li>The gears engaged, and I was moving!</li>
+<li>Engage the clutch gradually.</li>
+<li>When the large cog wheel engages, the mill stone will start to go round.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

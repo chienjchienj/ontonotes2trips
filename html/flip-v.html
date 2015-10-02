@@ -1,0 +1,113 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="flip" hidden/><h2>flip</h2>
+<h4> 1.1: throw or move so as to turn over (an item)</h4>
+
+<ul>
+<li>He flips burgers for a living.</li>
+<li>Flip a coin to see who does the dishes.</li>
+<li>The diver flipped expertly off the diving board.</li>
+<li>I flipped the image to get a mirror effect.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: cause to move with a flick or as if with a flick</h4>
+
+<ul>
+<li>The monkey flipped the switch, shutting power off to all districts.</li>
+<li>She flipped through the magazine, pondering her day.</li>
+<li>Randy flipped back the lid of his zippo and lit a cigarette in one</li>
+<li>smooth motion.</li>
+<li>She flips the channels so fast you can't even tell what's on.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: react in an excited/surprized way; go crazy</h4>
+
+<ul>
+<li>'Oh my gosh! Your mom's going to flip when she sees this!'</li>
+<li>I once had a ninja P.E. teacher, but then he flipped out and kicked half my class.</li>
+<li>Oh boy! Britney Spears has flipped out again!</li>
+<li>Has dad flipped his lid?</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: reverse a direction, attitude or course of action, perhaps perceptually.</h4>
+
+<ul>
+<li>I flipped the car around and chased the taxi.</li>
+<li>He has totally thrown all sense of fairness to the winds and</li>
+<li>flipped his opinion.</li>
+<li>The small rodent flipped in and out of Derek's field of vision.</li>
+<li>Some say Kerry flipped around a lot in the debates.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: FLIP THE SWITCH: terminate an operation or group</h4>
+
+<ul>
+<li>The Fed flipped the switch on the cocain smuggling ring.</li>
+<li>Management just flipped the switch on our office renovation project.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: FLIP THE BIRD: give someone the 'middle finger'</h4>
+
+<ul>
+<li>I can't believe that those punk teens just flipped the bird at us!</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: buy a rundown structure, fix up and sell for a higher price</h4>
+
+<ul>
+<li>He flips houses for a living.</li>
+<li>When you flip cars you are almost breaking the law.</li>
+<li>Hey, we should buy this old house and flip it!</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

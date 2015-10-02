@@ -1,0 +1,78 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="reverse" hidden/><h2>reverse</h2>
+<h4> 1.1: change direction, become undone</h4>
+
+<ul>
+<li>Rising export and import prices in 1987 reversed the trend of recent years.</li>
+<li>The new manager hoped to reverse the decline in the company's fortunes.</li>
+<li>The UNDO command can reverse your steps back to the first thing you ever did.</li>
+<li>Many of the deterimental effects can be reversed by moderate exercise.</li>
+<li>The Supreme Court reversed, ruling that the video implicated legitimate concerns.</li>
+<li>(compare carefully to sense 2)</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: formally revoke or overturn previous decision or ruling</h4>
+
+<ul>
+<li>The Court of Appeal reversed the earlier judgment and set him free.</li>
+<li>The council reversed their earlier vote.</li>
+<li>The boy is asking the court to reverse a ruling barring him from karate</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: turn inside out or upside down; make or become opposite</h4>
+
+<ul>
+<li>You can reverse the cloak and wear it with the lining on the outside.</li>
+<li>Choose any 3 colors to make this hat, and reverse the hat so you have 2 hats.</li>
+<li>So in some respect, Tim and I have reversed our situations; he stays at home and I work.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: go backwards</h4>
+
+<ul>
+<li>She reversed into the parking space. (UK usage for AM 'backed')</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

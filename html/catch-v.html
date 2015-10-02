@@ -1,0 +1,159 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="catch" hidden/><h2>catch</h2>
+<h4> 1.1: sieze, stop the movement of something, entangle</h4>
+
+<ul>
+<li>Catch the ball!</li>
+<li>He quickly caught the elevator door and pushed it open.</li>
+<li>We have a big barrel to catch the rainwater.</li>
+<li>Who is catching for the Angels today?</li>
+<li>One foot caught in the stirrup.</li>
+<li>His look caught her.</li>
+<li>She caught his eye.</li>
+<li>I was caught in traffic and missed the meeting.</li>
+<li>The billboard caught my attention.</li>
+<li>She caught him before he could say anything else.</li>
+<li>She managed to catch herself before telling her boss what was really on her mind.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: capture, ensnare, discover in the act</h4>
+
+<ul>
+<li>She caught her son eating candy.</li>
+<li>He was caught shoplifting.</li>
+<li>The reporter caught the senator in his lie.</li>
+<li>He caught her staring out the window.</li>
+<li>Cheating students were caught out by cellphone monitors.</li>
+<li>I caught a rabbit in a trap today.</li>
+<li>Did you finally catch the thief?</li>
+<li>She caught his heart.</li>
+<li>She really caught the spirit of the place in her drawings.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: perceive, understand, be aware of</h4>
+
+<ul>
+<li>I caught the aroma of coffee.</li>
+<li>He caught the allusion of her glance.</li>
+<li>He caught a glimpse of her by the last rays of twilight.</li>
+<li>We caught the conversation at the next table.</li>
+<li>We caught something of his theory in the lecture.</li>
+<li>A mammogram may not catch a small tumor.</li>
+<li>I don't catch your meaning.</li>
+<li>I didn't catch your name.</li>
+<li>She didn't get the joke at first, but then she caught on.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: connect with; reach a target or goal</h4>
+
+<ul>
+<li>I have to catch a train at 7:00.</li>
+<li>The Rolls Royce caught us near the exit ramp.</li>
+<li>I caught up on my homework.</li>
+<li>I'm trying to catch up with the latest developments.</li>
+<li>We spent hours catching up on the phone.</li>
+<li>I'll catch you later!</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: receive, be affected by, suffer</h4>
+
+<ul>
+<li>Even little Edris caught the mood and began to giggle.</li>
+<li>The tablecloth caught fire.</li>
+<li>Did you catch a cold?</li>
+<li>She will catch hell for this behavior!</li>
+<li>I really caught it the next day, for stealing my mom's things.</li>
+<li>I was caught up in the excitement.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: attend an entertainment or event</h4>
+
+<ul>
+<li>Let's catch a movie.</li>
+<li>There's still time to catch the best show on television.</li>
+<li>After work, they caught a baseball game.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: start and spread</h4>
+
+<ul>
+<li>The fire caught.</li>
+<li>The fashion did not catch.</li>
+<li>The building green trend is catching in the corporate world.</li>
+<li>This diet plan never really caught on.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: get something necessary</h4>
+
+<ul>
+<li>Let's catch a bite to eat.</li>
+<li>I need to catch a few zzzzs.</li>
+<li>Give him a moment to catch his breath.</li>
+<li>I haven't caught a wink in the past few nights.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: hit, contact</h4>
+
+<ul>
+<li>The rock caught her in the back of the head.</li>
+<li>The punch caught him in the stomach.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

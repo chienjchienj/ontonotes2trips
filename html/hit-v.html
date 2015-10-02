@@ -1,0 +1,148 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="hit" hidden/><h2>hit</h2>
+<h4> 1.1: strike with an instrument, missile, or oneself</h4>
+
+<ul>
+<li>Jasmine hit the ball to her cousin.</li>
+<li>When the car hit the tree, the windshield shattered.</li>
+<li>Don't hit your brother!</li>
+<li>He was hit with a bullet at close range.</li>
+<li>Khruschev is famous for hitting his shoe against a table to interrupt a United Nation's speech.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: figuratively strike; affect or experience suddenly</h4>
+
+<ul>
+<li>We were hit by really bad weather.</li>
+<li>The earthquake hit a midnight.</li>
+<li>The Germans hit Poland that September.</li>
+<li>An interesting thought hit her.</li>
+<li>His words really hit home.</li>
+<li>The company was hit with an injunction.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: reach, attain</h4>
+
+<ul>
+<li>We hit Detroit by noon.</li>
+<li>The product should hit the market in June.</li>
+<li>Let's hit the stores right when they open tomorrow.</li>
+<li>I need to hit the books before exams.</li>
+<li>The temperature hit 100 degrees today.</li>
+<li>The water hit the top stair in out basement.</li>
+<li>Her speech hit a sour note at the end.</li>
+<li>You hit the bullseye!</li>
+<li>He hit the jackpot!</li>
+<li>You hit the nail on the head!</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: consume to excess</h4>
+
+<ul>
+<li>Every time she gets upset, she hits the bottle.</li>
+<li>Don't you think you're hitting the cookies kind of hard?</li>
+<li>He really hit it up last night.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: perform a type of ball striking in a sport</h4>
+
+<ul>
+<li>Williams hit a pop fly to center field.</li>
+<li>He's hit 32 home runs already this season.</li>
+<li>She hit a long drive to the middle of the fairway.</li>
+<li>He hit .300 last season.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: discover or encounter, esp. by chance</h4>
+
+<ul>
+<li>I hit on the idea while chopping vegetables.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: pay unsolicited sexual attention to</h4>
+
+<ul>
+<li>He likes to go to bars and hit on women.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: throw oneself to the ground</h4>
+
+<ul>
+<li>When the shots rang out, everyone hit the dirt.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: become angry and express rage</h4>
+
+<ul>
+<li>When she came home at 2a.m., her father hit the ceiling.</li>
+<li>I nearly hit the roof when I saw the Visa bill.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: go to sleep</h4>
+
+<ul>
+<li>I need to hit the hay.</li>
+<li>You should hit the sack</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,89 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="transform" hidden/><h2>transform</h2>
+<h4> 1.1: change or alter form, appearance, or nature</h4>
+
+<ul>
+<li>This groundbreaking freephone service has transformed the face of visitor information.</li>
+<li>The Brown case transformed the values of the country.</li>
+<li>The Great Depression transformed the American political and economic landscape.</li>
+<li>Then through the power of his magic he transformed the mouse into a girl.</li>
+<li>Pop artists use their images to shock and transform attitudes of what is considered "art."</li>
+<li>Warhol's series of red and white Campbell's soup cans transformed the commercial illustrator into a pop-art sensation.</li>
+<li>I met a teacher in my school sixth form who transformed my life because he transformed my view of myself.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: convert one form of energy to another</h4>
+
+<ul>
+<li>This device can transform energy into light.</li>
+<li>Energy is neither gained nor lost, only transformed from kinetic energy to potential energy and vice versa.</li>
+<li>When the apple hits the ground, kinetic energy is transformed into heat energy.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: subject to a mathematical transformation</h4>
+
+<ul>
+<li>To transform a sequence into an evenly distributed set of real numbers in the interval from 0 to 1, divide each of the original numbers by N.</li>
+<li>The argument @f is the list of values to be transformed.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: genetically alter a cell</h4>
+
+<ul>
+<li>To chemically transform cells, competent cells are mixed with the DNA.</li>
+<li>Some cells along the cut will be transformed by the bacterium, that inserts its DNA into the cell.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: increase or decrease an alternating current or voltage</h4>
+
+<ul>
+<li>Electrical Transformers take electricity of one voltage and transform it into another voltage.</li>
+<li>The ballast transforms line voltage 120 volts to these requirements.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,97 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="shake" hidden/><h2>shake</h2>
+<h4> 1.1: move or cause to shudder or vibrate</h4>
+
+<ul>
+<li>The chemist shook the flask vigorously.</li>
+<li>His hands couldn't stop shaking.</li>
+<li>He was shaken from his dreams.</li>
+<li>Shake the salt out of the salt shaker.</li>
+<li>He shook off his water logged boots.</li>
+<li>I shook my piggy bank but all that came out was a paper clip.</li>
+<li>The 6.2 magnitude quake shook the densely populated province.</li>
+<li>A child 's brain and body can be injured when he or she is shaken.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: make unstable, undermine, cause to waver, challenge</h4>
+
+<ul>
+<li>My faith has been shaken.</li>
+<li>The bad news shook her hopes.</li>
+<li>The civil war shook the country.</li>
+<li>I'm all shook up!</li>
+<li>The sinister and surreal events of the night shook him up so badly that he resigned.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: make a communicative gesture</h4>
+
+<ul>
+<li>She shook her finger at the naughty students.</li>
+<li>Teach your horse to shake his head yes and no.</li>
+<li>They ought not shake hands with people while they are infected.</li>
+<li>Don't shake your fist at me.</li>
+<li>Shake, shake, shake, shake your booty.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: get rid of</h4>
+
+<ul>
+<li>I couldn't shake the feeling that I was being watched.</li>
+<li>He tried to shake the car that was following him.</li>
+<li>He shook off his image as one of international football's conservatives.</li>
+<li>Daughter Barbara shook off her Secret Service escort.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: shuffle and reorganize</h4>
+
+<ul>
+<li>The corporation shook up its financial staff after the buyout.</li>
+<li>As rumored , Microsoft shook up Windows development by putting Steven Sinofsky in charge.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

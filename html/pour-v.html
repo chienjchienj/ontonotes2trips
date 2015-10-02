@@ -1,0 +1,102 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="pour" hidden/><h2>pour</h2>
+<h4> 1.1: make a substance flow from a container</h4>
+
+<ul>
+<li>Please pour me a glass of water?</li>
+<li>I spilled the juice while I was pouring it.</li>
+<li>Pour the honey into the bowl and mix it thoroughly with the other ingredients.</li>
+<li>Would you like me to pour you some more wine?</li>
+<li>Would you like to pour while I open some bags of nuts?</li>
+<li>Pour some sugar into the bowl, please.</li>
+<li>The sommelier poured out the wine for the guests.</li>
+<li>He poured the rest of the oil down the drain.</li>
+<li>He poured the wine down their dry throats.</li>
+<li>They had poured forth and had drunken to their heart.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: flow out quickly or in large amounts</h4>
+
+<ul>
+<li>Dirty water poured all over the floor.</li>
+<li>People poured out of the theatre.</li>
+<li>The bus was pouring out thick black exhaust fumes.</li>
+<li>I felt a sharp pain and looked down to see blood pouring from my leg.</li>
+<li>Refugees have been pouring into neighbouring countries to escape the civil war.</li>
+<li>The sweat was pouring down her face by the end of the race.</li>
+<li>Letters of complaint came pouring in.</li>
+<li>Mount Doom erupted and lava and ash poured forth onto the plain of Gorgoroth.</li>
+<li>The woman poured out her frustrations as the judge listened.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: supply or spend in large amounts</h4>
+
+<ul>
+<li>The government has been pouring money into inefficient state-owned industries.</li>
+<li>We poured money into the education of our children.</li>
+<li>Gloria has poured a lot of effort into making this quilt for you.</li>
+<li>I poured sleepless nights and countless hours into my dedicated effort.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: rain heavily</h4>
+
+<ul>
+<li>It poured all night.</li>
+<li>It has been pouring down for hours.</li>
+<li>Put on your rain coat. It's pouring outside!</li>
+<li>It looks as though it's about to pour.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: be discouraging or negative about</h4>
+
+<ul>
+<li>The government has poured cold water on calls to cut income tax rates.</li>
+<li>Author of Jurassic Park pours cold water on global warming.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

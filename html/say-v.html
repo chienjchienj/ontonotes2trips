@@ -1,0 +1,94 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="say" hidden/><h2>say</h2>
+<h4> 1.1: an agent expresses or communicates a concept through words</h4>
+
+<ul>
+<li>He said that he wanted to marry her.</li>
+<li>He says he is innocent.</li>
+<li>I say we forget the whole thing.</li>
+<li>I said to forget the whole thing.</li>
+<li>She said 'no' and left us standing there.</li>
+<li>The teacher said the student had to go to the principal's office.</li>
+<li>Will you please say grace for us?</li>
+<li>We said farewell to our family and friends as we embarked on our mission.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: to indicate something through a physical, non-verbal medium</h4>
+
+<ul>
+<li>Jackson Pollock's paintings say nothing to me.</li>
+<li>The clock said noon when they arrived at the inn.</li>
+<li>Does the fuel gauge say empty?</li>
+<li>His eyes said farewell.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: express a supposition; usually occurs with the expression 'let us'</h4>
+
+<ul>
+<li>Let's say you had a lot of money--what would you do?</li>
+<li>Let us say that Colonel Mustard committed the murder in the library with the candlestick.</li>
+<li>Say you had a free ticket to Europe. Where would you go?</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: a written document's specific wording</h4>
+
+<ul>
+<li>Does that statute say anything about what constitutes malpractice?</li>
+<li>The poker handbook says a flush beats a full house.</li>
+<li>The article says the following about diving on Grand Cayman.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: physical act of articulating or pronouncing speech sounds</h4>
+
+<ul>
+<li>I can't say Danish vowels very well.</li>
+<li>Try to say 'she sells sea shells by the sea shore' fast, three times.</li>
+<li>Can that child say two-syllable words yet?</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

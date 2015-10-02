@@ -1,0 +1,98 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="vote" hidden/><h2>vote</h2>
+<h4> 1.1: officially express a preference for a candidate, measure, resolution, etc.</h4>
+
+<ul>
+<li>He voted for the motion.</li>
+<li>None of the Democrats voted last night.</li>
+<li>My point was, I voted party lines regardless of who the candidate was.</li>
+<li>A United States Senator, at some personal and political price to himself, voted his conscience.</li>
+<li>Some of your "old timers" stood firm and voted his beliefs and that of his constituents.</li>
+<li>For 100 years people in the south voted democrat.</li>
+<li>They thought Kellie Pickler would be voted the next American Idol.</li>
+<li>After the crucial challenge defeat, the La Mina tribe voted the Retired Astronaut, Dan Barry, off Survivor Panama.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: express an opinion</h4>
+
+<ul>
+<li>I vote that we all go home.</li>
+<li>She voted for eating at the Chinese restaurant.</li>
+<li>Rather than managing for the chaotic, I vote that we manage for the complex.</li>
+<li>I vote that we immediately change seamonkey.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: succeed in electing</h4>
+
+<ul>
+<li>They voted in Clinton.</li>
+<li>Taiwan voted in a new Democratic Progressive Party for the first time in half a millennium.</li>
+<li>Actor and film-maker Tom Hanks was voted in as vice-president of the Academy of Motion Pictures and Sciences.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: thwart from passage or remove from office</h4>
+
+<ul>
+<li>The bill was just voted out of a committee and heads to the California Assembly for a full vote.</li>
+<li>ust like the Germans last fall, Canadians voted out a government whose leaders made clear their opposition to President Bush.</li>
+<li>Former Blue star Antony Costa has become the next person to be voted out.</li>
+<li>Christina School District residents voted down a property tax hike to pay for initiatives.</li>
+<li>Republicans in Congress voted down Democratic amendments to increase fuel-efficiency standards.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: bring into existence or make available by vote</h4>
+
+<ul>
+<li>They voted aid for the underdeveloped countries in Asia.</li>
+<li>The electors voted aid to the extent of $50000 in bonds of the city.</li>
+<li>Achaeans were divided, some wishing to vote an alliance with Philip and some with the Romans.</li>
+<li>Eventually, they voted assistance to the latter.</li>
+<li>United's directors voted themselves lifetime access to free first-class travel and $20,000 a year for life as well.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

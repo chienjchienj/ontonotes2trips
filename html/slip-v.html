@@ -1,0 +1,113 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="slip" hidden/><h2>slip</h2>
+<h4> 1.1: (cause to) pass or move quickly, insert discreetly</h4>
+
+<ul>
+<li>John slipped the border guard a twenty dollar bill.</li>
+<li>Mary slipped in some references to her own work in the report.</li>
+<li>The man slipped a note to Sally under the table.</li>
+<li>The enemy ship slipped into the harbor under the cover of darkness.</li>
+<li>We quietly slipped away from the talk to have an ice cream.</li>
+<li>The couple let too many years slip away without ever taking a vacation.</li>
+<li>They slipped by the guards and into the soldiers' barracks.</li>
+<li>The cat burglar has slipped the police again!</li>
+<li>You'd better buy before your chance slips away.</li>
+<li>I was appalled at how easily the lie slipped from my lips.</li>
+<li>The more you tighten your grasp, Tarkin, the more star systems will slip through your fingers.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: (cause to) move easily, as in a slide or skid</h4>
+
+<ul>
+<li>Bob slipped on the wet marble floor.</li>
+<li>The children were slipping all over the ice.</li>
+<li>The silky cloth slipped from the table on to the floor.</li>
+<li>Her hair kept slipping into her eyes as she bent over the cauldron.</li>
+<li>The figurine kept slipping off the cake.</li>
+<li>She slipped on her shoes and ran out the door.</li>
+<li>He held her hand and slipped on the diamond ring.</li>
+<li>She slipped into her nightgown.</li>
+<li>He lost so much blood that he slipped into a coma.</li>
+<li>Sam has easily slipped into the role of counselor, listener, and friend.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: decline, worsen, decrease</h4>
+
+<ul>
+<li>Stocks slipped in heavy trading today.</li>
+<li>Analysts think it unlikely the economy will slip into recession.</li>
+<li>John's grades are slipping this semester.</li>
+<li>That restaurant's standards have been slipping recently.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: to err, make a mistake</h4>
+
+<ul>
+<li>NASA slipped in their calculations of exactly where the rocket would go.</li>
+<li>You can't slip John up with those brainteasers.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: escape one's mind</h4>
+
+<ul>
+<li>The unpleasant event has slipped their memory.</li>
+<li>The name of that film has slipped my mind.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: dislocate, misalign</h4>
+
+<ul>
+<li>Bill slipped a disk trying to move the piano.</li>
+<li>The clutch keeps slipping third gear.</li>
+<li>I think I've slipped my shoulder.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

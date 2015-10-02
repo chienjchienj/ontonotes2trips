@@ -1,0 +1,104 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="fix" hidden/><h2>fix</h2>
+<h4> 1.1: repair,mend</h4>
+
+<ul>
+<li>They charged a lot to fix my car.</li>
+<li>I'm fixing that tear in your jacket.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: fasten,secure</h4>
+
+<ul>
+<li>The cat got out when the latch to the back door wasn't fixed.</li>
+<li>Let's fix the picture to the frame</li>
+<li>As he was fixing his hand on her shoulder, she turned at him with an icy glare.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: specify</h4>
+
+<ul>
+<li>See what you get when this variable is fixed to a higher value.</li>
+<li>We haven't fixed the date for our wedding yet.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: prepare, make, get ready</h4>
+
+<ul>
+<li>She was fixing dinner when the phone rang.</li>
+<li>Can you fix these samples and send them over to pathology?</li>
+<li>I was fixing to leave town after I paid the hotel bill.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: take revenge on</h4>
+
+<ul>
+<li>Just wait, I'll fix you!</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: sterilize</h4>
+
+<ul>
+<li>She's going to get her two cats fixed next week.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: FIX UP:find something/someone or make arrangements for</h4>
+
+<ul>
+<li>I'll fix you up with a nice girl.</li>
+<li>The car salesman fixed me up with a sweet deal.</li>
+<li>Can you fix up a meeting with the president?</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

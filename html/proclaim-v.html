@@ -1,0 +1,58 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="proclaim" hidden/><h2>proclaim</h2>
+<h4> 1.1: make official through declaration</h4>
+
+<ul>
+<li>This is a complete copy of the resolution that proclaimed the first Earth Day.</li>
+<li>He was proclaimed king.</li>
+<li>He proclaimed himself King of Haiti in 1811 and created an atmosphere of discipline.</li>
+<li>Once the legislation has been proclaimed, the government will have two years to begin a lawsuit.</li>
+<li>The president proclaimed a state of emergency. (Where "state of emergency" is understood to be an official condition necessary for federal funding to be released, etc)</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: announce, state, claim</h4>
+
+<ul>
+<li>The state-run news agency proclaimed the law's passing to be an historic achievement.</li>
+<li>All of a sudden he proclaimed himself an abolitionist--straight out and publicly!</li>
+<li>He proclaimed his vision of the universe as infallible.</li>
+<li>Imagine my horror when my daughter proclaimed that being a virgin until she was married wasn't happening.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

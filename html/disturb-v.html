@@ -1,0 +1,58 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="disturb" hidden/><h2>disturb</h2>
+<h4> 1.1: change the normal or accepted arrangement, position, or state of</h4>
+
+<ul>
+<li>Was this who had disturbed her father's papers?</li>
+<li>It is not clear yet if the export tax has disturbed the viability of iron ore exports from Goa.</li>
+<li>If the equilibrium is disturbed, the parasite will begin to slowly grow in number.</li>
+<li>Activities that disturbed the rubble and raised dust would likely produce a greater exposure to some hazards.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: upset the mental or emotional state of; vex or trouble</h4>
+
+<ul>
+<li>Even though the graphics left much up to the imagination, the sight of pixellated blood flying about disturbed her.</li>
+<li>The news of her death disturbed him.</li>
+<li>Serious rifts have already disturbed the community.</li>
+<li>The chirping birds disturbed her sleep every morning before dawn.</li>
+<li>Please don't disturb me while I'm working.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

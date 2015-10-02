@@ -1,0 +1,72 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="oppose" hidden/><h2>oppose</h2>
+<h4> 1.1: be against, resist</h4>
+
+<ul>
+<li>The senator said he would oppose the bill.</li>
+<li>The board opposed his motion.</li>
+<li>A letter by author CS Lewis has shown he opposed the idea of a screen version of his Narnia books.</li>
+<li>He opposed the British, he opposed the Hindu that were victims of the past, he opposed even Gandhiji, he opposed the Government of free India.</li>
+<li>Singapore opposed the call for a moratorium on death-penalty.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: match, play against, compare</h4>
+
+<ul>
+<li>Let them oppose their best athletes against ours.</li>
+<li>Our current series will oppose the teams ranked 14 vs 19.</li>
+<li>This effectively opposes people against each other, which to me goes against spiritual common sense.</li>
+<li>This is often seen in a competitively fearful framework that opposes individual and group against each other.</li>
+<li>Delone Catholic will oppose Columbia in the opening round at 6 pm Tuesday.</li>
+<li>They deliberately use synthetic / chemical materials which they frequently oppose with 'natural' materials.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: oppose with equal weight or force</h4>
+
+<ul>
+<li>The force of static friction will only oppose a push up to a point.</li>
+<li>Can two flat objects be electromagnetized so that they oppose each other?</li>
+<li>Frictional forces that oppose the motion of moving objects are due to kinetic friction.</li>
+<li>Luke did not immediately die, and we know that Jedi have the power to oppose gravity with the force.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,82 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="warm" hidden/><h2>warm</h2>
+<h4> 1.1: make less cold, more hot</h4>
+
+<ul>
+<li>Material is then fed into a pressurized vessel and warmed up to reach a liquid stage.</li>
+<li>Water temperatures in areas where hurricanes form in the Atlantic Ocean have warmed up over the past century.</li>
+<li>Of the two wet solids, which warmed the fastest?</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: (cause to) become receptive or friendly</h4>
+
+<ul>
+<li>On a personal note, I've warmed up to the operating system considerably since its launch.</li>
+<li>I've warmed up to the movie in the years since I first saw it.</li>
+<li>I was helming and it really warmed the cockles of my heart to watch my son he ambled barefoot down the deck to the bow.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: bring to a state of readiness or efficient performance</h4>
+
+<ul>
+<li>I've found that generaly it takes 3-4 miles for the car to warm up.</li>
+<li>What's weird is, this would only happen if the engine wasn't fully warmed up.</li>
+<li>Most early comedians were merely viewed as joke tellers, who warmed up the audience as an opening act.</li>
+<li>The coach warmed up the players before the game.</li>
+<li>At first I didn't think I would be able to but I hung in there and my muscles warmed up then I was good to go.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: idioms</h4>
+
+<ul>
+<li>WARM THE BENCH</li>
+<li>Daniels is a good player who warmed the bench much of the season.</li>
+<li>Both men were too old to really contribute, so they largely warmed the bench and helped to pump ticket sales.</li>
+<li>DEATH WARMED OVER</li>
+<li>I'm back home and feeling like death warmed over.</li>
+<li>Bette, my sixty year old bud, looking like death warmed over, was the best medicine I could have asked for.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

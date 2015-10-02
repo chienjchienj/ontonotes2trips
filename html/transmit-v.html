@@ -1,0 +1,67 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="transmit" hidden/><h2>transmit</h2>
+<h4> 1.1: send or transfer from one entity (to another)</h4>
+
+<ul>
+<li>Within each donor set, only one donor was suspected of having transmitted the disease.</li>
+<li>The father transmitted the trait to two of his three daughters.</li>
+<li>Mariner 10 transmitted the first detailed photographs of Venus's atmosphere.</li>
+<li>What do I do if I transmitted the wrong payment amount?</li>
+<li>Payment transactions processed on Friday are transmitted the next business day.</li>
+<li>If a tree falls in the forest and nobody hears it, is information transmitted?</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: serve as a medium for transmission</h4>
+
+<ul>
+<li>The material without air transmitted the largest force.</li>
+<li>They also have transmitted the ability to feel the contour of particular shapes over the Internet.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: broadcast over the airways</h4>
+
+<ul>
+<li>We received a message from the destination station concerning a flight for which a flight plan was transmitted.</li>
+<li>A sequence system uses a locally generated noise code to encode digital data to be transmitted.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

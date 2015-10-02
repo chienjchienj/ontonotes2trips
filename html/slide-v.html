@@ -1,0 +1,89 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="slide" hidden/><h2>slide</h2>
+<h4> 1.1: glide, slip, or extend smoothly without interruption</h4>
+
+<ul>
+<li>The bartender slid two beers down to the end of the bar.</li>
+<li>Cars were sliding all over the black ice.</li>
+<li>These beautifully machined tool parts slide easily against each other.</li>
+<li>The base runner slid into second and was safe.</li>
+<li>The man slid down on the couch in unconsciousness.</li>
+<li>Johnny likes to slide down the bannisters.</li>
+<li>I could just slide the dress over my head, without messing with the zipper.</li>
+<li>Let me first slide off this uncomfortable suit. Then we'll go grab some dinner.</li>
+<li>Here the river silently slides under the bridge, and into Lake Jocassee.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: move sneakily, secretly, or deceptively</h4>
+
+<ul>
+<li>The storekeeper saw the man slide a bottle into his pocket.</li>
+<li>Bob deeply resents how Bill has been sliding into Mary's good graces again. (figurative)</li>
+<li>Quietly we slid into seats at the back of the auditorium</li>
+<li>John slid a twenty into the hand of the maitre d'.</li>
+<li>They slid past the gate without being noticed.</li>
+<li>How could a problem so big have slipped by unnoticed?</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: slump or go into a worse state</h4>
+
+<ul>
+<li>Stocks slid in heavy trading this morning. (down in price)</li>
+<li>His numbers at the polls are sliding to a new low.</li>
+<li>Eventually, they both slid into comfortable mediocrity.</li>
+<li>The dollar slid against other major currencies.</li>
+<li>Car exports slid by 40% this year.</li>
+<li>He was improving for a while, but I fear he's sliding back into his old habits.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: elapse, pass by</h4>
+
+<ul>
+<li>I could have gotten upset but decided to just let it slide.</li>
+<li>He is just letting his life slide by without any real plan.</li>
+<li>Three years slid by before we visited Rome again.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

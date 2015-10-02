@@ -1,0 +1,96 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="bury" hidden/><h2>bury</h2>
+<h4> 1.1: enclose or cover completely</h4>
+
+<ul>
+<li>There are many clues that the Vikings buried the treasure here.</li>
+<li>The growing city of Worcester buried the majority of the Blackstone</li>
+<li>Canal.</li>
+<li>The Day They Buried The Lone Ranger was a sad one.</li>
+<li>The engineers buried the pipes at depths of three to twelve feet.</li>
+<li>Mount Vesuvius erupted and buried the towns of Pompeii and Herculaneum.</li>
+<li>Mac buried himself in his covers, hugging his teddy bear.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: embed deeply</h4>
+
+<ul>
+<li>I sat down by the body and buried my face in my hands.</li>
+<li>The youth's friend lay down, buried his face in his arms and fell asleep.</li>
+<li>The archer buried the arrow in the bullseye.</li>
+<li>The hidden gold was buried deep in the cavern (where the gold is not under the rock).</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: dismiss from mind; consign to obscurity; burden with an undesirable situation; resign to ineffectiveness.</h4>
+
+<ul>
+<li>Not wanting to hurt anyone, he buried the thought that came to him.</li>
+<li>They buried the N word today.</li>
+<li>I buried the devil that has been sitting on my shoulder.</li>
+<li>They buried the American dream today.</li>
+<li>Secrets buried deep in time are hard to unveil.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: Burden with an undesirable situation; resign to ineffectiveness.</h4>
+
+<ul>
+<li>He buried the company in debt.</li>
+<li>Williams was buried deep in the tournament rankings.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: immerse oneself in</h4>
+
+<ul>
+<li>Grant buried himself in his new job.</li>
+<li>Doran is a man who has seemingly buried himself in a slacker</li>
+<li>lifestyle.</li>
+<li>Paul Flemming buried himself in books.</li>
+<li>Emma buried herself in her fantasies and dreamed of living in Paris.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

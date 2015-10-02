@@ -1,0 +1,74 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="sustain" hidden/><h2>sustain</h2>
+<h4> 1.1: support; hold up; nurture or provide for</h4>
+
+<ul>
+<li>The girders, softened by fire, could no longer sustain the walls of the building.</li>
+<li>You can't sustain a family in this country on $50 a week.</li>
+<li>Memories of Venice sustained them through the long gray winter.</li>
+<li>Mary sustained herself on cigarettes and coffee through graduate school.</li>
+<li>She was sustained by the strength of her religious faith.</li>
+<li>The love of my family and friends sustained me through my ordeal.</li>
+<li>The soil in that planet is not rich enough to sustain lifeforms.</li>
+<li>He seems to find it difficult to sustain relationships with women.</li>
+<li>A hurricane of that magnitude can sustain winds of over 140 miles per hour.</li>
+<li>The runner is sustaining a comfortable lead at this point.</li>
+<li>Analysts wonder how long the economy can sustain its current pace. (figurative)</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: suffer or experience damage, injury, or loss</h4>
+
+<ul>
+<li>Both the driver and passenger sustained head injuries.</li>
+<li>The club-footed boy sustained a lot of teasing from classmates at the new school.</li>
+<li>Most buildings sustained only minimal damage in the earthquake.</li>
+<li>The company has sustained heavy losses this year.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: validate, verify</h4>
+
+<ul>
+<li>The judge said the objection was sustained.</li>
+<li>There is no evidence to sustain the plaintiff's allegations.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

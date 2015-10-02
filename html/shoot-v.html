@@ -1,0 +1,109 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="shoot" hidden/><h2>shoot</h2>
+<h4> 1.1: propel a projectile, hit with a projectile</h4>
+
+<ul>
+<li>He was shot in the head.</li>
+<li>Stop shooting me with those rubberbands!</li>
+<li>He shot 3 innocent bystanders before being apprehended.</li>
+<li>They shot down several enemy aircraft.</li>
+<li>She shot down my proposal.</li>
+<li>Don't shoot until you see the whites of their eyes.</li>
+<li>The ballistic missiles were shot at noon.</li>
+<li>I wonder what they shot at?</li>
+<li>You can't go around shooting off your mouth.</li>
+<li>Martine shot back an answer.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: (cause to) move suddenly and swiftly in a particular direction</h4>
+
+<ul>
+<li>He shot into the street to grab his daughter.</li>
+<li>The star shot through the sky.</li>
+<li>The dragon shot flames out of his mouth.</li>
+<li>The pain shot up her leg.</li>
+<li>Shoot the dice.</li>
+<li>I shot him a glance.</li>
+<li>The cloth was shot through with metallic thread.</li>
+<li>Prices shot up overnight.</li>
+<li>The motorcycle shot down the street.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: make a film or picture</h4>
+
+<ul>
+<li>He shot the movie in black and white.</li>
+<li>She shot over 200 photos at the wedding.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: inject</h4>
+
+<ul>
+<li>We shot glucose into the patient's veins.</li>
+<li>They shot hydrogen into the balloon.</li>
+<li>He shoots up every chance he gets.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: score in or play a game</h4>
+
+<ul>
+<li>He shot a 3-point basket to win the game.</li>
+<li>My uncle loves to shoot craps.</li>
+<li>She shot a hole-in-one!</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: measure the altitude by using a sextant</h4>
+
+<ul>
+<li>The astronomer shot the star Sirius.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

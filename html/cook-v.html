@@ -1,0 +1,71 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="cook" hidden/><h2>cook</h2>
+<h4> 1.1: make food ready for consumption (by applying heat)</h4>
+
+<ul>
+<li>I can never cook burgers the way I want.</li>
+<li>I cooked the meal by stirring it into boiling water.</li>
+<li>Cook up the vegebles in the same pot as the noodles.</li>
+<li>We cooked out in the woods while camping. (Meaning 'to barbecue')</li>
+<li>Onions cook faster than carrots in stir-fry.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: transform or destroy non-food items by heating</h4>
+
+<ul>
+<li>Cocaine cooked his brain.</li>
+<li>My brother cooked the laptop we gave him for Christmas.</li>
+<li>Some food packaging can be dangerous if cooked.</li>
+<li>The alchemist cooked up a compress to put on the wound.</li>
+<li>The sun is cooking me.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: create something artificial (with the purpose of deception)</h4>
+
+<ul>
+<li>How did Cheney cook the intelligence on Iran?</li>
+<li>The presidnet cooked up a secret mission to give thanks to his</li>
+<li>troops.</li>
+<li>Dell admits that they cooked the books on their quarterly sales.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

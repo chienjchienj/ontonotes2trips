@@ -1,0 +1,124 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="lead" hidden/><h2>lead</h2>
+<h4> 1.1: result in, tend to, cause, conduce</h4>
+
+<ul>
+<li>Washing clothes without bleach will lead to duller colors eventually.</li>
+<li>This remark led to further arguments among the guests</li>
+<li>Her greed led her to forge the checks</li>
+<li>This path is leading him to disaster.</li>
+<li>More exercise will lead to better cardiovascular health.</li>
+<li>The United States will lead of the 10th annual World's Fair.</li>
+<li>Hitler's attack on Poland led up to WWII.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: travel in front of, be first, precede</h4>
+
+<ul>
+<li>The majorettes led the parade on Main Street.</li>
+<li>That country leads the world in annual silk production.</li>
+<li>John is now leading in the tennis tournament.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: extend, connect, afford access to</h4>
+
+<ul>
+<li>Train service no longer leads all the way out to those villages.</li>
+<li>I wonder where this twisty passage will lead.</li>
+<li>The French doors in the living room lead onto a wide terrace.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: head, preside, direct</h4>
+
+<ul>
+<li>Who will be leading this project?</li>
+<li>The conductor led the audience in a medley of patriotic tunes.</li>
+<li>I've been asked to lead the service this evening.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: guide</h4>
+
+<ul>
+<li>You can lead a horse to water, but you can't make him drink.</li>
+<li>This problem has been leading me in circles.</li>
+<li>He led her upstairs to see his etchings.</li>
+<li>You've been leading me astray!</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: pass, spend</h4>
+
+<ul>
+<li>They are leading a splendid life on the Amalfi coast.</li>
+<li>He led a life of quiet virtue.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: run, place</h4>
+
+<ul>
+<li>Be sure to lead the wire behind the furniture, so we won't trip on it.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: deceive, teach bad behavior to (with false promises)</h4>
+
+<ul>
+<li>That preacher sure led us astray with promises of eternal life.</li>
+<li>It was common practice to lead off young ones.</li>
+<li>Martin led the professor by the nose.</li>
+<li>She led on her blind date, telling him she was a model.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

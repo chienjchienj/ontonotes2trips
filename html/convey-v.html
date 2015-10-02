@@ -1,0 +1,62 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="convey" hidden/><h2>convey</h2>
+<h4> 1.1: express, symbolize, mean; be a medium of expression or transmission</h4>
+
+<ul>
+<li>The visits have conveyed the message to Central Africans that they are not abandoned.</li>
+<li>There was an atmosphere of excitement, which conveyed the impression that we would not have long to wait.</li>
+<li>Topped off with a messy ponytail, this look conveyed the cool of a New York girl.</li>
+<li>That one look conveyed unspoken words; words that frightened me to the core.</li>
+<li>Critics charge the EPA has downplayed risks and conveyed false assurances.</li>
+<li>Hypertension in renal allograft recipients may be conveyed by cadaveric kidneys.</li>
+<li>As a cartoonist, he conveyed the newspaper's political opinions to a wide audience.</li>
+<li>He called a press conference at which he conveyed the government's decision to repeal the law.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: transfer location or possession</h4>
+
+<ul>
+<li>The wooden plow was equipped with a seed hopper and a tube that conveyed the seed.</li>
+<li>Are souls conveyed thither immediately after death?</li>
+<li>In 1992, Patrick and his wife Joann conveyed the parcel to the defendants.</li>
+<li>In April of 1999, the appellant conveyed the property to the appellee.</li>
+<li>John de Vaux conveyed the manor to his brother Oliver.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,53 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="rely" hidden/><h2>rely</h2>
+<h4> 1.1: have confidence or expectation for a certain behavior</h4>
+
+<ul>
+<li>Don't rely on 'safe days' as birth control.</li>
+<li>Don't rely on finding me here when you get back.</li>
+<li>Colorado weather can never be relied on. It's always changing.</li>
+<li>Can Taiwan rely on the US?</li>
+<li>The new wireless broadband router doesn't rely on a landline modem for its internet connection.</li>
+<li>You can rely on your old man's money.</li>
+<li>Millions of retirees expect to rely on Medicaid to cover the cost of their long-term care.</li>
+<li>Elderly parents are often forced to rely on their adult children.</li>
+<li>New diet rules rely on common sense.</li>
+<li>I rely on you for good advice.</li>
+<li>We will give you advice you can rely on.</li>
+<li>After all the lies, I've learned that I can't rely on them.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

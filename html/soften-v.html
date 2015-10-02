@@ -1,0 +1,79 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="soften" hidden/><h2>soften</h2>
+<h4> 1.1: make images or sounds less sharp</h4>
+
+<ul>
+<li>Be careful not to over blur the dust because that will soften the image area.</li>
+<li>It is common knowledge that anti-aliasing filters soften the resolution.</li>
+<li>I move my hand toward the sound hole to soften the notes and move back to the bridge to give them edge.</li>
+<li>Turning up the attack time will help to 'soften' the notes and make them blur into the mix.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: lessen in force, impact, or effect</h4>
+
+<ul>
+<li>The quick enactment last year of the President's tax relief plan softened the recessionary headwinds in 2001.</li>
+<li>Astronomers have significantly softened the wording of the Torino scale.</li>
+<li>And the more he smiled the more his face softened.</li>
+<li>These occurrences softened the sting of Dutchess Mall's presence.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: weaken, make or become more receptive to outside influences</h4>
+
+<ul>
+<li>He says this crisis has softened the hearts of many.</li>
+<li>Once it had softened up the enemy's front line, troops cut gaps in the barbed wire.</li>
+<li>His hard-boiled American opponent softened when the topic turned to breakfast.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: make or become physically less hard or rough</h4>
+
+<ul>
+<li>After the bars have been softened, the containers are removed from the microwave oven.</li>
+<li>Of the many solvents tested, only acetone softened the adhesive effectively.</li>
+<li>Really soak it into the leather and it will soften it in no time.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

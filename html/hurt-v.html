@@ -1,0 +1,85 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="hurt" hidden/><h2>hurt</h2>
+<h4> 1.1: (cause to) experience pain, ache, injury</h4>
+
+<ul>
+<li>Incorrect heavy lifting will hurt your back.</li>
+<li>The shot didn't even hurt.</li>
+<li>Her knee has been hurting for two months since the skiing accident.</li>
+<li>The child didn't let on how much he was really hurting in his stomach.</li>
+<li>Will it hurt?</li>
+<li>They are still hurting from their rout in the play-offs. (figurative)</li>
+<li>Have small independent book shops been hurt or helped by the Internet?</li>
+<li>Sticks and stones may break my bones, but words can never hurt me.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: have a negative, quantitative effect upon</h4>
+
+<ul>
+<li>His criminal record has hurt his chances of getting into medical school.</li>
+<li>Double-digit inflation has been hurting their economy for years.</li>
+<li>Snotty Simon hurt her chances by comparing her unfavorably to Carrie.</li>
+<li>Is this gonna hurt my poll numbers?</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: (cause to) experience emotional unhappiness</h4>
+
+<ul>
+<li>I think that remark may have hurt her feelings.</li>
+<li>It hurts to think of the wasted opportunities for peace.</li>
+<li>Bob didn't want Sally to be hurt by their casual affair.</li>
+<li>Phil was hurt by the sight of the long line of homeless waiting by the soup kitchen.</li>
+<li>He has been hurt too many times to trust anyone easily.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: lack or yearn</h4>
+
+<ul>
+<li>Barry is not hurting for money.</li>
+<li>Those beautiful models are not hurting for attention from the photographers.</li>
+<li>Alice is hurting for her mother's home cooking.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,82 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="recognize" hidden/><h2>recognize</h2>
+<h4> 1.1: discern, identify, or know because of a previous experience</h4>
+
+<ul>
+<li>I hadn't seen her for 20 years, but I recognized her immediately.</li>
+<li>Do you recognize this song?</li>
+<li>Doctors are trained to recognize the symptoms of different diseases.</li>
+<li>I don't recognize any of these buildings in the dark.</li>
+<li>Mary finally recognized him as the man she'd sat next to on the plane.</li>
+<li>He recognizes a kindred spirit when he sees one.</li>
+<li>They pretended not to recognize her as they passed in the hall.</li>
+<li>The HIV virus is able to keep producing new antigens that the immune system does not yet recognize.</li>
+<li>A vaccine enables the body to recognize a pathogen without actually suffering the disease.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: acknowledge and accept the truth/importance of; give due credit</h4>
+
+<ul>
+<li>He sadly recognized that he would die childless.</li>
+<li>You must recognize the seriousness of the problems we are facing.</li>
+<li>They don't seem to recognize the danger of running such a large deficit.</li>
+<li>I recognize that I am at fault.</li>
+<li>The opponents of racial equality have always refused to recognize the problem.</li>
+<li>He never recognized the sacrifices his parents made for him all those years.</li>
+<li>Bob feels bitter that his work is not more widely recognized.</li>
+<li>They were not recognized as industry leaders.</li>
+<li>The two boys were recognized for outstanding community service.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: acknowledge the authority or officiality of</h4>
+
+<ul>
+<li>The Secretary of State refused to recognize the decision of Federal Court.</li>
+<li>Several nations will not recognize the new government.</li>
+<li>The floor recognizes the Senator from Delaware.</li>
+<li>They would not recognize any other god but their own.</li>
+<li>The Regents officially recognized the new educational institution.</li>
+<li>A driver's license is not recognized as a valid document for flying an airplane.</li>
+<li>The airport will only recognize government-issued IDs as acceptable identification.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

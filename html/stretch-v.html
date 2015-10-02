@@ -1,0 +1,74 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="stretch" hidden/><h2>stretch</h2>
+<h4> 1.1: exist in a long configuration</h4>
+
+<ul>
+<li>The park stretched beneath the train line.</li>
+<li>A huge cloud of dense smoke stretched across the horizon.</li>
+<li>The Andes stretch for 7250 km along the west coast of South America.</li>
+<li>The refugee camps stretch as far as the eye can see.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: lengthen, widen, or extend, esp. by pulling</h4>
+
+<ul>
+<li>The cat woke up, yawned, and stretched.</li>
+<li>Stretch out your legs if you have to sit for long periods.</li>
+<li>She stretched forth her hand and helped him from his chair.</li>
+<li>That elastic band will snap if you stretch it too far.</li>
+<li>The polyester fabric stretches in both directions to hold wraps securely in place.</li>
+<li>Dear God, please do help me to stretch my patience.</li>
+<li>National law is a great incentive for a plaintiff or a defendant to try and stretch the rules in his favour.</li>
+<li>White grapes were required in the blend, which were used to stretch the wine.</li>
+<li>The sleeves of this sweater have stretched.</li>
+<li>Many families' budgets are already stretched to breaking point.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: lie down comfortably</h4>
+
+<ul>
+<li>The cat stretched by the fire.</li>
+<li>To enjoy the picnic, we stretched out on the grass.</li>
+<li>I can picture it. Your greyhound stretched out on the couch with no room for you.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

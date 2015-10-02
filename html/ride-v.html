@@ -1,0 +1,173 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="ride" hidden/><h2>ride</h2>
+<h4> 1.1: move, continue, or travel somewhere</h4>
+
+<ul>
+<li>The boy rode on the donkey and the old psychologist walked.</li>
+<li>We rode the train from Sydney to Perth.</li>
+<li>She loves to ride her new motorcycle through the town.</li>
+<li>Others rode to freedom on truks and in cars.</li>
+<li>Together they mounted the laird's good mare and rode away/off into the night.</li>
+<li>By 17, Thompson had rode horseback from central New Mexico to Calgary.</li>
+<li>Let it ride for now.</li>
+<li>The train rode.</li>
+<li>The ambassador rode on and on till he came at the very last to the house.</li>
+<li>They rode on and on.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: cause to travel or be moved somewhere</h4>
+
+<ul>
+<li>I think you'd better ride me over to the hospital.</li>
+<li>My father put me on his old bicycle and rode me to the wedding banquet.</li>
+<li>She really rode me to realize my full potential.</li>
+<li>I am asking myself which devil rode me to plan and push this project.</li>
+<li>Gambling quickly rode him to poverty.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: move, travel, or slide along some path, body, state, or support</h4>
+
+<ul>
+<li>In 2003, at a spot on Maui called Jaws, a surfer rode the largest wave so far.</li>
+<li>In the end we just rode the freeway and enjoyed the 2 meters of lane to ourselves.</li>
+<li>The inner lining rides up my legs and becomes very uncomfortable if I run in them.</li>
+<li>The ship rode at a high angle over the crest of the wave and down the other side.</li>
+<li>The birds will catch the front end of a wave and ride the current of air.</li>
+<li>The Prime Minister is riding on a wave of popularity.</li>
+<li>If Mondale can ride a tide of sympathy votes, he might get to keep his job.</li>
+<li>Ride the boat at a constant 1/4 throttle opening for about 1 minute.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: RIDE ON-be contingent on success or viability of something</h4>
+
+<ul>
+<li>Most of the weight rides on the central shaft.</li>
+<li>The future of the company now rides on the new managing director.</li>
+<li>I have a lot of money riding on that horse.</li>
+<li>Your grade will ride on your homework, attendance, and participation.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: RIDE OUT-endure through a trial of endurance" type="\"></h4>
+
+<ul>
+<li>Many companies did not manage to ride out the recession.</li>
+<li>The ship managed to ride out the storm.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: apply pressure, control, or criticism</h4>
+
+<ul>
+<li>Don't rest foot on clutch pedal while driving or ride the clutch for long periods.</li>
+<li>I have promised not to ride him so hard in my responses to his posts.</li>
+<li>Your boss is riding you much too hard at the moment.</li>
+<li>He was riding me about my English grammar constantly.</li>
+<li>Adams wanted the national bank to ride the herd on issuing too many notes.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: (cause to) anchor in a particular place</h4>
+
+<ul>
+<li>The ship rode at anchor in Eniwetok until 17 July when she returned to sea.</li>
+<li>The moon rode high in the night sky.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: function in a particular manner when moving</h4>
+
+<ul>
+<li>By 1600, the weather was improving and the ship rode better.</li>
+<li>This new model supposed to ride well over rough terrain.</li>
+<li>My new truck rides smoothly.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: copulate with</h4>
+
+<ul>
+<li>The bull rode the cow.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: drive horse or cattle while accompanying them</h4>
+
+<ul>
+<li>These weeks are spent riding the herd and moving cattle to fresh grass and water.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.11: RIDE ROUGHSHOD OVER-treat harshly without consideration</h4>
+
+<ul>
+<li>They accused the government of riding roughshod over parliamentary procedure.</li>
+<li>Insurance companies have rode roughshod over what doctors could prescribe for patients.</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.11" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      
+<h4> 1.12: RIDE BENCH-be out of the game</h4>
+
+<ul>
+<li>She played in 24 games and rode the bench completely for seven.</li>
+</ul>
+
+<input type="text" name="annotation[results][11][id]" value="1.12" hidden />
+<input type="text" name="annotation[results][11][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

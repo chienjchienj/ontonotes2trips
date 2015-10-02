@@ -1,0 +1,103 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="know" hidden/><h2>know</h2>
+<h4> 1.1: be cognizant, realize</h4>
+
+<ul>
+<li>I know that the President lied to the people.</li>
+<li>I know that I left the key on the table.</li>
+<li>Galileo knew that the earth moves around the sun.</li>
+<li>The child knows right from wrong.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: recognize, be familar or well-versed with</h4>
+
+<ul>
+<li>I know this flower as a Peruian Lily.</li>
+<li>Do you know my sister?</li>
+<li>He was known to them by a different name.</li>
+<li>I know Latin.</li>
+<li>We all knew her as a big show-off.</li>
+<li>I would know that voice anywhere.</li>
+<li>She is the bravest woman I've ever known.</li>
+<li>A priori knowledge is something we know apart from experience.</li>
+<li>Only the twins' mother knew them apart.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: have the ability or know-how</h4>
+
+<ul>
+<li>I know how to ride a horse.</li>
+<li>Does your husband know how to cook?</li>
+<li>I know the right way to approach a strange dog.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: experience</h4>
+
+<ul>
+<li>Have you ever known hunger?</li>
+<li>We knew real terror when the car began rolling down the cliff.</li>
+<li>That time in Venice was the most wonderful experience I've ever known.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: acknowledge, discern</h4>
+
+<ul>
+<li>His greed knew no limits</li>
+<li>Her love knows no bounds.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: have sex with" type="Archaic"></h4>
+
+<ul>
+<li>"Adam knew Eve".</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

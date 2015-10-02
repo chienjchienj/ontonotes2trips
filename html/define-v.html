@@ -1,0 +1,68 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="define" hidden/><h2>define</h2>
+<h4> 1.1: state or explain the meaning</h4>
+
+<ul>
+<li>How does the dictionary define 'sadness'?</li>
+<li>Before I answer your question, could you define your terms a little more</li>
+<li>Your rights and responsibilities are defined in the citizens' charter.</li>
+<li>Your role in the project will be strictly defined.</li>
+<li>What defines a good wine?</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: give form, character or meaning to something</h4>
+
+<ul>
+<li>I'd hate to feel that I was defined by my job.</li>
+<li>Your hairstyle doesn't have to define you.</li>
+<li>The age we live in is defined by a deep sense of uncertainty.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: cleary show or mark a boundary/delineate/show the outline</h4>
+
+<ul>
+<li>The outline of the castle on the hill was clearly defined against the evening sky.</li>
+<li>The camera could define the smallest object.</li>
+<li>The tree was clearly defined by the light.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

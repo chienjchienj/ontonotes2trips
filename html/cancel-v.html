@@ -1,0 +1,71 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="cancel" hidden/><h2>cancel</h2>
+<h4> 1.1: stop, postpone or annul something from happening</h4>
+
+<ul>
+<li>The guest speaker is sick and has had to cancel class.</li>
+<li>If it rains tomorrow, we'll have to cancel our picnic.</li>
+<li>The 7am train to New York has been cancelled.</li>
+<li>We were forced to cancel our vacation cruise.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: put an end to, make invalid a process that's already begun</h4>
+
+<ul>
+<li>Could you cancel my subscription to your magazine?</li>
+<li>Members are free to cancel at any time.</li>
+<li>How do I cancel the download from the internet?</li>
+<li>He is calling on the CEP to cancel the results at this polling station.</li>
+<li>A customer cancelled his personal check on me after receiving the product!</li>
+<li>The bank cancelled the check because it was fraudulent.</li>
+<li>If the stamp has been canceled, the stamp should be light.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: neutralize or counterbalance an effect with an opposite effect</h4>
+
+<ul>
+<li>This month's paycheck will cancel out his debt, but it won't give him any extra money.</li>
+<li>The new tax effectively cancels out my raise.</li>
+<li>The `A' will cancel out the `C' on your record.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

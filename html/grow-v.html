@@ -1,0 +1,96 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="grow" hidden/><h2>grow</h2>
+<h4> 1.1: enter a new condition or state</h4>
+
+<ul>
+<li>The sky grew black as we headed the boat to harbor.</li>
+<li>The patient is growing sicker by the day.</li>
+<li>He changed jobs, grew a beard and bought a new sports car.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: normal physical development by natural processes</h4>
+
+<ul>
+<li>In these forests, mushrooms grow under the trees.</li>
+<li>He is growing a new variety of grape in his vineyards.</li>
+<li>They grew corn for livestock where I lived as a child.</li>
+<li>The ivy grew over the patio.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: human emotional development</h4>
+
+<ul>
+<li>Her son grew to his full height by age twelve.</li>
+<li>The girls grew from their experience helping the relief workers after the earthquake.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: increase or expand</h4>
+
+<ul>
+<li>Their business is growing fast.</li>
+<li>The responsibilities associated with this job have grown too large for me to handle.</li>
+<li>They saw a huge fireball growing across the eastern horizon.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: arise, originate</h4>
+
+<ul>
+<li>Their friendship grew over the years.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: specific way or process of development</h4>
+
+<ul>
+<li>Stalactites grow from the top of caves, and stalagmites grow from the bottom of them.</li>
+<li>Crystals grow as a lattice structure.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,69 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="relax" hidden/><h2>relax</h2>
+<h4> 1.1: (cause to) become less tense</h4>
+
+<ul>
+<li>A hot bath always relaxes me.</li>
+<li>Every evening after work, he relaxed in his old leather armchair.</li>
+<li>Our new collegue relaxed after she saw that we were a friendly group.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: (cause to) become looser</h4>
+
+<ul>
+<li>He relaxed his grip on the boy's arm.</li>
+<li>Relax the tension on the rope.</li>
+<li>She will never relax her hold on her son.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: (cause to) become less intense or strict</h4>
+
+<ul>
+<li>The government relaxed the curfew after most of the rebels were caught.</li>
+<li>The rules relaxed after the new director arrived.</li>
+<li>After several hours of intense concentration, she relaxed her efforts.</li>
+<li>Don't relax your guard just because this last outbreak did not become an epidemic.</li>
+<li>He relaxed his attention for just a moment, and she slipped away.</li>
+<li>The committee relaxed the definition of "associate member" at the last meeting.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

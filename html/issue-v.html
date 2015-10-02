@@ -1,0 +1,67 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="issue" hidden/><h2>issue</h2>
+<h4> 1.1: bring out or supply in an official capacity; announce, publish or distribute something</h4>
+
+<ul>
+<li>The government will be issuing a new dollar bill.</li>
+<li>Will they issue a warrant for his arrest?</li>
+<li>That clerk is not authorized to issue the tickets.</li>
+<li>Each soldier was issued a pair of boots and a knapsack.</li>
+<li>He issued three Presidential pardons at the end of his term.</li>
+<li>Employees will then be issued a check for their out-of-pocket expenses.</li>
+<li>The publisher issued an additional 100,000 copies of that bestseller.</li>
+<li>The regional weather watch has issued a tornado warning for out county.</li>
+<li>The school issued a statement about its plans to the press.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: (cause to) emerge or come from; (cause to) emit or flow</h4>
+
+<ul>
+<li>The UFO issued light smoke rings toward the ground and rotated very slowly.</li>
+<li>He issued a cry of help.</li>
+<li>A cry for help issued from the building.</li>
+<li>Little money issued from the stocks.</li>
+<li>He issued forth from a long line of fierce warriors.</li>
+<li>Our conclusions issue from analysis of the data.</li>
+<li>Indulgence in evil must first issue in the suffering of the people.</li>
+<li>A stream of epithets issued from his mouth as he fell onto the cactus.</li>
+<li>When the vast assembly was met together, suddenly beams of light issued forth.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,82 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="print" hidden/><h2>print</h2>
+<h4> 1.1: produce writing, design, or images on a surface</h4>
+
+<ul>
+<li>Some newspapers still refuse to print certain swear words.</li>
+<li>They printed his letter in Tuesday's paper.</li>
+<li>The leaflets will be printed on recycled paper.</li>
+<li>Please print the letters over the picture.</li>
+<li>I'm waiting for a document to print.</li>
+<li>A machine prints the corporate logo onto pencils.</li>
+<li>We printed enough T-shirts for the whole team.</li>
+<li>20000 copies of the novel will be printed in hardback.</li>
+<li>These books were printed in Canada.</li>
+<li>The company prints several news magazines in addition to books.</li>
+<li>Photographs are better if they are printed from the original negative.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: write as if with print, not in cursive</h4>
+
+<ul>
+<li>Please print your name clearly below your signature.</li>
+<li>Please fill out in print the following form in blue or black ink.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: make copy or positive image from a negative</h4>
+
+<ul>
+<li>I shoot a lot of 120 Ilford XP2 and print the negatives conventionally.</li>
+<li>He printed the negatives he had of her and the old biking group.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: make an unforgettable impression</h4>
+
+<ul>
+<li>To this day, Mom's homemade chili is indelibly printed on my memory.</li>
+<li>Then there was that other picture that printed itself on my mind.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

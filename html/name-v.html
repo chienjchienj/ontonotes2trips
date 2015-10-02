@@ -1,0 +1,74 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="name" hidden/><h2>name</h2>
+<h4> 1.1: assign or give a personal name to someone, something</h4>
+
+<ul>
+<li>We named our dog Fido.</li>
+<li>They named their son David.</li>
+<li>The new school was named after the famous Civil Rights leader.</li>
+<li>Berkeley named several plant species in their honour.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: identify or pick out someone or something</h4>
+
+<ul>
+<li>Many senators were named in connection with the scandal.</li>
+<li>Name your accomplices!</li>
+<li>I can name every state west of Mississippi.</li>
+<li>Name your price.</li>
+<li>The pair has named a date for their big day.</li>
+<li>Mary has named three possible times for our meeting next week.</li>
+<li>Name the place of our duel.</li>
+<li>In most instances the supplier will have named a price that they consider negotiable.</li>
+<li>Try to deflect questions about salary until the employer names a figure.</li>
+<li>John's doctors have been unable to name the underlying cause of his inflammation.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: appoint to a particular office or honor, assign to a role</h4>
+
+<ul>
+<li>She was named Head of the Committee.</li>
+<li>They haven't yet named her successor.</li>
+<li>He has named a committee to seek his successor.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

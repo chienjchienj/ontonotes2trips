@@ -1,0 +1,89 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="eliminate" hidden/><h2>eliminate</h2>
+<h4> 1.1: eradicate, destroy, extinguish, get rid of</h4>
+
+<ul>
+<li>The company has eliminated several of its perks, including free lunches.</li>
+<li>They believe these policies will eliminate half the national debt in five years.</li>
+<li>The auto industry has eliminated 12,000 jobs in North America this year.</li>
+<li>I fear their intent is to eliminate the several ethnic populations of that region.</li>
+<li>The mob wanted to eliminate him for cooperating with the FBI.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: exclude, or rule out from a list of possibilities</h4>
+
+<ul>
+<li>At this point we can't eliminate any of the possibilities.</li>
+<li>The police have eliminated Bob as a suspect.</li>
+<li>Look at the answer choices and eliminate wrong answers until there is only one answer.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: physically excrete waste</h4>
+
+<ul>
+<li>The man was given a laxative before surgery to help him eliminate.</li>
+<li>Her dog has trouble eliminating after eating bones.</li>
+<li>The new treatment plant now keeps raw sewage from eliminating into the bay. (metaphoric)</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: beat, vanquish or disqualify a participant from a contest</h4>
+
+<ul>
+<li>John was eliminated during the second round of the ping pong tournament.</li>
+<li>Two athletes were eliminated from the competition for using drugs.</li>
+<li>He'll be eliminated from the game for receiving his third penalty.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: remove mathematically</h4>
+
+<ul>
+<li>We can now eliminate X from these equations.</li>
+<li>You cannot eliminate Y by dividing each equation by X + 1.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,91 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="develop" hidden/><h2>develop</h2>
+<h4> 1.1: bring into existence, start something, build or create from nothing</h4>
+
+<ul>
+<li>They have developed a new stronger composite material for boat hulls.</li>
+<li>We have developed a new theory of evolution.</li>
+<li>We have developed an aversion to televsion.</li>
+<li>The patient developed an abdominal pain and skin rash.</li>
+<li>A new religious movement developed in that country.</li>
+<li>The problem developed over months of miscommunication.</li>
+<li>We must develop more potential customers.</li>
+<li>A flower developed on the branch.</li>
+<li>He developed a different motif in the second movement of his concerto.</li>
+<li>We strive to deliver the news as it develops.</li>
+<li>They're planning to develop the whole site into a shopping complex.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: further grow, build up, increase, or change into a more advanced form</h4>
+
+<ul>
+<li>The country developed its natural resources.</li>
+<li>Could you develop the ideas in your thesis.</li>
+<li>This exercise is designed to develop the shoulder and back muscles.</li>
+<li>There is a plot. It just develops slowly, that's all.</li>
+<li>I'm looking for a job which will enable me to develop my skills.</li>
+<li>Our school develops leaders of our future.</li>
+<li>The embroyo develops into a fetus.</li>
+<li>The fear is that these minor clashes may develop into all-out confrontation.</li>
+<li>Over time, their acquaintance developed into a lasting friendship.</li>
+<li>Many countries around the world are developing at a very fast pace.</li>
+<li>The perfect climate here develops the grain.</li>
+<li>The child developed beautifully in her new kindergarten.</li>
+<li>I must say, that melody was beautifully developed.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: alter by chemical means, to make images.</h4>
+
+<ul>
+<li>Can you develop these two rolls of film?</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: superimpose</h4>
+
+<ul>
+<li>* No examples found.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,58 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="enact" hidden/><h2>enact</h2>
+<h4> 1.1: pass legislation</h4>
+
+<ul>
+<li>The ban was enacted as part of an aviation overhaul bill.</li>
+<li>The policy was enacted due to an increase in gas theft from stores.</li>
+<li>The legislature enacted this law in 1985.</li>
+<li>This ordinance is enacted as a public health measure to protect persons from rabid linguists.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: act out or perform</h4>
+
+<ul>
+<li>What will attract more people will be a Civil War encampment enacted by volunteers.</li>
+<li>She challenges them to create a space where the great virtues are visible, enacted and demonstrated.</li>
+<li>Speech is performed in settings where conversations are conducted, enacted, and rehearsed.</li>
+<li>You might be able to work out what scenario is being enacted or re-enacted in your cat's dream.</li>
+<li>Her website has "The Exorcist in 30 seconds, re-enacted by bunnies."</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

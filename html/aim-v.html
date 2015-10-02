@@ -1,0 +1,69 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="aim" hidden/><h2>aim</h2>
+<h4> 1.1: point or direct object, weapon, or blow at something or someone</h4>
+
+<ul>
+<li>The hunter aimed an arrow (at the animal).</li>
+<li>The hunter aimed carefully (at the animal). (Instrument of aim is implied.)</li>
+<li>She aimed a kick at my shins.</li>
+<li>He aimed an insult at me.</li>
+<li>The new product is aimed at medical and legal professionals.</li>
+<li>I aimed the camera so that the center spot was lined up with her face.</li>
+<li>Aim your anger somewhere else!</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: wish, purpose or intend to achieve something</h4>
+
+<ul>
+<li>The hunter aimed (wished) to kill (the animal).</li>
+<li>She aimed to hurt me. She kicked my shins!</li>
+<li>I am certain he aimed to insult me.</li>
+<li>They aimed to help the medical and legal professonals with the new product.</li>
+<li>They aimed to improve the eating habits of children through the campaign.</li>
+<li>The photographer aimed (wished) to take a picture of her face.</li>
+<li>I aim to arrive at noon.</li>
+<li>We aim for a better education.</li>
+<li>I aim to be a millionaire by the time I'm 35.</li>
+<li>We are aiming for a 50% share of German market.</li>
+<li>The talks are aiming at a compromise.</li>
+<li>The campaign aimed at influencing public opinion.</li>
+<li>She wanted to aim a pun.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

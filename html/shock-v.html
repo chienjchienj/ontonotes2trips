@@ -1,0 +1,86 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="shock" hidden/><h2>shock</h2>
+<h4> 1.1: strike with horror, surprise, disgust</h4>
+
+<ul>
+<li>Again we shocked the industry when we offered our magnetic stripe readers for under 50 dollars!</li>
+<li>It shocked politicians enough to denounce arts funding.</li>
+<li>The callousness of the so-called educated upperclasses shocked him even more.</li>
+<li>The novel was meant to shock.</li>
+<li>His heart attack shocked him into eating better and exercising.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: subject to an electrical shock</h4>
+
+<ul>
+<li>So we shocked him and did some CPR, all according to our training.</li>
+<li>I shocked him at 300J and got a pulse back.</li>
+<li>The suspect says officers shocked him with a stun gun five times.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: inflict trauma to a system</h4>
+
+<ul>
+<li>The next day I shocked the pool and put two chlorine tablets in the floating device.</li>
+<li>Adrenaline kicked in and an immediate redistribution of blood shocked his system.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: gather into shocks</h4>
+
+<ul>
+<li>He rode the binder at wheat harvest while the rest of the family shocked the grain bundles.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: collide violently</h4>
+
+<ul>
+<li>Here for many a day shocked together the Spaniard and the Moor.</li>
+<li>The two bodies had shocked together like a college rush.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

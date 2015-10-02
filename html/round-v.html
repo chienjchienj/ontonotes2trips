@@ -1,0 +1,130 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="round" hidden/><h2>round</h2>
+<h4> 1.1: move along a circular course</h4>
+
+<ul>
+<li>As she rounded a corner she could see the same man.</li>
+<li>I could see the new pickup she was driving as she rounded a curve on the gravel road.</li>
+<li>I rounded the bend on the Crabtree Creek greenway, perhaps going a tad over the posted speed limit.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: have a circular path</h4>
+
+<ul>
+<li>The view as the road rounded was breathtaking.</li>
+<li>The path rounded the hill and came to a fork.</li>
+<li>Just where the river rounded the hill the sun caught it.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: make into or become a smooth, circular shape</h4>
+
+<ul>
+<li>They rounded off the edges with a sander.</li>
+<li>Picasso in 1905 rounded out the sharp faces of his Blue period figures.</li>
+<li>She held the sculpture and felt how the sides rounded, the edges inflected.</li>
+<li>We took a standard APEX scull blade and rounded the edges to approximate a delta shape.</li>
+<li>Regular meals had softened the chiseled bones in her face and rounded out the sharp angles of her body.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: bring into a refined state</h4>
+
+<ul>
+<li>Tahini rounded out the sharp nearly discordant edges marrying the favors into a lovely whole.</li>
+<li>The passage to India has rounded out the sharp corners for the Western palate.</li>
+<li>Despite the aforementioned flaws rounded off by amateurish editing, the game is brainless fun.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: attack verbally</h4>
+
+<ul>
+<li>She rounded on the new boy and said that he had no idea what he was talking about.</li>
+<li>He rounded on her with the full force of those penetrating eyes.</li>
+<li>Even though her pack of attack dogs rounded on me, I kept beating them off.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: estimate</h4>
+
+<ul>
+<li>Please round your answer to three decimals.</li>
+<li>When entering time on your time sheet, round to the nearest quarter-hour.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: complete, fill out</h4>
+
+<ul>
+<li>The day is rounded off with the breaking of the fast through a special dinner.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: seek out and bring together</h4>
+
+<ul>
+<li>I've rounded up some simple tips and tutorials for the conference..</li>
+<li>Kay has rounded up a bunch of great articles on our tax system.</li>
+<li>The police rounded up all the suspects.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: pronounce with rounded lips</h4>
+
+<ul>
+<li>Vaz rounded his vowels to make himself sound wronged.</li>
+<li>He rounded his vowels and the resulting 'educated' accent made him sound British.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

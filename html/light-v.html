@@ -1,0 +1,96 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="light" hidden/><h2>light</h2>
+<h4> 1.1: illuminate; (cause to) become brighter</h4>
+
+<ul>
+<li>This lamp lights the room well.</li>
+<li>The sky lit up above the raging volcano.</li>
+<li>The torch will light your way.</li>
+<li>The child's face lit up when she saw the new Teddy Bear.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: begin to smoke or burn; ignite</h4>
+
+<ul>
+<li>After dinner, some of the diners lit cigarettes.</li>
+<li>Light a fire with a fire stick.</li>
+<li>The coal in the BBQ finally lit up.</li>
+<li>Soldiers light up cigarettes for each other.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: come to rest, fall upon, get down</h4>
+
+<ul>
+<li>Misfortune lighted upon him.</li>
+<li>And then Lady Luck lit upon my shoulder and I won the table.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: attack; criticize</h4>
+
+<ul>
+<li>The Senator gleefully lit into Thompson over a lengthy and poorly produced YouTube video.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: discover or realize unexpectedly</h4>
+
+<ul>
+<li>The archeologist lit upon a fabulous Roman temple.</li>
+<li>It made me feel like a new person whenever it lit upon me.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: start smoking cigarettes</h4>
+
+<ul>
+<li>After dinner he like to take a fine cigar and light up.</li>
+<li>Hey, are you going outside to light up? Can I come?</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

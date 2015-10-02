@@ -1,0 +1,89 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="arise" hidden/><h2>arise</h2>
+<h4> 1.1: come into existence, develop, appear, or occur</h4>
+
+<ul>
+<li>Should the opportunity arise, I'd love to go to China.</li>
+<li>Could you work on Saturday, should the need arise?</li>
+<li>He hoped that a new spirit of freedom was arising.</li>
+<li>When did the problem arise?</li>
+<li>A new question arose.</li>
+<li>The shortage of qualified staff arises from a lack of investment in training.</li>
+<li>Suddenly a scream arose from one of the mourners.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: move upward</h4>
+
+<ul>
+<li>The curling smoke arose from the fire.</li>
+<li>Suddenly a scream arose from one of the mourners.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: rise or get up from sitting or prone position</h4>
+
+<ul>
+<li>Captain Martin now arose from the chair where he had been seated for a long time.</li>
+<li>I remembered that I had a knee that used to lock and pain when I arose from kneeling.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: wake up from sleep or death</h4>
+
+<ul>
+<li>We arose early on Christmas morning.</li>
+<li>Pete arose at dawn one morning and began walking along the shore-line of Cooper Creek.</li>
+<li>How do we know that Jesus arose from the dead?</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: rebel</h4>
+
+<ul>
+<li>But this is the beginning of the storm, and if the people arise, they will consume everything.</li>
+<li>In the midst of this chaos, four determined souls arose against the tyranny.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

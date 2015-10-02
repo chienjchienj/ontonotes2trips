@@ -1,0 +1,60 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="heat" hidden/><h2>heat</h2>
+<h4> 1.1: make hotter</h4>
+
+<ul>
+<li>It costs too much to heat this apartment.</li>
+<li>The carrageenan was heated or cooled to room temperature, then mixed with droplets.</li>
+<li>Charcoal, wood or gas heats this cylinder.</li>
+<li>It depends on how strong you make the beer and how long you heated it in the oven.</li>
+<li>The South and West started to heat up also, and also saw rainfall shortages.</li>
+<li>The water 'pouring' noise soon disappeared and the radiators started to heat as well.</li>
+<li>Again, snakes exposed to courtship were heated faster than those that were not.</li>
+<li>(refers to body temperature of the snakes, not of mating behavior)</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: ignite, intensify</h4>
+
+<ul>
+<li>Only recently has interest in LBS started to heat up again.</li>
+<li>The government had a more comfortable lead and the political atmosphere started to heat.</li>
+<li>As her emotions heated, I noticed myself becoming cool and still.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

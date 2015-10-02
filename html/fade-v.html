@@ -1,0 +1,62 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="fade" hidden/><h2>fade</h2>
+<h4> 1.1: (Cause to) gradually lose visual or aural clarity, or sharpness perceptually</h4>
+
+<ul>
+<li>This was a work that swelled to a deafening roar then faded to a whisper.</li>
+<li>Interesting how the sun faded the paint and we can see it so evidently.</li>
+<li>He faded the music in the background.</li>
+<li>This wedding picture faded away in an album until we rescued it through photo restoration.</li>
+<li>Subsequent images from other telescopes revealed that the afterglow faded far more gradually than expected.</li>
+<li>Then the smile faded off the Pigman's face.</li>
+<li>The face assumed a livid hue, and the light faded out of the wide-open eyes.</li>
+<li>The colour faded from his cheeks, one hand rose waveringly and pointed over my shoulder into the distance.</li>
+<li>The right picture faded away and the text slides across to the left also fading away.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: physically languish; slowly die; become reduced physically as an organism or as a physical condition of an organism.</h4>
+
+<ul>
+<li>His rash faded over the next 4 days.</li>
+<li>Old soldiers never die, they just fade away.</li>
+<li>The roses were fading.</li>
+<li>The prisoner has been fading for years in the dungeon.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

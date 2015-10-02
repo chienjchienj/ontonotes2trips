@@ -1,0 +1,100 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="remember" hidden/><h2>remember</h2>
+<h4> 1.1: recall to mind or keep in mind a piece of information</h4>
+
+<ul>
+<li>I can't remember where I parked my car.</li>
+<li>I can remember people's faces, but not their names</li>
+<li>I finally remembered the address.</li>
+<li>Then I remembered that today is your birthday.</li>
+<li>Do you remember that he loved you?</li>
+<li>I remember how we used to play soccer in the rain.</li>
+<li>Remember the starving children around the world!</li>
+<li>I remember him as a rather annoying man.</li>
+<li>I don't remember signing a contract!</li>
+<li>Remember your appointment with the dentist.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: exercise or have power of memory</h4>
+
+<ul>
+<li>Some remember better than others.</li>
+<li>After the stroke, she lost her ability to remember.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: commemorate a special person, event, or occasion</h4>
+
+<ul>
+<li>We remembered the 50th anniversary of the liberation of Auschwitz.</li>
+<li>Remember the dead of the First World War.</li>
+<li>Mother Theresa will be remembered as long as humanity exists.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: consider, include</h4>
+
+<ul>
+<li>My cousin remembered me in her will.</li>
+<li>Will you remember him in your prayers?</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: give greetings from</h4>
+
+<ul>
+<li>Remember me to your family.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: recover one's good manners after behaving badly</h4>
+
+<ul>
+<li>Please remember yourself, boy!</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

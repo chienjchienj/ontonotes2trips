@@ -1,0 +1,79 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="fear" hidden/><h2>fear</h2>
+<h4> 1.1: feel scared, in danger, or frightened</h4>
+
+<ul>
+<li>That child greatly fears dogs.</li>
+<li>Do you think the suicide bomber feared her death?</li>
+<li>Bob has always feared his mother's alcoholic rages.</li>
+<li>We huddled together, fearing we might be killed.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: feel anxious, concerned, uneasy, or apprehensive about</h4>
+
+<ul>
+<li>She fears her son is not doing his assignments on time.</li>
+<li>Some fear that a sharp decline in real estate prices is coming.</li>
+<li>John fears his roof may not last another winter.</li>
+<li>These companies fear increased competition from overseas.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: regard with feelings of reverence or respect</h4>
+
+<ul>
+<li>She was taught by her grandmother to fear the kitchen god.</li>
+<li>The men quickly learned to fear the King, for they saw in him god's own wisdom and judgement.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: be sorry about or regret</h4>
+
+<ul>
+<li>I fear I left my passport in the top drawer of my desk.</li>
+<li>I'll buy her book, but I fear it won't be the hardback version.</li>
+<li>Mary said she feared all there was to serve us were some cold leftovers.</li>
+<li>I fear my favorite old shoes have finally worn out.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

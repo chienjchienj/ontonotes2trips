@@ -1,0 +1,344 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="break" hidden/><h2>break</h2>
+<h4> 1.1: come apart, separate, split</h4>
+
+<ul>
+<li>The figurine broke.</li>
+<li>He broke the glass plate.</li>
+<li>The surf was breaking on the rocks.</li>
+<li>Break the bread into small pieces.</li>
+<li>They are afraid the dam will break.</li>
+<li>Could you break a $20 for me?</li>
+<li>The book dealer would not break the set.</li>
+<li>The referee broke the boxers.</li>
+<li>Were they able to break the tie?</li>
+<li>The branch broke when he swung on it.</li>
+<li>The glass broke when it was heated.</li>
+<li>She didn't break her foot playing volleyball.</li>
+<li>The artillery fire was breaking the ranks of soldiers into disorganized bands.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: render inoperable, ruin, undo</h4>
+
+<ul>
+<li>You might break the alarm clock if you take it apart.</li>
+<li>He says she'll break the bank if she spends like that.</li>
+<li>I keep breaking this code everytime I make a change to it!</li>
+<li>This performance will make or break his career.</li>
+<li>My daughter's wedding is going to break me!</li>
+<li>The fan belt finally broke on his old car.</li>
+<li>The prosecutor broke the defendent's alibi with new evidence.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: interrupt, stop, discontinue</h4>
+
+<ul>
+<li>She has decided to break all ties with him.</li>
+<li>John finally broke the long silence.</li>
+<li>They are breaking diplomatic relations.</li>
+<li>I accidentally broke the circuit.</li>
+<li>Will this storm never break?</li>
+<li>The heat wave finally broke yesterday.</li>
+<li>The stocks may break on news of low earnings this quarter.</li>
+<li>I think her fever is finally breaking.</li>
+<li>The artist finally broke with the tradition of representational painting.</li>
+<li>The partners broke over a disagreement about intellectual property rights.</li>
+<li>He can't break his addiction to nicotine.</li>
+<li>Breaking bad habits is very difficult.</li>
+<li>He's broken every record for a two-year old race horse.</li>
+<li>Let's break for lunch.</li>
+<li>They broke hostilities for Christmas Day.</li>
+<li>A little gossip during the day breaks the monotony on the assembly line.</li>
+<li>Here and there a tree broke the flatness of the landscape.</li>
+<li>The awning broke his fall to the ground.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: transgress, infract</h4>
+
+<ul>
+<li>Did he break the law?</li>
+<li>The dictator has broken every accord he signed in that treaty.</li>
+<li>The will was broken.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: subdue, train</h4>
+
+<ul>
+<li>He breaks horses gently.</li>
+<li>They administered capital punishment daily, but the prisoner would not break.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: solve</h4>
+
+<ul>
+<li>This computer can't break that code in log time.</li>
+<li>The young dectective finally broke the case.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: (cause to) come forth, emerge, occur</h4>
+
+<ul>
+<li>It seemed as though dawn would never break on the horizon.</li>
+<li>The first winter storm broke over New York.</li>
+<li>Things are really breaking fast on this new project.</li>
+<li>Break the news to them gently.</li>
+<li>News of his resignation broke this afternoon.</li>
+<li>When the story broke, they were still asleep.</li>
+<li>Look, the whales are breaking over there!</li>
+<li>The horse broke from the stable.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: pierce</h4>
+
+<ul>
+<li>Surprisingly the brambles didn't break her skin.</li>
+<li>He broke the skin with a sharp needle.</li>
+<li>The fish broke the water.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: change in tone (as in voice breaking)</h4>
+
+<ul>
+<li>His voice broke as he described the scene of the carnage.</li>
+<li>Her teenaged brother gets embarrassed when his voice breaks.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: physically enter unlawfully</h4>
+
+<ul>
+<li>He was arrested for breaking and entering.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.11: demote</h4>
+
+<ul>
+<li>They broke his rank for misconduct in the line of duty.</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.11" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      
+<h4> 1.12: change direction</h4>
+
+<ul>
+<li>The thundering herd of bison broke to the left.</li>
+</ul>
+
+<input type="text" name="annotation[results][11][id]" value="1.12" hidden />
+<input type="text" name="annotation[results][11][trips]" value="" visible/>
+      
+<h4> 1.13: dance</h4>
+
+<ul>
+<li>Those dancers can really break!</li>
+</ul>
+
+<input type="text" name="annotation[results][12][id]" value="1.13" hidden />
+<input type="text" name="annotation[results][12][trips]" value="" visible/>
+      
+<h4> 1.14: initiate a game of pool</h4>
+
+<ul>
+<li>John always seems to break whenever we play pool.</li>
+</ul>
+
+<input type="text" name="annotation[results][13][id]" value="1.14" hidden />
+<input type="text" name="annotation[results][13][trips]" value="" visible/>
+      
+<h4> 1.15: linguistic change</h4>
+
+<ul>
+<li>The simple vowels broke in many Germanic languages.</li>
+</ul>
+
+<input type="text" name="annotation[results][14][id]" value="1.15" hidden />
+<input type="text" name="annotation[results][14][trips]" value="" visible/>
+      
+<h4> 1.16.1: (cause to) come apart, separate, or split</h4>
+
+<ul>
+<li>Thionic bacteria can break down pipe steel.</li>
+<li>First we should break down the problem into manageable chunks.</li>
+<li>The arm on this figurine broke off during the move.</li>
+<li>He broke open the box as soon as he saw it on the table.</li>
+<li>The pinata broke open when it hit the floor.</li>
+<li>The crowd broke up when it started to rain.</li>
+<li>The satellite broke up when it hit the atmosphere.</li>
+<li>The cookie broke up after sitting in the milk.</li>
+<li>The book dealer would not break up the set.</li>
+<li>The icebergs broke up in the warming water.</li>
+</ul>
+
+<input type="text" name="annotation[results][15][id]" value="1.16.1" hidden />
+<input type="text" name="annotation[results][15][trips]" value="" visible/>
+      
+<h4> 1.16.2: BREAK DOWN--(cause to) cease operating</h4>
+
+<ul>
+<li>My car broke down this morning.</li>
+<li>Negotiations broke down after the ambassador insulted the president.</li>
+<li>Martin Luther King, Jr., tried to break down racial discrimination.</li>
+</ul>
+
+<input type="text" name="annotation[results][16][id]" value="1.16.2" hidden />
+<input type="text" name="annotation[results][16][trips]" value="" visible/>
+      
+<h4> 1.16.3: interrupt, stop, discontinue</h4>
+
+<ul>
+<li>The southern states tried to break away from the union during the Civil War.</li>
+<li>She always breaks in when we're trying to have a serious conversation.</li>
+<li>They broke off the engagement right before the wedding.</li>
+<li>We broke off our vacation because of the bad weather.</li>
+<li>Tina and Mike broke up after dating for a year.</li>
+<li>The icebergs broke up in the warm weather.</li>
+<li>The tobacco monopoly broke up.</li>
+<li>His continued infidelity broke up the marriage.</li>
+<li>The 13 colonies broke with England during the Revolution.</li>
+</ul>
+
+<input type="text" name="annotation[results][17][id]" value="1.16.3" hidden />
+<input type="text" name="annotation[results][17][trips]" value="" visible/>
+      
+<h4> 1.16.4: (cause to) come forth, emerge, begin</h4>
+
+<ul>
+<li>The man broke away from the crowd and fled down the alley.</li>
+<li>How do I break in to acting?</li>
+<li>Sandra was so happy, she broke into song.</li>
+<li>The horse broke into a gallop.</li>
+<li>All his pent-up anger broke loose.</li>
+<li>The convict broke loose from the maximum-security prison.</li>
+<li>War broke out the following spring.</li>
+<li>The pigs broke out of the pen.</li>
+<li>Why not break out the champagne?</li>
+<li>Whenever I eat strawberries, I break out in hives.</li>
+</ul>
+
+<input type="text" name="annotation[results][18][id]" value="1.16.4" hidden />
+<input type="text" name="annotation[results][18][trips]" value="" visible/>
+      
+<h4> 1.16.5: pierce, penetrate" type="8"></h4>
+
+<ul>
+<li>The rescue team broke through the wall in the mine shaft.</li>
+<li>When will that molar break through the gums?</li>
+</ul>
+
+<input type="text" name="annotation[results][19][id]" value="1.16.5" hidden />
+<input type="text" name="annotation[results][19][trips]" value="" visible/>
+      
+<h4> 1.16.6: enter unlawfully</h4>
+
+<ul>
+<li>The thieves broke in after we had left.</li>
+</ul>
+
+<input type="text" name="annotation[results][20][id]" value="1.16.6" hidden />
+<input type="text" name="annotation[results][20][trips]" value="" visible/>
+      
+<h4> 1.16.7: cause to be not new</h4>
+
+<ul>
+<li>I like to break in new hiking boots before actually going on a hike.</li>
+</ul>
+
+<input type="text" name="annotation[results][21][id]" value="1.16.7" hidden />
+<input type="text" name="annotation[results][21][trips]" value="" visible/>
+      
+<h4> 1.16.8: suffer collapse or loss of control</h4>
+
+<ul>
+<li>She broke down and started to cry.</li>
+<li>It was so funny when he slipped, we broke up laughing.</li>
+<li>After Pam left him, he just broke up.</li>
+</ul>
+
+<input type="text" name="annotation[results][22][id]" value="1.16.8" hidden />
+<input type="text" name="annotation[results][22][trips]" value="" visible/>
+      
+<h4> 1.16.9: BREAK EVEN--attain a level with no gain or loss</h4>
+
+<ul>
+<li>People like to say they broke even, when, really, they lost money.</li>
+</ul>
+
+<input type="text" name="annotation[results][23][id]" value="1.16.9" hidden />
+<input type="text" name="annotation[results][23][trips]" value="" visible/>
+      
+<h4> 1.16.10: multiword expressions</h4>
+
+<ul>
+<li>The early Christians broke bread together.</li>
+<li>They broke camp early in the morning so they could reach their next spot by nightfall.</li>
+<li>Learn some great breakdance moves with this instructional video.</li>
+<li>This housework is going to break my back.</li>
+<li>Sean broke Amanda's heart when he cheated on her.</li>
+<li>The sharks broke water with their fins.</li>
+<li>Eating those beans will make you break wind.</li>
+</ul>
+
+<input type="text" name="annotation[results][24][id]" value="1.16.10" hidden />
+<input type="text" name="annotation[results][24][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

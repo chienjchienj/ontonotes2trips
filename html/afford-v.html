@@ -1,0 +1,79 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="afford" hidden/><h2>afford</h2>
+<h4> 1.1: manage or bear to do something; spare something</h4>
+
+<ul>
+<li>No nation can afford to ignore the threat of flu pandemic.</li>
+<li>Hypocrisy can afford to be magnificent in its promises.</li>
+<li>We need to focus on the amount of data the organization can afford to lose.</li>
+<li>The MPAA can afford to relax.</li>
+<li>I can't afford to spend two hours babysitting this person! I have my own work to do.</li>
+<li>We can't afford any more lost time or we'll lose the competition.</li>
+<li>The new regime can afford a few concessions because it will beat the opposition in the elections.</li>
+<li>Both players have realized that they can afford a couple of calls going against them.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: have the financial means to obtain, buy, or do something</h4>
+
+<ul>
+<li>We can't afford a vacation this year.</li>
+<li>If our insurance won't cover the costs, we can't afford it.</li>
+<li>Calvin didn't buy a house he couldn't afford.</li>
+<li>How can we afford to send our kids to an Ivy League college?</li>
+<li>Can you afford to buy the new iPod?</li>
+<li>Who can afford a $200 loss per cow?</li>
+<li>The company can't afford to send you to Europe to meet with clients.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: provide</h4>
+
+<ul>
+<li>The hut afforded little protection from the elements.</li>
+<li>Her seat afforded her an uninterrupted view of the stage.</li>
+<li>The Court has afforded bloggers the same kind of protection usually reserved to journalists.</li>
+<li>If you are jumping with just a body harness you are afforded quite a bit of freedom to move around.</li>
+<li>Our meeting afforded much interesting information.</li>
+<li>1901 Ash Creek Bridge Crossing this bridge affords access to the original stagecoach trail.</li>
+<li>It's the sliding door affords access to the patio or deck.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

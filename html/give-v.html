@@ -1,0 +1,235 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="give" hidden/><h2>give</h2>
+<h4> 1.1: transfer possession of something, often physical</h4>
+
+<ul>
+<li>He gave her a bouquet of roses.</li>
+<li>Can I give you my keys while I go to the pool?</li>
+<li>Would you please give him the files.</li>
+<li>Let's give the leftovers to the cat.</li>
+<li>He gives a lot to charity every year.</li>
+<li>I'll give you two pieces of licorice in exchange for six jelly beans.</li>
+<li>She gave away that ugly vase.</li>
+<li>They never give back the money.</li>
+<li>We should give these old plates the deep six.</li>
+<li>The teacher gave out the exams a day early.</li>
+<li>Do you have any clothes you can give up for a good cause?</li>
+<li>The doctors gave her a new heart.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: offer or relinquish a personal resource, attribute, knowledge, etc.</h4>
+
+<ul>
+<li>She gave tremendous energy and time to the new production.</li>
+<li>He gave his life for his children.</li>
+<li>The scholar was asked to give an opinion on the new painting.</li>
+<li>They wouldn't give him the specifics of the plan.</li>
+<li>He's giving a talk on identity theft next Thursday.</li>
+<li>She won't give herself to just anyone.</li>
+<li>He gave me his hand as I stepped from the carriage.</li>
+<li>They have given his name to the police.</li>
+<li>He gave this furniture collection the modern styling so popular today.</li>
+<li>I don't give a damn.</li>
+<li>He gave away their location to the police.</li>
+<li>They gave ear to all he had to say.</li>
+<li>I'm willing to give it a try.</li>
+<li>The mother gave suck to the infant.</li>
+<li>They gave thanks for their good fortune.</li>
+<li>He gave tongue to his anger.</li>
+<li>He gave voice to his opinions.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: (intentionally)grant, decree, assign or force upon</h4>
+
+<ul>
+<li>Will she give him a divorce?</li>
+<li>The plan gives them two years to pay back the loan.</li>
+<li>The administrator gave exemptions to anyone who had joined before 1997.</li>
+<li>You should give your children as much freedom as they can responsibly handle.</li>
+<li>The judge gave the man 20 years in prison.</li>
+<li>She gave him the week off.</li>
+<li>Please give me another chance!</li>
+<li>You gave him an opportunity of showing greatness of character and he did not seize it.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: be the source of (unintentionally or naturally)</h4>
+
+<ul>
+<li>The large window gave us our view of the sea.</li>
+<li>Last year the farm gave us a bumper crop.</li>
+<li>This is giving me an idea!</li>
+<li>That boy is giving us all sorts of trouble.</li>
+<li>We want this building to give visitors a sense of welcome.</li>
+<li>Isaac Newton gave us calculus.</li>
+<li>Rich food will give him indigestion.</li>
+<li>The wet ceiling gave evidence of a leak in the roof.</li>
+<li>That painting technique gives interesting texture to the walls.</li>
+<li>The new law gave rise to many complaints.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: relinquish, yield, fail</h4>
+
+<ul>
+<li>My dog settled in on the couch and wouldn't give an inch.</li>
+<li>The dam looks ready to give any minute!</li>
+<li>She's a tough leader who won't give under pressure.</li>
+<li>You must give in to my demands.</li>
+<li>The engine finally gave out.</li>
+<li>Our supply of water will give out in a few days.</li>
+<li>Don't give up now!</li>
+<li>She gave up the right to her children when she abandoned them.</li>
+<li>You really should give up smoking.</li>
+<li>He gave vent to his emotions.</li>
+<li>The bridge just gave way.</li>
+<li>Aspens give way to pines as you approach the summit.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: communicate nonverbally, intentionally or not</h4>
+
+<ul>
+<li>He gave me a wink.</li>
+<li>He will give the sign to sit down.</li>
+<li>He gave me to think he would vote yes on the referendum.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: hold or organize an event</h4>
+
+<ul>
+<li>I'm going to give a reception for the new dean.</li>
+<li>That band won't be giving another concert in our town this year.</li>
+<li>I came to New York City and gave a speech to high profile members of the media.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: administer</h4>
+
+<ul>
+<li>I gave the baby his medicine.</li>
+<li>The bypasser was able to give CPR to the stricken man.</li>
+<li>He gave the plants a good watering before he left.</li>
+<li>The nurse gave care to the wounded.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: emit</h4>
+
+<ul>
+<li>He gave a shudder at the thought.</li>
+<li>We gave a collective gasp at the beautiful fireworks display.</li>
+<li>The chimney gave forth a thick smoke.</li>
+<li>That new radio gives off a strange odor.</li>
+<li>This radiator gives out a lot of heat.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: estimate, calculate, predict</h4>
+
+<ul>
+<li>I gave the project a 50-50 chance of success, but John gave it better odds.</li>
+<li>His doctor is giving him the prognosis of a full recovery.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.11: provide access</h4>
+
+<ul>
+<li>The French doors give onto a terrace.</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.11" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      
+<h4> 1.12: occur</h4>
+
+<ul>
+<li>What gives?</li>
+</ul>
+
+<input type="text" name="annotation[results][11][id]" value="1.12" hidden />
+<input type="text" name="annotation[results][11][trips]" value="" visible/>
+      
+<h4> 1.13: execute and deliver</h4>
+
+<ul>
+<li>Wilson appointed Moore and gave bond and security and took the oath according to law.</li>
+</ul>
+
+<input type="text" name="annotation[results][12][id]" value="1.13" hidden />
+<input type="text" name="annotation[results][12][trips]" value="" visible/>
+      
+<h4> 1.14: idioms</h4>
+
+<ul>
+<li>Her step-father gave her away at the wedding.</li>
+<li>She gave birth in a blinding snowstorm.</li>
+<li>He took off on a motorcycle and the police gave chase.</li>
+<li>I'm giving notice at my job tomorrow.</li>
+<li>I had to give him the axe because he never came in on time.</li>
+<li>When he walked in, they all gave him the eye.</li>
+<li>Mary gave John the gate when she saw him with another woman.</li>
+<li>She gives the glad eye to any man who walks by.</li>
+<li>My father always gave me the once over before I left.</li>
+<li>She must find a new job because her employer just gave her the sack.</li>
+<li>He gave tongue to his anger.</li>
+</ul>
+
+<input type="text" name="annotation[results][13][id]" value="1.14" hidden />
+<input type="text" name="annotation[results][13][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

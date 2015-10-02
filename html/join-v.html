@@ -1,0 +1,77 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="join" hidden/><h2>join</h2>
+<h4> 1.1: connect, link or unite separate things, either physically or abstractly</h4>
+
+<ul>
+<li>Join the two ends of the tube to make a circle.</li>
+<li>The two roads join here.</li>
+<li>He and I have joined paths many times over the years.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: enlist or accept membership within some group or organization</h4>
+
+<ul>
+<li>He joined the rank of the homeless.</li>
+<li>He joined the Communist Party as a young man.</li>
+<li>She joined the rock band as their lead singer.</li>
+<li>The two prolific leaders joined up to form a new government.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: participate with someone else in some event</h4>
+
+<ul>
+<li>Please join me in welcoming our esteemed guest.</li>
+<li>Mark joined the battle to free the wrongly incarcerated man.</li>
+<li>The president and the prime minster joined forces to legalize abortion.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: accompany or meet up</h4>
+
+<ul>
+<li>Please join us for mint juleps on the veranda.</li>
+<li>A friendly big brown dog joined me on my walk yesterday.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

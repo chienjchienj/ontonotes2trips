@@ -1,0 +1,84 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="acquire" hidden/><h2>acquire</h2>
+<h4> 1.1: develop or internalize a new ability, skill, or preference</h4>
+
+<ul>
+<li>She acquired fluency in French during her years in Paris.</li>
+<li>This strain of bacteria is acquiring immunity to antibiotics.</li>
+<li>He has acquired an aversion to broccoli.</li>
+<li>These children are not acquiring the skills they'll need to succeed in the world.</li>
+<li>I learned to work well under a deadline, and acquired confidence in my abilities.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: take on, display, or exhibit a characteristic</h4>
+
+<ul>
+<li>Bob has acquired a limp since the last time I saw him.</li>
+<li>The demon acquired the form of a young maiden.</li>
+<li>Sally is acquiring a chip on her shoulder. (figurative)</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: become the owner or posessor of something</h4>
+
+<ul>
+<li>The giant software firm just acquired two small start-ups.</li>
+<li>She acquired several works of art from her uncle's estate.</li>
+<li>We acquired a permit to add an extension to our kitchen.</li>
+<li>The Beaufort County Trust aquired the property and sold it to Joel Silver.</li>
+<li>At the Investor Day, Penim was clearly motivated to acquire the football rights.</li>
+<li>No one knows how the New River acquired its name given all these theories.</li>
+<li>Early in his career he acquired the title 'Duke of Tralee'.</li>
+<li>Lopardo acquired the team in 2002 when he purchased the then-Waterbury Spirit.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: locate something moving, obtain a fix on something moving</h4>
+
+<ul>
+<li>The missile has acquired its target and locked on.</li>
+<li>The police acquired the getaway car through triangulation.</li>
+<li>They weren't able to acquire the aircraft on their radar.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

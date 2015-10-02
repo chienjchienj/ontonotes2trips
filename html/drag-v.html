@@ -1,0 +1,127 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="drag" hidden/><h2>drag</h2>
+<h4> 1.1: pull, move or force something</h4>
+
+<ul>
+<li>He dragged the big suitcase behind him.</li>
+<li>She dragged the canoe down to the water.</li>
+<li>She had to drag her child away from the toy shop.</li>
+<li>I really had to drag myself out of bed this morning.</li>
+<li>She's always dragging her financial situation into the conversation.</li>
+<li>Don't drag me into this. I already said, I don't wanna do it.</li>
+<li>Drag this icon to the lower right hand corner of your screen.</li>
+<li>I'm sorry to drag you away from your work.</li>
+<li>I was so tired that I could scarcely drag myself up the stairs.</li>
+<li>The boy dragged his feet as he walked accross the room. (compare this to 2)</li>
+<li>They'll drag you down to their level and beat you to death with experience!</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: move slowly, linger, loiter, or lag</h4>
+
+<ul>
+<li>The afternoon was beginning to drag.</li>
+<li>But in so many other areas we are still dragging.</li>
+<li>We urged him to stop dragging his feet and get something done. (compare this to 1)</li>
+<li>The ordeal for him and his family has dragged on for over three decades.</li>
+<li>The convention might only last a week, but the debate could drag out for years.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: search along the bottom of river or lake</h4>
+
+<ul>
+<li>They found the man's body after dragging the canal.</li>
+<li>One day the police dragged the lake for the missing body.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: DRAG IN-inhale; suck in or take in (air or smoke)</h4>
+
+<ul>
+<li>She dragged in smoke again, then let the smoke out as she spoke.</li>
+<li>He dragged in a breath of crisp air and glanced at the cabin.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: DRAG A BUNT-hit a ball to make it go a short distance</h4>
+
+<ul>
+<li>Johnson dragged a bunt toward first, and Vidro advanced.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: DRAG DOWN-damage; make something bad or ill</h4>
+
+<ul>
+<li>With a small company, one person can drag you down.</li>
+<li>They must not drag the company down by their poor health lifestyle habits.</li>
+<li>All that stress at work had begun to drag him down.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: DRAG UP-bring up, bring to mind</h4>
+
+<ul>
+<li>Mom is afraid that this will just drag up old hurts.</li>
+<li>I only meant drag up old discussions to keep discussing.</li>
+<li>I just wrote about something on another list that dragged up anger bigtime.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: DRAG THROUGH MUD/MIRE-badmouth, harm reputation</h4>
+
+<ul>
+<li>She just doesn't care who's name she drags through the mud!</li>
+<li>Who would blame him with the way the media has dragged him through the mire.</li>
+<li>Every article about people criticising him drags them through the mud.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

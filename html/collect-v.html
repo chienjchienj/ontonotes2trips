@@ -1,0 +1,84 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="collect" hidden/><h2>collect</h2>
+<h4> 1.1: gather, bring, or come together in a mass</h4>
+
+<ul>
+<li>She is collecting a lot of data for her thesis.</li>
+<li>She collects dolls for hobbie.</li>
+<li>So when did you start collecting antique glass?</li>
+<li>A large crowd of reporters collected outside the Prime Minister's house.</li>
+<li>After the party I collected twenty bottles from various parts of the house.</li>
+<li>We're collecting toys for the orphans.</li>
+<li>We're collecting for the homeless.</li>
+<li>These china ornaments just collect dust.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: obtain payment of</h4>
+
+<ul>
+<li>Jon Porter and his wife collected rent on seven condominiums.</li>
+<li>The retailer must either collect tax or accept a completed exemption certificate.</li>
+<li>A debt collector regularly collects debts owed to another person.</li>
+<li>The managers collected fees to cover their program costs.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: pick up, get something or someone (from somewhere)</h4>
+
+<ul>
+<li>Your shoes will be repaired and ready for you to collect on Thursday.</li>
+<li>I'll collect you from the station.</li>
+<li>She collected her children and drove home.</li>
+<li>I collected my belongings and left.</li>
+<li>They collected me from the airport.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: recover and gain control of</h4>
+
+<ul>
+<li>Cool off, take a time out, and collect your emotions.</li>
+<li>Take a few minutes to collect yourself before the stress of court.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

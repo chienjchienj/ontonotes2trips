@@ -1,0 +1,85 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="march" hidden/><h2>march</h2>
+<h4> 1.1: walk or stride; move or proceed</h4>
+
+<ul>
+<li>He marched into the classroom and announced the exam.</li>
+<li>The soldiers marched across the border.</li>
+<li>As he marched into Egypt, Antiochus was successful with his armies.</li>
+<li>He felt like he had marched into a huge solar oven.</li>
+<li>The people lined the street and watched as the procession marched by.</li>
+<li>Time marches on.</li>
+<li>When communism collapsed, the World Bank marched into the Former Soviet Union with privatization agenda in hand.</li>
+<li>Quantum cryptography has marched from theory to laboratory to real products.</li>
+<li>Safety Index has marched steadily down toward our goal of zero accidents.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: force or cause someone/thing to move or walk</h4>
+
+<ul>
+<li>The Japanese marched their prisoners through Manchuria.</li>
+<li>He marched her in to try it on and reveled in the beauty she was.</li>
+<li>They marched the mules into the desert.</li>
+<li>She took hold of my arm and marched me off to the headmaster's office.</li>
+<li>The police marched a gang of youths out of the building.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: walk in a group publicly in support or disapproval</h4>
+
+<ul>
+<li>Advocates will march for better immigration bill.</li>
+<li>He has marched for breast cancer awareness and for the March of Dimes.</li>
+<li>This weekend I marched in Washington DC with as many as 500,000 people.</li>
+<li>The King would not have marched against gay marriage.</li>
+<li>Women marched to protest an anti-pornography bill that could impose jail terms for kissing.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: lie adjacent to, share a boundary</h4>
+
+<ul>
+<li>England marches with Scotland.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

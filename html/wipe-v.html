@@ -1,0 +1,101 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="wipe" hidden/><h2>wipe</h2>
+<h4> 1.1: clean, rub or move with a circular motion</h4>
+
+<ul>
+<li>John wiped the table clean.</li>
+<li>He wiped the back of his ears with his thumbs.</li>
+<li>Some deny police had deliberately wiped the tapes, others remain convinced there was a cover-up.</li>
+<li>Just wipe the off the excess condensation and lightly blowdry the mirror.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: eliminate completely, delete</h4>
+
+<ul>
+<li>The flood of 1965 almost wiped the town off the map.</li>
+<li>An algorithm update wiped those six placements off the map and his once busy site was relegated to obscurity.</li>
+<li>Her arrival wiped away any worries he had about her loyalty.</li>
+<li>Just a single asteroid strike wiped out the dinosaurs.</li>
+<li>Were the Aztecs wiped out by an ebola-type bug?</li>
+<li>The Cavendish, the version of the banana that tops most U.S. cereal bowls, is being wiped out by fungus.</li>
+<li>We've astronimcally increased carcinogenic toxins, blighted soils, and wiped out resources.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: counteract, cancel out</h4>
+
+<ul>
+<li>Remus' grin instantly wiped out the effects of the grey hair and the shabby clothes.</li>
+<li>Such is the enthusiasm of my consumption that I will wipe out the effects of a decade of vegetarianism.</li>
+<li>The Vulture Funds effectively wiped out any of the benefits from International debt Relief this year.</li>
+<li>The refurb has wiped out any profit this year from that property.</li>
+<li>The recent rise in fuel prices has virtually wiped out all the progress that was made towards meeting these targets.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: crash, fall</h4>
+
+<ul>
+<li>Carlos's car wiped out in a seven-car pile-up five years ago.</li>
+<li>He wiped out on his bike and nearly knocked his two front teeth out.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: idioms (please see list)</h4>
+
+<ul>
+<li>WIPE THE FLOOR WITH (defeat decisively)</li>
+<li>Is it a surprise that the Corvette wiped the floor with nearly all Le Mans contenders?</li>
+<li>He cannot quite admit she wiped the floor with your man.</li>
+<li>WIPE THE SLATE CLEAN (make a clean start)</li>
+<li>Much as we might like to wipe the slate clean when our memories becomes a pain, that is not an option.</li>
+<li>The time he spent in prison should have wiped the slate clean.</li>
+<li>WIPE THE SMILE OFF ONE'S FACE</li>
+<li>The easiest way to wipe the smile off Gordon's face is to make full use of your accounts.</li>
+<li>I'd love to wipe the smile off his face.</li>
+<li>It was like you couldn't wipe the smile off your face.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

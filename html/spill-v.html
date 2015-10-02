@@ -1,0 +1,75 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="spill" hidden/><h2>spill</h2>
+<h4> 1.1: (cause) to fall, flow, or run from a source</h4>
+
+<ul>
+<li>The guy thinks he spilled Gatorade on his laptop, which can be a very pricey repair.</li>
+<li>Ewwww, who spilled the litter box?</li>
+<li>Whoops, I spilled.</li>
+<li>Anyone who shames his fellow in public, it is as if he spilled blood.</li>
+<li>5500 tonnes (1616000 gallons) of gasoline, crude oil, diesel, and</li>
+<li>jet fuel were spilled.</li>
+<li>As he entered the pool, he noticed that water spilled over the</li>
+<li>sides of the pool.</li>
+<li>The mercury spilled onto the table.</li>
+<li>Cheerios spilled out from the tear in the bag.</li>
+<li>The crowd spilled out into the street.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: have an abundance or excess of something</h4>
+
+<ul>
+<li>Such books spilled over with supposed mobster names and sinister-sounding activities.</li>
+<li>The entire ambience spilled over with empathy.</li>
+<li>The article spilled over with errors of fact.</li>
+<li>The policeman's law abiding ways spilled over to his family</li>
+<li>life.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: reveal a secret</h4>
+
+<ul>
+<li>He spilled the beans to reporters on his relationship with shortstop Derek Jeter.</li>
+<li>Come on, girlfriend. You have got to spill the juicy gossip!</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,92 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="launch" hidden/><h2>launch</h2>
+<h4> 1.1: physically propel something with force</h4>
+
+<ul>
+<li>How is a Satellite launched into an Orbit?</li>
+<li>What is a projectile and why do people want to launch them?</li>
+<li>The crossbow is used to launch a suction cupped dart during projectile motion and energy conservation portions of the physics class.</li>
+<li>A Space Services spokesperson said he would be the first astronaut to have his remains launched into space.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: begin something, set something in motion</h4>
+
+<ul>
+<li>Red Hat has launched a program to support embedded deployments of Red Hat Enterprise Linux.</li>
+<li>The Participatory Culture Foundation has launched a site for listing free and open source software coding.</li>
+<li>The Commission today launched a study on the economic and technical evolution of the scientific publication markets in Europe.</li>
+<li>An investigation has been launched into complaints about Afghanistan's landmark election.</li>
+<li>Why are ships launched by breaking a bottle of champagne over the bow?</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: vigorously enter into an activity</h4>
+
+<ul>
+<li>He launched into a long diatribe.</li>
+<li>She launched into a dangerous adventure.</li>
+<li>Then he launched into his spiel.</li>
+<li>As the hard rocking quartet launched into their final song, the crowd went wild.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: scold, attack</h4>
+
+<ul>
+<li>Before I knew what had happened he launched into him punching him in the face.</li>
+<li>She then entered my office and launched into me about what I had done to her life.</li>
+<li>When he didn't like my response, he launched into me.</li>
+<li>She launched into him saying that he was boring and knew nothing and should shut up.</li>
+<li>Sandra smelled blood and launched into me with both barrels.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: smooth the surface of</h4>
+
+<ul>
+<li>*No examples found.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

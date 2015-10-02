@@ -1,0 +1,70 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="determine" hidden/><h2>determine</h2>
+<h4> 1.1: find out, learn, ascertain</h4>
+
+<ul>
+<li>Physicists haven't yet determined what dark matter is.</li>
+<li>He is trying to determine why his air-conditioner stopped working.</li>
+<li>Did you determine whether she is John's new wife?</li>
+<li>Will we ever determine the meaning of life?</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: decide, settle, fix definitely</h4>
+
+<ul>
+<li>The town determined that the dog park should include a pond.</li>
+<li>They determined to risk the consequences.</li>
+<li>We determined to raise a party of not less than thirty individuals.</li>
+<li>He is still determining whether or not to apply to law school.</li>
+<li>John and Mary have determined to get a divorce.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: be the deciding factor in a state of affairs or an outcome</h4>
+
+<ul>
+<li>That fence determines the boundary between our property and theirs.</li>
+<li>What determines species diversity?</li>
+<li>The distribution of shortening through a pie crust determines how flaky it is.</li>
+<li>How you light a room will largely determine its mood.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

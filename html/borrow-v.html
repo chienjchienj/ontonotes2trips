@@ -1,0 +1,59 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="borrow" hidden/><h2>borrow</h2>
+<h4> 1.1: temporarily obtain</h4>
+
+<ul>
+<li>Use this calculator to determine if you should borrow from your 401(k) retirement plan.</li>
+<li>The classical pioneers of mathematics, astronomy and physics borrowed their number system from Egypt.</li>
+<li>You may be able to borrow the book you need from another library.</li>
+<li>We asked him to return the money and he borrowed time, saying that he would come up with something different.</li>
+<li>He owes his neighbor 6 eggs because he borrowed some.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: adopt or take as one's own</h4>
+
+<ul>
+<li>The new strategy, borrowed from failure in Vietnam and 19th-century British colonialism, could be called "Bases and Borders."</li>
+<li>On numerous occasions he borrowed from these sayings when writing his poetry.</li>
+<li>Since he borrowed freely from other religious traditions, Mello's writings are often misconstrued.</li>
+<li>In 1962, Kurosawa borrowed from Martin Gorky's classic proletariat play, and filmed:'The Lower Depths'.</li>
+<li>Stravinsky borrowed some of his music from Russian folk songs.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

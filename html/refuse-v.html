@@ -1,0 +1,80 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="refuse" hidden/><h2>refuse</h2>
+<h4> 1.1: be unwilling to accept or do</h4>
+
+<ul>
+<li>He refused to join the group on a hike.</li>
+<li>He refused my offer of hospitality.</li>
+<li>They refused hundreds of fans.</li>
+<li>After 3 rounds of chemo, my body refused to go into remission.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: deny, not let someone have something</h4>
+
+<ul>
+<li>I refused them the use of my tools.</li>
+<li>She refused him the dog.</li>
+<li>Eventually, he refused her the visa.</li>
+<li>The British government refused them the full rights of English citizens.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: reject sexual or romantic overtures</h4>
+
+<ul>
+<li>She refused him utterly, and foretold his death at Rama's hands.</li>
+<li>As he told Circe of his love she fell in love with him, but he refused her.</li>
+<li>When he refused her, she attempted to battle him.</li>
+<li>He said they would both lose their jobs if she refused him.</li>
+<li>He admired Betsy and asked her to marry him but at first she refused him.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: resist immunologically foreign tissue or organ</h4>
+
+<ul>
+<li>His body refused the liver of the donor.</li>
+<li>Two of his patients have refused donor parts.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

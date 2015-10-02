@@ -1,0 +1,64 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="suffer" hidden/><h2>suffer</h2>
+<h4> 1.1: endure or experience a painful event</h4>
+
+<ul>
+<li>He suffered the ridicule of his classmates in junior high.</li>
+<li>The child suffered a broken arm and a light concussion from the bicycle accident.</li>
+<li>My mother suffers from arthritis.</li>
+<li>She doesn't suffer fools gladly.</li>
+<li>Mary made Bob suffer through another silly pet film.</li>
+<li>The team is putting on a brave face, but they are suffering from the defeat.</li>
+<li>The doctor asked her if she was still suffering in her lower back.</li>
+<li>Our shaggy dog suffers in the summer heat and humidity.</li>
+<li>He suffers from a tendency to criticize everything.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: become worse or decline, show negative effects</h4>
+
+<ul>
+<li>Eating all that chocolate will make your complexion suffer.</li>
+<li>These Japanese haiku suffer in translation.</li>
+<li>Their revenues have suffered this past year from increasing competition in their vertical market.</li>
+<li>The project suffered from lack of personnel resources and from poor timing.</li>
+<li>The facilities suffered from deferred maintenance and poorly designed modifications.</li>
+<li>Her designs suffer from too many angular lines.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,78 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="justify" hidden/><h2>justify</h2>
+<h4> 1.1: give or be a good reason for something, rationalize</h4>
+
+<ul>
+<li>Does the end justify the means?</li>
+<li>Whether or not we think the anger is justified by the action is immaterial.</li>
+<li>She justified each budgetary expense as necessary.</li>
+<li>I can't really justify taking another day off work</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: LEGAL- demonstrate sufficent legal reason for a legal action</h4>
+
+<ul>
+<li>They have not taken any legal action to justify the discovery of Doe's identity.</li>
+<li>The action must justify the benefit that one set of creditors receives.</li>
+<li>You simply need to have enough co-plaintiffs to justify the suit as a class.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: absolve from responsibility, guilt or blame</h4>
+
+<ul>
+<li>It does not justify him from him duties.</li>
+<li>It doesn't justify you from cheating on your wife.</li>
+<li>The authorities justified him from all the false charges brought against him.</li>
+<li>God justifies sinners by grace.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: adjust spaces between words to produce even margins</h4>
+
+<ul>
+<li>Justify the paragraph with respect to the graphic.</li>
+<li>Pressing Ctrl-J on your keyboard justifies the paragraph.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

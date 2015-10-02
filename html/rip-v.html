@@ -1,0 +1,133 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="rip" hidden/><h2>rip</h2>
+<h4> 1.1: separate violently; split or tear violently</h4>
+
+<ul>
+<li>The pen ripped the paper.</li>
+<li>He winced as his sleeve caught on a splinter and the cloth ripped.</li>
+<li>Skewers of white-hot metal from the explosion had ripped into the Stryker.</li>
+<li>Dozens of bullets ripped into the creature's Armani suit and it finally fell to the ground.</li>
+<li>This was the economic change that ripped into the fabric of American society.</li>
+<li>Soon after, winds up to 200 mph ripped the roof from the school as the twister struck.</li>
+<li>The different forces acting on its two constituent bodies would have ripped them apart.</li>
+<li>His cherished base of operations is ripped from his grasp by the cold-eyed French bean-counters.</li>
+<li>So, I am not the only person to have my heart ripped out of my chest and presented to me on a canoe polo paddle.</li>
+<li>It seems to have to be ripped from my cold, dead fingers.</li>
+<li>I'm sorry all your dreams for me have all been ripped away.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: move quickly and violently</h4>
+
+<ul>
+<li>The tornado ripped along the coast.</li>
+<li>She hurled herself to the side as a bolt of lightning ripped into the ground.</li>
+<li>The staccato of the coaxial machine gun ripped into the night.</li>
+<li>A turquoise Iroc with the t-top popped ripped into the teachers' parking lot.</li>
+<li>Deadly Hurricane Ivan ripped into Jamaica with powerful winds, torrential rains and huge waves today.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: RIP OFF: deceive or cheat someone; steal</h4>
+
+<ul>
+<li>I can almost guarantee you that the people that ripped her off do not own property.</li>
+<li>They even ripped off the documentation, copying this bit of text directly from the documentation.</li>
+<li>Also his mechanics ripped him off for the time they said it took.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: RIP INTO: criticize or verbally abuse</h4>
+
+<ul>
+<li>The father ripped into the teachers for teaching the kids lies.</li>
+<li>He ripped into the White House throughout the article.</li>
+<li>The Senator ripped into the President's plans for personal savings accounts.</li>
+<li>He also wrote, produced and directed his own film, which critics ripped into like ravenous monkeys in a banana patch.</li>
+<li>The press ripped the senator apart in light of the recent scandal.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: intensely or violently initiate activity</h4>
+
+<ul>
+<li>He ripped into the opener and the crowd started screaming.</li>
+<li>Then they ripped into the song faultlessly.</li>
+<li>We had dinner and ripped into the present exchange. (note: it is the 'exchange'--an activity--being 'ripped into,' not the presents.)</li>
+<li>He ripped out a vicious oath.</li>
+<li>I haven't ripped into the project yet, so I do not know what is under the present deck.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: tear open, break into a container</h4>
+
+<ul>
+<li>I still haven't ripped into the macbook, this is big for me.</li>
+<li>And they weren't let down when i finally got home an ripped into my new toy.</li>
+<li>After she got home she ripped into the packages and started to eat. (note: initiation of eating is not implied by the verb phrase containing 'rip,' but by the second verb phrase, 'started to eat.')</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: cut wood along the grain</h4>
+
+<ul>
+<li>I ripped the pieces to the correct width, then cross cut them to the right.</li>
+<li>To start, I ripped the workpiece down the middle, parallel to the face grain.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: import an audio file directly from CD</h4>
+
+<ul>
+<li>I ripped the same John Coltrane album to MP3.</li>
+<li>You can carry your collection with you once you've ripped the files from the discs with iTunes.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

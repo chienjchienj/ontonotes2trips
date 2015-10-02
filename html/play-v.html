@@ -1,0 +1,287 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="play" hidden/><h2>play</h2>
+<h4> 1.1: engage in a fun or recreational (childlike) activity</h4>
+
+<ul>
+<li>The children are playing across the street.</li>
+<li>Life is short, play hard.</li>
+<li>Let's play hide-and-seek.</li>
+<li>My dog likes to play 'keep away' with his ball.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: engage in or make moves related to competition or sport</h4>
+
+<ul>
+<li>They played cards far into the night.</li>
+<li>Do you want to play tennis with me tomorrow?</li>
+<li>Princeton plays Yale this weekend.</li>
+<li>The Democrats still have a couple of cards to play before November.</li>
+<li>She played a good backhand last night.</li>
+<li>The grand master played a spectacular opening in the first game of the chess tournament.</li>
+<li>They'll be playing the new catcher in tonight's game.</li>
+<li>Defense attorneys and the accused inevitably played the pity card.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: behave in a certain way; have a specific effect or outcome</h4>
+
+<ul>
+<li>Money is playing a big role in his decision to take the job.</li>
+<li>That boy played no part in the vandalism.</li>
+<li>I think we should play it safe.</li>
+<li>She wasn't playing fair during the custody battle.</li>
+<li>Storms play havoc with New England phone services.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: perform or transmit music</h4>
+
+<ul>
+<li>The band played all night long.</li>
+<li>The radio is playing my favorite song.</li>
+<li>She played some very difficult Beethoven at the recital.</li>
+<li>Can you play the guitar?</li>
+<li>Can you play my favorite record?</li>
+<li>The stereo was playing chidren's song when I arrived.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: perform/act a role, pretend</h4>
+
+<ul>
+<li>He usually plays a villain in films.</li>
+<li>She plays the lead in Evita.</li>
+<li>The show only played three nights before closing.</li>
+<li>Can your dog play dead?</li>
+<li>Banderas was also very good playing the innocent and helpless man.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: wager, bet</h4>
+
+<ul>
+<li>He used to play the ponies a lot.</li>
+<li>They played the casinos every night in Las Vegas.</li>
+<li>I'd play my money on the horse from Tennessee.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: toy, fiddle, or trifle with; act without the expected seriousness</h4>
+
+<ul>
+<li>He plays the stockmarket a little on the side.</li>
+<li>She really knows how to play on their emotions, doesn't she?</li>
+<li>She has played with the idea of starting a dating service.</li>
+<li>Stop playing with me!</li>
+<li>That's as dangerous as playing with fire!</li>
+<li>Stop playing with your keychain!</li>
+<li>I've played with that idea for a long time.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: be interpreted or received</h4>
+
+<ul>
+<li>That campaign speech won't play well in Peoria.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: move freely (usually within a bounded space)</h4>
+
+<ul>
+<li>I think this steering wheel is playing too much.</li>
+<li>The city lights played over the still waters.</li>
+<li>The spotlights played on the politicians.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: run or operate</h4>
+
+<ul>
+<li>The fountains played all day.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.11: FISHING-exhaust by allowing to pull on the line</h4>
+
+<ul>
+<li>John knows how to play a hooked fish.</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.11" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      
+<h4> 1.12.1: PLAY ALONG-cooperate or pretend to cooperate</h4>
+
+<ul>
+<li>He decided to play along with the burglars for the moment.</li>
+<li>I don't know where he's going with it, but just play along for now.</li>
+</ul>
+
+<input type="text" name="annotation[results][11][id]" value="1.12.1" hidden />
+<input type="text" name="annotation[results][11][trips]" value="" visible/>
+      
+<h4> 1.12.2: PLAY ALONG-musically accompany</h4>
+
+<ul>
+<li>Children love to play along on the piano and sing their favorite songs.</li>
+<li>Is it ok to play the song along with the tape?</li>
+</ul>
+
+<input type="text" name="annotation[results][12][id]" value="1.12.2" hidden />
+<input type="text" name="annotation[results][12][trips]" value="" visible/>
+      
+<h4> 1.12.3: PLAY AROUND-work or deal with in an amateurish or casual manner</h4>
+
+<ul>
+<li>He plays around with investments but he never makes any money.</li>
+<li>I've been playing around with the idea of writing poetry for a while now.</li>
+<li>Will you stop playing around? We are trying to get some work done here.</li>
+</ul>
+
+<input type="text" name="annotation[results][13][id]" value="1.12.3" hidden />
+<input type="text" name="annotation[results][13][trips]" value="" visible/>
+      
+<h4> 1.12.4: PLAY AROUND-commit adultery</h4>
+
+<ul>
+<li>He says that he is not merely interested in playing around with her.</li>
+<li>He plays around a lot.</li>
+</ul>
+
+<input type="text" name="annotation[results][14][id]" value="1.12.4" hidden />
+<input type="text" name="annotation[results][14][trips]" value="" visible/>
+      
+<h4> 1.12.5: PLAY BACK-reproduce a recording as on a recorder</h4>
+
+<ul>
+<li>They played back the conversation to show that their client was innocent.</li>
+<li>Play back the tape you just recorded and listen carefully.</li>
+<li>She played back the incident over and over again in her head.</li>
+</ul>
+
+<input type="text" name="annotation[results][15][id]" value="1.12.5" hidden />
+<input type="text" name="annotation[results][15][trips]" value="" visible/>
+      
+<h4> 1.12.6: PLAY DOWN-understate importance or quality of</h4>
+
+<ul>
+<li>A lawyer by profession, he knew he must mentally play down the danger.</li>
+<li>Helen played down her disability despite its devastating effect.</li>
+<li>She played down her influence on domestic politics.</li>
+</ul>
+
+<input type="text" name="annotation[results][16][id]" value="1.12.6" hidden />
+<input type="text" name="annotation[results][16][trips]" value="" visible/>
+      
+<h4> 1.12.7: PLAY OFF-set into opposition or rivalry</h4>
+
+<ul>
+<li>The winners will play off against each other in the Championship Cup.</li>
+<li>Hungarian minimalism plays off against Polish expressionism.</li>
+<li>Watt and the guitarist played off of each other putting on a great performance!</li>
+</ul>
+
+<input type="text" name="annotation[results][17][id]" value="1.12.7" hidden />
+<input type="text" name="annotation[results][17][trips]" value="" visible/>
+      
+<h4> 1.12.8: PLAY OUT-happen or develop; go from beginning to end</h4>
+
+<ul>
+<li>I wonder how this debate will play out.</li>
+<li>The way the conference played out last year, you have to be ready every weekend.</li>
+</ul>
+
+<input type="text" name="annotation[results][18][id]" value="1.12.8" hidden />
+<input type="text" name="annotation[results][18][trips]" value="" visible/>
+      
+<h4> 1.12.9: PLAY UP-emphasize, highlight, or exaggerate</h4>
+
+<ul>
+<li>No need to play the story up. The magnitude of the event is implicit in the facts.</li>
+<li>James Plum played up his life's setbacks as if they were 'gifts...even treasures'.</li>
+</ul>
+
+<input type="text" name="annotation[results][19][id]" value="1.12.9" hidden />
+<input type="text" name="annotation[results][19][trips]" value="" visible/>
+      
+<h4> 1.12.10: PLAY UP-meet a standard or expectation</h4>
+
+<ul>
+<li>Gillian Apps played up to her title, as she propelled her team to victory.</li>
+<li>He's had some weeks where he hasn't played up to his expectations or ours.</li>
+</ul>
+
+<input type="text" name="annotation[results][20][id]" value="1.12.10" hidden />
+<input type="text" name="annotation[results][20][trips]" value="" visible/>
+      
+<h4> 1.12.11: PLAY UP-ingratiate oneself, often with insincere behavior</h4>
+
+<ul>
+<li>It's unbelievable how she plays up to her supervisors.</li>
+<li>The cast members so obviously played up to the camera.</li>
+</ul>
+
+<input type="text" name="annotation[results][21][id]" value="1.12.11" hidden />
+<input type="text" name="annotation[results][21][trips]" value="" visible/>
+      
+<h4> 1.12.12: idiomatic expressions</h4>
+
+<ul>
+</ul>
+
+<input type="text" name="annotation[results][22][id]" value="1.12.12" hidden />
+<input type="text" name="annotation[results][22][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

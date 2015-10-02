@@ -1,0 +1,58 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="portray" hidden/><h2>portray</h2>
+<h4> 1.1: describe or depict someone or something</h4>
+
+<ul>
+<li>The book portrays the actor as a selfish person.</li>
+<li>The father is portrayed as a good-looking man in this painting.</li>
+<li>Sophocles allegedly said that he portrayed his characters as they ought to be, Euripides as they are.</li>
+<li>It accurately portrayed what I have experienced as a Brown oarsman.</li>
+<li>I found out that the movie accurately portrayed what actually happened that year.</li>
+<li>Does the Flight Simulator accurately portray how to handle a C172?</li>
+<li>Next to the angel the painter portrayed a cherub with the palm frond.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: enact, play the role of</h4>
+
+<ul>
+<li>The actor portrays an elderly, lonely man.</li>
+<li>The core acting company member will portray the scheming blackmailer Krogstad.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

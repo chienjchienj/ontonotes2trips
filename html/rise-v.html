@@ -1,0 +1,112 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="rise" hidden/><h2>rise</h2>
+<h4> 1.1: lift, go up</h4>
+
+<ul>
+<li>We saw smoke rising in the distance.</li>
+<li>The building rose before them</li>
+<li>When the water boils, bubbles will rise to the surface.</li>
+<li>They believed the sun would rise in another hour.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: increase, advance</h4>
+
+<ul>
+<li>The value of our house rose sharply last year.</li>
+<li>Tensions were rising at that meeting.</li>
+<li>The thermometer is rising.</li>
+<li>He has risen through the ranks to become a director at his firm.</li>
+<li>Demand for oil has been rising steadily during the last decade.</li>
+<li>His second album rose to number three on the charts in just two weeks.</li>
+<li>A glass of good wine will make your spirits rise!</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: change posture</h4>
+
+<ul>
+<li>We rose to our feet and applauded as she came onstage.</li>
+<li>He rises before dawn every day to work out at the gym.</li>
+<li>Try rising from a sitting position without using your arms.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: expand physically</h4>
+
+<ul>
+<li>The dough will rise more quickly in a warm, dark place.</li>
+<li>The souffle didn't seem to rise very much in the oven.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: act, confront</h4>
+
+<ul>
+<li>John was able to rise to the new challenges facing him.</li>
+<li>The peasants rose against the evil king.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: originate, develop</h4>
+
+<ul>
+<li>The theme of that play rose from his wartime experiences.</li>
+<li>A sense of dread began to rise in his heart.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: return</h4>
+
+<ul>
+<li>The Phoenix rose from his ashes.</li>
+<li>The South shall rise again!</li>
+<li>Christ has risen!</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

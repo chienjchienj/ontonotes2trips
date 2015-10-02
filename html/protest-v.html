@@ -1,0 +1,58 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="protest" hidden/><h2>protest</h2>
+<h4> 1.1: express opposition by preforming some action</h4>
+
+<ul>
+<li>A 'protest song' is a song which protests problems in society such as injustice,</li>
+<li>war, racial discrimination, etc.</li>
+<li>More than 10,000 people rallied in Jena, LA., to protest the treatment of six black teenagers.</li>
+<li>A monks' organization for the first time urged the public to join in protesting</li>
+<li>"evil military despotism" in Myanmar, also known as Burma.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: affirm solemnly through speech or other declaration</h4>
+
+<ul>
+<li>'But I can't do math,' the child protested to the teacher.</li>
+<li>For though I protested I was not hungry, the old man insisted on our sharing alike.</li>
+<li>Girls, however much do they protest to the contrary, are not getting as much pleasure</li>
+<li>out of the hookups as they claim.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

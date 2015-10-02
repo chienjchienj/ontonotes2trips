@@ -1,0 +1,105 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="strip" hidden/><h2>strip</h2>
+<h4> 1.1: remove or take away contents, covering, possessions, priviledges, or honor</h4>
+
+<ul>
+<li>Vandals also stripped the house of its Italian marble mantels and cypress paneling.</li>
+<li>Winter has stripped the garden down to its bones.</li>
+<li>Strip the tobacco leaves and separate them into "marketable" and "unmarketable" piles.</li>
+<li>If you strip a mine of its minerals, the minerals don't re-spawn instantly.</li>
+<li>Scientific American quickly stripped him of his title of Research Leader of the Year.</li>
+<li>Native Americans were successively stripped of their lands and removed to the West.</li>
+<li>It has stripped the country of schools, hospitals, roads and livelihoods.</li>
+<li>Because of the pollution, the trees are almost completely stripped of bark.</li>
+<li>She stripped and refinished the old chest of drawers.</li>
+<li>He stripped off his socks and threw them in the hamper.</li>
+<li>Moore's task is to strip away comforting illusions.</li>
+<li>The IOC executive board stripped Mr. Kim of all his Olympic duties.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: cut, rip, or pull apart into strips or smaller parts</h4>
+
+<ul>
+<li>We then stripped the pink wallpaper into shreds.</li>
+<li>I've decided to strip down my motorbike and rebuild it.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: take off clothing; do a striptease</h4>
+
+<ul>
+<li>Suddenly he stripped off and ran into the sea.</li>
+<li>He stripped down to the waist.</li>
+<li>The Nurse quickly and efficiently stripped Melody as bare naked as the day she was born.</li>
+<li>She only strips to support her family.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: remove substances from a liquid or solution</h4>
+
+<ul>
+<li>It stripped the water of 95 percent of its total phosphorus.</li>
+<li>Mechanical homogenization process strips the milk of it's buffers.</li>
+<li>Water in your skin strips the acid of hydrogen atoms, producing enough heat to burn.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: damage the threads of a part or fitting</h4>
+
+<ul>
+<li>I am sorry that the wrenches that you have stripped the bolts.</li>
+<li>And if you do manage to strip the screws completely, you won't be able to remove them.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: press the last drops of milk (from cow or goat)</h4>
+
+<ul>
+<li>Do not strip the cow until the calf is weaned.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

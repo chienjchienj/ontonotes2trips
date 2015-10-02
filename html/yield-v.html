@@ -1,0 +1,71 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="yield" hidden/><h2>yield</h2>
+<h4> 1.1: produce, profit, or give forth as a result</h4>
+
+<ul>
+<li>These fields yield good crops.</li>
+<li>The research has yielded some interesting results.</li>
+<li>Our efforts yielded $156 million in emergency AIDS funding.</li>
+<li>Go with an an investment that yields high percentages.</li>
+<li>These bonds yield up to 8 percent.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: end resistance, surrender control or possession</h4>
+
+<ul>
+<li>The window was painted shut and wouldn't yield.</li>
+<li>He eventually yielded control of the company to his daughter.</li>
+<li>The commander finally yielded after a long siege.</li>
+<li>She refused to yield despite our pleas.</li>
+<li>I yield to your argument that 1897 was the correct date.</li>
+<li>We will not yield to tantrums.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: move over, replace, let another pass</h4>
+
+<ul>
+<li>He yield his seat to a pregnant woman.</li>
+<li>Yield to the traffic on the right.</li>
+<li>Older houses and gardens were gradually yielding to modern apartments.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

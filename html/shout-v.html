@@ -1,0 +1,69 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="shout" hidden/><h2>shout</h2>
+<h4> 1.1: speak loudly; utter a sharp cry; state (as if) shouting</h4>
+
+<ul>
+<li>My grandmother is hard of hearing--you'll have to shout.</li>
+<li>'Oh, your baby boy is here,' her sister shouted out as she opened the door.</li>
+<li>Blaine shouted in pain as scalding hot antifreeze dripped onto his foot.</li>
+<li>The pirate shouted in agony as he fell to the ground, bleeding.</li>
+<li>Martini shouted out as the pump truck kicked back into motion and a</li>
+<li>river of concrete rushed out.</li>
+<li>If the employees shout enough, maybe we'll get a new copier.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: reprimand</h4>
+
+<ul>
+<li>The angry mother shouted at the teacher.</li>
+<li>He was shouting at police, and later began screaming at police.</li>
+<li>I turned to ask her why she was shouting at me and was ordered to keep my mouth shut.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: silence or overwhelm</h4>
+
+<ul>
+<li>The mayor was also shouted down by the protesters for the homeless.</li>
+<li>The shareholders listened at first, then heckled him, hooted him, finally shouted him down.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

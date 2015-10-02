@@ -1,0 +1,233 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="turn" hidden/><h2>turn</h2>
+<h4> 1.1: (cause to) change orientation or direction</h4>
+
+<ul>
+<li>He turned toward me with a surprised look.</li>
+<li>She slowly turned the key in the lock.</li>
+<li>Turn the page.</li>
+<li>Turn in after you see the gate.</li>
+<li>Turn off at the next exit.</li>
+<li>The wheels are turning.</li>
+<li>She turned the cake onto the plate.</li>
+<li>My daughter loves to turn cartwheels.</li>
+<li>February is too early to turn the soil for planting.</li>
+<li>He turned his warm smile on me.</li>
+<li>Turn the dial to AM850 and then turn down the volume.</li>
+<li>When I need help, I always turn to my sister.</li>
+<li>The issue turns on how the evidence is to be interpreted.</li>
+<li>I need some time to turn it over in my mind.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: (cause to) undergo a transformation of substance, shape, or feature</h4>
+
+<ul>
+<li>The water turned into ice.</li>
+<li>We have turned this garden into a paradise!</li>
+<li>Their house was turned into a battle ground.</li>
+<li>The weather turned nasty.</li>
+<li>The light gradually turned from green to blue.</li>
+<li>She turned the frog into a prince with her kiss.</li>
+<li>In Vermont, the leaves turn early.</li>
+<li>I can tell the milk has turned by the smell.</li>
+<li>When do you turn 40?</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: (cause to) undergo a change in attitude, emotion, belief, or custom</h4>
+
+<ul>
+<li>Public opinion turned after the scandal came out.</li>
+<li>The elders want us to turn back to our old ways.</li>
+<li>The crowd quickly turned against the speaker.</li>
+<li>He turned back their anger with a word.</li>
+<li>He turned Mary from a reactionary to an activist.</li>
+<li>People turn to mysticism at the turn of the millenium.</li>
+<li>After the cold war, many nations turned from communism to capitalism.</li>
+<li>He turned traitor.</li>
+<li>There was one night when even his fans turned on him.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: send away or reject</h4>
+
+<ul>
+<li>The supermarket had to turn away many disappointed customers.</li>
+<li>He turned back the demons with a spell.</li>
+<li>She turned down the offer of work.</li>
+<li>It's a rare man who can turn down her advances.</li>
+<li>Marcie was turned out of her home at the age of 16.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: change the activation or arousal of</h4>
+
+<ul>
+<li>She turned on the air conditioner.</li>
+<li>He turned off the radio.</li>
+<li>Would you turn out the lights?</li>
+<li>He really knows how to turn on the charm.</li>
+<li>I love her, but she no longer turns me on.</li>
+<li>Her psychobabble turns him off.</li>
+<li>Turn on, tune in, and drop out. --Timothy Leary</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: prove, show to be, end up</h4>
+
+<ul>
+<li>Richard turned out to be the wrong man for the job.</li>
+<li>The medicine turned out to save her life.</li>
+<li>Turns out she was right.</li>
+<li>How do you think the game will turn out?</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: appear, discover, find</h4>
+
+<ul>
+<li>She turned up looking stunning.</li>
+<li>My search turned up nothing.</li>
+<li>I turned up an old box in the garden.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: produce, especially through commerce or business</h4>
+
+<ul>
+<li>The factory can turn out five cars a minute.</li>
+<li>Celent turned a profit for the first time this year.</li>
+<li>Should we close up shop if the company turns a loss again?</li>
+<li>For the first half of the 20th century, the corporation turned a nice dollar.</li>
+<li>I think we can turn over $2 million a year.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: shape by rotating</h4>
+
+<ul>
+<li>After purchasing the wood, I ripped all the pieces to length, then turned the legs on a motorized lathe.</li>
+<li>After 1980, Wilson turned the pots while his sister and brother glazed, loaded and fired the kilns.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: sprain, hurt by twisting</h4>
+
+<ul>
+<li>The claimant testified that she turned her ankle on a wet floor at work.</li>
+<li>He got his skate caught in a rut or something and turned his knee.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.11: deliver, hand over</h4>
+
+<ul>
+<li>Everyone turn in your papers by the end of the day.</li>
+<li>The shop owner turned him in to the police.</li>
+<li>He had been turned over to the Gestapo for "special treatment."</li>
+<li>She turned in the performance of a lifetime!</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.11" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      
+<h4> 1.12: go to or get up from sleep</h4>
+
+<ul>
+<li>She turns out every morning at the crack of dawn.</li>
+</ul>
+
+<input type="text" name="annotation[results][11][id]" value="1.12" hidden />
+<input type="text" name="annotation[results][11][trips]" value="" visible/>
+      
+<h4> 1.13: (cause to) improve</h4>
+
+<ul>
+<li>That tutor really turned around my son's performance in math!</li>
+<li>We're taking on the tough issues and we're going to get the company turned around.</li>
+<li>Sales turned around in the second quarter.</li>
+</ul>
+
+<input type="text" name="annotation[results][12][id]" value="1.13" hidden />
+<input type="text" name="annotation[results][12][trips]" value="" visible/>
+      
+<h4> 1.14: come or gather</h4>
+
+<ul>
+<li>How many people turned out for the party?</li>
+<li>Thousands of Democrats turned out for the rally.</li>
+</ul>
+
+<input type="text" name="annotation[results][13][id]" value="1.14" hidden />
+<input type="text" name="annotation[results][13][trips]" value="" visible/>
+      
+<h4> 1.15: idioms</h4>
+
+<ul>
+<li>How can you turn a blind eye to his misbehavior?</li>
+<li>Much as she hated having sex with strangers, she turned tricks to make a living.</li>
+<li>That car can turn on a dime!</li>
+<li>His hypocracy turn's my stomach.</li>
+<li>When actually confronted by the bully, he turned tail and ran.</li>
+<li>She turned the tables on her rival with allegations of corruption.</li>
+<li>The council turned thumb's down at the proposal.</li>
+<li>A private passenger bus turned turtle, injuring 15.</li>
+<li>Your performance had better improve, or I'll really turn up the heat.</li>
+<li>Key European governments turned up the pressure on Iran over its nuclear plans.</li>
+</ul>
+
+<input type="text" name="annotation[results][14][id]" value="1.15" hidden />
+<input type="text" name="annotation[results][14][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

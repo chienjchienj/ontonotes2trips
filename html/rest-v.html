@@ -1,0 +1,93 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="rest" hidden/><h2>rest</h2>
+<h4> 1.1: cease exertion or action; relax; sleep</h4>
+
+<ul>
+<li>Let's rest here in the shade.</li>
+<li>Quiet; he's resting.</li>
+<li>The birds rested high in the tree.</li>
+<li>The committee is resting over the summer.</li>
+<li>Rest assured, I won't stop until I've found her.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: (cause to) be situated, fixed, or supported</h4>
+
+<ul>
+<li>The unusual split-level Colonial rests in a peaceful portion of the town.</li>
+<li>He earmarked the very place where President Washington had rested his hand.</li>
+<li>Rest your head on my shoulder.</li>
+<li>The book rests in a place of honor on the shelf.</li>
+<li>Here rests an honored soldier.</li>
+<li>She rested the cane against the wall.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: give a rest to; cause to be inactive</h4>
+
+<ul>
+<li>Alexander then rested his troops.</li>
+<li>You need to rest that leg.</li>
+<li>We sold 300 of these lambs and rested the field for two weeks.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: rely on; be vested in</h4>
+
+<ul>
+<li>Libby's fate now rests in the hands of the jury.</li>
+<li>Apple smart phone project rests on Mac OS X tie-ins.</li>
+<li>Her account of the phenomenon rests on a misleading use of statistics.</li>
+<li>The responsibility rests with the Allies.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: LEGAL: voluntarily end the presentation of evidence</h4>
+
+<ul>
+<li>The prosecution rested today in the Simpson trial.</li>
+<li>The appellant then rested his case.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

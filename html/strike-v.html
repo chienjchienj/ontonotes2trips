@@ -1,0 +1,156 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="strike" hidden/><h2>strike</h2>
+<h4> 1.1: hit, collide, or attack</h4>
+
+<ul>
+<li>He struck the table hard with his fists.</li>
+<li>Her car went out of control and struck an oncoming vehicle.</li>
+<li>They took the reed and struck him on his head.</li>
+<li>In 1979, the killer struck again, killing a couple in the park.</li>
+<li>Germany struck Poland in 1939 using gliders.</li>
+<li>The team struck back with vengeance.</li>
+<li>A strange sound struck my ears.</li>
+<li>The lightning struck down on the hikers.</li>
+<li>When he struck the middle C key, we heard 'bonggg' in front of us.</li>
+<li>Just when I entered, the clock struck midnight.</li>
+<li>The floods have struck the town on two other occasions.</li>
+<li>I am struck down with cold and dry cough.</li>
+<li>A devastating tornado struck the community resulting in the loss of life.</li>
+<li>A severe economic recession struck the state of Washington.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: cause to think or feel</h4>
+
+<ul>
+<li>He was fixing his bike when the thought struck him.</li>
+<li>It just struck me that I still owe you for the concert tickets.</li>
+<li>It also struck me odd that all itineraries had my new address on them.</li>
+<li>Doesn't this strike you as weird?</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: come across something or discover</h4>
+
+<ul>
+<li>Have the Mars rovers struck water?</li>
+<li>The hikers finally struck the main path to the lake.</li>
+<li>We struck oil in our own back yard!</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: achieve or attain something</h4>
+
+<ul>
+<li>After 2 failures, he struck success with his 3rd venture.</li>
+<li>The horse finally struck a pace.</li>
+<li>We turned to the traffic and struck the pose: right arm out, thumb up.</li>
+<li>Dell and Google struck a deal today.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: stop work</h4>
+
+<ul>
+<li>The workers were striking for a raise of 50 cents per day.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: remove; make void</h4>
+
+<ul>
+<li>Please strike this remark from the record.</li>
+<li>Please strike my name off your mailing list.</li>
+<li>Latecomers' names will be struck out from the list.</li>
+<li>A federal judge in Philadelphia struck down the law in February 1999.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: make by stamping as in a coin</h4>
+
+<ul>
+<li>This coin struck under Tiberius in 15 or 16 CE.</li>
+<li>The city struck a medal in his honor.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: start something</h4>
+
+<ul>
+<li>He struck fire from the flintstones.</li>
+<li>He struck out on his own after becoming frustrated working with the system.</li>
+<li>The musicians struck up a tune.</li>
+<li>How do I strike up a conversation with complete strangers?</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: STRIKE OUT-be put out of game or be unsuccessful</h4>
+
+<ul>
+<li>He struck out three batters to close the inning.</li>
+<li>The candidate struck out with his health care plan.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: idiomatic expressions</h4>
+
+<ul>
+<li>The court ruling struck a blow at the old segration laws.</li>
+<li>The story struck a chord with the listeners.</li>
+<li>Her comments struck a sour note.</li>
+<li>I hope this message strikes home.</li>
+<li>The announcements struck us dumb.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

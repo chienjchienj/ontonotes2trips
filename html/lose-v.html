@@ -1,0 +1,99 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="lose" hidden/><h2>lose</h2>
+<h4> 1.1: misplace some concrete thing, be unable to account or track something or someone</h4>
+
+<ul>
+<li>She lost her purse when she left it unattended on her seat.</li>
+<li>I've lost my car keys for the third time this week!</li>
+<li>He thinks he may have lost his glasses at the gym.</li>
+<li>The cops lost him again as he snuck around the back of the building.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: not succeed in achieving some abstract thing</h4>
+
+<ul>
+<li>The Red Sox have lost the last five games.</li>
+<li>He lost custody of his son.</li>
+<li>I lost the opportunity to spend a year abroad.</li>
+<li>She lost her son's respect by lying to him.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: to attempt communication that is missing clarity or accuracy.</h4>
+
+<ul>
+<li>I am losing you with this bad phone connection.</li>
+<li>I think the film 'Portrait of a Lady' completely lost what Henry James had in mind.</li>
+<li>He'll lose the marketing department with these technical slides.</li>
+<li>He lost the forest for the trees.</li>
+<li>I lost the clarinet theme through the complicated instrumentation.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: relinquish something physical or emotional, usually involuntarily</h4>
+
+<ul>
+<li>He lost his life on 9/11.</li>
+<li>She lost her husband to that woman from Washington.</li>
+<li>He lost a finger in the boating accident.</li>
+<li>She lost her voice before the Met auditions.</li>
+<li>Your pestering is making me lose my temper!</li>
+<li>Pancho lost weight before the big cruise.</li>
+<li>When my cousin started cursing at my mom, I lost it.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: to recede, fade away or fall off</h4>
+
+<ul>
+<li>I was losing the shape of the distant skyline through the fog.</li>
+<li>France is losing its tradition of classic cooking to the fast food industry.</li>
+<li>She lost fifteen pounds last summer.</li>
+<li>Those old customs have been lost to history.</li>
+<li>I've lost my appetite.</li>
+<li>Let's lose him!</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

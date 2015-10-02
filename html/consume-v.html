@@ -1,0 +1,80 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="consume" hidden/><h2>consume</h2>
+<h4> 1.1: eat or drink, esp. in large amounts; ingest</h4>
+
+<ul>
+<li>She consumes 2 cups of sugar a day.</li>
+<li>Total cholesterol, LDL cholesterol and apoB were lower when women consumed</li>
+<li>the HUFA diet than when they consumed the other two diets.</li>
+<li>My cows consume more hay than my neighbor's.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: use resources or materials</h4>
+
+<ul>
+<li>Motorcycles consume less gas than cars do.</li>
+<li>We consumed our entire savings in less than a month.</li>
+<li>The horrific slaughter consumed 63% of the airtime.</li>
+<li>Americans consume more information from the internet than any other nation.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: do away with; destroy</h4>
+
+<ul>
+<li>The fire consumed the building.</li>
+<li>He discussed how commerce consumed the commons.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: engage</h4>
+
+<ul>
+<li>He was an artist whose heart was consumed by passion.</li>
+<li>He is consumed by a desire to be great.</li>
+<li>They were consumed with grief after the death of their child.</li>
+<li>After her breakup, depression consumed her.</li>
+<li>Our country is consumed by war.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

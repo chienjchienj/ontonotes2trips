@@ -1,0 +1,77 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="contain" hidden/><h2>contain</h2>
+<h4> 1.1: hold something inside or include as a part</h4>
+
+<ul>
+<li>This bottle contains oil and that one contains vinegar.</li>
+<li>The gas tank on John's car can only contain twelve gallons.</li>
+<li>This clue probably contains the solution to the whole puzzle. (figurative)</li>
+<li>This box contains a surprise birthday gift for Sally.</li>
+<li>This CD contains two of the most famous arias performed by that tenor.</li>
+<li>The label says these cookies contain no hydrogenated fats.</li>
+<li>My minestrone contains beans and pasta, as well as fresh vegetables.</li>
+<li>This micro chip contains two processors and a shared cache.</li>
+<li>I've lost a file containing a lot of important documents.</li>
+<li>Try to avoid foods which contain a lot of fat.</li>
+<li>I like the concept. It contains the idea that ethics is embedded in each of us.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: restrain, halt or check</h4>
+
+<ul>
+<li>They are trying to contain the cancer with a new experimental drug.</li>
+<li>More police were sent to help contain the violence.</li>
+<li>Bob has trouble containing his sarcasm at meetings.</li>
+<li>The peacekeepers could not contain the civil war to just one province.</li>
+<li>She could no longer contain her anger and shouted at him uncontrollably.</li>
+<li>Contain yourself! It's not that exciting.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: be divisible by with no remainder</h4>
+
+<ul>
+<li>24 contains 6.</li>
+<li>15 contains 3.</li>
+<li>21 does not contain 4.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

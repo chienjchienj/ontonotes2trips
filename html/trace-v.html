@@ -1,0 +1,81 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="trace" hidden/><h2>trace</h2>
+<h4> 1.1: study or discover by going step-by-step</h4>
+
+<ul>
+<li>We must closely trace Cuba's economic development.</li>
+<li>Trace the students progress through military school.</li>
+<li>She traced the circumstances of her birth.</li>
+<li>He traced the errors in the kernal that were causing software problems.</li>
+<li>The government traced the criminal's IP address.</li>
+<li>Innovations allows the government to more closely trace U.S. funds worldwide.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: Make a line or marks on a surface; copy by following the lines of</h4>
+
+<ul>
+<li>Trace the outline of your body in the sand.</li>
+<li>Trace the pattern of the dinosaur bone with a crayon and your tracing</li>
+<li>paper.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: Follow one's own or another's path</h4>
+
+<ul>
+<li>The hunters traced the deer into the woods.</li>
+<li>The detectives traced the suspect until they found him.</li>
+<li>Trace your path back through the forest.</li>
+<li>The children traced along the edge of the dark forest.</li>
+<li>The women traced the pasture.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: Read with difficulty</h4>
+
+<ul>
+<li>The archeologist traced the hieroglyphs.</li>
+<li>He found it difficult to trace the author's wobbly script.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

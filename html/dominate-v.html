@@ -1,0 +1,60 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="dominate" hidden/><h2>dominate</h2>
+<h4> 1.1: be prominent or in full control</h4>
+
+<ul>
+<li>That drug company dominates the tranquilizer market.</li>
+<li>Blair junior dominates international math competition.</li>
+<li>My school dominated the national chess competition for years!</li>
+<li>Figure skating dominates field at UPenn Invitational.</li>
+<li>Successful leaders dominate events rather than react to them.</li>
+<li>His wife completely dominates him.</li>
+<li>He refuses to let others speak and dominates every meeting.</li>
+<li>Ambition dominated their lives.</li>
+<li>Her chronic back pain completely dominated every aspect of her life.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: overlook from a height</h4>
+
+<ul>
+<li>The view from the cliffside chalet dominates the valley.</li>
+<li>The villa dominates the town.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

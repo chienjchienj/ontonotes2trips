@@ -1,0 +1,67 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="emerge" hidden/><h2>emerge</h2>
+<h4> 1.1: issue forth from; exit or come from somewhere</h4>
+
+<ul>
+<li>The Bengal tiger emerged from the forest.</li>
+<li>I couldn't believe the imperious stream of words emerging from her lips.</li>
+<li>The fugitive emerged from hiding after ten years.</li>
+<li>Some new fiscal problems are emerging on the horizon. (metaphoric)</li>
+<li>Jealousy emerged in his heart at the sight of Mary dancing with Bob.</li>
+<li>Some fruitful discussions emerged during those weekly meetings.</li>
+<li>He always emerges from his house at six o'clock sharp.</li>
+<li>They have emerged intact from their recent bankruptcy</li>
+<li>Jane has not emerged without scars from the ordeal.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: develop or surface (as); become known or perceived (as)</h4>
+
+<ul>
+<li>He is quickly emerging as the leading candidate of their party.</li>
+<li>This stock has emerged as the one to buy in recent weeks.</li>
+<li>India has emerged as the most attractive global retail destination for a second straight year.</li>
+<li>Palestinian Islamic Jihad emerged in the early 1980s.</li>
+<li>The tourism report emerged from four studies over a three year period.</li>
+<li>But the next day, when the fog has lifted, a starkly different image emerges.</li>
+<li>The facts behind the scandal are sure to emerge eventually.</li>
+<li>It has emerged that secret talks had been going on between the two companies.</li>
+<li>She's the most exciting British singer to emerge on the pop scene for a decade.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

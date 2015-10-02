@@ -1,0 +1,111 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="bend" hidden/><h2>bend</h2>
+<h4> 1.1: Change direction.</h4>
+
+<ul>
+<li>The road bends ahead.</li>
+<li>The Monaco racecourse bends wildly.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: Bend one's back forward from the waist on down.</h4>
+
+<ul>
+<li>The kind gentleman bent to pick up the girl's purse.</li>
+<li>I bent down to inspect the rock.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: (Cause to) turn from a straight course, fixed direction, or line of interest; cause to bend or give way.</h4>
+
+<ul>
+<li>It is unlikely that presidential pleas will lead House Democrats to</li>
+<li>bend.</li>
+<li>I will not bend or break.</li>
+<li>The author bent the story to an unpredictable, incredible conclusion.</li>
+<li>Furthermore, it is also likely to encourage those on Capitol Hill</li>
+<li>asking for cuts in the assistance to El Salvador if President</li>
+<li>Cristiani does not bend to demands of the Marxist guerrillas.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: Distort or modify with the intent to falsify or make subjective.</h4>
+
+<ul>
+<li>Reporters must strive never to bend the truth in order to make a more</li>
+<li>interesting story.</li>
+<li>Pressure was put on him to bend the report in a certain direction.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: Bend a joint.</h4>
+
+<ul>
+<li>He painfully bent his elbow for the doctor, revealing the extent of</li>
+<li>his injury.</li>
+<li>I bent my knees.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: Cause to assume a crooked, angular, or twisted form; (cause to) form a curve.</h4>
+
+<ul>
+<li>The weightlifter could bend the metal rods without trouble.</li>
+<li>The stick did not bend.</li>
+<li>The last time I baked, I tried to bend the dough into a braid.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: BEND OVER BACKWARD(S): try very hard to please someone.</h4>
+
+<ul>
+<li>She bends over backwards when she sees her mother in law.</li>
+<li>He bent over backward to please her.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

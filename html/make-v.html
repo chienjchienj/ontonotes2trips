@@ -1,0 +1,308 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="make" hidden/><h2>make</h2>
+<h4> 1.1: LIGHT VERB--do or perform a specified action</h4>
+
+<ul>
+<li>When I make a decision, I'll let you know. (When I decide, I'll let you know)</li>
+<li>I made a call to my mother. (I called my mother.)</li>
+<li>They made a motion for approval and was approved unanimously. (They motioned for approval...)</li>
+<li>He made a bid. (He bidded.)</li>
+<li>She made a change to the document. (She changed the document.)</li>
+<li>He made claims about his work. (He claimed (something) about his work.)</li>
+<li>Accusations were made. ((Someone) accused (someone else).)</li>
+<li>Make me an offer. (Offer me (something).)</li>
+<li>NOT: He made a point. (does not mean "He pointed.")--This usage would be in sense 2.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: create, produce, or manufacture</h4>
+
+<ul>
+<li>Oh, I made a mess of an ebay purchase.</li>
+<li>His essay on Stoic Philosophy had made a stir in 1833.</li>
+<li>The company has been making toys for two centuries.</li>
+<li>I made a poem using as many of those phases as possible.</li>
+<li>He made her a cake for her birthday.</li>
+<li>You can't make iron into gold.</li>
+<li>It is your turn to go to the lake for water while I make the fire.</li>
+<li>This law was made a long time ago.</li>
+<li>Make breakfast for the guests, please.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: cause to become, or to have a certain quality</h4>
+
+<ul>
+<li>She made him mad.</li>
+<li>Looking at all this food makes me full.</li>
+<li>This album will make him famous.</li>
+<li>Friendster has made it possible to see who's looking at you.</li>
+<li>Should that make her president of the club?</li>
+<li>The media made this into a bigger issue than it really is.</li>
+<li>All those hours of practice made him a winner.</li>
+<li>Maple makes beautiful, lasting furniture.</li>
+<li>It was this album that made his career.</li>
+<li>Go ahead, make my day.</li>
+<li>She made the bed.</li>
+<li>He made up the room for the guest.</li>
+<li>Good clothing and hairstyle will make a man.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: force to do something</h4>
+
+<ul>
+<li>Will they make me eat healthy food at the spa?</li>
+<li>My children made me buy a new computer.</li>
+<li>How did she make the plants grow?</li>
+<li>They had made him sweat, and now he intended to make them sweat.</li>
+<li>Oh, yeah? Make me!</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: think, suppose, estimate, or calculate</h4>
+
+<ul>
+<li>What do you make of his remarks?</li>
+<li>Let's make an estimate of the costs.</li>
+<li>I make that wall's height to be about eight feet.</li>
+<li>It wasn't as bad as some people made it (to be).</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: constitute, comprise or form</h4>
+
+<ul>
+<li>This makes a fine introduction.</li>
+<li>The neighborhood children made up the choir.</li>
+<li>This makes the third time I've missed the bus!</li>
+<li>Three and four make seven.</li>
+<li>That made for an uncomfortable moment.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: acquire or gain</h4>
+
+<ul>
+<li>We provide advice on how to make friends.</li>
+<li>How much do you think he makes as a trial lawyer?</li>
+<li>Our company made a handsome profit during the third quarter.</li>
+<li>They made 29 points that day.</li>
+<li>If I could make a penny for every time I mess up, I'd be rich!</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: attain or reach something desired (a goal)</h4>
+
+<ul>
+<li>He made the basketball team.</li>
+<li>We barely made the plane.</li>
+<li>I made the opening act in plenty of time.</li>
+<li>Can you believe it? We made it!</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: move toward or away from a location</h4>
+
+<ul>
+<li>As the enemy approached our town, we made for the hills.</li>
+<li>He made his way carefully across the icy parking lot.</li>
+<li>They made off with the jewels.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: appear to begin an activity</h4>
+
+<ul>
+<li>He made to speak but said nothing in the end.</li>
+<li>He made as if to shake my hand, but suddenly he turned around and left.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.11: arrange neatly; pretty up</h4>
+
+<ul>
+<li>For their daughter, they made up a room fit for a princess.</li>
+<li>I made my bed and ironed the clothes yesterday. It was not fun.</li>
+<li>She makes herself up every morning.</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.11" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      
+<h4> 1.12: pretend; create a story or lie</h4>
+
+<ul>
+<li>Bugs Bunny makes like an air-traffic controller and "guides" Beaky to the ground with a crash.</li>
+<li>Sutton wine in 7-up makes like a instant wine cooler.</li>
+<li>I think he made the whole thing up.</li>
+<li>She loves to make up stories.</li>
+</ul>
+
+<input type="text" name="annotation[results][11][id]" value="1.12" hidden />
+<input type="text" name="annotation[results][11][trips]" value="" visible/>
+      
+<h4> 1.13: urinate</h4>
+
+<ul>
+<li>Again, the cat had made on the expensive rug.</li>
+<li>The dog made water and a drop of it fell on Kosiya's hand.</li>
+</ul>
+
+<input type="text" name="annotation[results][12][id]" value="1.13" hidden />
+<input type="text" name="annotation[results][12][trips]" value="" visible/>
+      
+<h4> 1.14: have sexual relations</h4>
+
+<ul>
+<li>Did he make it with her?</li>
+</ul>
+
+<input type="text" name="annotation[results][13][id]" value="1.14" hidden />
+<input type="text" name="annotation[results][13][trips]" value="" visible/>
+      
+<h4> 1.15: behave in a certain way, usu. joyful</h4>
+
+<ul>
+<li>The members of the wedding party made merry all night.</li>
+<li>They ate, drank, and made merry.</li>
+</ul>
+
+<input type="text" name="annotation[results][14][id]" value="1.15" hidden />
+<input type="text" name="annotation[results][14][trips]" value="" visible/>
+      
+<h4> 1.16: other idiomatic expressions</h4>
+
+<ul>
+</ul>
+
+<input type="text" name="annotation[results][15][id]" value="1.16" hidden />
+<input type="text" name="annotation[results][15][trips]" value="" visible/>
+      
+<h4> 1.17.1: MAKE OUT--distinguish, recognize</h4>
+
+<ul>
+<li>Can you make out what that says?</li>
+</ul>
+
+<input type="text" name="annotation[results][16][id]" value="1.17.1" hidden />
+<input type="text" name="annotation[results][16][trips]" value="" visible/>
+      
+<h4> 1.17.2: MAKE OUT--write or fill out</h4>
+
+<ul>
+<li>Just make out the check to me.</li>
+</ul>
+
+<input type="text" name="annotation[results][17][id]" value="1.17.2" hidden />
+<input type="text" name="annotation[results][17][trips]" value="" visible/>
+      
+<h4> 1.17.3: MAKE OUT--write or fill out</h4>
+
+<ul>
+<li>Just make out the check to me.</li>
+</ul>
+
+<input type="text" name="annotation[results][18][id]" value="1.17.3" hidden />
+<input type="text" name="annotation[results][18][trips]" value="" visible/>
+      
+<h4> 1.17.4: MAKE OUT--get along, cope</h4>
+
+<ul>
+<li>How are they making out with new procedures?</li>
+<li>She made out OK after she got laid off.</li>
+</ul>
+
+<input type="text" name="annotation[results][19][id]" value="1.17.4" hidden />
+<input type="text" name="annotation[results][19][trips]" value="" visible/>
+      
+<h4> 1.17.5: MAKE OUT--imply or suggest</h4>
+
+<ul>
+<li>She made him out to be an idiot.</li>
+<li>He made out that he had been there all along.</li>
+</ul>
+
+<input type="text" name="annotation[results][20][id]" value="1.17.5" hidden />
+<input type="text" name="annotation[results][20][trips]" value="" visible/>
+      
+<h4> 1.17.6: MAKE UP--compensate</h4>
+
+<ul>
+<li>How can I make it up to you?</li>
+<li>He needs to make up for the homework he forgot to turn in.</li>
+<li>They made up for the extra weight by carrying less fuel.</li>
+</ul>
+
+<input type="text" name="annotation[results][21][id]" value="1.17.6" hidden />
+<input type="text" name="annotation[results][21][trips]" value="" visible/>
+      
+<h4> 1.17.7: MAKE UP--reconcile</h4>
+
+<ul>
+<li>Let's stop fighting and make up.</li>
+</ul>
+
+<input type="text" name="annotation[results][22][id]" value="1.17.7" hidden />
+<input type="text" name="annotation[results][22][trips]" value="" visible/>
+      
+<h4> 1.17.8: MAKE OVER--redo</h4>
+
+<ul>
+<li>They hired a designer to make over the whole downstairs.</li>
+</ul>
+
+<input type="text" name="annotation[results][23][id]" value="1.17.8" hidden />
+<input type="text" name="annotation[results][23][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

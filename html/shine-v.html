@@ -1,0 +1,108 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="shine" hidden/><h2>shine</h2>
+<h4> 1.1: Emit light; be bright, as of the sun or a light; touch with light.</h4>
+
+<ul>
+<li>The sun shone bright that day.</li>
+<li>Light shone on her face.</li>
+<li>The sun shone on the fields.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: Be shiny, as if wet; be bright by reflecting or casting light; be distinguished or obvious, as if bright.</h4>
+
+<ul>
+<li>His eyes were shining.</li>
+<li>His talent shines.</li>
+<li>He shines as an example.</li>
+<li>His wife made him shine in the gossip columns with her profligate</li>
+<li>spending habits.</li>
+<li>While the merits of diversification shine through when times are</li>
+<li>tough, there's also a price to pay.</li>
+<li>Her face shown when she came out of the sauna.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: Throw or flash the light of (a lamp)</h4>
+
+<ul>
+<li>Shine the light on that window, please.</li>
+<li>We have to shine a bright light on politicians these days.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: Experience a feeling of well-being or happiness, as from good health or an intense emotion.</h4>
+
+<ul>
+<li>She was shining with joy.</li>
+<li>Her face shown with happiness.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: Make a surface shine.</h4>
+
+<ul>
+<li>Shine the silver, please.</li>
+<li>Shine my shoes!</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: SHINE AT: Be good at.</h4>
+
+<ul>
+<li>She shines at math.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: SHINE UP: Ingratiate oneself to, often with insincere behavior.</h4>
+
+<ul>
+<li>She is shining up to the chairman.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

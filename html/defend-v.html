@@ -1,0 +1,75 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="defend" hidden/><h2>defend</h2>
+<h4> 1.1: protect or resist against an physical attack</h4>
+
+<ul>
+<li>The soldiers could not defend the forward line and had to drop back.</li>
+<li>Their team is not defending the end zone very well today.</li>
+<li>This medicine will defend against heart worm in your pets.</li>
+<li>White blood cells help defend the body against infection.</li>
+<li>Bill had to defend his plate of chocolate cookies from his office mates.</li>
+<li>I'm going to karate lessons to learn how to defend myself.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: protect or speak up against criticism or opposition</h4>
+
+<ul>
+<li>John defended his thesis brilliantly before the committee.</li>
+<li>The administration is defending its economic policies.</li>
+<li>He hasn't agreed to defend our position at tomorrow's meeting.</li>
+<li>I won't defend her actions in this matter.</li>
+<li>Bob defended his little sister against their mother's criticisms.</li>
+<li>They are fighting to defend their rights.</li>
+<li>He vigorously defended his point of view.</li>
+<li>That law firm has a reputation for defending members of the mob.</li>
+<li>The famous attorney will defend her in the high-profile murder case.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: compete to retain a title</h4>
+
+<ul>
+<li>They'll be defending their title this year against the Giants.</li>
+<li>He has defended his heavyweight title against four contenders.</li>
+<li>The three-year old colt continues to defend his shot at the Triple Crown with today's win.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

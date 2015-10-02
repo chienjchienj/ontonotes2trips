@@ -1,0 +1,87 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="crash" hidden/><h2>crash</h2>
+<h4> 1.1: (cause to) violently impact and undergo destruction</h4>
+
+<ul>
+<li>His small private plane crashed into a residential high-rise building on New York.</li>
+<li>He hit the earthen bank protecting the crowd and the Mercedes crashed into pieces.</li>
+<li>His massive tail crashed against the younger beast's ugly head.</li>
+<li>As I moved toward the captain's cabin, a wave crashed against the uppermost deck.</li>
+<li>Mo crashed her fork down on her plate.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: make a crashing noise</h4>
+
+<ul>
+<li>Flutes blew heraldic fragments while bass drum and cymbals crashed on off-beats.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: enter or participate uninvited</h4>
+
+<ul>
+<li>Forget the pride he felt at having successfully crashed the Plaza Hotel wedding.</li>
+<li>Greens say Republicans crashed their party.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: experience severe downturn or malfunction</h4>
+
+<ul>
+<li>Millionaire margin investors became bankrupt instantly as the stock market crashed.</li>
+<li>The team returns to the 1999 death of a young woman whose dotcom business crashed.</li>
+<li>My computer crashed and I was forced to re-install all programs again.</li>
+<li>New electronic voting machines malfunctioned and the county's phone system crashed .</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: sleep in a convenient place</h4>
+
+<ul>
+<li>Do you think it would be alright if I could just crash here tonight?</li>
+<li>A friend of mine crashed on the couch while he established himself in NYC for about a month.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

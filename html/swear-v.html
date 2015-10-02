@@ -1,0 +1,100 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="swear" hidden/><h2>swear</h2>
+<h4> 1.1: solemnly promise, bind by oath</h4>
+
+<ul>
+<li>He swore to uphold the law.</li>
+<li>He swore an oath to be the kingdom's champion.</li>
+<li>We were sworn to secrecy.</li>
+<li>He was so bad at lying, I swore him to silence on a deep-cover.</li>
+<li>He swore on a historic bible and had no objections to doing it.</li>
+<li>He swore by his crown of moonshine that he would battle all the stars in the skies.</li>
+<li>The speaker of the House swore in the new President.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: utter profanities</h4>
+
+<ul>
+<li>I got so used to using bad language that I almost swore at my students.</li>
+<li>He claimed that the referee swore at him.</li>
+<li>No matter what your mother said, there may be times when swearing is appropriate.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: assert sincerely, avow, state as true</h4>
+
+<ul>
+<li>I solemnly swear that I am up to no good.</li>
+<li>I swear to you Miss Scarlett, I don't know nothing about cooking collards.</li>
+<li>He swore the results had to be wrong and that I'd made an error somewhere.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: have confidence or faith in</h4>
+
+<ul>
+<li>I swear by my grandmother's recipes.</li>
+<li>He swore by Craftsman tools.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: abstain from</h4>
+
+<ul>
+<li>I have sworn off cigarettes altogether.</li>
+<li>He swore off dangerous stunts like wing-walking on biplanes.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: deliver a warrant or summons to someone</h4>
+
+<ul>
+<li>He swore out a warrant on March 1 for the arrest of Queensbury.</li>
+<li>He swore out the affidavit on condition Angelico send them to the ARRB.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

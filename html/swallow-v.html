@@ -1,0 +1,106 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="swallow" hidden/><h2>swallow</h2>
+<h4> 1.1: pass through the esophagus</h4>
+
+<ul>
+<li>It is easier to swallow pills if you take them with some water.</li>
+<li>Jonah was swallowed by a whale.</li>
+<li>The fish was too big for the bird to swallow whole.</li>
+<li>Bob swallowed hard, took a deep breath and jumped off the high dive.</li>
+<li>The patient is having trouble swallowing.</li>
+<li>There was an old lady who swallowed a cow. I don't know why swallowed the cow.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: destroy, engulf, subsume, take in entirely</h4>
+
+<ul>
+<li>The Germans quickly swallowed Poland during the blitzkrieg.</li>
+<li>A rogue wave swallowed up the small fishing boat.</li>
+<li>The little mom and pop stores are being swallowed up by the big chains.</li>
+<li>The roof repairs have pretty much swallowed up our savings.</li>
+<li>Monthly debts were swallowing up his paychecks.</li>
+<li>Too much of the town's conservation land is being swallowed up by developers.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: rescind, retract, revoke a statement or remark</h4>
+
+<ul>
+<li>John had to swallow his words when his accusations of Bob being a thief proved untrue.</li>
+<li>She refused to swallow her words to her mother that had been made in anger.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: suppress a feeling, attitude, inclination</h4>
+
+<ul>
+<li>Sally swallowed her anger at the lewd remark and continued her speech.</li>
+<li>They may have to swallow their pride and ask Bob's parents for a loan.</li>
+<li>He swallowed his urge to pop John in the nose.</li>
+<li>We need to swallow hard, force a smile, and congratulate them and wish them well.</li>
+<li>Our investors might need to swallow hard before listening to the housing expert.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: speak indistinctly, mutter</h4>
+
+<ul>
+<li>The child tends to swallow his words when talking in front of strangers.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: accept or believe a distasteful state of affairs or an unlikely story or account</h4>
+
+<ul>
+<li>IPU won't swallow the bitter pill of pharmacy deregulation.</li>
+<li>He can't seem to swallow the idea that his kid has a drinking problem.</li>
+<li>The taxpayers won't swallow another override this year.</li>
+<li>It's hard to swallow his story about the accident, given the evidence in front of us.</li>
+<li>The public seems to be swallowing the account given by the senator.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,77 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="flood" hidden/><h2>flood</h2>
+<h4> 1.1: fill or cover with</h4>
+
+<ul>
+<li>He did not know the basement flooded when he purchased the house.</li>
+<li>The smell of gasoline vapors after a failed start may mean you have flooded the engine.</li>
+<li>In the microcosms flooded with saline media, the initially present members of the N. oligotropha lineage were replaced.</li>
+<li>Jack stood up to reach for the tool catalog when suddenly the room flooded with fluorescent light.</li>
+<li>He was about to sit down on the floor when the room flooded with Enya.</li>
+<li>Thoughts of Keilan flooded to the front of her mind and she clenched her jaw.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: supply with an excess of</h4>
+
+<ul>
+<li>Publishers flooded the market with books that matched this formula, giving readers more and more of what they demanded.</li>
+<li>Those of you that flooded the Montana Park system with calls and emails please know that you did make a difference!</li>
+<li>They spent roughly 5 million dollars on an aggressive campaign that flooded the airwaves with attacks against Senator.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: arrive in great numbers</h4>
+
+<ul>
+<li>Afterwards, hundreds of letters flooded in to the radio station.</li>
+<li>Hundreds of stories flooded in, everything from standard computer failures to tales of blue smoke and fire.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: charge someone with too many tasks</h4>
+
+<ul>
+<li>He was flooded out with too many questions to solve to allow him the time to disentangle them.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,169 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="check" hidden/><h2>check</h2>
+<h4> 1.1: examine, esp. to confirm validity, correctness, safety, or suitability</h4>
+
+<ul>
+<li>You should always check your oil before taking your car on a long trip.</li>
+<li>Customs stopped us and checked our bags for alcohol and cigarettes.</li>
+<li>After I'd finished the exam, I checked over my answers for mistakes.</li>
+<li>The doctor will call next week to check up on your progress.</li>
+<li>My wife checks on our elderly neighbour every few days to make sure that he's alright.</li>
+<li>You should check out John's column this week. It is really funny.</li>
+<li>If you're near the garage, could you check to see if the car's ready?</li>
+<li>If you're unsure of your legal rights, I would check with a lawyer.</li>
+<li>The six computers check with one another to assure that they are doing the same thing.</li>
+<li>I'll check into that!</li>
+<li>The council usually sends someone to check out the noise levels.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: agree, confirm, or be consistent</h4>
+
+<ul>
+<li>These stories don't check.</li>
+<li>The fingerprints checked out with the ones on file.</li>
+<li>Her statement checks with most of the eye-witness reports.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: keep something or someone under control; stop something from happening</h4>
+
+<ul>
+<li>They began to vaccinate children in an attempt to check the spread of the disease.</li>
+<li>Check your anger before law does.</li>
+<li>Checking the urge to laugh out loud, I buried my head in the newspaper.</li>
+<li>Some people simply can't check their behavior while under the influence.</li>
+<li>He checked the flow of water by shutting off the main valve.</li>
+<li>'I mean,' she checked herself hastly. 'ah ... I dunno where he may be.'</li>
+<li>In mid-sentence, he checked himself abruptly, looking terribly embarrassed.</li>
+<li>He was a great defender that routinely checked the opponent's best offensive threat.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: mark something with a check mark</h4>
+
+<ul>
+<li>Please check your name off from the list.</li>
+<li>Check the box next to Connect Automatically when starting TCP/IP applications.</li>
+<li>Please make sure you have checked the circle next to the item you require.</li>
+<li>Check here if the billing address is different from the shipping address.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: consign belongings for temporary safekeeping</h4>
+
+<ul>
+<li>She checked her bags and boarded the plane.</li>
+<li>Check your coat at the door.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: arrive and register/commit</h4>
+
+<ul>
+<li>When we checked in at the hotel, we also checked in at the Cruise Line desk.</li>
+<li>Her doctor said she needed treatment and checked her into the hospital.</li>
+<li>He checked himself into a rehabilitation treatment center for alcohol.</li>
+<li>We achieved the airport, checked in at the counter, and sat in the lobby.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: unregister, make necessary payments, and leave</h4>
+
+<ul>
+<li>We awoke the following morning, had breakfast, and checked out of the hotel.</li>
+<li>The lady at the grocery shop that checked us out was very friendly.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: create cracks or chinks in</h4>
+
+<ul>
+<li>Sunlight dried and checked the paint.</li>
+<li>The glass checked when it was heated.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: in chess: put the opponent king under direct attack</h4>
+
+<ul>
+<li>The rook capture would have checked the king and held the pawn at a7.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: trackers: stop in a chase when the scent is low</h4>
+
+<ul>
+<li>Suddenly the dog checked, sniffed and scratched around tentatively in the leaves.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.11: falcon: abandon intended game and pursue lesser prey</h4>
+
+<ul>
+<li>Sorry, could not find example</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.11" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      
+<h4> 1.12: gambling: decline to initiate a betting</h4>
+
+<ul>
+<li>Sorry, could not find example.</li>
+</ul>
+
+<input type="text" name="annotation[results][11][id]" value="1.12" hidden />
+<input type="text" name="annotation[results][11][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

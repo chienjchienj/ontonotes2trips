@@ -1,0 +1,147 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="write" hidden/><h2>write</h2>
+<h4> 1.1: communicate or express in writing, compose a piece of writing (i.e. novel)</h4>
+
+<ul>
+<li>Please write to me every week.</li>
+<li>Write her soon, please!</li>
+<li>He wrote that he would be coming soon.</li>
+<li>He wrote a memo to all the employees.</li>
+<li>Many listeners wrote in after the controversial radio program.</li>
+<li>The employees were asked not to write personal email messages at work.</li>
+<li>Sally wrote a scathing letter to the editor.</li>
+<li>She has written four novels but not yet published any of them.</li>
+<li>Beethoven wrote nine symphonies.</li>
+<li>He can help you write your resume.</li>
+<li>The teacher asked the students to write about their favorite hobby.</li>
+<li>In that book, the author wrote mostly of the earliest period of Greek civilization.</li>
+<li>The topic he choose to write on is the history of the electric car.</li>
+<li>She used to write copy for Harper's Bazaar.</li>
+<li>Igor Stravinsky and Leonard Bernstein both wrote jazz-inspired pieces.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: the mechanics of forming symbols or alphabetic characters</h4>
+
+<ul>
+<li>The artist wrote Chinese characters on a big piece of white paper.</li>
+<li>Russian is written with the Cyrillic alphabet.</li>
+<li>The child doesn't yet know how to write his name.</li>
+<li>His hands were shaking so hard that he couldn't write.</li>
+<li>He quickly erased what he had written.</li>
+<li>Her handwriting is so terrible that I can never read what she has written.</li>
+<li>Cuneiform refers to the way scribes wrote marks on wet clay.</li>
+<li>Can you write down your phone number for me?</li>
+<li>When we were children, we would write in code so that our parents couldn't understand.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: store or record data on a computer</h4>
+
+<ul>
+<li>The company wrote boot instructions on the disk.</li>
+<li>I can only write this disk once.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: create code or computer programs</h4>
+
+<ul>
+<li>She writes code faster than anybody else.</li>
+<li>Some BASIC dialects do not allow programmers to write their own procedures.</li>
+<li>Programmers can write roughly the same number of lines of code per year regardless of language.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: reduce the estimated value of something</h4>
+
+<ul>
+<li>For tax purposes you can write off the laser printer.</li>
+<li>In December 2001, we wrote down to its estimated fair value our investment.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: dismiss, concede a loss</h4>
+
+<ul>
+<li>Write it off as a loss.</li>
+<li>McCain too quickly wrote off the religious right as a constituency he could draw upon.</li>
+<li>They wrote off any criticism as persecution.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: cast a vote by entering a name on a ballot</h4>
+
+<ul>
+<li>Many voters wrote in the names of strangers.</li>
+<li>Four thousand eight hundred people in Texas wrote in the Green candidates on election day.</li>
+<li>In Gadsden, some voters wrote in Al Gore instead of checking his name.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: complete or fill in a form</h4>
+
+<ul>
+<li>Please write the check out to the corporation.</li>
+<li>He quickly wrote up a contract.</li>
+<li>I just stood there as the cop wrote out the ticket.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: publicly praise or condemn</h4>
+
+<ul>
+<li>The New York Times wrote him up last week.</li>
+<li>Did your boss write you up?</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

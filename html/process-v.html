@@ -1,0 +1,96 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="process" hidden/><h2>process</h2>
+<h4> 1.1: work on, subject to treatment, produce a transformed output</h4>
+
+<ul>
+<li>They processed the light to break it into the various colors.</li>
+<li>She shot the photos and processed the photographs in her own lab.</li>
+<li>The plant processes cheese on behalf of its own leading brands.</li>
+<li>The text gives an explanation of how the swordmaker processes iron.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: calculate (numerical or quantitative)</h4>
+
+<ul>
+<li>The results of the elections were still being processed when he gave his acceptance speech.</li>
+<li>We processed the latest state level estimates with components of change from the Census Bureau.</li>
+<li>Dr. Symes simulated the survey and then we processed the resulting time vectors.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: deal with according to routine or procedure</h4>
+
+<ul>
+<li>The computer processes five pictures per second.</li>
+<li>We processed the pup, giving him vaccinations, taking measurements, pit tagging and radio collaring him.</li>
+<li>He was warned that the district attorney would process him.</li>
+<li>I thought they were going to detain him but they pretty much processed him as normal and sent him on his way.</li>
+<li>The police officers processed him on an outstanding traffic warrant.</li>
+<li>The next morning we picked him up from the Douglas County Correctional Facility and processed him.</li>
+<li>The government claims to have processed the arrestees as expeditiously and humanely as possible.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: take in, comprehend, handle input</h4>
+
+<ul>
+<li>How much information is being processed by the human eye each second?</li>
+<li>The study suggested that men and women process humour differently in their brains.</li>
+<li>Some friends have only just found out and others have not yet processed the death of a dear departed.</li>
+<li>The last night of the retreat, we processed the entire week examining interpersonal issues and lessons learned.</li>
+<li>The ordained minister described how she processed the complicated questions surrounding the death penalty.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: march in a procession</h4>
+
+<ul>
+<li>It felt wonderful as we processed into the enormous St Hugh's Choir where the congregation were.</li>
+<li>They processed into the dining room.</li>
+<li>She nodded to Pastor Shulz and the choir as they processed into the sanctuary.</li>
+<li>A door across the room from the altar opened and pairs of hooded figures processed into the chamber.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

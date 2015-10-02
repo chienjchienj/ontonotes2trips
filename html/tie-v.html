@@ -1,0 +1,101 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="tie" hidden/><h2>tie</h2>
+<h4> 1.1: fasten or restrain something/body to another</h4>
+
+<ul>
+<li>They tied the prisoners hands behind him.</li>
+<li>John said he is tied to his desk this weekend. (figurative)</li>
+<li>Their IT department is hindered by being tied to such an old operating system.</li>
+<li>Sally thinks Todd is too tied to his past. (figurative)</li>
+<li>Can you tie these newspapers up with some string?</li>
+<li>Traffic is tied up around the bridge where there was a rollover.</li>
+<li>Bob tied up the boat at the dock.</li>
+<li>For years she was tied down caring for a very sick child.</li>
+<li>That sail is not tied down properly.</li>
+<li>Bob showed his son how to tie a full Windsor knot.</li>
+<li>Tying flies for fly-fishing is quite an art.</li>
+<li>Mary tied a beautiful bow on the wrapped gift.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: relate or associate one something/body to another</h4>
+
+<ul>
+<li>The detectives are tying these events together into a case.</li>
+<li>The business partners are also tied by family connections.</li>
+<li>John and Mary will tie the knot on Saturday. (get married)</li>
+<li>The bonuses are tied to quarterly performance.</li>
+<li>These notes are tied across the measure.</li>
+<li>This remark ties in with what we were discussing yesterday.</li>
+<li>These data don't tie in well with earlier experiments.</li>
+<li>Is the allergy tied to dairy products, for example?</li>
+<li>Can you tie his behaviour up with anything that's happened recently?</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: draw, have equal scores in a game</h4>
+
+<ul>
+<li>Mary and Sally tied for first place.</li>
+<li>The teams can't tie, they will play overtime until one of them wins.</li>
+<li>We tied with a team from the south in the championships.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: attack with vigor</h4>
+
+<ul>
+<li>He tied into the students for their insolence and lack of self discipline.</li>
+<li>I was surprised when Joan tied into Bill at the last meeting.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: get drunk</h4>
+
+<ul>
+<li>Pete really tied one on last night at the fraternity's keg party.</li>
+<li>He ties one on almost every night these days.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

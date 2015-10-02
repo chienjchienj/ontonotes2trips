@@ -1,0 +1,68 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="assert" hidden/><h2>assert</h2>
+<h4> 1.1: express and maintain that a claim is true</h4>
+
+<ul>
+<li>He asserted his innocence to the gathered crowd.</li>
+<li>She asserted that she had never seen the man before.</li>
+<li>He asserts that she stole money from him.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: exercise that which is in one's right or power to do</h4>
+
+<ul>
+<li>He asserted his Fifth Amendment rights and refused to testify.</li>
+<li>During Cold War, the Allies asserted their right to move freely between the two Berlins.</li>
+<li>She very rarely asserts her authority over the children.</li>
+<li>The new management quickly began to assert itself after the takeover.</li>
+<li>I really must assert myself more in meetings.</li>
+<li>The relationship went well until their age difference began to assert itself.</li>
+<li>Another seemingly impossible problem asserted itself here.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: say - as in a dialogue</h4>
+
+<ul>
+<li>The boy asserted, "We are supposed to help, not hurt!"</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

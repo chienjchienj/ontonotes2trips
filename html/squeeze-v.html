@@ -1,0 +1,101 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="squeeze" hidden/><h2>squeeze</h2>
+<h4> 1.1: exert pressure or influence on something</h4>
+
+<ul>
+<li>Squeeze the lemon and add a couple tablespoons along with some broth.</li>
+<li>He then squeezed my hand in a gesture of solidarity and affirmation.</li>
+<li>He reloaded the gun, took aim and then squeezed the trigger.</li>
+<li>Small businesses are being squeezed by heavy taxation.</li>
+<li>It's dangerous because the feds want to squeeze him for information.</li>
+<li>To have squeezed the universe into a ball.</li>
+<li>His eyes, seemingly squeezed upward into slits, narrowed still further.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: extract by exerting pressure or influence</h4>
+
+<ul>
+<li>Squeeze some juice from the lemon.</li>
+<li>After cleaning the floor, he squeezed the dirty water from her cloth.</li>
+<li>The studio is using marketing tricks to squeeze profit from the movie.</li>
+<li>They managed to squeeze confession from suspect.</li>
+<li>We have an excellent travel agent who can squeeze a deal out of a stone.</li>
+<li>He managed to squeeze out a timid "thank you" (of himself).</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: push or cram something/someone into something</h4>
+
+<ul>
+<li>The boy squeezed between the boxes and closed his eyes.</li>
+<li>The car's quite full, but we could manage to squeeze another person.</li>
+<li>I must have put on a lot of weight. I can't squeeze into my favorite jeans.</li>
+<li>While we're in Australia, we're hoping to squeeze in a trip to the Barrier Reef.</li>
+<li>I'm very busy this week but I could squeeze you in at 2.30 on Tuesday.</li>
+<li>Conversation? Funny. You listen and squeeze a word or two in every five minutes.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: barely manage or succeed in doing or surviving something</h4>
+
+<ul>
+<li>I barely managed to squeeze through the exam with a D.</li>
+<li>Can you squeeze by on 40 dollars a day?</li>
+<li>She squeezed through the crowd and found a seat at the front.</li>
+<li>They managed to squeeze under the fence and get into the festival without paying.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: exclude</h4>
+
+<ul>
+<li>The company squeezed them out by means of aggressive marketing.</li>
+<li>The show has been squeezed out of prime time slot.</li>
+<li>Some employees were squeezed out by the recent budget cuts.</li>
+<li>People within this income group are being squeezed out of their tenure and home of choice.</li>
+<li>Justice has been squeezed out of the criminal justice system, as wrongful convictions are at a high rate.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

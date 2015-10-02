@@ -1,0 +1,79 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="mix" hidden/><h2>mix</h2>
+<h4> 1.1: combine or blend things, qualities, or activities</h4>
+
+<ul>
+<li>In a large bowl, she mixed together the flour and dried fruit.</li>
+<li>Oil and water don't mix.</li>
+<li>At this stage of making the cake, mix in the nuts.</li>
+<li>I'll mix some drinks for you and your friends.</li>
+<li>A few times he forgot to put on gloves and mixed the cement by hand.</li>
+<li>Damian then mixed a soundtrack corresponding to the images.</li>
+<li>Some people are happy to mix business and pleasure, but I'm not one of them.</li>
+<li>That is what parents do: mix joy and worry, pride and potential problems.</li>
+<li>He mixed browns and golds in his design to create a sense of warmth.</li>
+<li>Don't mix food and tv.</li>
+<li>Make sure not to mix alcohol and prescription medication.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: assemble without order or sense, cause to be confounded</h4>
+
+<ul>
+<li>She mixed the cards carefully and asked her friend to cut them.</li>
+<li>He mixes up the words when he is told to give an inpromptu speech.</li>
+<li>I always mix up the the dates.</li>
+<li>He tries hard to not mix up the twins.</li>
+<li>I think his explanation mixed me up more.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: participate or become involved socially</h4>
+
+<ul>
+<li>I suppose you mix with a wide variety of people in your job.</li>
+<li>She mixes very well - perhaps that's why she's so popular.</li>
+<li>For the scavenger hunt, we'll mix the boys and girls on each team.</li>
+<li>He got himself mixed up with the wrong people.</li>
+<li>I heard them arguing but decided not to mix in.</li>
+<li>In the case of a family argument, a friend should not mix in.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

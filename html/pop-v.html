@@ -1,0 +1,123 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="pop" hidden/><h2>pop</h2>
+<h4> 1.1: (cause to) burst or open, usually with a sharp sound</h4>
+
+<ul>
+<li>The balloon popped.</li>
+<li>She popped the blister.</li>
+<li>He popped the champagne bottle.</li>
+<li>Let's pop a few beers after work.</li>
+<li>Would you pop the trunk?</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: make a short, sharp sound</h4>
+
+<ul>
+<li>I could hear his joints popping from across the room.</li>
+<li>The sound of Gatlin guns popping in the distance abruptly ended our revelry.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: move suddenly into or out of a location, appear suddenly</h4>
+
+<ul>
+<li>We could see prairie dogs popping out of their holes all across the field.</li>
+<li>You stick a bill in the vending machine and the change pops out.</li>
+<li>When he stretch his arms, all the buttons popped off his shirt.</li>
+<li>I popped in to the park to have a quick look around.</li>
+<li>She popped out to grab some lunch.</li>
+<li>Rob said he would pop in tomorrow for a chat.</li>
+<li>What grates my cheese is when you pop off into a shopping centre to buy milk.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: cause to move suddenly in a particular direction, release suddenly</h4>
+
+<ul>
+<li>She popped the pizza into the oven.</li>
+<li>He popped the clutch to start the car.</li>
+<li>He popped the cracked tile off the wall.</li>
+<li>He popped the lozenge into his mouth, then grimaced at the bitter taste.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: bulge outward</h4>
+
+<ul>
+<li>His eyes popped when he heard Gordon's salary.</li>
+<li>When she saw her mother's outfit, her eyes popped out.</li>
+<li>His back muscles popped out of his T-shirt.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: Baseball: hit</h4>
+
+<ul>
+<li>Julio popped him right in the nose, and down he went.</li>
+<li>Next time up she batted right and popped one into left field for another homer.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: injest orally, take drugs orally</h4>
+
+<ul>
+<li>She's been popping pills since she was 15.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: die</h4>
+
+<ul>
+<li>Since my old man popped off at 46, I'm a tad conscious of trying to survive</li>
+<li>long enough to see me kids through uni.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

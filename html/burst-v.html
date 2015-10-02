@@ -1,0 +1,77 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="burst" hidden/><h2>burst</h2>
+<h4> 1.1: (Cause to) break apart suddenly; issue forth forcibly.</h4>
+
+<ul>
+<li>The bubbles burst.</li>
+<li>The champagne bottle burst.</li>
+<li>The ice burst the pipes in the basement.</li>
+<li>Despite all efforts, the dam burst.</li>
+<li>Don't burst my bubble, seriously.</li>
+<li>The Jack burst from the box.</li>
+<li>The dinner was bursting with flavor.</li>
+<li>Don was bursting at every seam with his own importance.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: Force out suddenly, emerge</h4>
+
+<ul>
+<li>Little children make her burst with joy!</li>
+<li>She was so overcome that she burst into tears.</li>
+<li>Katie was bursting with excitement to tell her brother.</li>
+<li>The trees burst into striking fall color.</li>
+<li>I threw the book onto the fire and it burst into flames.</li>
+<li>The crowd burst into chatter.</li>
+<li>Nadya spontaneously burst into song.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: Move energetically or violently.</h4>
+
+<ul>
+<li>The stock burst upward following the news.</li>
+<li>As Icarus burst through the clouds, the sun began to melt his wings</li>
+<li>of wax.</li>
+<li>Vice President Cheney burst into the press room, growling.</li>
+<li>He burst out of the house.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

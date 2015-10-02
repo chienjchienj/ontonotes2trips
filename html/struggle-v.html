@@ -1,0 +1,66 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="struggle" hidden/><h2>struggle</h2>
+<h4> 1.1: fight or make effort to defeat someone or something</h4>
+
+<ul>
+<li>He struggled with his attacker who then ran off.</li>
+<li>For years she struggled against the establishment to get her theories accepted.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: make strenuous efforts</h4>
+
+<ul>
+<li>She struggled to be polite.</li>
+<li>The dog had been struggling to get free of the wire noose.</li>
+<li>I've been struggling to understand this article all afternoon.</li>
+<li>Fish struggle for survival when the water level drops in the lake.</li>
+<li>A rescue party struggled to reach the stranded climbers.</li>
+<li>He struggled out of bed.</li>
+<li>She struggled along the rough road holding her son.</li>
+<li>Clark Kent struggled for years to be Batman and Aquaman at the same time.</li>
+<li>He struggled with the heavy load.</li>
+<li>I've always struggled with my math homework.</li>
+<li>Nygren's funds have struggled recently, but he has not wavered in his style.</li>
+<li>Our son has been struggling for years in school and in life.</li>
+<li>The only place they have struggled is the free throw line, where they've hit only 62 percent.</li>
+<li>The Sox grew impatient when Wells struggled for two seasons.</li>
+<li>He struggled for the first time this season, throwing three interceptions.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

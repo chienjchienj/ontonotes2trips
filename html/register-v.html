@@ -1,0 +1,90 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="register" hidden/><h2>register</h2>
+<h4> 1.1: enter into an official record, make record, enroll</h4>
+
+<ul>
+<li>We registered at the hotel.</li>
+<li>Did you register for your courses?</li>
+<li>I want to register a complaint to the manager.</li>
+<li>If you didn't get a notice, you may not be registered in a party.</li>
+<li>I would like to register this mail.</li>
+<li>The disputed domain names were registered for the legitimate purpose of attracting people to the town.</li>
+<li>Check CUConnect for confirmation of whether you were registered for the selected courses.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: be aware of, enter into someone's consciousness</h4>
+
+<ul>
+<li>Did this event register in your parent's minds?</li>
+<li>Did you register any changes when I pressed the button?</li>
+<li>I registered the time before moving on.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: indicate a measurement</h4>
+
+<ul>
+<li>The thermometer registered 13 degrees below zero.</li>
+<li>His reading ability was registered at the fifth-grade level.</li>
+<li>The Bulldogs registered a two-round 601 team score (+33) on the par 72 Currie East.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: show in one's face</h4>
+
+<ul>
+<li>Her surprise did not register.</li>
+<li>A shadow of his confusion registered on his countenance.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: manipulate the registers of a musical instrument</h4>
+
+<ul>
+<li>I have registered it on the harpsichord using the two manuals.</li>
+<li>She registered the organ and began to play again.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

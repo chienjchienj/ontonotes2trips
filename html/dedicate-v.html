@@ -1,0 +1,85 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="dedicate" hidden/><h2>dedicate</h2>
+<h4> 1.1: devote wholly and earnestly to some purpose</h4>
+
+<ul>
+<li>She dedicated her life to her husband.</li>
+<li>The artist dedicated her life to saving the environment.</li>
+<li>Mr. Smith dedicated his entire fortune to finding his son.</li>
+<li>UNICEF workers dedicate their time to helping underpriviledged children.</li>
+<li>The smallest American republic, Panama, dedicated her navy to</li>
+<li>service yesterday.</li>
+<li>Fifty percent of his income was dedicated to his children.</li>
+<li>I want to dedicate myself to the Goddess of Learning.</li>
+<li>Rabbis dedicate their lives to serving Adonai.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: offer formally to a person or cause</h4>
+
+<ul>
+<li>Russel dedicated the book to his family, particularly his</li>
+<li>daughters.</li>
+<li>Is it weird to dedicate a song to your cat?</li>
+<li>The new museum was dedicated to Marc Rothko.</li>
+<li>Mara dedicated her article to her support group.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: mark the completing of a public area; open for use</h4>
+
+<ul>
+<li>A large number of prominent Catholic clergymen today dedicated the</li>
+<li>Church of Our Lady.</li>
+<li>Miss Teen Utah dedicated the new bridge this morning.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: ECCLESIASTIC: set apart for sacred duties with a ritual</h4>
+
+<ul>
+<li>When he was a baby, his mother dedicated him to service for the</li>
+<li>church.</li>
+<li>We dedicated the cross.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

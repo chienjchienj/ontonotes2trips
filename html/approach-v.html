@@ -1,0 +1,73 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="approach" hidden/><h2>approach</h2>
+<h4> 1.1: come close or near, approximate (literal and metaphorical)</h4>
+
+<ul>
+<li>We are approaching the border.</li>
+<li>He motioned us to approach.</li>
+<li>Winter is approaching.</li>
+<li>I see it's approaching lunchtime, so let's take a break.</li>
+<li>As the spring approaches, I notice people similing more.</li>
+<li>He's very active for a man approaching 80.</li>
+<li>The two parties are finally approaching an accord.</li>
+<li>These statements approach libel.</li>
+<li>The performance approaches perfection.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: make a proposal or overtures to with a specific end in view</h4>
+
+<ul>
+<li>Who do I approach about volunteering?</li>
+<li>We've just approached the bank about a loan.</li>
+<li>I approached the administration for a raise.</li>
+<li>She's been approached by a modelling agency.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: treat something in a particular way</h4>
+
+<ul>
+<li>How did she approach the problem?</li>
+<li>She approached the task with dread.</li>
+<li>The professor approached the issue from a historical perspective.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

@@ -1,0 +1,59 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="imagine" hidden/><h2>imagine</h2>
+<h4> 1.1: create something in the mind</h4>
+
+<ul>
+<li>Stop imagining things!</li>
+<li>I was imagining I was in Tales from the Gold Monkey.</li>
+<li>This other patient imagined himself walking down a hospital corridor.</li>
+<li>We then imagined we were kind of like Forest Gump.</li>
+<li>There have been times when I've thought perhaps I imagined all of it.</li>
+<li>I shall become more powerful than you can possibly imagine.</li>
+<li>Let's imagine that he has already determined that if he cannot obtain evidence.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: conclude</h4>
+
+<ul>
+<li>I imagine that the self aggrandizement inherent in opinion writing turns off a lot of women.</li>
+<li>I would imagine he's got one or two starts left in the minors.</li>
+<li>You would imagine her to be about thirty-two from her appearance.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

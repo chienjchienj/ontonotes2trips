@@ -1,0 +1,58 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="derive" hidden/><h2>derive</h2>
+<h4> 1.1: develop from or receive from a source</h4>
+
+<ul>
+<li>Foy admitted that each year he derived income from the golf tournament.</li>
+<li>The EU is not a State; it derives its authority from its Member States.</li>
+<li>From the Niels Bohr he derived the concept of the social and dialogical character of scientific invention.</li>
+<li>Jules argues that he derived citizenship through his mother, because she applied for naturalization before he turned 18.</li>
+<li>I'm told the word git derives from Arabic, where it describes a pregnant camel, of all things.</li>
+<li>TextBox does not match a System.Web.UI.Control type even though it derives from it.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: infer, deduce</h4>
+
+<ul>
+<li>How did Newton derive his second law of motion?</li>
+<li>He derived statistical algorithms for cell counting and cell identification.</li>
+<li>From this starting point, she derives two startling metaphysical possibilities.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

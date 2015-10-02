@@ -1,0 +1,286 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="take" hidden/><h2>take</h2>
+<h4> 1.1: carry out, enact</h4>
+
+<ul>
+<li>They have taken steps to avoid any confusion.</li>
+<li>Spiderman was extremely angry now, and took vengeance.</li>
+<li>Take a picture of that bridge. (please compare carefully to "take a photo" in sense 11)</li>
+<li>The roll out took place intensely and extensively.</li>
+<li>She decided not to take German next year.</li>
+<li>I'd like to take this shot over.</li>
+<li>He took apart the radio.</li>
+<li>I'd like to take some time off work soon.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: light verb usage (see info)</h4>
+
+<ul>
+<li>He'll take his driving test tomorrow. (can be paraphrased as "He'll test tomorrow.")</li>
+<li>Take a photograph of that bridge. (can be paraphrased as, "Photograph that bridge.")</li>
+<li>The seamstress took my measurements. ("The seamstress measured me.")</li>
+<li>The company has taken aim at their rival through a new ad campaign.</li>
+<li>Can we take shelter from the rain in this cave?</li>
+<li>The old fellow took sick last year and died.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: require or neccesitate</h4>
+
+<ul>
+<li>It took three hours to drive to the mall.</li>
+<li>It takes time to build a corporate image.</li>
+<li>This game doesn't take much skill.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: bring with, transport, move</h4>
+
+<ul>
+<li>The child was taken to the principal's office.</li>
+<li>Please take these letters to the post office.</li>
+<li>Are the children taking their umbrellas?</li>
+<li>The bandits took (themselves) to the hills.</li>
+<li>All he took with him were a few good memories.</li>
+<li>His talent took him straight to the top.</li>
+<li>Her charitable work took her into some dangerous neighborhoods.</li>
+<li>Please take these books back to the library.</li>
+<li>That song really takes me back!</li>
+<li>He took down the Christmas lights.</li>
+<li>They took down the building to make way for a parking lot.</li>
+<li>He took up the sugar with a spoon.</li>
+<li>They took to the hills.</li>
+<li>He took off for Boston as soon as he graduated.</li>
+<li>Her business is really taking off.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: select, accept, come into possession of</h4>
+
+<ul>
+<li>John took a cookie from the plate.</li>
+<li>The princess took a husband from the three suitors.</li>
+<li>I told the salesperson I would take the red leather shoes.</li>
+<li>He never could take criticism.</li>
+<li>Do you take lemon with your tea?</li>
+<li>They had to take a pay cut last quarter.</li>
+<li>They can't take in any more refugees without more funding.</li>
+<li>The storm has taken the lives of three fishermen.</li>
+<li>Mary took a small apartment in London.</li>
+<li>He has stopped taking the New York Times.</li>
+<li>Morgan took back her necklace.</li>
+<li>Can you take on the task of emptying these boxes?</li>
+<li>I'll take on all comers!</li>
+<li>Teenagers take up new ideas seemingly on a whim.</li>
+<li>I'd like to take up golf.</li>
+<li>We took in 1,000 dollars the first weekend.</li>
+<li>They took out a loan.</li>
+<li>Can we take on any new members?</li>
+<li>We'll take up this matter at the next meeting.</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: (cause to) acquire or assume a state or quality</h4>
+
+<ul>
+<li>The film takes an interesting twist in final scene.</li>
+<li>He has taken the position of managing director of flight operations.</li>
+<li>Now let's take our seats.</li>
+<li>The company has taken to locking the supply closet.</li>
+<li>The child has taken a chill.</li>
+<li>John has taken his company public.</li>
+<li>He has taken on the mannerisms of his boss.</li>
+<li>She takes after her father.</li>
+<li>He took to skiing like a fish takes to water.</li>
+<li>We should take in the sails.</li>
+<li>She pointed out all his mistakes and took him down a peg or two.</li>
+<li>That couch takes up all the room.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: interpret, consider</h4>
+
+<ul>
+<li>He took her remarks as an insult.</li>
+<li>Take the following case of possible patent infringement.</li>
+<li>Did you take account of her recent illness?</li>
+<li>I took her to be the maid.</li>
+<li>He took her for a fool.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: travel by means of</h4>
+
+<ul>
+<li>She takes the bus to work.</li>
+<li>Take the alternate route through Chelsea during rush hour.</li>
+<li>Instead of standing up for his beliefs, he took the coward's way out.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: claim or conquer, become in control of</h4>
+
+<ul>
+<li>The enemy still could not take the city after a three-month siege.</li>
+<li>The pirates took the women against their will.</li>
+<li>Terrorists took control of the embassy.</li>
+<li>The army took over the government in a matter of hours.</li>
+<li>Bell South took over ATT, although they called it a merger.</li>
+<li>Kristen took over Sean's job while he was out of town.</li>
+<li>The con man took in his victim easily.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: hold, contain</h4>
+
+<ul>
+<li>That wall won't take the paint without an undercoat of primer.</li>
+<li>His car only takes ten gallons of gas.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.11: withdraw or remove</h4>
+
+<ul>
+<li>He took the gun from his pocket.</li>
+<li>Please don't take my coffee cup yet.</li>
+<li>This event has certainly taken the blindfold from the committee's eyes.</li>
+<li>He took away the broken washer.</li>
+<li>Child Protective Services took away her children.</li>
+<li>Take off your shoes before entering.</li>
+<li>Take out the chicken after adding the vegetables.</li>
+<li>He took all his money out of his account.</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.11" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      
+<h4> 1.12: absorb physically, mentally, or with the senses</h4>
+
+<ul>
+<li>How much water can that sponge take in?</li>
+<li>He took in all the knowledge his teacher could offer.</li>
+<li>I took in every word they said.</li>
+<li>They took in the sights of Paris.</li>
+<li>The cloth takes up the liquid.</li>
+</ul>
+
+<input type="text" name="annotation[results][11][id]" value="1.12" hidden />
+<input type="text" name="annotation[results][11][trips]" value="" visible/>
+      
+<h4> 1.13: TAKE DOWN--make a written note of</h4>
+
+<ul>
+<li>Please take down this number.</li>
+</ul>
+
+<input type="text" name="annotation[results][12][id]" value="1.13" hidden />
+<input type="text" name="annotation[results][12][trips]" value="" visible/>
+      
+<h4> 1.14.1: Multi-word expressions.</h4>
+
+<ul>
+<li>TAKE A BREATHER/FIVE/TEN/TIME OFF</li>
+<li>TAKE A CHANCE</li>
+<li>TAKE A FIRM STAND</li>
+<li>TAKE A HIT</li>
+<li>TAKE A LEAK</li>
+<li>TAKE A POWDER</li>
+<li>TAKE ABACK</li>
+<li>TAKE ADVANTAGE</li>
+<li>TAKE CARE</li>
+<li>TAKE CHANCES</li>
+<li>TAKE EFFECT</li>
+<li>TAKE EXCEPTION</li>
+<li>TAKE FOR GRANTED</li>
+<li>TAKE HEART</li>
+<li>TAKE HOME</li>
+<li>TAKE IN VAIN</li>
+<li>TAKE ISSUE</li>
+<li>TAKE IT EASY</li>
+<li>TAKE IT ON THE CHIN</li>
+<li>TAKE KINDLY TO</li>
+<li>TAKE OFFICE</li>
+<li>TAKE ONE'S LUMPS</li>
+<li>TAKE PAINS</li>
+<li>TAKE PART</li>
+<li>TAKE PLACE</li>
+<li>TAKE PRIDE</li>
+<li>TAKE SHAPE</li>
+<li>TAKE STAGE</li>
+<li>TAKE STOCK</li>
+<li>TAKE THE AIR</li>
+<li>TAKE THE BULL BY THE HORNS</li>
+<li>TAKE THE CAKE</li>
+<li>TAKE THE FIELD</li>
+<li>TAKE THE FIFTH</li>
+<li>TAKE THE FIFTH AMENDMENT</li>
+<li>TAKE THE FLOOR</li>
+<li>TAKE THE ROAD</li>
+<li>TAKE THE STAGE</li>
+<li>TAKE THE STAND</li>
+<li>TAKE THE VEIL</li>
+<li>TAKE TIME BY THE FORELOCK</li>
+<li>TAKE TIME OFF</li>
+<li>TAKE TO HEART</li>
+<li>TAKE TO TASK</li>
+<li>TAKE TURNS</li>
+<li>TAKE UP ARMS</li>
+<li>TAKE WATER</li>
+</ul>
+
+<input type="text" name="annotation[results][13][id]" value="1.14.1" hidden />
+<input type="text" name="annotation[results][13][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

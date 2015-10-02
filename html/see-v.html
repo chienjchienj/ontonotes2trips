@@ -1,0 +1,157 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="see" hidden/><h2>see</h2>
+<h4> 1.1: perceive by sight</h4>
+
+<ul>
+<li>Can you see the bird in that tree?</li>
+<li>His fumbling the ball was seen on TV by millions of viewers.</li>
+<li>The camera saw the burglary and recorded it.</li>
+<li>I must see your passport before you can enter the country.</li>
+<li>Don't drive after taking the medication. It will make you see double.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: realize, visualize or understand mentally (or through imagination)</h4>
+
+<ul>
+<li>I just can't see your point.</li>
+<li>They saw a risk in his strategy.</li>
+<li>I am not seeing this situation as hopeless.</li>
+<li>I see what you mean.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: witness, observe, or experience</h4>
+
+<ul>
+<li>Did you see any encouragement from him?</li>
+<li>You'll see a lot of cheating in this school.</li>
+<li>He saw action in Vietnam.</li>
+<li>I see that you have been promoted.</li>
+<li>I saw Berlin before the Wall came down.</li>
+<li>They are planning to see two museums tomorrow.</li>
+<li>1960 saw the rebellion of the younger generation against established traditions.</li>
+<li>As an artist, you must learn to see.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: verify, prove, check or insure by actively examining (evidence)</h4>
+
+<ul>
+<li>He's going to see whether the train will leave on time.</li>
+<li>See whether you can come tomorrow.</li>
+<li>He went to see if the valves were indeed closed.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      
+<h4> 1.5: take care of, take responsilibity over, keep up with</h4>
+
+<ul>
+<li>Can you see about this matter at once?</li>
+<li>Jeff's job is to see to it that the visitors get the proper reception.</li>
+<li>Jeeves will see you to the door.</li>
+<li>The sponsor has promised us to see the project to completion.</li>
+<li>See to it!</li>
+</ul>
+
+<input type="text" name="annotation[results][4][id]" value="1.5" hidden />
+<input type="text" name="annotation[results][4][trips]" value="" visible/>
+      
+<h4> 1.6: meet or encounter on social or professional capacity</h4>
+
+<ul>
+<li>How nice to see you again!</li>
+<li>He's been seeing a therapist for two years.</li>
+<li>She hasn't seen her mother in six months.</li>
+<li>The doctor will see you now.</li>
+<li>His wife thinks he's seeing another woman.</li>
+</ul>
+
+<input type="text" name="annotation[results][5][id]" value="1.6" hidden />
+<input type="text" name="annotation[results][5][trips]" value="" visible/>
+      
+<h4> 1.7: match as in poker game</h4>
+
+<ul>
+<li>I'll see you and raise you ten.</li>
+</ul>
+
+<input type="text" name="annotation[results][6][id]" value="1.7" hidden />
+<input type="text" name="annotation[results][6][trips]" value="" visible/>
+      
+<h4> 1.8: SEE RED-become angry or upset</h4>
+
+<ul>
+<li>When I saw that man hit my mother, I saw red.</li>
+</ul>
+
+<input type="text" name="annotation[results][7][id]" value="1.8" hidden />
+<input type="text" name="annotation[results][7][trips]" value="" visible/>
+      
+<h4> 1.9: SEE THE LIGHT-change or reform for the bettter</h4>
+
+<ul>
+<li>The lazy student finally saw the light.</li>
+</ul>
+
+<input type="text" name="annotation[results][8][id]" value="1.9" hidden />
+<input type="text" name="annotation[results][8][trips]" value="" visible/>
+      
+<h4> 1.10: SEE EYE TO EYE-be in agreement</h4>
+
+<ul>
+<li>We never saw eye to eye on this question.</li>
+</ul>
+
+<input type="text" name="annotation[results][9][id]" value="1.10" hidden />
+<input type="text" name="annotation[results][9][trips]" value="" visible/>
+      
+<h4> 1.11: Deliberate or decide.</h4>
+
+<ul>
+<li>See if you can get in touch with the agent.</li>
+<li>Let's see.</li>
+</ul>
+
+<input type="text" name="annotation[results][10][id]" value="1.11" hidden />
+<input type="text" name="annotation[results][10][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

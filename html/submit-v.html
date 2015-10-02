@@ -1,0 +1,82 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="submit" hidden/><h2>submit</h2>
+<h4> 1.1: yield control to another being or force</h4>
+
+<ul>
+<li>In the end, many Congresspeople who knew that the resolution was bad policy submitted to the pressure to vote for it.</li>
+<li>Soldiers are taught to submit to authority immediately.</li>
+<li>Although an employee is equal to the boss as a man, the employee must submit to him because he holds a higher rank.</li>
+<li>Were he able to simply reverse his will and submit to fate, he would find peace more swiftly.</li>
+<li>There, Alexander Nevsky, the bane of Germans, submitted to the inevitable and accepted Mongol lordship over all of Russia.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: hand over or put in</h4>
+
+<ul>
+<li>She submitted a proposal to the agency.</li>
+<li>We submitted an application for a grant to the NSF.</li>
+<li>Submit your website URL to 40 major search engines for FREE!</li>
+<li>You can submit a letter to the Voice of San Diego editors on this page.</li>
+<li>On Feb. 9, 1989, Jeannette Dinning, Lighthill's daughter, submitted the estate for probate.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: put forward an idea or question for approval or judgement</h4>
+
+<ul>
+<li>I submit to you that the accused is guilty.</li>
+<li>I jokingly submit to him that this is environment where all editorial decisions should be made.</li>
+<li>I had submitted to her that there was a 50/50 chance of failure.</li>
+<li>Finally they stopped a day laborer and submitted the question to him.</li>
+<li>I submitted the problem to tech support everything was quickly resolved and working.</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      
+<h4> 1.4: undergo</h4>
+
+<ul>
+<li>Workers are often not allowed to form unions and are easily submitted to unfair treatment.</li>
+<li>He had not submitted to punishment without some resistance.</li>
+</ul>
+
+<input type="text" name="annotation[results][3][id]" value="1.4" hidden />
+<input type="text" name="annotation[results][3][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>

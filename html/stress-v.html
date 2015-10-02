@@ -1,0 +1,69 @@
+
+<html>
+
+<head>
+  <script type="text/javascript" src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript"src="https://cdn.rawgit.com/marioizquierdo/jquery.serializeJSON/master/jquery.serializejson.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+  var ref = new Firebase("https://torrid-torch-4304.firebaseio.com/results");
+  //var resref = ref.push();
+  /*ref.authAnonymously(function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+    }
+  });*/
+  var onComplete = function(error) {
+    if (error) {
+      console.log('Synchronization failed');
+    } else {
+      console.log('Synchronization succeeded');
+    } return false;
+  };
+  function subm() {
+    ref.push($('#res').serializeJSON({useIntKeysAsArrayIndex: true}), onComplete);
+    return false;
+  }
+  </script>
+      <form id="res">
+<input type="text" name="annotation[annotator]"           value="your name"/><input type="text" name="annotation[lemma]" value="stress" hidden/><h2>stress</h2>
+<h4> 1.1: single out as important, bring focus to</h4>
+
+<ul>
+<li>The doctor stress the importance of exercise in addition to a change in diet.</li>
+<li>Prime Minister Aziz stressed the need to enhance cooperation between Pakistan and Russia.</li>
+<li>Literature, art and posters of this period overwhelmingly stressed the role of the infallible Leader, Joseph Stalin.</li>
+<li>They also stressed the group's active participation in the review.</li>
+<li>He stressed the Navy cannot afford the "Star Wars version" of every new idea.</li>
+</ul>
+
+<input type="text" name="annotation[results][0][id]" value="1.1" hidden />
+<input type="text" name="annotation[results][0][trips]" value="" visible/>
+      
+<h4> 1.2: strain, try the limits of</h4>
+
+<ul>
+<li>Recent scandals have stressed the administration to its breaking point.</li>
+<li>Rapid population growth has stressed the natural resource base.</li>
+<li>If the cord is stressed the cylinder and the block are moving with the same acceleration.</li>
+</ul>
+
+<input type="text" name="annotation[results][1][id]" value="1.2" hidden />
+<input type="text" name="annotation[results][1][trips]" value="" visible/>
+      
+<h4> 1.3: utter with an accent</h4>
+
+<ul>
+<li>In Farsi, you stress the last syllable of each word.</li>
+<li>When we stress syllables in words, we use a combination of different features.</li>
+<li>He stressed every word; every syllable came out crystal clear.</li>
+<li>Her accent was light, although she stressed the first syllable of 'rapport.'</li>
+</ul>
+
+<input type="text" name="annotation[results][2][id]" value="1.3" hidden />
+<input type="text" name="annotation[results][2][trips]" value="" visible/>
+      <button onclick="subm()">submit</button></form></body</html>>
